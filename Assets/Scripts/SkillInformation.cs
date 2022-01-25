@@ -23,12 +23,10 @@ public class SkillInformation : MonoBehaviour
         btnClick.onClick.AddListener(MakeAction);
     }
 
-    public void SetSkill(CharacterAttribute attribute, SkillAttribute skill)
+    public void SetSkill(CharacterAttribute character, SkillAttribute skill)
     {
-        cache = new CharacterSkilled();
-        cache.Attribute = skill== null ? 1 :skill.Attribute;
-        cache.NameSkill = skill == null ? "Punch": skill.NameSkill;
-        cache.EndValue = cache.Attribute * attribute.Damage;
+        cache = new CharacterSkilled(skill, character);
+
         txt.text = $"Name: {cache.NameSkill}\nDamage: {cache.EndValue: 0.00}";
     }
 

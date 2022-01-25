@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -90,14 +92,24 @@ public class CharacterAttribute
     }
 }
 
+public enum SkillType {
+    Damage,
+    Heal,
+    Buff_Attack,
+}   
+
+
 [System.Serializable]
 public class SkillAttribute
 {
     [SerializeField] string nameSkill;
     [SerializeField] float attribute;
 
+    [SerializeField] private int timeEffect = 1;
+
     public float Attribute { get => attribute; set => attribute = value; }
     public string NameSkill { get => nameSkill; set => nameSkill = value; }
+    public int TimeEffect { get => timeEffect; set => timeEffect = value; }
 
     internal object Clone()
     {
@@ -109,6 +121,15 @@ public class SkillAttribute
 public class CharacterSkilled: SkillAttribute
 {
     [SerializeField] float endValue;
+
+    public CharacterSkilled(SkillAttribute oldSkill, CharacterAttribute attribute)
+    {
+        Attribute = oldSkill == null ? 1 : oldSkill.Attribute;
+        NameSkill = oldSkill == null ? "Punch" : oldSkill.NameSkill;
+        NameSkill = oldSkill == null ? "Punch" : oldSkill.NameSkill;
+        EndValue = Attribute * attribute.Damage;
+    }
+
 
     public float EndValue { get => endValue; set => endValue = value; }
 

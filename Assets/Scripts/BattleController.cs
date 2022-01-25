@@ -59,7 +59,7 @@ public class BattleController : MonoBehaviour
     public void StartBattle()
     {
         timer = 0;
-        Chagne(BattleStep.PreSkill);
+        Chagne(BattleStep.PreSkill,true);
         blues.ForEach(s => { 
             s.Initialize();
             s.Controller = this;
@@ -106,6 +106,7 @@ public class BattleController : MonoBehaviour
         {
             cache.from = character;
             UpdateSkill(character);
+            AssignSkill(new CharacterSkilled(null, character.CurrentStat));
         }
         else
         {
@@ -168,9 +169,9 @@ public class BattleController : MonoBehaviour
 
     }
 
-    private void Chagne(BattleStep nextStep)
+    private void Chagne(BattleStep nextStep, bool mustBe = false)
     {
-        if (nextStep != Step)
+        if (nextStep != Step || mustBe)
         {
             Step = nextStep;
 
