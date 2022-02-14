@@ -10,7 +10,7 @@ public class SkillInformation : MonoBehaviour
     [SerializeField] private Button btnClick;
     [SerializeField] private TextMeshProUGUI txt;
 
-    CharacterSkilled cache;
+    SkillAttribute cache;
 
     private void Reset()
     {
@@ -25,9 +25,9 @@ public class SkillInformation : MonoBehaviour
 
     public void SetSkill(CharacterAttribute character, SkillAttribute skill)
     {
-        cache = new CharacterSkilled(skill, character);
+        cache = skill.Clone() as SkillAttribute;
 
-        txt.text = $"Name: {cache.NameSkill}\nDamage: {cache.EndValue: 0.00}";
+        txt.text = $"Name: {cache.NameSkill}\nDamage: {cache.Effects[0].EndValue: 0.00}";
     }
 
     public void SetController(BattleController controller)

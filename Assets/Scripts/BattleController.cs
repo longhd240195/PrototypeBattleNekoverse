@@ -59,7 +59,7 @@ public class BattleController : MonoBehaviour
     public void StartBattle()
     {
         timer = 0;
-        Chagne(BattleStep.PreSkill,true);
+        ChangeStateBattle(BattleStep.PreSkill,true);
         blues.ForEach(s => { 
             s.Initialize();
             s.Controller = this;
@@ -78,18 +78,20 @@ public class BattleController : MonoBehaviour
         var sb = new StringBuilder("--Log--\n");
         queue.ForEach(q =>
         {
-            var isBlue = blues.IndexOf(q.from) != -1;
-            sb.Append(isBlue ? "Blue" : "Red").
-            Append(":\t").
-            Append((isBlue ? blues.IndexOf(q.from) : reds.IndexOf(q.from)) + 1).
+            var isBlueFrom = blues.IndexOf(q.from) != -1;
+            var isBlueTarget = blues.IndexOf(q.target) != -1;
+            sb.
+            Append(isBlueFrom ? "B":"R").
+            Append((isBlueFrom ? blues.IndexOf(q.from) : reds.IndexOf(q.from)) + 1).
             Append("-").
-            Append((isBlue ? reds.IndexOf(q.target) : blues.IndexOf(q.target)) + 1).
+            Append(isBlueTarget?"B":"R").
+            Append((isBlueTarget ? blues.IndexOf(q.target) : reds.IndexOf(q.target)) + 1).
             Append("\n");
         });
         txtLog.text = sb.ToString();
     }
 
-    public void AssignSkill(CharacterSkilled skill)
+    public void AssignSkill(SkillAttribute skill)
     {
         if (cache == null)
             cache = new QueueBattle();
@@ -106,7 +108,7 @@ public class BattleController : MonoBehaviour
         {
             cache.from = character;
             UpdateSkill(character);
-            AssignSkill(new CharacterSkilled(null, character.CurrentStat));
+            AssignSkill(new SkillAttribute(character.CurrentStat));
         }
         else
         {
@@ -128,9 +130,9 @@ public class BattleController : MonoBehaviour
 
     private void UpdateSkill(CharacterInformation character)
     {
-        for(int i = 0; i < character.Skills.Count|| i < skills.Count; i++)
+        for (int i = 0; i < character.Skills.Count || i < skills.Count; i++)
         {
-                skills[i].SetSkill(character.CurrentStat, i < character.Skills.Count? character.Skills[i]:null);
+            skills[i].SetSkill(character.CurrentStat, i < character.Skills.Count ? character.Skills[i] : null);
         }
     }
 
@@ -140,10 +142,11 @@ public class BattleController : MonoBehaviour
 
         if (queue.Count <= 0)
         {
-            Chagne(BattleStep.PreSkill);
+            ChangeStateBattle(BattleStep.PreSkill);
             return;
         }
-        Chagne(BattleStep.CastSkill);
+
+        ChangeStateBattle(BattleStep.CastSkill);
 
         var q = queue[0];
         var target = q.target;
@@ -153,7 +156,7 @@ public class BattleController : MonoBehaviour
         {
             target.transform.DOJump(Vector2.zero, 20f, 1, .2f).SetRelative(true);
             from.transform.DOJump(Vector2.zero, 20f, 1, .2f).SetRelative(true);
-            target.TakeDamage(q.skill.EndValue);
+            target.ApplyEffects(q.skill.Effects);
         }
         else
         {
@@ -169,7 +172,7 @@ public class BattleController : MonoBehaviour
 
     }
 
-    private void Chagne(BattleStep nextStep, bool mustBe = false)
+    private void ChangeStateBattle(BattleStep nextStep, bool mustBe = false)
     {
         if (nextStep != Step || mustBe)
         {
@@ -202,5 +205,5 @@ public class QueueBattle
     public CharacterInformation from;
     public CharacterInformation target;
 
-    public CharacterSkilled skill;
+    public SkillAttribute skill;
 }

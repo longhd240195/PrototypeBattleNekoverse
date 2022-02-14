@@ -1,6 +1,10 @@
+using Sirenix.OdinInspector;
+
 using System.Collections.Generic;
 using System.Text;
+
 using TMPro;
+
 using UnityEditor.Experimental.GraphView;
 
 using UnityEngine;
@@ -26,7 +30,7 @@ public class CharacterInformation : MonoBehaviour
 
     public List<SkillAttribute> Skills { get => skills; set => skills = value; }
 
-    public CharacterAttribute CurrentStat { get => currentStat;}
+    public CharacterAttribute CurrentStat { get => currentStat; }
 
     private void Reset()
     {
@@ -45,15 +49,39 @@ public class CharacterInformation : MonoBehaviour
         UpdateStat();
     }
 
+    public void ApplyEffects(SkillEffect[] effects)
+    {
+        foreach(var ef in effects)
+            switch (ef.Type)
+            {
+                case TypeSkill.Damage:
+                    TakeDamage(ef.EndValue);
+                    break;
+                case TypeSkill.Heal:
+                    break;
+                case TypeSkill.Buff_atk:
+                    break;
+                case TypeSkill.Bonus_atk:
+                    break;
+            }
+    }
+
     public void TakeDamage(float damage)
     {
         CurrentStat.Hp -= damage;
         UpdateStat();
-
+        LogInfor(damage);
         if (CurrentStat.Hp <= 0)
         {
             Debug.Log("Dead");
         }
+    }
+
+    public void LogInfor(float damage)
+    {
+        var infor = new StringBuilder();
+        infor.Append($"{(damage > 0 ? "<color=red>-" : "<color=green>+")}{Mathf.Abs(damage)}");
+        TextSingleton.Instance.CreateText(transform.position, infor.ToString());
     }
 
     public void UpdateStat()
@@ -81,6 +109,7 @@ public class CharacterAttribute
     [SerializeField] float hp;
     [SerializeField] float damage;
     [SerializeField] float speed;
+    [SerializeField] float evasion;
 
     public float Damage { get => damage; set => damage = value; }
     public float Hp { get => hp; set => hp = value; }
@@ -92,24 +121,36 @@ public class CharacterAttribute
     }
 }
 
-public enum SkillType {
+public enum SkillType
+{
     Damage,
     Heal,
     Buff_Attack,
-}   
+}
 
 
 [System.Serializable]
 public class SkillAttribute
 {
     [SerializeField] string nameSkill;
-    [SerializeField] float attribute;
+    [SerializeField] SkillEffect[] effects;
 
-    [SerializeField] private int timeEffect = 1;
 
-    public float Attribute { get => attribute; set => attribute = value; }
     public string NameSkill { get => nameSkill; set => nameSkill = value; }
-    public int TimeEffect { get => timeEffect; set => timeEffect = value; }
+    public SkillEffect[] Effects { get => effects; set => effects = value; }
+
+    public SkillAttribute(string nameSkill, SkillEffect[] effects)
+    {
+        NameSkill = nameSkill;
+        Effects = effects;
+    }
+
+    public SkillAttribute(CharacterAttribute attribute)
+    {
+        NameSkill = "Punch";
+        Effects = new SkillEffect[1];
+        Effects[0] = new SkillEffect(TypeSkill.Damage,1,attribute.Damage);
+    }
 
     internal object Clone()
     {
@@ -117,24 +158,48 @@ public class SkillAttribute
     }
 }
 
-[System.Serializable]
-public class CharacterSkilled: SkillAttribute
+public enum TypeSkill
 {
-    [SerializeField] float endValue;
+    Damage,
+    Heal,
+    Buff_atk,
+    Bonus_atk
+}
 
-    public CharacterSkilled(SkillAttribute oldSkill, CharacterAttribute attribute)
+[System.Serializable]
+public class SkillEffect
+{
+[SerializeField] TypeSkill type;
+    [SerializeField] float attribute;
+    [SerializeField,ReadOnly] float endValue;
+
+    public SkillEffect(TypeSkill type, float attribute, float endValue)
     {
-        Attribute = oldSkill == null ? 1 : oldSkill.Attribute;
-        NameSkill = oldSkill == null ? "Punch" : oldSkill.NameSkill;
-        NameSkill = oldSkill == null ? "Punch" : oldSkill.NameSkill;
-        EndValue = Attribute * attribute.Damage;
+        Type = type;
+        Attribute = attribute;
+        EndValue = endValue;
     }
 
-
+    public TypeSkill Type { get => type; set => type = value; }
+    public float Attribute { get => attribute; set => attribute = value; }
     public float EndValue { get => endValue; set => endValue = value; }
 
-    internal SkillAttribute Clone()
+    public void SetEndValue(float multiple)
     {
-        return this.MemberwiseClone() as SkillAttribute;
+        switch (type)
+        {
+            case TypeSkill.Damage:
+                endValue = multiple * attribute;
+                break;
+            case TypeSkill.Heal:
+                endValue = multiple * attribute;
+                break;
+            case TypeSkill.Buff_atk:
+                endValue = attribute;
+                break;
+            case TypeSkill.Bonus_atk:
+                endValue = attribute;
+                break;
+        }
     }
 }
