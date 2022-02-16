@@ -1,3 +1,5 @@
+using Sirenix.Serialization.Utilities;
+
 using TMPro;
 
 using UnityEngine;
@@ -8,6 +10,7 @@ public class SkillInformation : MonoBehaviour
     [SerializeField] private BattleController controller;
 
     [SerializeField] private Button btnClick;
+    [SerializeField] private Image signSelected;
     [SerializeField] private TextMeshProUGUI txt;
 
     SkillAttribute cache;
@@ -25,9 +28,16 @@ public class SkillInformation : MonoBehaviour
 
     public void SetSkill(CharacterAttribute character, SkillAttribute skill)
     {
-        cache = skill.Clone() as SkillAttribute;
+        btnClick.interactable = skill != null;
+        if (skill == null || character == null)
+        {
+            txt.text = string.Empty;
+            return;
+        }
 
-        txt.text = $"Name: {cache.NameSkill}\nDamage: {cache.Effects[0].EndValue: 0.00}";
+        cache = skill.Clone() as SkillAttribute;
+        cache.Apply(character);
+        txt.text = cache.ToString() ;
     }
 
     public void SetController(BattleController controller)
@@ -38,5 +48,10 @@ public class SkillInformation : MonoBehaviour
     private void MakeAction()
     {
         controller.AssignSkill(cache);
+    }
+
+    public void CheckState(SkillAttribute skillAtb)
+    {
+        signSelected.gameObject.SetActive(cache == skillAtb);
     }
 }

@@ -1,6 +1,5 @@
 using DG.Tweening;
 
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +30,8 @@ public class BattleController : MonoBehaviour
     private QueueBattle cache;
     private bool lockSelect = false;
 
-    private int NumberAction (){
+    private int NumberAction()
+    {
         var count = 0;
         blues.ForEach(s => { if (s.Alive) count++; });
         reds.ForEach(s => { if (s.Alive) count++; });
@@ -59,18 +59,40 @@ public class BattleController : MonoBehaviour
     public void StartBattle()
     {
         timer = 0;
-        ChangeStateBattle(BattleStep.PreSkill,true);
-        blues.ForEach(s => { 
+        ChangeStateBattle(BattleStep.PreSkill, true);
+        blues.ForEach(s =>
+        {
             s.Initialize();
             s.Controller = this;
         });
-        reds.ForEach(s => {
+        reds.ForEach(s =>
+        {
             s.Initialize();
             s.Controller = this;
         });
-        skills.ForEach(s => {
+        skills.ForEach(s =>
+        {
             s.SetController(this);
         });
+    }
+
+    public void UpdateUI()
+    {
+        ResetState();
+
+        if (cache == null)
+            return;
+
+        blues.ForEach(s => s.CheckState(cache.from));
+        reds.ForEach(s => s.CheckState(cache.target));
+        skills.ForEach(s => s.CheckState(cache.skill));
+    }
+
+    private void ResetState()
+    {
+        blues.ForEach(s => s.CheckState(null));
+        reds.ForEach(s => s.CheckState(null));
+        skills.ForEach(s => s.CheckState(null));
     }
 
     private void UpdateLog()
@@ -81,10 +103,12 @@ public class BattleController : MonoBehaviour
             var isBlueFrom = blues.IndexOf(q.from) != -1;
             var isBlueTarget = blues.IndexOf(q.target) != -1;
             sb.
-            Append(isBlueFrom ? "B":"R").
+            Append(isBlueFrom ? "B" : "R").
             Append((isBlueFrom ? blues.IndexOf(q.from) : reds.IndexOf(q.from)) + 1).
             Append("-").
-            Append(isBlueTarget?"B":"R").
+            Append($"{q.skill.NameSkill}").
+            Append("-").
+            Append(isBlueTarget ? "B" : "R").
             Append((isBlueTarget ? blues.IndexOf(q.target) : reds.IndexOf(q.target)) + 1).
             Append("\n");
         });
@@ -97,13 +121,14 @@ public class BattleController : MonoBehaviour
             cache = new QueueBattle();
 
         cache.skill = skill;
+        UpdateUI();
     }
 
     public void AssignCharacter(CharacterInformation character)
     {
         if (cache == null)
             cache = new QueueBattle();
-        
+
         if (!cache.from)
         {
             cache.from = character;
@@ -124,7 +149,7 @@ public class BattleController : MonoBehaviour
             }
         }
 
-
+        UpdateUI();
         UpdateLog();
     }
 
@@ -154,14 +179,14 @@ public class BattleController : MonoBehaviour
 
         if (target.Alive && from.Alive)
         {
-            target.transform.DOJump(Vector2.zero, 20f, 1, .2f).SetRelative(true);
-            from.transform.DOJump(Vector2.zero, 20f, 1, .2f).SetRelative(true);
+            from.transform.DOMove(-from.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
+            target.transform.DOMove(-target.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
             target.ApplyEffects(q.skill.Effects);
         }
         else
         {
-            target.transform.DOShakePosition(.2f, new Vector3(10, 0, 0),20);
-            from.transform.DOShakePosition(.2f, new Vector3(10, 0, 0),45);
+            target.transform.DOShakePosition(.2f, new Vector3(.1f, 0, 0), 20);
+            from.transform.DOShakePosition(.2f, new Vector3(.1f, 0, 0), 45);
         }
 
         DOVirtual.DelayedCall(1f, () =>
