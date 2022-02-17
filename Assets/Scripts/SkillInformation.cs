@@ -1,15 +1,16 @@
-using Sirenix.Serialization.Utilities;
-
 using TMPro;
-
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SkillInformation : MonoBehaviour
 {
-    [SerializeField] private BattleController controller;
+    private static GameObject SkillInfo;
 
-    [SerializeField] private Button btnClick;
+    [SerializeField] private BattleController controller;
+    [SerializeField] private Image imgFaded;
+
+    [SerializeField] private UIButton btnClick;
     [SerializeField] private Image signSelected;
     [SerializeField] private TextMeshProUGUI txt;
 
@@ -17,13 +18,26 @@ public class SkillInformation : MonoBehaviour
 
     private void Reset()
     {
-        btnClick = GetComponent<Button>();
+        btnClick = GetComponent<UIButton>();
         txt = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    [ContextMenu("Update ui button")]
+    private void GetUIButton()
+    {
+        btnClick = GetComponent<UIButton>();
     }
 
     private void Start()
     {
+        btnClick.onDrag.AddListener(Drag);
         btnClick.onClick.AddListener(MakeAction);
+        btnClick.onStartDrag.AddListener(() =>
+        {
+            StartDrag();
+            MakeAction();
+        });
+        btnClick.onPointerUp.AddListener(PointerUp);
     }
 
     public void SetSkill(CharacterAttribute character, SkillAttribute skill)
@@ -48,6 +62,26 @@ public class SkillInformation : MonoBehaviour
     private void MakeAction()
     {
         controller.AssignSkill(cache);
+    }
+
+    private void StartDrag()
+    {
+        SkillInfo = Instantiate(imgFaded, transform.parent.parent).gameObject;
+        var txt = SkillInfo.GetComponentInChildren<TextMeshProUGUI>();
+        txt.text = cache.ToString();
+    }
+
+    private void Drag(PointerEventData eventData)
+    {
+        SkillInfo.transform.position = eventData.position;
+    }
+
+    private void PointerUp()
+    {
+        Destroy(SkillInfo);
+
+        controller.EndSelection();
+        controller.UnassignSkill(cache);
     }
 
     public void CheckState(SkillAttribute skillAtb)

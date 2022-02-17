@@ -16,7 +16,6 @@ public class GetTouch : MonoBehaviour
     {
         if (!interactable)
             return;
-        Debug.Log("On mouse up button");
         onClick?.Invoke();
     }
 
@@ -24,7 +23,6 @@ public class GetTouch : MonoBehaviour
     {
         if (!interactable)
             return;
-        Debug.Log("MOuse enter");
         onMouseEnter?.Invoke();
     }
 

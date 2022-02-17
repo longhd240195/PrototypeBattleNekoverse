@@ -2,6 +2,7 @@
 
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -10,10 +11,7 @@ using UnityEngine.UI;
 public class CharacterInformation : MonoBehaviour
 {
     [Header("Reference")]
-//    [SerializeField] TextMeshProUGUI txtHP;
-   // [SerializeField] Image imgSelectMe;
-    //[SerializeField] Button btnMain;
-    [SerializeField] GetTouch btnMain;
+    [SerializeField] GetTouch btnOnCharacter;
     [SerializeField] Transform imgSelectMe;
     [SerializeField] private BattleController controller;
     [Header("Stat")]
@@ -32,11 +30,20 @@ public class CharacterInformation : MonoBehaviour
     public List<SkillAttribute> Skills { get => skills; set => skills = value; }
 
     public CharacterAttribute CurrentStat { get => currentStat; }
+    
+    [ContextMenu("Init skill")]
+    private void InitSkill()
+    {
+        if(Skills.Count <= 0)
+        {
+            Skills.Add(new SkillAttribute(currentStat) );
+        }
+    }
 
     [ContextMenu("Update ref")]
     private void UpdateReference()
     {
-        btnMain = GetComponentInChildren<GetTouch>();
+        btnOnCharacter = GetComponentInChildren<GetTouch>();
     }
 
     [ContextMenu("Update Cone")]
@@ -48,7 +55,10 @@ public class CharacterInformation : MonoBehaviour
     private void Start()
     {
         localCone = imgSelectMe.localPosition;
-        btnMain.onClick.AddListener(AssignAction);
+
+        btnOnCharacter.onClick.AddListener(AssignAction);
+        btnOnCharacter.onMouseEnter.AddListener(SetTargetPlayer);
+        btnOnCharacter.onMouseExit.AddListener(RemoveTargetPlayer);
     }
 
     public void Initialize()
@@ -64,18 +74,18 @@ public class CharacterInformation : MonoBehaviour
         sb.Append($"DAM: {CurrentStat.Damage} / {initStat.Damage}\n");
         sb.Append($"Speed: {CurrentStat.Speed}");
      //   txtHP.text = sb.ToString();
-        if(btnMain)
-        btnMain.interactable = Alive;
+        if(btnOnCharacter)
+            btnOnCharacter.interactable = Alive;
     }
 
 
-    public void CheckState(CharacterInformation attributeCheck)
+    public void CheckState(QueueBattle attributeCheck)
     {
-        imgSelectMe.DOKill();
-        imgSelectMe.localPosition = localCone;
-        imgSelectMe.gameObject.SetActive(this == attributeCheck);
-
-        if(imgSelectMe.gameObject.activeInHierarchy)
+        var track = attributeCheck != null &&
+            ((attributeCheck.from != null && attributeCheck.from == this) ||
+            (attributeCheck.target != null && attributeCheck.target == this));
+        MoveToInitCone(track);
+        if (imgSelectMe.gameObject.activeInHierarchy)
             imgSelectMe.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
     }
 
@@ -156,12 +166,27 @@ public class CharacterInformation : MonoBehaviour
 
     #endregion
 
+    private void SetTargetPlayer()
+    {
+        Controller.AssignCharacter(this,true);
+    }
 
+    private void RemoveTargetPlayer()
+    {
+        Controller.RemoveAssignTarget(this);
+    }
 
     public void AssignAction()
     {
-        Debug.Log("assign:" + transform.name, this);
         Controller.AssignCharacter(this);
+        Controller.EndSelection();
+    }
+
+    private void MoveToInitCone(bool active)
+    {
+        imgSelectMe.DOKill();
+        imgSelectMe.localPosition = localCone;
+        imgSelectMe.gameObject.SetActive(active);
     }
 }
 

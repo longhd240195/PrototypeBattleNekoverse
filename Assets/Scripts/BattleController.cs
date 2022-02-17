@@ -1,11 +1,8 @@
 using DG.Tweening;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using TMPro;
-
 using UnityEngine;
 
 public class BattleController : MonoBehaviour
@@ -76,15 +73,15 @@ public class BattleController : MonoBehaviour
         });
     }
 
-    public void UpdateUI()
+    public void UpdateSign()
     {
-        ResetState();
+     //   ResetState();
 
         if (cache == null)
             return;
 
-        blues.ForEach(s => s.CheckState(cache.from));
-        reds.ForEach(s => s.CheckState(cache.target));
+        blues.ForEach(s => s.CheckState(cache));
+        reds.ForEach(s => s.CheckState(cache));
         skills.ForEach(s => s.CheckState(cache.skill));
     }
 
@@ -121,36 +118,85 @@ public class BattleController : MonoBehaviour
             cache = new QueueBattle();
 
         cache.skill = skill;
-        UpdateUI();
+        UpdateSign();
     }
 
-    public void AssignCharacter(CharacterInformation character)
+    public void UnassignSkill(SkillAttribute skill)
+    {
+        if (cache == null)
+            return;
+
+        if (cache.skill == skill)
+            cache.skill = null;
+
+        UpdateSign();
+    }
+
+    public bool AssignCharacter(CharacterInformation character, bool needSkill = false)
     {
         if (cache == null)
             cache = new QueueBattle();
 
-        if (!cache.from)
+        if (needSkill && cache.skill == null)
+            return false;
+
+        if (cache.skill == null)
         {
+            Debug.Log("assign from: " + character.transform.name, this);
             cache.from = character;
             UpdateSkill(character);
-            AssignSkill(new SkillAttribute(character.CurrentStat));
         }
         else
         {
+            Debug.Log("assign target: " + character.transform.name, this);
             cache.target = character;
-            queue.Add(cache);
-
-            cache = new QueueBattle();
-            queue = queue.OrderBy(s => s.from.Speed).ToList();
-
-            if (queue.Count >= NumberAction())
-            {
-                DoQueue();
-            }
         }
 
-        UpdateUI();
+        UpdateSign();
+
+        return true;
+    }
+
+    public void RemoveAssignTarget(CharacterInformation character)
+    {
+        if (cache == null) return;
+
+        if (cache.target == character)
+        {
+            //Debug.Log("Remove assign:" + character.transform.name, this);
+            cache.target = null;
+
+            UpdateSign();
+        }
+    }
+
+    public void EndSelection()
+    {
+        if(cache== null || cache.from == null || cache.target == null || cache.skill == null)
+        {
+            if(cache.target == null)
+                Debug.Log("<color=red>Missing</color> target, queue not add battle infor");
+            else
+                Debug.LogError("Missing somethign here");
+            return;
+        }
+        queue.Add(cache);
+
         UpdateLog();
+        ResetState();
+        ResetCacheBattle();
+    }
+
+    private void ResetCacheBattle()
+    {
+        queue = queue.OrderBy(s => s.from.Speed).ToList();
+
+        if (queue.Count >= NumberAction())
+        {
+            DoQueue();
+        }
+
+        cache = new QueueBattle();
     }
 
     private void UpdateSkill(CharacterInformation character)

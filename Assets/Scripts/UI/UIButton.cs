@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class UIButton : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IPointerUpHandler
+using UnityEngine.UI;
+using UnityEngine.Events;
+
+public class UIButton : Button, IBeginDragHandler, IPointerUpHandler , IDragHandler
 {
+    public UnityEvent onStartDrag;
+    public UnityEvent<PointerEventData> onDrag;
+    public UnityEvent onPointerUp;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Begin Drag");
-        //TODO: Asign skill+ for player
+        onStartDrag?.Invoke();
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Click");
-        //TODO: Click, assign skill for player
+        onDrag?.Invoke(eventData);
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public override void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("pointer up");
-        //TODO: End assign action
-    }
+        base.OnPointerUp(eventData);
 
+        onPointerUp?.Invoke();
+    }
 }
