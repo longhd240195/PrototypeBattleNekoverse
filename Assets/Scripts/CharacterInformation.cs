@@ -112,6 +112,27 @@ public class CharacterInformation : MonoBehaviour
         UpdateStat();
     }
 
+    public void ApplyEffects(SkillEffect effects)
+    {
+        switch (effects.Type)
+        {
+            case TypeSkill.Damage:
+                TakeDamage(effects.EndValue);
+                break;
+            case TypeSkill.Heal:
+                HealCharacter(effects.EndValue);
+                break;
+            case TypeSkill.Buff_atk:
+                BuffPower(effects.EndValue);
+                break;
+            case TypeSkill.Bonus_atk:
+                BonusPower(effects.EndValue);
+                break;
+        }
+
+        UpdateStat();
+    }
+
     private void BuffPower(float numberEffect)
     {
         var old = CurrentStat.Damage;
@@ -277,10 +298,20 @@ public enum TypeSkill
     Bonus_atk
 }
 
+public enum SkillTargetType { 
+    Self,
+    Ally,
+    Allies,
+    Enemy,
+    Enemies
+}
+
+
 [System.Serializable]
 public class SkillEffect
 {
     [SerializeField] TypeSkill type;
+    [SerializeField] SkillTargetType targetType;
     [SerializeField] float attribute;
     [SerializeField, ReadOnly] float endValue;
 
@@ -294,6 +325,7 @@ public class SkillEffect
     public TypeSkill Type { get => type; set => type = value; }
     public float Attribute { get => attribute; set => attribute = value; }
     public float EndValue { get => endValue; set => endValue = value; }
+    public SkillTargetType TargetType { get => targetType; set => targetType = value; }
 
     public void SetEndValue(float multiple)
     {
