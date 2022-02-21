@@ -11,9 +11,12 @@ public class UIButton : Button, IBeginDragHandler, IPointerUpHandler , IDragHand
     public UnityEvent<PointerEventData> onDrag;
     public UnityEvent onPointerUp;
 
+    private bool isDrag = false;
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         onStartDrag?.Invoke();
+        isDrag = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -25,6 +28,8 @@ public class UIButton : Button, IBeginDragHandler, IPointerUpHandler , IDragHand
     {
         base.OnPointerUp(eventData);
 
-        onPointerUp?.Invoke();
+        if(isDrag)
+            onPointerUp?.Invoke();
+        isDrag = false;
     }
 }

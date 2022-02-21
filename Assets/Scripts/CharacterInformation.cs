@@ -6,13 +6,15 @@ using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CharacterInformation : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] GetTouch btnOnCharacter;
-    [SerializeField] Transform imgSelectMe;
+    [SerializeField] Transform targetCanSelect;
+    [SerializeField] Transform targetSelected;
     [SerializeField] private BattleController controller;
     [Header("Stat")]
     [SerializeField] private CharacterAttribute initStat;
@@ -49,12 +51,20 @@ public class CharacterInformation : MonoBehaviour
     [ContextMenu("Update Cone")]
     private void UpdateCone()
     {
-        imgSelectMe = transform.Find("Cone");
+        targetCanSelect = transform.Find("Cone");
     }
+    
+    [ContextMenu("Update Selected")]
+    private void UpdateSelected()
+    {
+        targetSelected = transform.Find("Cylinder");
+    }
+    
+    
 
     private void Start()
     {
-        localCone = imgSelectMe.localPosition;
+        localCone = targetCanSelect.localPosition;
 
         btnOnCharacter.onClick.AddListener(AssignAction);
         btnOnCharacter.onMouseEnter.AddListener(SetTargetPlayer);
@@ -82,11 +92,11 @@ public class CharacterInformation : MonoBehaviour
     public void CheckState(QueueBattle attributeCheck)
     {
         var track = attributeCheck != null &&
-            ((attributeCheck.from != null && attributeCheck.from == this) ||
-            (attributeCheck.target != null && attributeCheck.target == this));
-        MoveToInitCone(track);
-        if (imgSelectMe.gameObject.activeInHierarchy)
-            imgSelectMe.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
+            (attributeCheck.from != null && attributeCheck.from == this ||
+            attributeCheck.target != null && attributeCheck.target == this);
+        MoveCone(track);
+        if (targetCanSelect.gameObject.activeInHierarchy)
+            targetCanSelect.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
     }
 
     #region Logic change character attribute in-game
@@ -189,7 +199,7 @@ public class CharacterInformation : MonoBehaviour
 
     private void SetTargetPlayer()
     {
-        Controller.AssignCharacter(this,true);
+        Controller.AssignCharacterTarget(this);
     }
 
     private void RemoveTargetPlayer()
@@ -199,16 +209,22 @@ public class CharacterInformation : MonoBehaviour
 
     public void AssignAction()
     {
-        Controller.AssignCharacter(this);
+        Controller.AssignCharacterTarget(this);
         Controller.EndSelection();
     }
 
-    private void MoveToInitCone(bool active)
+    public void MoveCone(bool active)
     {
-        imgSelectMe.DOKill();
-        imgSelectMe.localPosition = localCone;
-        imgSelectMe.gameObject.SetActive(active);
+        targetCanSelect.DOKill();
+        targetCanSelect.localPosition = localCone;
+        targetCanSelect.gameObject.SetActive(active);
     }
+
+    public void SelectedTarget(bool active)
+    {
+        targetSelected.gameObject.SetActive(active);
+    }
+    
 }
 
 

@@ -12,7 +12,11 @@ public class GetTouch : MonoBehaviour
     public UnityEvent onMouseEnter;
     public UnityEvent onMouseExit;
 
-    private void OnMouseUpAsButton()
+	private void Start()
+	{
+    }
+
+	private void OnMouseUpAsButton()
     {
         if (!interactable)
             return;

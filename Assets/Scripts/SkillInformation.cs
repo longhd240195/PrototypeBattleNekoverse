@@ -79,13 +79,12 @@ public class SkillInformation : MonoBehaviour
     private void PointerUp()
     {
         Destroy(SkillInfo);
-
         controller.EndSelection();
         controller.UnassignSkill(cache);
     }
 
     public void CheckState(SkillAttribute skillAtb)
     {
-        signSelected.gameObject.SetActive(cache == skillAtb);
+        signSelected.gameObject.SetActive(skillAtb != null && cache == skillAtb);
     }
 }
