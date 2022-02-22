@@ -64,7 +64,8 @@ public class BattleController : MonoBehaviour
 		reds.ForEach(s=>orderCharacters.Add(s));
 		
 		RefreshCurrentTurn();
-		OrderQueue();
+		ReorderQueue();
+		InitUIQueue();
 	}
 
 	private void RefreshCurrentTurn()
@@ -85,9 +86,10 @@ public class BattleController : MonoBehaviour
 		return result;
 	}
 
-	private void OrderQueue()
+	private void ReorderQueue()
 	{
 		orderCharacters = orderCharacters.OrderBy(s => s.Speed).ToList();
+		currentOrderCharacters.RemoveAll(s => !s.Alive);
 		currentOrderCharacters = currentOrderCharacters.OrderBy(s => s.Speed).ToList();
 
 		UpdateUIQueue();
@@ -100,7 +102,24 @@ public class BattleController : MonoBehaviour
 			if (i < orderCharacters.Count)
 			{
 				var c = orderCharacters[i];
-				queueTurns[i].SetCurrent(orderCharacters.Contains(c));
+				queueTurns[i].Init(c.MainTexture,reds.Contains(c) ? Color.red : Color.blue);
+				queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c));
+			}
+			
+//			var result = i < currentOrderCharacters.Count && orderCharacters.Contains(currentOrderCharacters[i]);
+//			queueTurns[i].SetCurrent(result);
+
+		}
+	}
+	
+	private void InitUIQueue()
+	{
+		for (int i = 0; i < queueTurns.Count; i++)
+		{
+			if (i < orderCharacters.Count)
+			{
+				var c = orderCharacters[i];
+				queueTurns[i].Init(c.MainTexture,reds.Contains(c) ? Color.red : Color.blue);
 			}
 		}
 	}
@@ -177,6 +196,7 @@ public class BattleController : MonoBehaviour
 		if (currentOrderCharacters.Count <= 0)
 			RefreshCurrentTurn();
 		
+		ReorderQueue();
 		ClearCone();
 		
 		currentOrderCharacters.RemoveAll(s => !s.Alive);
@@ -358,44 +378,49 @@ public class BattleController : MonoBehaviour
 		if (target.Alive && from.Alive)
 		{
 			//Here is pre-skill
-			from.transform.DOMove(-from.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
-			target.transform.DOMove(-target.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
+//			from.transform.DOMove(-from.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
+//			target.transform.DOMove(-target.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
 
 			//Here is in-skill
-			foreach (var ef in q.skill.Effects)
+			from.PlayAnimation(q.skill.SkillAnimation, () =>
 			{
-				switch (ef.TargetType)
+				foreach (var ef in q.skill.Effects)
 				{
-					case SkillTargetType.Self:
-						from.ApplyEffects(ef);
-						from.MoveCone(true);
-						break;
-					case SkillTargetType.Ally:
-						target.ApplyEffects(ef);
-						target.MoveCone(true);
-						break;
-					case SkillTargetType.Allies:
-						var listAllies = reds.Contains(from) ? reds : blues;
-						listAllies.ForEach(s =>
-						{
-							s.ApplyEffects(ef);
-							s.MoveCone(true);
-						});
-						break;
-					case SkillTargetType.Enemy:
-						target.ApplyEffects(ef);
-						target.MoveCone(true);
-						break;
-					case SkillTargetType.Enemies:
-						var listEnemies = !reds.Contains(from) ? reds : blues;
-						listEnemies.ForEach(s =>
-						{
-							s.ApplyEffects(ef);
-							s.MoveCone(true);
-						});
-						break;
+					switch (ef.TargetType)
+					{
+						case SkillTargetType.Self:
+							from.ApplyEffects(ef);
+							from.MoveCone(true);
+							break;
+						case SkillTargetType.Ally:
+							target.ApplyEffects(ef);
+							target.MoveCone(true);
+							break;
+						case SkillTargetType.Allies:
+							var listAllies = reds.Contains(from) ? reds : blues;
+							listAllies.ForEach(s =>
+							{
+								s.ApplyEffects(ef);
+								s.MoveCone(true);
+							});
+							break;
+						case SkillTargetType.Enemy:
+							target.ApplyEffects(ef);
+							target.PlayAnimation( "TakeDamage");
+							target.MoveCone(true);
+							break;
+						case SkillTargetType.Enemies:
+							var listEnemies = !reds.Contains(from) ? reds : blues;
+							listEnemies.ForEach(s =>
+							{
+								s.ApplyEffects(ef);
+								s.PlayAnimation( "TakeDamage");
+								s.MoveCone(true);
+							});
+							break;
+					}
 				}
-			}
+			});
 
 			//TODO: End of action, change state to pre skill
 			//need to split all action, prepare for command pattern? 

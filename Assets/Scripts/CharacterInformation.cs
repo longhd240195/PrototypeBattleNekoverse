@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
@@ -15,16 +16,22 @@ public class CharacterInformation : MonoBehaviour
     [SerializeField] GetTouch btnOnCharacter;
     [SerializeField] Transform targetCanSelect;
     [SerializeField] Transform targetSelected;
+    [SerializeField] Animator animator;
     [SerializeField] private BattleController controller;
+    [SerializeField] private IngameHealthBar healthBar;
+    [SerializeField] private Texture mainTexture; 
+
     [Header("Stat")]
     [SerializeField] private CharacterAttribute initStat;
     [SerializeField, ReadOnly] private CharacterAttribute currentStat;
     [SerializeField] private List<SkillAttribute> skills;
-
+        
     private Vector3 localCone;
 
     public BattleController Controller { get => controller; set => controller = value; }
 
+    public float Health => CurrentStat.Hp;
+    public float InitHealth => initStat.Hp;
     public float Damage => CurrentStat.Damage;
     public float Speed => CurrentStat.Speed;
     public bool Alive => CurrentStat.Hp > 0;
@@ -32,7 +39,12 @@ public class CharacterInformation : MonoBehaviour
     public List<SkillAttribute> Skills { get => skills; set => skills = value; }
 
     public CharacterAttribute CurrentStat { get => currentStat; }
+
+    public Texture MainTexture => mainTexture;
+
+    private Action callbackDelay;
     
+    #region Get reference on scene
     [ContextMenu("Init skill")]
     private void InitSkill()
     {
@@ -60,7 +72,12 @@ public class CharacterInformation : MonoBehaviour
         targetSelected = transform.Find("Cylinder");
     }
     
-    
+    [ContextMenu("Update Animator")]
+    private void UpdateAnimator()
+    {
+        animator = transform.GetComponent<Animator>();
+    }
+    #endregion 
 
     private void Start()
     {
@@ -74,6 +91,9 @@ public class CharacterInformation : MonoBehaviour
     public void Initialize()
     {
         currentStat = (CharacterAttribute)initStat.Clone();
+        healthBar = HpBarIngameSpawnner.Instance.GetTemp();
+        healthBar.Init(this);
+        healthBar.transform.position = transform.position + HpBarIngameSpawnner.Instance.PosTemp;
         UpdateStat();
     }
 
@@ -164,18 +184,25 @@ public class CharacterInformation : MonoBehaviour
         if (CurrentStat.Hp > initStat.Hp)
             CurrentStat.Hp = initStat.Hp;
 
+        healthBar.ChangePercent(this);
+        
         LogChangeHeal(-numberEffect);
     }
 
     public void TakeDamage(float numberEffect)
     {
         CurrentStat.Hp -= numberEffect;
-        LogChangeHeal(numberEffect);
-
+        
         if (CurrentStat.Hp <= 0)
         {
+            CurrentStat.Hp = 0;
+            healthBar.gameObject.SetActive(false);
+            gameObject.SetActive(false);
             Debug.Log("Dead");
         }
+        
+        LogChangeHeal(numberEffect);
+        healthBar.ChangePercent(this);
     }
 
     #endregion
@@ -185,14 +212,15 @@ public class CharacterInformation : MonoBehaviour
     {
         var infor = new StringBuilder();
         infor.Append($"{(damage > 0 ? "<color=red>-" : "<color=green>+")}{Mathf.Abs(damage)}");
-        TextSingleton.Instance.CreateText(transform.position, infor.ToString());
+        TextController.Singleton.ShowInfo(transform.position,infor.ToString());
+        //TextSingleton.Instance.CreateText(transform.position, infor.ToString());
     }
 
     public void LogChangePower(float power)
     {
         var infor = new StringBuilder();
         infor.Append($"Damage add {(power > 0 ? "<color=red>-" : "<color=green>+")}{Mathf.Abs(power)}");
-        TextSingleton.Instance.CreateText(transform.position, infor.ToString());
+        TextController.Singleton.ShowInfo(transform.position,infor.ToString());
     }
 
     #endregion
@@ -223,6 +251,20 @@ public class CharacterInformation : MonoBehaviour
     public void SelectedTarget(bool active)
     {
         targetSelected.gameObject.SetActive(active);
+    }
+
+
+    public void PlayAnimation(string anim, Action callback = null)
+    {
+        if(callback != null)
+            callbackDelay = callback;
+        animator.Play(anim);
+    }
+
+    public void PlayCallBack()
+    {
+        callbackDelay?.Invoke();
+        callbackDelay = null;
     }
     
 }
@@ -259,10 +301,11 @@ public class SkillAttribute
 {
     [SerializeField] string nameSkill;
     [SerializeField] SkillEffect[] effects;
-
+    [SerializeField] private string skillAnimation = "CastSkill";
     public string NameSkill { get => nameSkill; set => nameSkill = value; }
     public SkillEffect[] Effects { get => effects; set => effects = value; }
-
+    public string SkillAnimation => skillAnimation;
+    
     public SkillAttribute(string nameSkill, SkillEffect[] effects)
     {
         NameSkill = nameSkill;

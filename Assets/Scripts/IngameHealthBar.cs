@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics.Tracing;
+using DG.Tweening;
+using TMPro;
+using UnityEngine;
+
+public class IngameHealthBar : MonoBehaviour
+{
+    [SerializeField] private SpriteRenderer border;
+    [SerializeField] private SpriteRenderer main;
+    [SerializeField] private SpriteRenderer hpLost;
+    [SerializeField] private TextMeshPro txt;
+
+    private float currentPercent;
+    
+    
+    public void Init(CharacterInformation infor)
+    {
+        main.transform.localScale = border.transform.localScale;
+        
+        txt.text = $"{infor.Health}/{infor.InitHealth}";
+        currentPercent = 1;
+    }
+
+    public void ChangePercent(CharacterInformation infor)
+    {
+        var percent = infor.Health / infor.InitHealth;
+
+        hpLost.transform.localScale = new Vector3(currentPercent,1,1);
+
+        currentPercent = percent;
+        
+        main.transform.localScale = new Vector3(currentPercent,1,1);
+        hpLost.transform.DOScaleX(currentPercent, .5f).SetEase(Ease.Linear);  
+        txt.text = $"{infor.Health}/{infor.InitHealth}";
+    }
+}

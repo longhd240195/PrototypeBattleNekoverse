@@ -766,6 +766,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2452334038296024917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3872201527885691416}
+  m_Layer: 6
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3872201527885691416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452334038296024917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0005208368, y: -0.0028278641, z: -0.000072266695}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2869610368681661186}
+  m_Father: {fileID: 5554380759973400961}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2977022333306642103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3961973673531277894}
   m_LocalRotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -2.8327693e-16}
-  m_LocalPosition: {x: -0.0007708434, y: -0.60717624, z: -0.15698868}
+  m_LocalPosition: {x: -0.0012916441, y: -0.60434836, z: -0.15691635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3374252075163707826}
@@ -1218,7 +1249,7 @@ Transform:
   - {fileID: 6917959625683332532}
   - {fileID: 8211342551967401261}
   - {fileID: 5450994392622867894}
-  m_Father: {fileID: 5554380759973400961}
+  m_Father: {fileID: 3872201527885691416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4019164743681712731
@@ -1313,7 +1344,7 @@ Transform:
   m_LocalPosition: {x: -2, y: 0.575, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2869610368681661186}
+  - {fileID: 3872201527885691416}
   - {fileID: 8874925599092903805}
   - {fileID: 49256147672197420}
   - {fileID: 8569505257465800600}
@@ -1375,6 +1406,7 @@ MonoBehaviour:
   targetCanSelect: {fileID: 1620798080}
   targetSelected: {fileID: 958338756}
   controller: {fileID: 0}
+  healthBar: {fileID: 0}
   initStat:
     hp: 50
     damage: 7
