@@ -11,6 +11,7 @@ public class IngameHealthBar : MonoBehaviour
     [SerializeField] private SpriteRenderer main;
     [SerializeField] private SpriteRenderer hpLost;
     [SerializeField] private TextMeshPro txt;
+    [SerializeField] private TextMeshPro txtName;
 
     private float currentPercent;
     
@@ -18,7 +19,7 @@ public class IngameHealthBar : MonoBehaviour
     public void Init(CharacterInformation infor)
     {
         main.transform.localScale = border.transform.localScale;
-        
+        txtName.text = infor.transform.name;
         txt.text = $"{infor.Health}/{infor.InitHealth}";
         currentPercent = 1;
     }

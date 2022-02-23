@@ -305,7 +305,10 @@ MonoBehaviour:
   btnOnCharacter: {fileID: 288255049308849249}
   targetCanSelect: {fileID: 6299592571414148791}
   targetSelected: {fileID: 1930864145}
+  animator: {fileID: 0}
   controller: {fileID: 0}
+  healthBar: {fileID: 0}
+  mainTexture: {fileID: 0}
   initStat:
     hp: 50
     damage: 20
@@ -323,18 +326,21 @@ MonoBehaviour:
       targetType: 3
       attribute: 1.1
       endValue: 0
+    skillAnimation: 
   - nameSkill: Skill 2
     effects:
     - type: 1
       targetType: 1
       attribute: 1.2
       endValue: 0
+    skillAnimation: 
   - nameSkill: Skill 3
     effects:
     - type: 2
       targetType: 2
       attribute: 3
       endValue: 0
+    skillAnimation: 
 --- !u!114 &288255049308849249
 MonoBehaviour:
   m_ObjectHideFlags: 0

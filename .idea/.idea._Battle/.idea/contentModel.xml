@@ -134,6 +134,7 @@
           <e p="CharacterInformation.cs" t="Include" />
           <e p="Gesture" t="Include">
             <e p="GetTouch.cs" t="Include" />
+            <e p="WsClient.cs" t="Include" />
           </e>
           <e p="IngameHealthBar.cs" t="Include" />
           <e p="Require.cs" t="Include" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 
 using Sirenix.OdinInspector;
@@ -27,7 +28,7 @@ public class CharacterInformation : MonoBehaviour
     [SerializeField] private List<SkillAttribute> skills;
         
     private Vector3 localCone;
-
+    
     public BattleController Controller { get => controller; set => controller = value; }
 
     public float Health => CurrentStat.Hp;
@@ -43,6 +44,8 @@ public class CharacterInformation : MonoBehaviour
     public Texture MainTexture => mainTexture;
 
     private Action callbackDelay;
+
+    private Coroutine loop;
     
     #region Get reference on scene
     [ContextMenu("Init skill")]
@@ -59,7 +62,7 @@ public class CharacterInformation : MonoBehaviour
     {
         btnOnCharacter = GetComponentInChildren<GetTouch>();
     }
-
+    
     [ContextMenu("Update Cone")]
     private void UpdateCone()
     {
@@ -227,18 +230,18 @@ public class CharacterInformation : MonoBehaviour
 
     private void SetTargetPlayer()
     {
-        Controller.AssignCharacterTarget(this);
+        Controller?.AssignCharacterTarget(this);
     }
 
     private void RemoveTargetPlayer()
     {
-        Controller.RemoveAssignTarget(this);
+        Controller?.RemoveAssignTarget(this);
     }
 
     public void AssignAction()
     {
-        Controller.AssignCharacterTarget(this);
-        Controller.EndSelection();
+        Controller?.AssignCharacterTarget(this);
+        Controller?.EndSelection();
     }
 
     public void MoveCone(bool active)
@@ -251,9 +254,24 @@ public class CharacterInformation : MonoBehaviour
     public void SelectedTarget(bool active)
     {
         targetSelected.gameObject.SetActive(active);
+
+        if (active)
+        {
+            loop = StartCoroutine(Loop());
+        }else if(loop != null)
+            StopCoroutine(loop);
     }
 
-
+    private IEnumerator Loop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(.5f);
+            targetSelected.gameObject.SetActive(!targetSelected.gameObject.activeInHierarchy);
+        }
+    }
+    
+    
     public void PlayAnimation(string anim, Action callback = null)
     {
         if(callback != null)
@@ -261,6 +279,9 @@ public class CharacterInformation : MonoBehaviour
         animator.Play(anim);
     }
 
+    /// <summary>
+    /// This function call on unity animation
+    /// </summary>
     public void PlayCallBack()
     {
         callbackDelay?.Invoke();

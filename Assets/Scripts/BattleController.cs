@@ -8,7 +8,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 
 using UnityEngine;
-
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
 
 public class BattleController : MonoBehaviour
@@ -22,6 +22,8 @@ public class BattleController : MonoBehaviour
 	[SerializeField] TextMeshProUGUI txtTimerRound;
 	[SerializeField] TextMeshProUGUI txtLog;
 	[SerializeField] TextMeshProUGUI txtLogTurn;
+	[SerializeField] LineRenderer line;
+	[SerializeField] Image imgClock;
 
 	[Header("Config")]
 	[SerializeField] private float timePerRound = 10;
@@ -37,24 +39,23 @@ public class BattleController : MonoBehaviour
 	private List<CharacterInformation> orderCharacters;
 	private List<CharacterInformation> currentOrderCharacters;
 	
-	private void Start()
-	{
-		StartBattle();
-	}
-
 	private void Update()
 	{
+		if(CurrentStep == BattleStep.PreBattle)
+			return;
+		
 		timer += Time.deltaTime;
-		txtTimer.text = $"{timer:0.00}";
+		txtTimer.text = $"Game time: {timer:0}";
 
 		if (CurrentStep == BattleStep.PreSkill)
 		{
 			timeRoundCD -= Time.deltaTime;
-			txtTimerRound.text = $"{timeRoundCD:0.00}";
+			txtTimerRound.text = $"{timeRoundCD:0}";
+			imgClock.fillAmount = timeRoundCD / timePerRound;
 		}
 	}
 
-
+	
 	#region Queue character turn
 
 	private void UpdateStack()
@@ -105,10 +106,6 @@ public class BattleController : MonoBehaviour
 				queueTurns[i].Init(c.MainTexture,reds.Contains(c) ? Color.red : Color.blue);
 				queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c));
 			}
-			
-//			var result = i < currentOrderCharacters.Count && orderCharacters.Contains(currentOrderCharacters[i]);
-//			queueTurns[i].SetCurrent(result);
-
 		}
 	}
 	
@@ -119,7 +116,7 @@ public class BattleController : MonoBehaviour
 			if (i < orderCharacters.Count)
 			{
 				var c = orderCharacters[i];
-				queueTurns[i].Init(c.MainTexture,reds.Contains(c) ? Color.red : Color.blue);
+				queueTurns[i].Init(c.MainTexture,reds.Contains(c) ? Color.red : Color.green);
 			}
 		}
 	}
@@ -147,6 +144,7 @@ public class BattleController : MonoBehaviour
 		timer = 0;
 		turnCount = 0;
 		ChangeStateBattle(BattleStep.PreSkill, true);
+		
 		blues.ForEach(s =>
 		{
 			s.Initialize();
@@ -208,16 +206,20 @@ public class BattleController : MonoBehaviour
 		//if(turnCharacter.Alive)
 		if (blues.Contains(turnCharacter))
 		{
-			Debug.Log("Character blue attack");
+			ShowUISkill(true);
+			
 			AssignCharacterAttack(turnCharacter);
+			
 		}
 		else
 		{
 			//TODO: Add AI for red team here
-			Debug.Log("Character red attack");
-
+			ShowUISkill(false);
+			
 			AIAction(turnCharacter);
 		}
+		
+		AnnounceNewTurn();
 	}
 	
 	public void AssignSkill(SkillAttribute skill)
@@ -226,9 +228,16 @@ public class BattleController : MonoBehaviour
 			cache = new QueueBattle();
 
 		cache.skill = skill;
+		Announce("Drag skill to Opponent's Neko");
 		UpdateSignSkill();
 		AssignTargetableForSkill();
 	}
+
+	private void ShowUISkill(bool active)
+	{
+		skills.ForEach(s => s.gameObject.SetActive(active));
+	}
+	
 
 	public void UnassignSkill(SkillAttribute skill)
 	{
@@ -349,7 +358,7 @@ public class BattleController : MonoBehaviour
 			return;
 		}
 
-		UpdateLog();
+		//UpdateLog();
 		ResetState();
 		DoAction();
 		
@@ -372,16 +381,29 @@ public class BattleController : MonoBehaviour
 		var q = cache;
 		var target = q.target;
 		var from = q.from;
-
+		
+		//TODO: Polish here later
+		
+		line.SetPosition(0,from.transform.position);
+		line.SetPosition(1,target.transform.position);
+		
+		imgClock.fillAmount = 0;
+		txtTimerRound.text = string.Empty;
+		
 		Debug.Log($"Make attack: from {from.name} to {target.name}");
+		UpdateLog($"{from.name} {q.skill.NameSkill} {target.name}");
 		
 		if (target.Alive && from.Alive)
 		{
-			//Here is pre-skill
+			//TODO: Get all information about skill here to apply to character 
+			//HM... A lot's logic in here will need to fix
+			//Don't not check list target and enemy here, that job server will help you.
+			
+			//TODO: Here is pre-skill
 //			from.transform.DOMove(-from.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
 //			target.transform.DOMove(-target.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
 
-			//Here is in-skill
+			//TODO: Here is in-skill. Add more skill effect inside skill apply
 			from.PlayAnimation(q.skill.SkillAnimation, () =>
 			{
 				foreach (var ef in q.skill.Effects)
@@ -437,12 +459,21 @@ public class BattleController : MonoBehaviour
 			ChangeToSelectSkillAction();
 			NextOnQueue();
 		});
-
 	}
-
+	
+	private void AnnounceNewTurn()
+	{
+		var isPlayerTurn = blues.Contains(cache.from);
+		
+		Announce($"Your {(isPlayerTurn ? "" : "Opponent")} Turn");
+	}
+	
 	private void ClearCone()
 	{
 		orderCharacters.ForEach(s=>s.MoveCone(false));
+		
+		line.SetPosition(0,Vector3.zero);
+		line.SetPosition(1,Vector3.zero);
 	}
 
 
@@ -451,9 +482,13 @@ public class BattleController : MonoBehaviour
 		var firstAlive = blues.OrderBy(s => s.CurrentStat.Hp).First(s => s.Alive);
 		AssignCharacterAttack(characterAttack);
 		AssignSkill(characterAttack.Skills[0]);
-		AssignCharacterTarget(firstAlive);
 		
-		DoAction();
+		DOVirtual.DelayedCall(2,()=>
+		{
+			AssignCharacterTarget(firstAlive);
+			DoAction();
+		});
+		//DoAction();
 	}
 
 	private void ChangeToSelectSkillAction()
@@ -473,7 +508,6 @@ public class BattleController : MonoBehaviour
 					turnCount++;
 					timeRoundCD = timePerRound;
 					lockSelect = false;
-					Announce($"Turn: {turnCount}");
 					break;
 				case BattleStep.CastSkill:
 					lockSelect = true;
@@ -506,24 +540,9 @@ public class BattleController : MonoBehaviour
 		txtLogTurn.DOFade(0, .3f).SetDelay(1f);
 	}
 	
-	private void UpdateLog()
+	private void UpdateLog(string newTurn)
 	{
-		var sb = new StringBuilder("--Log--\n");
-//		queue.ForEach(q =>
-//		{
-//			var isBlueFrom = blues.IndexOf(q.from) != -1;
-//			var isBlueTarget = blues.IndexOf(q.target) != -1;
-//			sb.
-//				Append(isBlueFrom ? "B" : "R").
-//				Append((isBlueFrom ? blues.IndexOf(q.from) : reds.IndexOf(q.from)) + 1).
-//				Append("-").
-//				Append($"{q.skill.NameSkill}").
-//				Append("-").
-//				Append(isBlueTarget ? "B" : "R").
-//				Append((isBlueTarget ? blues.IndexOf(q.target) : reds.IndexOf(q.target)) + 1).
-//				Append("\n");
-//		});
-		txtLog.text = sb.ToString();
+		txtLog.text += newTurn + "\n";
 	}
 
 	#endregion
@@ -532,6 +551,7 @@ public class BattleController : MonoBehaviour
 public enum BattleStep
 {
 	None,
+	PreBattle,
 	PreSkill,
 	CastSkill
 }
