@@ -393,7 +393,7 @@ public class SkillEffect
     [SerializeField] TypeSkill type;
     [SerializeField] SkillTargetType targetType;
     [SerializeField] float attribute;
-    [SerializeField, ReadOnly] float endValue;
+    [SerializeField] float endValue;
 
     public SkillEffect(TypeSkill type, float attribute, float endValue)
     {
@@ -409,20 +409,20 @@ public class SkillEffect
 
     public void SetEndValue(float multiple)
     {
-        switch (type)
-        {
-            case TypeSkill.Damage:
-                endValue = multiple * attribute;
-                break;
-            case TypeSkill.Heal:
-                endValue = multiple * attribute;
-                break;
-            case TypeSkill.Buff_atk:
-                endValue = attribute;
-                break;
-            case TypeSkill.Bonus_atk:
-                endValue = attribute;
-                break;
-        }
+//        switch (type)
+//        {
+//            case TypeSkill.Damage:
+//                endValue = multiple * attribute;
+//                break;
+//            case TypeSkill.Heal:
+//                endValue = multiple * attribute;
+//                break;
+//            case TypeSkill.Buff_atk:
+//                endValue = attribute;
+//                break;
+//            case TypeSkill.Bonus_atk:
+//                endValue = attribute;
+//                break;
+//        }
     }
 }
