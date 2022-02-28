@@ -20,9 +20,9 @@ public class CharacterInformation : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] private BattleController controller;
     [SerializeField] private IngameHealthBar healthBar;
-    [SerializeField] private Texture mainTexture; 
+    [SerializeField] private Texture mainTexture;
 
-    [Header("Stat")]
+    [Header("Stat")] 
     [SerializeField] private CharacterAttribute initStat;
     [SerializeField, ReadOnly] private CharacterAttribute currentStat;
     [SerializeField] private List<SkillAttribute> skills;
@@ -298,10 +298,17 @@ public class CharacterAttribute
     [SerializeField] float damage;
     [SerializeField] float speed;
     [SerializeField] float evasion;
+    [SerializeField] int level;
 
     public float Damage { get => damage; set => damage = value; }
     public float Hp { get => hp; set => hp = value; }
     public float Speed { get => speed; set => speed = value; }
+
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
 
     public object Clone()
     {
@@ -344,7 +351,7 @@ public class SkillAttribute
     {
         foreach (var ef in Effects)
         {
-            ef.SetEndValue(attribute.Damage); 
+            ef.SetEndValue(attribute); 
         }
     }
 
@@ -407,7 +414,7 @@ public class SkillEffect
     public float EndValue { get => endValue; set => endValue = value; }
     public SkillTargetType TargetType { get => targetType; set => targetType = value; }
 
-    public void SetEndValue(float multiple)
+    public void SetEndValue(CharacterAttribute multiple)
     {
 //        switch (type)
 //        {
@@ -424,5 +431,6 @@ public class SkillEffect
 //                endValue = attribute;
 //                break;
 //        }
+
     }
 }

@@ -130,24 +130,36 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BattleController.cs" t="Include" />
-          <e p="CharacterInformation.cs" t="Include" />
+          <e p="GameInside" t="Include">
+            <e p="BattleController.cs" t="Include" />
+            <e p="CharacterInformation.cs" t="Include" />
+            <e p="IngameHealthBar.cs" t="Include" />
+            <e p="Require.cs" t="Include" />
+            <e p="SkillInformation.cs" t="Include" />
+            <e p="UI" t="Include">
+              <e p="Battle" t="Include">
+                <e p="QueueTurn.cs" t="Include" />
+              </e>
+              <e p="UIButton.cs" t="Include" />
+            </e>
+          </e>
           <e p="Gesture" t="Include">
             <e p="GetTouch.cs" t="Include" />
             <e p="WsClient.cs" t="Include" />
           </e>
-          <e p="IngameHealthBar.cs" t="Include" />
-          <e p="Require.cs" t="Include" />
+          <e p="Model" t="Include">
+            <e p="ModelConst.cs" t="Include" />
+            <e p="ModelController.cs" t="Include" />
+            <e p="TraitsDataModel.cs" t="Include" />
+          </e>
+          <e p="Shader" t="Include">
+            <e p="NewSurfaceShader 1.shader" t="Include" />
+            <e p="NewSurfaceShader 2.shader" t="Include" />
+            <e p="NewSurfaceShader.shader" t="Include" />
+          </e>
           <e p="Singleton" t="Include">
             <e p="HpBarIngameSpawnner.cs" t="Include" />
             <e p="TextController.cs" t="Include" />
-          </e>
-          <e p="SkillInformation.cs" t="Include" />
-          <e p="UI" t="Include">
-            <e p="Battle" t="Include">
-              <e p="QueueTurn.cs" t="Include" />
-            </e>
-            <e p="UIButton.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
