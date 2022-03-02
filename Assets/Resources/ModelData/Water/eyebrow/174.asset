@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 174
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: 8c660fd291fa01e4c8ed716ad050ce23, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 349c78ce9b49976439dc674b3da9a255, type: 3}
+  className: 1
+  trait: eyebrow

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 171
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: 4be1cd35df0237d42bd4cfd12ce743be, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e300b416aed0a194b990cb2321c0263c, type: 3}
+  className: 1
+  trait: eye

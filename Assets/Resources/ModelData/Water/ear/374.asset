@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 374
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: 3a8b12418fd01cc4db0967296483c945, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 521fdd0d9031c544bb9df81ca8cd94f6, type: 3}
+  className: 1
+  trait: ear

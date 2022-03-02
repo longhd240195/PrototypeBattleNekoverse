@@ -18,3 +18,15 @@ public class ModelConst
     public const string Back = "back";
     public const string SideFace = "side face";
 }
+
+public enum NekoClass
+{
+    None,
+    Water,
+    Fire,
+    Nature,
+    Earth,
+    Electric,
+    Ice,
+    Spirit
+}

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 216
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: 838c20c63fc96c040a83588e590a002a, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 46d4e01396a19e148972823c4745f6a9, type: 3}
+  className: 1
+  trait: back

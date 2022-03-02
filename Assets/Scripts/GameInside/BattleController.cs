@@ -1,15 +1,11 @@
 ﻿using System;
 using DG.Tweening;
-
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using TMPro;
-
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public class BattleController : MonoBehaviour
 {
@@ -24,7 +20,9 @@ public class BattleController : MonoBehaviour
 	[SerializeField] TextMeshProUGUI txtLogTurn;
 	[SerializeField] LineRenderer line;
 	[SerializeField] Image imgClock;
-
+	[SerializeField] private Button btnChangeSkin;
+	[SerializeField] private ModelController[] clr;
+	
 	[Header("Config")]
 	[SerializeField] private float timePerRound = 10;
 
@@ -38,7 +36,15 @@ public class BattleController : MonoBehaviour
 
 	private List<CharacterInformation> orderCharacters;
 	private List<CharacterInformation> currentOrderCharacters;
-	
+
+	private void Start()
+	{
+		btnChangeSkin.onClick.AddListener(() =>
+		{
+			clr.ForEach(s => s.Start());
+		});
+	}
+
 	private void Update()
 	{
 		if(CurrentStep == BattleStep.PreBattle)
@@ -103,7 +109,10 @@ public class BattleController : MonoBehaviour
 			if (i < orderCharacters.Count)
 			{
 				var c = orderCharacters[i];
-				queueTurns[i].Init(c.MainTexture,reds.Contains(c) ? Color.red : Color.blue);
+
+				var color = Color.white;//reds.Contains(c) ? Color.red : Color.blue;
+				color.a = .1f;
+				queueTurns[i].Init(c.MainTexture,color);
 				queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c));
 			}
 		}
@@ -536,7 +545,7 @@ public class BattleController : MonoBehaviour
 	private void Announce(string announceInfor)
 	{
 		txtLogTurn.text = announceInfor;
-		txtLogTurn.color = Color.black;
+		txtLogTurn.color = Color.white;
 		txtLogTurn.DOFade(0, .3f).SetDelay(1f);
 	}
 	

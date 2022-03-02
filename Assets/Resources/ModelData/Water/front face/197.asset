@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 197
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: f268db6e571301347af1cb714c9545b1, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 40f7a06f430cc6e47a9003730a02b51b, type: 3}
+  className: 1
+  trait: front face

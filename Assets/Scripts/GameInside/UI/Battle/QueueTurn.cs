@@ -20,15 +20,16 @@ public class QueueTurn : MonoBehaviour
     public QueueTurn SetCurrent(bool onQueue)
     {
         border.color = onQueue ? mainColor : (mainColor + Color.gray) / 2;
-        
+        gameObject.SetActive(onQueue);
+   
         if(!onQueue)
         {
-            Color c = border.color;
-            Color rawColor = Color.white;
-            c.a = .25f;
-            rawColor.a = .25f;
-            border.color = c;
-            rawImg.color = rawColor;
+//            Color c = border.color;
+//            Color rawColor = Color.white;
+//            c.a = .25f;
+//            rawColor.a = .25f;
+//            border.color = c;
+//            rawImg.color = rawColor;
         }
         return this;
     }

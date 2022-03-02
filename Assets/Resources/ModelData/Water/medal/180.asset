@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 180
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: f147dd1ae9bc05140b4dcac497e685fe, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1ae230ce6de58e14cabd6b9bce804f4e, type: 3}
+  className: 1
+  trait: medal

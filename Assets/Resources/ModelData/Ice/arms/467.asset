@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176fb4436e4f9ec44991b2d976a0792b, type: 3}
+  m_Name: 467
+  m_EditorClassIdentifier: 
+  model: {fileID: 919132149155446097, guid: da59db31a29ef8d42b047dff5cadbd25, type: 3}
+  icon: {fileID: 21300000, guid: 0d8171ab6567dd4428a3ff3113f0f059, type: 3}
+  className: 6
+  trait: arms

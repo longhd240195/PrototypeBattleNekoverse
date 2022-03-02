@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 170
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: 2473cda2b3484b74b81f74d4fd8e3e23, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 54877d79d8d9b5c4abf8e473d6ca69de, type: 3}
+  className: 1
+  trait: nose

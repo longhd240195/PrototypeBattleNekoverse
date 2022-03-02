@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 382
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: d59d51e1983c9bf4eb11f9fc9aa55880, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9d82dc1fc357a904d98235997a556599, type: 3}
+  className: 1
+  trait: arms

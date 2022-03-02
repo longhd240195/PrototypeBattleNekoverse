@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: 373
   m_EditorClassIdentifier: 
   model: {fileID: 919132149155446097, guid: 43424b20387cdfa4c8fa142df84c0bc6, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: bf026dbce3112b94e956ef0b4fbac677, type: 3}
+  className: 1
+  trait: necklaces

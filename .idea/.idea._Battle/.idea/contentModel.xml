@@ -21,6 +21,11 @@
             </e>
           </e>
         </e>
+        <e p="ExternalDependencyManager" t="Include">
+          <e p="Editor" t="Include">
+            <e p="external-dependency-manager_version-1.2.169_manifest.txt" t="Include" />
+          </e>
+        </e>
         <e p="JMO Assets" t="Include">
           <e p="Cartoon FX" t="Include">
             <e p="CartoonFX Free.txt" t="Include" />
@@ -148,8 +153,15 @@
             <e p="WsClient.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
+            <e p="GoogleDrive" t="Include">
+              <e p="AdaptiveWindowGUI.cs" t="Include" />
+              <e p="StringUltility.cs" t="Include" />
+              <e p="TestLoadGoogleDrive.cs" t="Include" />
+            </e>
+            <e p="ModelCanvas.cs" t="Include" />
             <e p="ModelConst.cs" t="Include" />
             <e p="ModelController.cs" t="Include" />
+            <e p="ModelRotation.cs" t="Include" />
             <e p="TraitsDataModel.cs" t="Include" />
           </e>
           <e p="Shader" t="Include">

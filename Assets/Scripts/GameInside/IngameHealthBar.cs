@@ -27,12 +27,12 @@ public class IngameHealthBar : MonoBehaviour
     public void ChangePercent(CharacterInformation infor)
     {
         var percent = infor.Health / infor.InitHealth;
-
-        hpLost.transform.localScale = new Vector3(currentPercent,1,1);
+        var cl=hpLost.transform.localScale;
+        hpLost.transform.localScale = new Vector3(currentPercent,cl.y,cl.z);
 
         currentPercent = percent;
         
-        main.transform.localScale = new Vector3(currentPercent,1,1);
+        main.transform.localScale = new Vector3(currentPercent,cl.y,cl.z);
         hpLost.transform.DOScaleX(currentPercent, .5f).SetEase(Ease.Linear);  
         txt.text = $"{infor.Health}/{infor.InitHealth}";
     }
