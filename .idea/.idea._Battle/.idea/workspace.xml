@@ -4,167 +4,97 @@
     <list default="true" id="f954b944-d5e5-49ff-a84a-7e20a8c39838" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/MaterialASD.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/MaterialASD.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/206.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/206.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/207.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/207.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/208.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/208.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/209.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/209.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/210.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/210.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/386.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/accessories/386.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/203.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/203.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/204.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/204.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/205.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/205.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/290.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/290.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/291.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/291.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/292.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/292.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/377.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/377.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/378.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/378.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/379.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/379.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/381.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/381.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/382.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/382.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/383.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/arms/383.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/211.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/211.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/212.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/212.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/213.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/213.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/214.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/214.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/215.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/215.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/216.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/216.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/294.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/back/294.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/163.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/163.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/164.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/164.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/165.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/165.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/166.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/166.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/398.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/body/398.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/167.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/167.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/168.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/168.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/169.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/169.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/374.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/ear/374.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/eye/171.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/eye/171.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/eye/400.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/eye/400.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/172.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/172.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/173.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/173.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/174.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/174.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/175.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/eyebrow/175.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/191.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/191.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/192.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/192.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/193.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/193.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/194.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/194.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/195.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/195.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/196.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/196.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/197.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/197.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/198.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/198.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/376.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/376.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/387.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/front face/387.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/176.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/176.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/177.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/177.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/178.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/178.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/179.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/179.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/180.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/medal/180.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/181.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/181.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/182.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/182.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/183.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/183.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/184.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/184.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/373.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/necklaces/373.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/170.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/170.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/375.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/375.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/401.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/401.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/402.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/nose/402.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/199.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/199.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/200.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/200.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/201.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/201.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/202.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/side face/202.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/185.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/185.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/186.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/186.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/187.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/187.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/188.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/188.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/189.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/189.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/190.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/190.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/380.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/380.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/384.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/384.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/385.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Water/top/385.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/206.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/206.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/207.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/207.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/208.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/208.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/209.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/209.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/210.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/210.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/386.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/accessories/386.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/203.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/203.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/204.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/204.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/205.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/205.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/290.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/290.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/291.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/291.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/292.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/292.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/377.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/377.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/378.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/378.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/379.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/379.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/381.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/381.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/382.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/382.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/383.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/arms/383.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/211.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/211.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/212.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/212.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/213.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/213.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/214.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/214.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/215.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/215.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/216.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/216.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/294.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/back/294.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/163.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/163.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/164.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/164.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/165.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/165.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/166.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/166.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/398.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/body/398.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/167.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/167.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/168.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/168.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/169.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/169.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/374.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/ear/374.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eye/171.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eye/171.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eye/400.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eye/400.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/172.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/172.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/173.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/173.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/174.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/174.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/175.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/eyebrow/175.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/191.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/191.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/192.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/192.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/193.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/193.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/194.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/194.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/195.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/195.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/196.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/196.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/197.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/197.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/198.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/198.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/376.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/376.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/387.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/front face/387.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/176.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/176.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/177.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/177.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/178.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/178.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/179.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/179.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/180.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/medal/180.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/181.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/181.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/182.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/182.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/183.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/183.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/184.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/184.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/373.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/necklaces/373.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/170.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/170.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/375.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/375.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/401.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/401.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/402.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/nose/402.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/199.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/199.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/200.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/200.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/201.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/201.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/202.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Water/side face/202.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle_Scene 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle_Scene 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/368.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/368.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/369.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/369.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/49.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/49.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/50.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/50.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/51.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/51.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/52.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/52.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/53.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/53.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/54.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/54.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/352.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/352.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/353.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/353.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/354.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/354.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/355.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/355.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/356.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/356.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/357.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/357.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/358.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/358.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/359.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/359.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/361.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/361.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/371.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/371.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/372.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/372.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/44.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/44.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/45.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/45.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/46.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/46.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/47.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/47.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/55.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/55.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/57.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/57.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/58.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/58.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/59.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/59.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/1.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/1.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/2.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/2.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/3.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/3.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/388.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/388.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/389.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/389.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/390.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/390.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/391.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/391.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/392.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/392.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/393.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/393.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/4.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/4.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/365.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/365.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/394.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/394.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/395.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/395.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/396.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/396.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/397.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/397.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/5.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/5.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/6.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/6.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/7.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/7.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/8.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/8.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/9.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/9.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/11.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/11.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/12.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/12.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/13.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/13.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/14.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/14.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/15.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/15.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/16.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/16.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/17.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/17.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/18.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/18.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/34.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/34.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/35.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/35.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/36.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/36.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/37.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/37.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/370.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/370.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/39.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/39.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/19.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/19.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/20.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/20.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/21.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/21.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/22.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/22.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/23.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/23.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/24.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/24.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/25.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/25.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/26.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/26.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/27.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/27.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/28.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/28.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/363.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/363.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/364.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/364.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/10.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/10.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/366.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/366.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/367.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/367.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/41.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/41.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/42.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/42.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/29.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/29.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/30.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/30.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/31.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/31.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/33.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/33.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/362.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/362.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Earth/back/295.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Earth/back/295.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/model.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/model.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInside/IngameHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameInside/IngameHealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/ModelConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ModelConst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recordings/movie_001.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recordings/movie_002.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recordings/movie_003.mp4" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,357 +103,57 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41751042">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="559">
-                  <caret line="86" column="32" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="32" />
-                  <folding>
-                    <marker date="1645640443496" expanded="true" signature="6:95" ph="..." />
-                    <marker date="1645640443496" expanded="true" signature="134:3373" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="266:345" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="369:518" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="554:902" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="718:871" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="792:861" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="969:2990" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="1463:1552" ph="/* Bind the socket to the local endpoint and ... */" />
-                    <marker date="1645640443496" expanded="true" signature="1565:2899" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="1724:2889" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="2163:2824" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="2379:2549" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="2676:2751" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="2927:2984" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="3013:3315" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="3105:3159" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="3210:3309" ph="{...}" />
-                    <marker date="1645640443496" expanded="true" signature="3337:3371" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="371">
-                  <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-                  <folding>
-                    <marker date="1646218557331" expanded="true" signature="6:259" ph="..." />
-                    <marker date="1646218557331" expanded="true" signature="305:9683" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="811:869" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="894:966" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="985:1128" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1032:1122" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1155:1503" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1201:1496" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1582:2625" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1639:2619" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1692:2506" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="1924:2490" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="2523:2609" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="2679:3649" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="2803:3643" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="2853:3529" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="3286:3513" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="3546:3633" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="3655:6050" ph="Change model" />
-                    <marker date="1646218557331" expanded="true" signature="3698:3826" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="3754:3811" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="3901:4838" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="3960:4832" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="4053:4728" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="4415:4664" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="4745:4822" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="4905:5255" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="5304:5564" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="5409:5558" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="5630:5888" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="5692:5762" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="5775:5882" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="5937:6034" ph="{...}" />
-                    <marker date="1646218557331" expanded="false" signature="6056:7104" ph="Load data" />
-                    <marker date="1646218557331" expanded="true" signature="6130:6849" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="6927:7083" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="7124:9681" ph="Modifier" />
-                    <marker date="1646218557331" expanded="true" signature="7197:8123" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="7297:8024" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="8210:9094" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="8423:8569" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="8478:8559" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="8600:8663" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="8697:9088" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="9161:9665" ph="{...}" />
-                    <marker date="1646218557331" expanded="true" signature="9447:9574" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/IngameHealthBar.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
-                  <folding>
-                    <marker date="1646215825612" expanded="false" signature="6:144" ph="..." />
-                    <marker date="1646215825612" expanded="true" signature="190:1247" ph="{...}" />
-                    <marker date="1646215825612" expanded="true" signature="536:743" ph="{...}" />
-                    <marker date="1646215825612" expanded="true" signature="802:1245" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/File.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1035">
-                  <caret line="11" column="21" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/ResourceData.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/AdaptiveWindowGUI.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="18" selection-start-column="18" selection-end-column="18" />
-                  <folding>
-                    <marker date="1646191441774" expanded="true" signature="75:941" ph="{...}" />
-                    <marker date="1646191441774" expanded="true" signature="316:354" ph="{...}" />
-                    <marker date="1646191441774" expanded="true" signature="396:426" ph="{...}" />
-                    <marker date="1646191441774" expanded="true" signature="463:511" ph="{...}" />
-                    <marker date="1646191441774" expanded="true" signature="548:644" ph="{...}" />
-                    <marker date="1646191441774" expanded="true" signature="682:719" ph="{...}" />
-                    <marker date="1646191441774" expanded="true" signature="764:939" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="28" column="35" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="35" />
-                  <folding>
-                    <marker date="1646218705923" expanded="false" signature="6:266" ph="..." />
-                    <marker date="1646218705923" expanded="true" signature="313:12167" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="1255:1346" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="1303:1341" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="1370:1684" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="1542:1681" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="1689:3242" ph="Queue character turn" />
-                    <marker date="1646218705923" expanded="true" signature="1746:1955" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="1991:2212" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="2249:2352" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="2382:2609" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="2640:2979" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="2688:2976" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="2726:2972" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3009:3226" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3057:3223" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3095:3219" ph="{...}" />
-                    <marker date="1646218705923" expanded="false" signature="3247:3443" ph="Ultilities" />
-                    <marker date="1646218705923" expanded="true" signature="3294:3430" ph="{...}" />
-                    <marker date="1646218705923" expanded="false" signature="3449:4194" ph="Start + init funtion" />
-                    <marker date="1646218705923" expanded="true" signature="3504:3832" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3612:3660" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3685:3733" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3760:3791" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="3864:3953" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="4014:4105" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="4133:4182" ph="{...}" />
-                    <marker date="1646218705923" expanded="false" signature="4198:7271" ph="Assign neko attack, skill use" />
-                    <marker date="1646218705923" expanded="true" signature="4353:4886" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="4674:4753" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="4760:4859" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="4935:5112" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="5152:5213" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="5265:5377" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="5445:5610" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="5678:5712" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="5716:6268" ph="/* Assign Both Character for from and attack target ... */" />
-                    <marker date="1646218705923" expanded="true" signature="6333:6524" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="6565:7259" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="6595:7237" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="6749:7233" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="7244:7256" ph="{...}" />
-                    <marker date="1646218705923" expanded="false" signature="7276:11509" ph="Time-life and status of battle" />
-                    <marker date="1646218705923" expanded="true" signature="7318:7415" ph="/// official end select skill and target, need to call action here ... " />
-                    <marker date="1646218705923" expanded="true" signature="7443:7795" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="7536:7719" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="7829:7864" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="7867:7944" ph="/// In side action, need to split step to step ... " />
-                    <marker date="1646218705923" expanded="true" signature="7969:10373" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="8460:10107" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="8468:8991" ph="/* TODO: Get all information about skill here to apply to character ... */" />
-                    <marker date="1646218705923" expanded="true" signature="9047:9987" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="9088:9982" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="9122:9976" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="9477:9541" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="9849:9953" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="9994:10103" ph="/* TODO: End of action, change state to pre skill ... */" />
-                    <marker date="1646218705923" expanded="true" signature="10114:10260" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="10297:10368" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="10407:10526" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="10554:10684" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="10747:11027" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="10948:11006" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11070:11118" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11194:11496" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11238:11493" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11294:11489" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11514:12165" ph="Update ui shower" />
-                    <marker date="1646218705923" expanded="true" signature="11542:11662" ph="/// Show all skill of character on ui ... " />
-                    <marker date="1646218705923" expanded="true" signature="11720:11908" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11794:11905" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="11954:12071" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="12113:12152" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="12191:12236" ph="{...}" />
-                    <marker date="1646218705923" expanded="true" signature="12262:12369" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/GetTouch.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="10" column="29" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="29" />
-                  <folding>
-                    <marker date="1645416560141" expanded="false" signature="6:118" ph="..." />
-                    <marker date="1645416560141" expanded="true" signature="157:694" ph="{...}" />
-                    <marker date="1645416560141" expanded="true" signature="315:324" ph="{...}" />
-                    <marker date="1645416560141" expanded="true" signature="359:445" ph="{...}" />
-                    <marker date="1645416560141" expanded="true" signature="478:569" ph="{...}" />
-                    <marker date="1645416560141" expanded="true" signature="601:692" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/CharacterInformation.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-34">
-                  <caret line="240" column="16" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
-                  <folding>
-                    <marker date="1645777642354" expanded="false" signature="6:247" ph="..." />
-                    <marker date="1645777642354" expanded="true" signature="298:8065" ph="{...}" />
-                    <marker date="1645777642354" expanded="false" signature="1511:2292" ph="Get reference on scene" />
-                    <marker date="1645777642354" expanded="true" signature="1602:1722" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="1638:1716" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="1790:1863" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="1931:1993" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="2069:2134" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="2210:2277" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="2319:2575" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="2605:2887" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="2917:3264" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="3321:3707" ph="{...}" />
-                    <marker date="1645777642354" expanded="false" signature="3713:6013" ph="Logic change character attribute in-game" />
-                    <marker date="1645777642354" expanded="true" signature="3813:4391" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="3884:4362" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="4442:4948" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="4478:4919" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="4996:5171" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="5220:5320" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="5371:5595" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="5643:5997" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="5731:5906" ph="{...}" />
-                    <marker date="1645777642354" expanded="false" signature="6019:6692" ph="Log visual" />
-                    <marker date="1645777642354" expanded="true" signature="6081:6393" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="6438:6676" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="6728:6789" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="6828:6886" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="6918:7015" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7054:7205" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7250:7453" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7330:7393" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7485:7683" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7512:7677" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7760:7868" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="7874:7952" ph="/// This function call on unity animation ... " />
-                    <marker date="1645777642354" expanded="true" signature="7983:8058" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="8121:8672" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="8497:8570" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="8597:8670" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="8695:8738" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="8790:10102" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9218:9288" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9345:9501" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9554:9662" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9596:9656" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9691:9742" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9781:10100" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="9904:10063" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="10125:10179" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="10209:10268" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="10317:11500" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="10553:10646" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="11004:11498" ph="{...}" />
-                    <marker date="1645777642354" expanded="true" signature="11011:11491" ph="/* switch (type) ... */" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-                  <folding>
-                    <marker date="1646218034003" expanded="false" signature="6:100" ph="..." />
-                    <marker date="1646218034003" expanded="true" signature="140:889" ph="{...}" />
-                    <marker date="1646218034003" expanded="true" signature="321:432" ph="{...}" />
-                    <marker date="1646218034003" expanded="true" signature="483:887" ph="{...}" />
-                    <marker date="1646218034003" expanded="true" signature="628:860" ph="{...}" />
-                    <marker date="1646218034003" expanded="true" signature="639:850" ph="/* Color c = border.color; ... */" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="35" selection-end-line="35" />
-                  <folding>
-                    <marker date="1646102439715" expanded="true" signature="6:78" ph="..." />
-                    <marker date="1646102439715" expanded="true" signature="127:721" ph="{...}" />
-                    <marker date="1646102439715" expanded="true" signature="340:413" ph="{...}" />
-                    <marker date="1646102439715" expanded="true" signature="437:508" ph="{...}" />
-                    <marker date="1646102439715" expanded="true" signature="540:621" ph="{...}" />
-                    <marker date="1646102439715" expanded="true" signature="646:719" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="86" column="32" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="32" />
+              <folding>
+                <marker date="1645640443496" expanded="true" signature="6:95" ph="..." />
+                <marker date="1645640443496" expanded="true" signature="134:3373" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="266:345" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="369:518" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="554:902" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="718:871" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="792:861" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="969:2990" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="1463:1552" ph="/* Bind the socket to the local endpoint and ... */" />
+                <marker date="1645640443496" expanded="true" signature="1565:2899" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="1724:2889" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="2163:2824" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="2379:2549" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="2676:2751" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="2927:2984" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="3013:3315" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="3105:3159" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="3210:3309" ph="{...}" />
+                <marker date="1645640443496" expanded="true" signature="3337:3371" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map/MoveMap.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+              <folding>
+                <marker date="1646309958889" expanded="true" signature="6:165" ph="..." />
+                <marker date="1646309958889" expanded="true" signature="239:2228" ph="{...}" />
+                <marker date="1646309958889" expanded="true" signature="546:779" ph="{...}" />
+                <marker date="1646309958889" expanded="true" signature="831:1475" ph="{...}" />
+                <marker date="1646309958889" expanded="true" signature="1535:1915" ph="{...}" />
+                <marker date="1646309958889" expanded="true" signature="1640:1878" ph="{...}" />
+                <marker date="1646309958889" expanded="true" signature="1953:2064" ph="{...}" />
+                <marker date="1646309958889" expanded="true" signature="2096:2220" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -534,35 +164,41 @@
       <find>AI</find>
       <find>DOaction</find>
       <find>Blue</find>
+      <find>x</find>
     </findStrings>
+    <replaceStrings>
+      <replace>y</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/StringUltility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader 2.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelConst.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/TestLoadGoogleDrive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/File.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Colyseous/ExampleManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/HpBarIngameSpawnner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/GoogleDriveRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/AdaptiveWindowGUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/GetTouch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/StringUltility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader 2.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelCanvas.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/MoveMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Battle_Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/FileList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/IngameHealthBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/ResourceData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/CharacterInformation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/HpBarIngameSpawnner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/GoogleDriveRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/AdaptiveWindowGUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/GetTouch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader 1.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -593,6 +229,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ModelCanvas.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/MoveMap.cs" />
       </list>
     </option>
   </component>
@@ -607,7 +244,6 @@
     </navigator>
     <panes>
       <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
@@ -615,6 +251,7 @@
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -685,11 +322,12 @@
       <workItem from="1646099045342" duration="13321000" />
       <workItem from="1646191033698" duration="4157000" />
       <workItem from="1646195606666" duration="4990000" />
+      <workItem from="1646297252181" duration="6109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78952000" />
+    <option name="totallyTimeSpent" value="85061000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,7 +342,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10761854" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10868407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -922,51 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/AdaptiveWindowGUI.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <marker date="1646191441774" expanded="true" signature="75:941" ph="{...}" />
-            <marker date="1646191441774" expanded="true" signature="316:354" ph="{...}" />
-            <marker date="1646191441774" expanded="true" signature="396:426" ph="{...}" />
-            <marker date="1646191441774" expanded="true" signature="463:511" ph="{...}" />
-            <marker date="1646191441774" expanded="true" signature="548:644" ph="{...}" />
-            <marker date="1646191441774" expanded="true" signature="682:719" ph="{...}" />
-            <marker date="1646191441774" expanded="true" signature="764:939" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="35" selection-end-line="35" />
-          <folding>
-            <marker date="1646102439715" expanded="true" signature="6:78" ph="..." />
-            <marker date="1646102439715" expanded="true" signature="127:721" ph="{...}" />
-            <marker date="1646102439715" expanded="true" signature="340:413" ph="{...}" />
-            <marker date="1646102439715" expanded="true" signature="437:508" ph="{...}" />
-            <marker date="1646102439715" expanded="true" signature="540:621" ph="{...}" />
-            <marker date="1646102439715" expanded="true" signature="646:719" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/File.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1035">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/ResourceData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/FileList.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -996,9 +589,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelCanvas.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <marker date="1646218657600" expanded="true" signature="6:139" ph="..." />
+            <marker date="1646218657600" expanded="true" signature="181:716" ph="{...}" />
+            <marker date="1646218657600" expanded="true" signature="492:705" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/IngameHealthBar.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="390">
           <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
           <folding>
             <marker date="1646215825612" expanded="false" signature="6:144" ph="..." />
@@ -1009,17 +614,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs">
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/File.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/ResourceData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/AdaptiveWindowGUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
           <folding>
-            <marker date="1646218034003" expanded="false" signature="6:100" ph="..." />
-            <marker date="1646218034003" expanded="true" signature="140:889" ph="{...}" />
-            <marker date="1646218034003" expanded="true" signature="321:432" ph="{...}" />
-            <marker date="1646218034003" expanded="true" signature="483:887" ph="{...}" />
-            <marker date="1646218034003" expanded="true" signature="628:860" ph="{...}" />
-            <marker date="1646218034003" expanded="true" signature="639:850" ph="/* Color c = border.color; ... */" />
+            <marker date="1646191441774" expanded="true" signature="75:941" ph="{...}" />
+            <marker date="1646191441774" expanded="true" signature="316:354" ph="{...}" />
+            <marker date="1646191441774" expanded="true" signature="396:426" ph="{...}" />
+            <marker date="1646191441774" expanded="true" signature="463:511" ph="{...}" />
+            <marker date="1646191441774" expanded="true" signature="548:644" ph="{...}" />
+            <marker date="1646191441774" expanded="true" signature="682:719" ph="{...}" />
+            <marker date="1646191441774" expanded="true" signature="764:939" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1041,7 +661,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/CharacterInformation.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="1155">
           <caret line="240" column="16" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
           <folding>
             <marker date="1645777642354" expanded="false" signature="6:247" ph="..." />
@@ -1103,10 +723,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <marker date="1646218034003" expanded="false" signature="6:100" ph="..." />
+            <marker date="1646218034003" expanded="true" signature="140:889" ph="{...}" />
+            <marker date="1646218034003" expanded="true" signature="321:432" ph="{...}" />
+            <marker date="1646218034003" expanded="true" signature="483:887" ph="{...}" />
+            <marker date="1646218034003" expanded="true" signature="628:860" ph="{...}" />
+            <marker date="1646218034003" expanded="true" signature="639:850" ph="/* Color c = border.color; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" selection-end-line="35" />
+          <folding>
+            <marker date="1646102439715" expanded="true" signature="6:78" ph="..." />
+            <marker date="1646102439715" expanded="true" signature="127:721" ph="{...}" />
+            <marker date="1646102439715" expanded="true" signature="340:413" ph="{...}" />
+            <marker date="1646102439715" expanded="true" signature="437:508" ph="{...}" />
+            <marker date="1646102439715" expanded="true" signature="540:621" ph="{...}" />
+            <marker date="1646102439715" expanded="true" signature="646:719" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <marker date="1646218867060" expanded="false" signature="6:164" ph="..." />
+            <marker date="1646218867060" expanded="true" signature="211:12075" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="1164:1254" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="1212:1249" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="1278:1592" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="1450:1589" ph="{...}" />
+            <marker date="1646218867060" expanded="false" signature="1597:3150" ph="Queue character turn" />
+            <marker date="1646218867060" expanded="true" signature="1654:1863" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="1899:2120" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2157:2260" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2290:2517" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2548:2887" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2596:2884" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2634:2880" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2917:3134" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="2965:3131" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="3003:3127" ph="{...}" />
+            <marker date="1646218867060" expanded="false" signature="3155:3351" ph="Ultilities" />
+            <marker date="1646218867060" expanded="true" signature="3202:3338" ph="{...}" />
+            <marker date="1646218867060" expanded="false" signature="3357:4102" ph="Start + init funtion" />
+            <marker date="1646218867060" expanded="true" signature="3412:3740" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="3520:3568" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="3593:3641" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="3668:3699" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="3772:3861" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="3922:4013" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="4041:4090" ph="{...}" />
+            <marker date="1646218867060" expanded="false" signature="4106:7179" ph="Assign neko attack, skill use" />
+            <marker date="1646218867060" expanded="true" signature="4261:4794" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="4582:4661" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="4668:4767" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="4843:5020" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="5060:5121" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="5173:5285" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="5353:5518" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="5586:5620" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="5624:6176" ph="/* Assign Both Character for from and attack target ... */" />
+            <marker date="1646218867060" expanded="true" signature="6241:6432" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="6473:7167" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="6503:7145" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="6657:7141" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="7152:7164" ph="{...}" />
+            <marker date="1646218867060" expanded="false" signature="7184:11417" ph="Time-life and status of battle" />
+            <marker date="1646218867060" expanded="true" signature="7226:7323" ph="/// official end select skill and target, need to call action here ... " />
+            <marker date="1646218867060" expanded="true" signature="7351:7703" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="7444:7627" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="7737:7772" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="7775:7852" ph="/// In side action, need to split step to step ... " />
+            <marker date="1646218867060" expanded="true" signature="7877:10281" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="8368:10015" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="8376:8899" ph="/* TODO: Get all information about skill here to apply to character ... */" />
+            <marker date="1646218867060" expanded="true" signature="8955:9895" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="8996:9890" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="9030:9884" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="9385:9449" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="9757:9861" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="9902:10011" ph="/* TODO: End of action, change state to pre skill ... */" />
+            <marker date="1646218867060" expanded="true" signature="10022:10168" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="10205:10276" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="10315:10434" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="10462:10592" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="10655:10935" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="10856:10914" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="10978:11026" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="11102:11404" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="11146:11401" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="11202:11397" ph="{...}" />
+            <marker date="1646218867060" expanded="false" signature="11422:12073" ph="Update ui shower" />
+            <marker date="1646218867060" expanded="true" signature="11450:11570" ph="/// Show all skill of character on ui ... " />
+            <marker date="1646218867060" expanded="true" signature="11628:11816" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="11702:11813" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="11862:11979" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="12021:12060" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="12099:12144" ph="{...}" />
+            <marker date="1646218867060" expanded="true" signature="12170:12277" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Colyseous/ExampleManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1646297228743" expanded="true" signature="6:78" ph="..." />
+            <marker date="1646297228743" expanded="true" signature="123:297" ph="{...}" />
+            <marker date="1646297228743" expanded="true" signature="195:216" ph="{...}" />
+            <marker date="1646297228743" expanded="true" signature="274:295" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+        <state relative-caret-position="116">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
           <folding>
             <marker date="1646218557331" expanded="true" signature="6:259" ph="..." />
             <marker date="1646218557331" expanded="true" signature="305:9683" ph="{...}" />
@@ -1158,21 +904,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelCanvas.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <marker date="1646218657600" expanded="true" signature="6:139" ph="..." />
-            <marker date="1646218657600" expanded="true" signature="181:716" ph="{...}" />
-            <marker date="1646218657600" expanded="true" signature="492:705" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
+        <state relative-caret-position="484">
           <caret line="86" column="32" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="32" />
           <folding>
             <marker date="1645640443496" expanded="true" signature="6:95" ph="..." />
@@ -1198,86 +932,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map/MoveMap.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="484">
+          <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
           <folding>
-            <marker date="1646218705923" expanded="false" signature="6:266" ph="..." />
-            <marker date="1646218705923" expanded="true" signature="313:12167" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="1255:1346" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="1303:1341" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="1370:1684" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="1542:1681" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="1689:3242" ph="Queue character turn" />
-            <marker date="1646218705923" expanded="true" signature="1746:1955" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="1991:2212" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="2249:2352" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="2382:2609" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="2640:2979" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="2688:2976" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="2726:2972" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3009:3226" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3057:3223" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3095:3219" ph="{...}" />
-            <marker date="1646218705923" expanded="false" signature="3247:3443" ph="Ultilities" />
-            <marker date="1646218705923" expanded="true" signature="3294:3430" ph="{...}" />
-            <marker date="1646218705923" expanded="false" signature="3449:4194" ph="Start + init funtion" />
-            <marker date="1646218705923" expanded="true" signature="3504:3832" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3612:3660" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3685:3733" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3760:3791" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="3864:3953" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="4014:4105" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="4133:4182" ph="{...}" />
-            <marker date="1646218705923" expanded="false" signature="4198:7271" ph="Assign neko attack, skill use" />
-            <marker date="1646218705923" expanded="true" signature="4353:4886" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="4674:4753" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="4760:4859" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="4935:5112" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="5152:5213" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="5265:5377" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="5445:5610" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="5678:5712" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="5716:6268" ph="/* Assign Both Character for from and attack target ... */" />
-            <marker date="1646218705923" expanded="true" signature="6333:6524" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="6565:7259" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="6595:7237" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="6749:7233" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="7244:7256" ph="{...}" />
-            <marker date="1646218705923" expanded="false" signature="7276:11509" ph="Time-life and status of battle" />
-            <marker date="1646218705923" expanded="true" signature="7318:7415" ph="/// official end select skill and target, need to call action here ... " />
-            <marker date="1646218705923" expanded="true" signature="7443:7795" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="7536:7719" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="7829:7864" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="7867:7944" ph="/// In side action, need to split step to step ... " />
-            <marker date="1646218705923" expanded="true" signature="7969:10373" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="8460:10107" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="8468:8991" ph="/* TODO: Get all information about skill here to apply to character ... */" />
-            <marker date="1646218705923" expanded="true" signature="9047:9987" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="9088:9982" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="9122:9976" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="9477:9541" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="9849:9953" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="9994:10103" ph="/* TODO: End of action, change state to pre skill ... */" />
-            <marker date="1646218705923" expanded="true" signature="10114:10260" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="10297:10368" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="10407:10526" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="10554:10684" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="10747:11027" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="10948:11006" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11070:11118" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11194:11496" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11238:11493" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11294:11489" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11514:12165" ph="Update ui shower" />
-            <marker date="1646218705923" expanded="true" signature="11542:11662" ph="/// Show all skill of character on ui ... " />
-            <marker date="1646218705923" expanded="true" signature="11720:11908" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11794:11905" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="11954:12071" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="12113:12152" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="12191:12236" ph="{...}" />
-            <marker date="1646218705923" expanded="true" signature="12262:12369" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="6:165" ph="..." />
+            <marker date="1646309958889" expanded="true" signature="239:2228" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="546:779" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="831:1475" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="1535:1915" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="1640:1878" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="1953:2064" ph="{...}" />
+            <marker date="1646309958889" expanded="true" signature="2096:2220" ph="{...}" />
           </folding>
         </state>
       </provider>
