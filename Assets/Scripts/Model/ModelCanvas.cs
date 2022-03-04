@@ -7,11 +7,12 @@ using UnityEngine.UI;
 
 public class ModelCanvas : MonoBehaviour
 {
-    [SerializeField] private ModelController controller;
+    [SerializeField] private ModelControllerTest controller;
     
     [SerializeField] private Button[] btnChangeClass;
     [SerializeField] private Button[] btnChangeTraits;
     [SerializeField] private Button[] btnChangeTraitsInfor;
+    [SerializeField] private Button[] btnChangeSkill;
     [SerializeField] private Button btnChangeModel;
 
     private void Start()
