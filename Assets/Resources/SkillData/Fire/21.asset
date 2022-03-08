@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a1650537b92114385ab02b4f59b14d, type: 3}
+  m_Name: 21
+  m_EditorClassIdentifier: 
+  nameSkill: Fire Last Man Stand
+  icon: {fileID: 5992636893488012638, guid: 412b583064485cb4eb1af707150fe96d, type: 3}
+  className: 2
+  desception: Decrease all of your opponent's Nekos by 20%. \nThis skill can not
+    be blocked by other Nekos
