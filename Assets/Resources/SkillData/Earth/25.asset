@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a1650537b92114385ab02b4f59b14d, type: 3}
   m_Name: 25
   m_EditorClassIdentifier: 
-  nameSkill: 
-  icon: {fileID: 0}
-  className: 0
-  desception: 
+  nameSkill: Earth Blast
+  icon: {fileID: 5445893763386203469, guid: 412b583064485cb4eb1af707150fe96d, type: 3}
+  className: 4
+  desception: Decrease all of your opponent's Nekos by 20%. \nThis skill can not
+    be blocked by other Nekos

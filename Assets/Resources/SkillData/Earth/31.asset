@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a1650537b92114385ab02b4f59b14d, type: 3}
   m_Name: 31
   m_EditorClassIdentifier: 
-  nameSkill: Fire Heal
+  nameSkill: Earth Heal
   icon: {fileID: 3585448899117464591, guid: 412b583064485cb4eb1af707150fe96d, type: 3}
-  className: 2
+  className: 4
   desception: Decrease all of your opponent's Nekos by 20%. \nThis skill can not
     be blocked by other Nekos

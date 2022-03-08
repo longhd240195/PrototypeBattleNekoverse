@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a1650537b92114385ab02b4f59b14d, type: 3}
   m_Name: 28
   m_EditorClassIdentifier: 
-  nameSkill: Fire Blast
+  nameSkill: Fire Discard
   icon: {fileID: 7912036787896062362, guid: 412b583064485cb4eb1af707150fe96d, type: 3}
   className: 2
   desception: Decrease all of your opponent's Nekos by 20%. \nThis skill can not

@@ -1419,7 +1419,6 @@ GameObject:
   - component: {fileID: 114383274}
   - component: {fileID: 114383276}
   - component: {fileID: 114383273}
-  - component: {fileID: 114383277}
   m_Layer: 5
   m_Name: Skill (7)
   m_TagString: Untagged
@@ -1460,7 +1459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 114383277}
+  NameSkill: 
   Icon: {fileID: 623688474}
   IsLockSkill: 0
   StateSkill: 0
@@ -1548,22 +1547,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &114383277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114383271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &135253561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4266,7 +4249,6 @@ GameObject:
   - component: {fileID: 314368913}
   - component: {fileID: 314368915}
   - component: {fileID: 314368912}
-  - component: {fileID: 314368916}
   m_Layer: 5
   m_Name: Skill (3)
   m_TagString: Untagged
@@ -4307,7 +4289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 314368916}
+  NameSkill: 
   Icon: {fileID: 1528171556}
   IsLockSkill: 0
   StateSkill: 0
@@ -4395,22 +4377,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &314368916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314368910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &323971373
 GameObject:
   m_ObjectHideFlags: 0
@@ -6207,7 +6173,6 @@ GameObject:
   - component: {fileID: 474241065}
   - component: {fileID: 474241067}
   - component: {fileID: 474241064}
-  - component: {fileID: 474241068}
   m_Layer: 5
   m_Name: Skill (4)
   m_TagString: Untagged
@@ -6248,7 +6213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 474241068}
+  NameSkill: 
   Icon: {fileID: 837303487}
   IsLockSkill: 0
   StateSkill: 0
@@ -6336,22 +6301,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &474241068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474241062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &477260159
 GameObject:
   m_ObjectHideFlags: 0
@@ -12364,7 +12313,6 @@ GameObject:
   - component: {fileID: 844161763}
   - component: {fileID: 844161765}
   - component: {fileID: 844161762}
-  - component: {fileID: 844161766}
   m_Layer: 5
   m_Name: Skill (5)
   m_TagString: Untagged
@@ -12405,7 +12353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 844161766}
+  NameSkill: 
   Icon: {fileID: 1192108771}
   IsLockSkill: 0
   StateSkill: 0
@@ -12493,22 +12441,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &844161766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844161760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &849066892
 GameObject:
   m_ObjectHideFlags: 0
@@ -13360,7 +13292,6 @@ GameObject:
   - component: {fileID: 919400796}
   - component: {fileID: 919400798}
   - component: {fileID: 919400795}
-  - component: {fileID: 919400799}
   m_Layer: 5
   m_Name: Skill (8)
   m_TagString: Untagged
@@ -13401,7 +13332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 919400799}
+  NameSkill: 
   Icon: {fileID: 507692377}
   IsLockSkill: 0
   StateSkill: 0
@@ -13489,22 +13420,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &919400799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919400793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &928182993
 GameObject:
   m_ObjectHideFlags: 0
@@ -16766,7 +16681,6 @@ GameObject:
   - component: {fileID: 1169160593}
   - component: {fileID: 1169160592}
   - component: {fileID: 1169160594}
-  - component: {fileID: 1169160597}
   m_Layer: 5
   m_Name: Skill (9)
   m_TagString: Untagged
@@ -16860,7 +16774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 1169160597}
+  NameSkill: 
   Icon: {fileID: 555467784}
   IsLockSkill: 0
   StateSkill: 0
@@ -16895,22 +16809,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1169160597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169160591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &1175305115
 GameObject:
   m_ObjectHideFlags: 0
@@ -17582,7 +17480,6 @@ GameObject:
   - component: {fileID: 1215172382}
   - component: {fileID: 1215172384}
   - component: {fileID: 1215172381}
-  - component: {fileID: 1215172385}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -17623,7 +17520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 1215172385}
+  NameSkill: 
   Icon: {fileID: 1010929509}
   IsLockSkill: 0
   StateSkill: 0
@@ -17711,22 +17608,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1215172385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215172379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &1220710171
 GameObject:
   m_ObjectHideFlags: 0
@@ -22505,7 +22386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nekoView: {fileID: 1576029784}
-  DesceptionSkill: {fileID: 285859447}
   classSpr:
   - {fileID: 21300000, guid: 176b4ac082126e042bea36ea4bba0c39, type: 3}
   - {fileID: 21300000, guid: 07d025424131edf4195f68385fa3f56d, type: 3}
@@ -22578,6 +22458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nekoBar: {fileID: 1576029785}
   nekoNameText: {fileID: 161212129}
+  DesceptionSkill: {fileID: 285859447}
 --- !u!114 &1576029785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24232,7 +24113,6 @@ GameObject:
   - component: {fileID: 1734465720}
   - component: {fileID: 1734465722}
   - component: {fileID: 1734465719}
-  - component: {fileID: 1734465723}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -24273,7 +24153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 1734465723}
+  NameSkill: 
   Icon: {fileID: 623546405}
   IsLockSkill: 0
   StateSkill: 0
@@ -24361,22 +24241,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1734465723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734465717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &1745467705
 GameObject:
   m_ObjectHideFlags: 0
@@ -28098,7 +27962,6 @@ GameObject:
   - component: {fileID: 2108456054}
   - component: {fileID: 2108456056}
   - component: {fileID: 2108456053}
-  - component: {fileID: 2108456057}
   m_Layer: 5
   m_Name: Skill (6)
   m_TagString: Untagged
@@ -28139,7 +28002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 2108456057}
+  NameSkill: 
   Icon: {fileID: 913145073}
   IsLockSkill: 0
   StateSkill: 0
@@ -28227,22 +28090,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2108456057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108456051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!1 &2112057837
 GameObject:
   m_ObjectHideFlags: 0
@@ -29030,7 +28877,6 @@ GameObject:
   - component: {fileID: 7572541817648778365}
   - component: {fileID: 7572541817648778366}
   - component: {fileID: 7572541817648778353}
-  - component: {fileID: 7572541817648778354}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -29050,28 +28896,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba7d5a7d40e4c459673eed9946e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 7572541817648778354}
+  NameSkill: 
   Icon: {fileID: 7572541815701321711}
   IsLockSkill: 0
   StateSkill: 0
   lockSkill: {fileID: 3804295525267016397}
   selectSkill: {fileID: 7572541816975979722}
---- !u!114 &7572541817648778354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7572541817648778352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameSkill: 
-  Desception: 
-  Dame: 0
-  SpriteName: 
 --- !u!222 &7572541817648778364
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -41,9 +41,6 @@ public class DataTest
         NekoSkill nekoSkill6 = new NekoSkill();
         nekoSkill6.NameSkill = "Fire Supreme";
 
-        NekoSkill nekoSkill7 = new NekoSkill();
-        nekoSkill7.NameSkill = "Fire Buring Sun";
-        nekoSkill7.IsLockSkill = true;
 
 
 
@@ -53,7 +50,6 @@ public class DataTest
         nekoListSkills.Add(nekoSkill4);
         nekoListSkills.Add(nekoSkill5);
         nekoListSkills.Add(nekoSkill6);
-        nekoListSkills.Add(nekoSkill7);
 
         neko.traitsNeko.Add(listTraitNames[0], 1);
         neko.traitsNeko.Add(listTraitNames[1], 2);
@@ -153,8 +149,6 @@ public class DataTest
         neko2Skill7.NameSkill = "Fire Buring Sun";
         neko2Skill7.IsLockSkill = true;
 
-        NekoSkill neko2Skill8 = new NekoSkill();
-        neko2Skill8.NameSkill = "Fire Blast";
 
         neko2ListSkills.Add(neko2Skill1);
         neko2ListSkills.Add(neko2Skill2);
@@ -163,7 +157,6 @@ public class DataTest
         neko2ListSkills.Add(neko2Skill5);
         neko2ListSkills.Add(neko2Skill6);
         neko2ListSkills.Add(neko2Skill7);
-        neko2ListSkills.Add(neko2Skill8);
 
         neko2.NekoSkill = neko2ListSkills;
         neko2.Atk = 170;

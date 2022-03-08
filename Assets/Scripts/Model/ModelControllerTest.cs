@@ -123,6 +123,7 @@ public class ModelControllerTest : MonoBehaviour
         nekoView.ShowDesceptionSkill(btnSkill);
         for (int i = 0; i < btnSkill.Length; i++)
         {
+           
             if (i < neko.NekoSkill.Count)
             {
                 var btn = btnSkill[i];
