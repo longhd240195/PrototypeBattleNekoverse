@@ -9,21 +9,24 @@ using UnityEngine.UI;
 public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 {
     [SerializeField] private Image img;
+    [SerializeField] private Image preBattle;
+    [SerializeField] private List<Image> childs;
 
     private Vector2 sizeScene;
     
     private Vector2 initSize;
+    private Vector2 sizeChild;
     private Vector2 CurrentSize => new Vector2(img.rectTransform.rect.width,img.rectTransform.rect.height);
     private float sizeMultiple = 3f;
     private bool drag;
+    private bool isIn;
     
     private void Start()
     {
         initSize = new Vector2(img.rectTransform.rect.width,img.rectTransform.rect.height);
         sizeScene = new Vector2(Screen.width,Screen.height);
-        
-        Debug.Log(initSize);
-        Debug.Log(sizeScene);
+        sizeChild = new Vector2(64, 64);
+        childs.ForEach(i => i.GetComponent<Button>().onClick.AddListener(OpenTitle));
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -48,23 +51,43 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
         img.rectTransform.position = positionTarget;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        var diff = (Vector2) img.rectTransform.position - eventData.position ;
+	public void OnPointerClick(PointerEventData eventData)
+	{
+		if (!drag)
+		{
+			if (!isIn)
+			{
+				var diff = (Vector2)img.rectTransform.position - eventData.position;
+                var toCenter =  sizeScene / 2 - eventData.position;
+                var last = diff * sizeMultiple - diff + toCenter;
 
-        if (!drag)
-        {
-            Debug.Log(diff);
-            img.rectTransform.DOSizeDelta(sizeMultiple * initSize,1f);
-            var last = diff * sizeMultiple - diff;
-            img.rectTransform.DOMove(last, 1f).SetRelative(true);
+                img.rectTransform.DOSizeDelta(sizeMultiple * initSize, 1f);
+				img.rectTransform.DOMove(last, 1f).SetRelative(true);
+                childs.ForEach(i => i.rectTransform.DOSizeDelta(sizeMultiple * sizeChild, 1f));
+            }
+            else
+			{
+                var diff = (Vector2)img.rectTransform.position - eventData.position;
+                var toCenter = sizeScene / 2 - eventData.position;
+                var last = diff / sizeMultiple - diff + toCenter;
 
+                img.rectTransform.DOSizeDelta(initSize, 1f);
+				img.rectTransform.DOMove(last, 1f).SetRelative(true);
+                childs.ForEach(i => i.rectTransform.DOSizeDelta( sizeChild, 1f));
+            }
+            isIn = !isIn;
         }
-        
-        drag = false;
+
+		drag = false;
     }
-    
-    private Vector2 BottomLeft()
+
+    private void OpenTitle()
+	{
+		preBattle.gameObject.SetActive(true);
+		preBattle.rectTransform.DOMoveX(sizeScene.x / 2, .5f);
+	}
+
+	private Vector2 BottomLeft()
     {
         Vector2 result = Vector2.zero;
 
