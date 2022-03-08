@@ -15,82 +15,132 @@ using Random = UnityEngine.Random;
 public class ModelControllerTest : MonoBehaviour
 {
     [SerializeField] private NekoView nekoView;
-    [SerializeField] private GameObject ObjSkill;
+
     [SerializeField] private List<Sprite> classSpr;
     [SerializeField] private Button[] btnChangeSkill;
-    private List<Sprite> nekoSkillSpr;
+    private List<Sprite> nekoImageSpr;
     private string[] listTraitNames;
     private Dictionary<string, List<TraitsDataModel>> traitsCache;
+
+
+    private List<SkillData> skillsCache;
+
+
     private Dictionary<string, GameObject> traits;
     private Dictionary<string, GameObject> Traits => traits ?? (traits = new Dictionary<string, GameObject>());
     private Dictionary<string, List<TraitsDataModel>> Cache =>
         traitsCache ?? (traitsCache = new Dictionary<string, List<TraitsDataModel>>());
+    private List<Neko> listNeko;
     private Neko neko;
+    private int cacheIdNeko = 0;
     private void Awake()
     {
         InitTraitName();
         CacheFile();
-        LoadSpriteSkill();
+        LoadSpriteImageNeko();
     }
 
     public void Start()
     {
-        neko = DataTest.GetNeko();
-        RandomInit();
-        InitNeko(btnChangeSkill, neko);
+        listNeko = DataTest.GetNeko();
+        neko = listNeko[cacheIdNeko];
+        InitNeko(neko);
     }
 #if UNITY_EDITOR
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            // RandomInit();
-            // ChangeClass(NekoClass.Fire);
-            InitNeko(btnChangeSkill, neko);
+            //RandomInit();
+            ChangeClass(NekoClass.Fire);
+            //InitNeko(neko);
         }
     }
 #endif
-    public void ChangeModel(){
-        InitNeko(btnChangeSkill, neko);
-    }
+    public void ChangeModel(int i)
+    {
+        int index = cacheIdNeko + i;
+        if (cacheIdNeko == 0 && i < 0)
+            return;
+        if (index < listNeko.Count)
+        {
+            InitNeko(listNeko[index]);
+            cacheIdNeko = index;
+        }
+        else
+        {
+            return;
+        }
 
-    public void InitNeko(Button[] btnSkill, Neko neko)
+    }
+    public void InitNeko(Neko neko)
     {
         ChangeClass(neko.NekoClass);
-        InitButtonSkill(btnSkill, neko);
+        foreach (KeyValuePair<string, int> kvp in neko.traitsNeko)
+        {
+            ChangeTraits(kvp.Key, kvp.Value);
+        }
+        nekoView.Init(neko);
+        nekoView.ResetBtnSkill(btnChangeSkill);
+        InitButtonSkill(btnChangeSkill, neko);
     }
     void InitTraitName()
     {
         listTraitNames = new[]
         {
             ModelConst.Body, ModelConst.Ear, ModelConst.Nose, ModelConst.Eye, ModelConst.Eyebrow, ModelConst.Medal,
-            ModelConst.Necklaces, ModelConst.Necklaces, ModelConst.FrontFace, ModelConst.Arms, ModelConst.Accessories,
+            ModelConst.Necklaces, ModelConst.FrontFace, ModelConst.Arms, ModelConst.Accessories,
             ModelConst.Back, ModelConst.SideFace
         };
     }
 
+    public void InitButtonYourNeko(Button[] btnYourNeko)
+    {
+        for (int i = 0; i < btnYourNeko.Length; i++)
+        {
+            if (i < listNeko.Count)
+            {
+                btnYourNeko[i].gameObject.SetActive(true);
+                int index = i;
+                var img = btnYourNeko[index].transform.GetChild(0).GetChild(0).GetComponent<Image>();
+                img.sprite = nekoImageSpr.Find(s => String.Compare(s.name, listNeko[i].NameImage.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+                btnYourNeko[index].onClick.AddListener(() =>
+                {
+                    neko = listNeko[index];
+                    cacheIdNeko = index;
+                    InitNeko(neko);
+                });
+            }
+            else
+            {
+                btnYourNeko[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
     public void InitButtonSkill(Button[] btnSkill, Neko neko)
     {
-        InitDesceptionSkill(btnSkill);
+        nekoView.ShowDesceptionSkill(btnSkill);
         for (int i = 0; i < btnSkill.Length; i++)
         {
             if (i < neko.NekoSkill.Count)
             {
+                var btn = btnSkill[i];
                 btnSkill[i].gameObject.SetActive(true);
-                NekoSkill n = btnSkill[i].GetComponent<NekoSkill>();
-                btnSkill[i].GetComponent<Skill>().NameSkill = neko.NekoSkill[i].skill.NameSkill;
-                btnSkill[i].GetComponent<Skill>().Desception = neko.NekoSkill[i].skill.Desception;
-                btnSkill[i].GetComponent<Skill>().Dame = neko.NekoSkill[i].skill.Dame;
-                btnSkill[i].GetComponent<Skill>().SpriteName = neko.NekoSkill[i].skill.SpriteName;
 
-                var img = btnSkill[i].GetComponent<NekoSkill>().Icon;
-                img.sprite = nekoSkillSpr.Find(s => String.Compare(s.name, n.skill.SpriteName.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
-                btnSkill[i].onClick.AddListener(() =>
+                NekoSkill n = btnSkill[i].GetComponent<NekoSkill>();
+                n.NameSkill = neko.NekoSkill[i].NameSkill;
+                n.IsLockSkill = neko.NekoSkill[i].IsLockSkill;
+
+                var s = skillsCache.Find(s => String.Compare(s.NameSkill, n.NameSkill.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+                n.Icon.sprite = s.Icon;
+
+                btn.onClick.AddListener(() =>
                 {
-                    ChangeDesceptionSkill(n.skill.NameSkill, n.skill.Desception);
+                    nekoView.SetDesceptionSkill(s.NameSkill, s.Desception);
                     n.StateSkill = StateSkill.SELECTED;
-                    ObjSkill.SetActive(true);
-                    nekoView.ChangeSkillState(btnSkill, n.skill.NameSkill);
+                    nekoView.SetDesceptionSkillActive(true);
+                    nekoView.ChangeSkillState(btnSkill, s.NameSkill);
                 });
             }
             else
@@ -98,31 +148,9 @@ public class ModelControllerTest : MonoBehaviour
                 btnSkill[i].gameObject.SetActive(false);
             }
         }
-
-
     }
 
-    void InitDesceptionSkill(Button[] btnSkill)
-    {
-        bool isSelect = false;
-        for (int i = 0; i < btnSkill.Length; i++)
-        {
-            NekoSkill nekoSkill = btnSkill[i].GetComponent<NekoSkill>();
-            if (nekoSkill.StateSkill == StateSkill.SELECTED)
-            {
-                isSelect = true;
-            }
-        }
-        if (!isSelect)
-        {
-            ObjSkill.SetActive(false);
-        }
-    }
-    public void ChangeDesceptionSkill(string nameSkill, string desception)
-    {
-        ObjSkill.transform.GetChild(0).GetComponent<Text>().text = nameSkill;
-        ObjSkill.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = desception;
-    }
+
     public void InitButtonTraits(Button[] btnTraits, Button[] btnTraitsInfor)
     {
         for (int i = 0; i < btnTraits.Length; i++)
@@ -187,7 +215,6 @@ public class ModelControllerTest : MonoBehaviour
         {
             ChangeTraits(traitName);
         }
-
     }
 
     public void UpdateInforTraits(string traitName, Button[] inforTraits)
@@ -257,6 +284,7 @@ public class ModelControllerTest : MonoBehaviour
     public void ChangeClass(NekoClass newClass)
     {
         Cache.Clear();
+        skillsCache.Clear();
         CacheFile(newClass.ToString());
         RandomInit();
     }
@@ -279,6 +307,8 @@ public class ModelControllerTest : MonoBehaviour
         ReadDataScripable(currentClass, ModelConst.Accessories);
         ReadDataScripable(currentClass, ModelConst.Back);
         ReadDataScripable(currentClass, ModelConst.SideFace);
+
+        ReadDataScripableSkill(currentClass);
     }
 
 
@@ -288,6 +318,12 @@ public class ModelControllerTest : MonoBehaviour
         var listItem = Resources.LoadAll<TraitsDataModel>($"ModelData/{className}/{pathName}").ToList();
         Cache.Add(pathName, listItem);
     }
+
+    private void ReadDataScripableSkill(string className)
+    {
+        skillsCache = Resources.LoadAll<SkillData>($"SkillData/{className}").ToList();
+    }
+
 
 
     #endregion
@@ -375,11 +411,11 @@ public class ModelControllerTest : MonoBehaviour
 #endif
     }
 
-    public void LoadSpriteSkill()
+    public void LoadSpriteImageNeko()
     {
-        var pathSpr = $"Texture/Skill";
+        var pathSpr = $"Texture/Image";
         List<Sprite> spr = Resources.LoadAll<Sprite>(pathSpr).ToList();
-        nekoSkillSpr = spr;
+        nekoImageSpr = spr;
     }
     #endregion
 }

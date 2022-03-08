@@ -1560,10 +1560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_7
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &135253561
 GameObject:
@@ -2047,12 +2046,12 @@ RectTransform:
   - {fileID: 481086155}
   - {fileID: 1119680524}
   m_Father: {fileID: 2045902989}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 669, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170156556
 MonoBehaviour:
@@ -2865,12 +2864,12 @@ RectTransform:
   - {fileID: 302121497}
   - {fileID: 2011345181}
   m_Father: {fileID: 2045902989}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1569, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &204843639
 MonoBehaviour:
@@ -4310,7 +4309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 314368916}
   Icon: {fileID: 1528171556}
-  IsLockSkill: 1
+  IsLockSkill: 0
   StateSkill: 0
   lockSkill: {fileID: 967655915}
   selectSkill: {fileID: 442421755}
@@ -4408,10 +4407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_3
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &323971373
 GameObject:
@@ -4598,8 +4596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65.5, y: -24.3}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: 75, y: -20}
+  m_SizeDelta: {x: 115, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353446487
 MonoBehaviour:
@@ -5939,7 +5937,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 823005823}
   m_Father: {fileID: 1497865559}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6349,10 +6348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_4
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &477260159
 GameObject:
@@ -7055,7 +7053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 381, y: 80.099976}
+  m_AnchoredPosition: {x: 381, y: 80.1001}
   m_SizeDelta: {x: 450, y: 74.5736}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &520122357
@@ -7919,7 +7917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -39.128906, y: 90.44287}
+  m_AnchoredPosition: {x: 0, y: 90}
   m_SizeDelta: {x: 1102, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &593737633
@@ -8809,10 +8807,10 @@ RectTransform:
   m_Father: {fileID: 2045902989}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2109, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &660730387
 GameObject:
@@ -9603,10 +9601,10 @@ RectTransform:
   m_Father: {fileID: 2045902989}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1749, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725057849
 MonoBehaviour:
@@ -10858,12 +10856,12 @@ RectTransform:
   - {fileID: 257738348}
   - {fileID: 1513592330}
   m_Father: {fileID: 2045902989}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1029, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774611418
 MonoBehaviour:
@@ -11811,17 +11809,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823005822}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1497865559}
-  m_RootOrder: 1
+  m_Father: {fileID: 444304117}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 0}
-  m_SizeDelta: {x: 288, y: 15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823005824
 MonoBehaviour:
@@ -11848,7 +11846,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.771
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -12507,10 +12505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_5
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &849066892
 GameObject:
@@ -12546,8 +12543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -70, y: -20}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: -65, y: -20}
+  m_SizeDelta: {x: 115, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849066894
 MonoBehaviour:
@@ -13504,10 +13501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_8
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &928182993
 GameObject:
@@ -13666,8 +13662,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -55, y: -20}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: -65, y: -20}
+  m_SizeDelta: {x: 115, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931860150
 MonoBehaviour:
@@ -13829,7 +13825,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1808125458}
   m_Father: {fileID: 1272921666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14054,7 +14051,7 @@ GameObject:
   - component: {fileID: 965642482}
   - component: {fileID: 965642480}
   m_Layer: 5
-  m_Name: NextButton
+  m_Name: PreButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14165,11 +14162,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1576029780}
         m_TargetAssemblyTypeName: ModelControllerTest, Assembly-CSharp
         m_MethodName: ChangeModel
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16910,10 +16907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_9
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &1175305115
 GameObject:
@@ -17727,10 +17723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_1
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &1220710171
 GameObject:
@@ -18273,12 +18268,12 @@ RectTransform:
   - {fileID: 736707039}
   - {fileID: 796228683}
   m_Father: {fileID: 2045902989}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1389, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240051438
 MonoBehaviour:
@@ -18449,6 +18444,7 @@ GameObject:
   - component: {fileID: 1254048637}
   - component: {fileID: 1254048636}
   - component: {fileID: 1254048635}
+  - component: {fileID: 1254048638}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -18471,12 +18467,12 @@ RectTransform:
   - {fileID: 867236595}
   - {fileID: 196932093}
   m_Father: {fileID: 2045902989}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 849, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254048635
 MonoBehaviour:
@@ -18560,6 +18556,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254048633}
   m_CullTransparentMesh: 1
+--- !u!114 &1254048638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254048633}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &1255904220
 GameObject:
   m_ObjectHideFlags: 0
@@ -18978,7 +18987,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952276290}
-  - {fileID: 1808125458}
   m_Father: {fileID: 2076349881}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19703,7 +19711,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1859350026}
-  - {fileID: 1567469390}
   m_Father: {fileID: 547649804}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21464,7 +21471,7 @@ GameObject:
   - component: {fileID: 1477253486}
   - component: {fileID: 1477253484}
   m_Layer: 5
-  m_Name: PreviButton
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21575,11 +21582,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1576029780}
         m_TargetAssemblyTypeName: ModelControllerTest, Assembly-CSharp
         m_MethodName: ChangeModel
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21868,7 +21875,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 444304117}
-  - {fileID: 823005823}
   m_Father: {fileID: 53088411}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22402,7 +22408,7 @@ GameObject:
   - component: {fileID: 1567469392}
   - component: {fileID: 1567469391}
   m_Layer: 5
-  m_Name: CurrentDamge
+  m_Name: CurrentHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22415,17 +22421,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567469389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1355314692}
-  m_RootOrder: 1
+  m_Father: {fileID: 1859350026}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 0}
-  m_SizeDelta: {x: 288, y: 15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567469391
 MonoBehaviour:
@@ -22478,6 +22484,7 @@ GameObject:
   - component: {fileID: 1576029783}
   - component: {fileID: 1576029780}
   - component: {fileID: 1576029784}
+  - component: {fileID: 1576029785}
   m_Layer: 6
   m_Name: MainNeko
   m_TagString: Untagged
@@ -22498,7 +22505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nekoView: {fileID: 1576029784}
-  ObjSkill: {fileID: 285859447}
+  DesceptionSkill: {fileID: 285859447}
   classSpr:
   - {fileID: 21300000, guid: 176b4ac082126e042bea36ea4bba0c39, type: 3}
   - {fileID: 21300000, guid: 07d025424131edf4195f68385fa3f56d, type: 3}
@@ -22569,6 +22576,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58725c9503d3a114780f13d4eece90a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nekoBar: {fileID: 1576029785}
+  nekoNameText: {fileID: 161212129}
+--- !u!114 &1576029785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576029779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b64d6c7912d3054e96669467c1b3d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderDame: {fileID: 823005824}
+  sliderSpeed: {fileID: 1808125459}
+  sliderHP: {fileID: 1567469391}
+  dameText: {fileID: 931860150}
+  speedText: {fileID: 849066894}
+  hpText: {fileID: 1875723855}
 --- !u!1 &1579230279
 GameObject:
   m_ObjectHideFlags: 0
@@ -22981,8 +23008,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -20}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: 75, y: -20}
+  m_SizeDelta: {x: 115, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635803676
 MonoBehaviour:
@@ -23905,12 +23932,12 @@ RectTransform:
   - {fileID: 52553944}
   - {fileID: 1357855901}
   m_Father: {fileID: 2045902989}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1209, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695162728
 MonoBehaviour:
@@ -24346,10 +24373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_2
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &1745467705
 GameObject:
@@ -25057,17 +25083,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808125457}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1272921666}
-  m_RootOrder: 1
+  m_Father: {fileID: 952276290}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 0}
-  m_SizeDelta: {x: 288, y: 15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808125459
 MonoBehaviour:
@@ -25344,7 +25370,7 @@ GameObject:
   - component: {fileID: 1859350028}
   - component: {fileID: 1859350027}
   m_Layer: 5
-  m_Name: Damge
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25360,7 +25386,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1567469390}
   m_Father: {fileID: 1355314692}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25665,8 +25692,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -20}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: -65, y: -20}
+  m_SizeDelta: {x: 115, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875723855
 MonoBehaviour:
@@ -25894,7 +25921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 57.5, y: -20}
+  m_AnchoredPosition: {x: 75, y: -20}
   m_SizeDelta: {x: 115, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883091837
@@ -26352,10 +26379,10 @@ RectTransform:
   m_Father: {fileID: 2045902989}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1929, y: -69.58932}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959737227
 MonoBehaviour:
@@ -26943,7 +26970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2045902989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26955,22 +26982,22 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 170156555}
   - {fileID: 1254048634}
   - {fileID: 774611417}
   - {fileID: 1695162727}
   - {fileID: 1240051437}
   - {fileID: 204843638}
+  - {fileID: 170156555}
   - {fileID: 725057848}
   - {fileID: 1959737226}
   - {fileID: 648963796}
   m_Father: {fileID: 2083424550}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.059222225}
-  m_AnchorMax: {x: 1, y: 0.16844444}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -1.0626984}
+  m_AnchorMin: {x: 0.5, y: 0.059222225}
+  m_AnchorMax: {x: 0.5, y: 0.16844444}
+  m_AnchoredPosition: {x: 0, y: 906}
+  m_SizeDelta: {x: 2778, y: -1.0626984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045902990
 MonoBehaviour:
@@ -26992,7 +27019,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 130, y: 130}
   m_Spacing: {x: 30, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -27510,10 +27537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2778, y: 1248}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -27644,6 +27671,13 @@ MonoBehaviour:
   - {fileID: 114383276}
   - {fileID: 919400798}
   - {fileID: 1169160592}
+  btnYourNeko:
+  - {fileID: 395378395}
+  - {fileID: 399717089}
+  - {fileID: 790022982}
+  - {fileID: 965779021}
+  - {fileID: 1140735716}
+  - {fileID: 1682332038}
   btnChangeModel: {fileID: 0}
 --- !u!1 &2088526955
 GameObject:
@@ -28205,10 +28239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_6
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!1 &2112057837
 GameObject:
@@ -29035,10 +29068,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f226e801cc0f2a4e9b77f017b6f122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameSkill: Skill_0
-  Desception: 'Look at book covers, determine the genre and see if you are right. 
-    Match the description to the book part. '
-  Dame: 100
+  NameSkill: 
+  Desception: 
+  Dame: 0
   SpriteName: 
 --- !u!222 &7572541817648778364
 CanvasRenderer:

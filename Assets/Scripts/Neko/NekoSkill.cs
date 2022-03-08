@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class NekoSkill : MonoBehaviour
 {
-    public Skill skill;
+    public string NameSkill;
     public Image Icon;
     public bool IsLockSkill;
     public StateSkill StateSkill;
     [SerializeField] private GameObject lockSkill;
     [SerializeField] private GameObject selectSkill;
-    private void Start()
-    {
-        lockSkill.SetActive(IsLockSkill);
-    }
+
     private void Update()
     {
         ChangeStateSkill();
+        ShowLockSkill();
     }
     void ChangeStateSkill()
     {
@@ -29,6 +27,10 @@ public class NekoSkill : MonoBehaviour
         {
             selectSkill.SetActive(false);
         }
+    }
+    void ShowLockSkill()
+    {
+        lockSkill.SetActive(IsLockSkill);
     }
 }
 
