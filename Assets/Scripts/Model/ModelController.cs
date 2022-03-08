@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+
 using DG.Tweening;
 using Sirenix.Utilities;
 using TMPro;
@@ -14,6 +16,7 @@ using Random = UnityEngine.Random;
 
 public class ModelController : MonoBehaviour
 {
+
     [SerializeField] private List<Sprite> classSpr;
     
     private string[] listTraitNames;
@@ -113,6 +116,17 @@ public class ModelController : MonoBehaviour
             }
         }
     }
+
+    [ContextMenu("Context")]
+    public void LogModel()
+	{
+        var sb = new StringBuilder();
+		foreach (var item in Traits)
+		{
+            sb.Append(item.Value.name.Replace("(Clone)","")).Append(",");
+		}
+        Debug.Log(sb.ToString());
+	}
 
     #region Change model
 

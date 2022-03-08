@@ -21,6 +21,208 @@
             </e>
           </e>
         </e>
+        <e p="Colyseus" t="Include">
+          <e p="Runtime" t="Include">
+            <e p="GameDevWare.Serialization" t="Include">
+              <e p="GenerateTypeSerializerAttribute.cs" t="Include" />
+              <e p="IJsonReader.cs" t="Include" />
+              <e p="IJsonWriter.cs" t="Include" />
+              <e p="IndexedDictionary.cs" t="Include" />
+              <e p="IValueInfo.cs" t="Include" />
+              <e p="Json.cs" t="Include" />
+              <e p="JsonMember.cs" t="Include" />
+              <e p="JsonReader.cs" t="Include" />
+              <e p="JsonReaderExtentions.cs" t="Include" />
+              <e p="JsonSerializationException.cs" t="Include" />
+              <e p="JsonStreamReader.cs" t="Include" />
+              <e p="JsonStreamWriter.cs" t="Include" />
+              <e p="JsonStringBuilderReader.cs" t="Include" />
+              <e p="JsonStringBuilderWriter.cs" t="Include" />
+              <e p="JsonStringReader.cs" t="Include" />
+              <e p="JsonTextReader.cs" t="Include" />
+              <e p="JsonTextWriter.cs" t="Include" />
+              <e p="JsonToken.cs" t="Include" />
+              <e p="JsonUtils.cs" t="Include" />
+              <e p="JsonWriter.cs" t="Include" />
+              <e p="JsonWriterExtentions.cs" t="Include" />
+              <e p="MessagePack" t="Include">
+                <e p="BigEndianBitConverter.cs" t="Include" />
+                <e p="DefaultMsgPackExtensionTypeHandler.cs" t="Include" />
+                <e p="EndianBitConverter.cs" t="Include" />
+                <e p="Endianness.cs" t="Include" />
+                <e p="LittleEndianBitConverter.cs" t="Include" />
+                <e p="MsgPackExtensionType.cs" t="Include" />
+                <e p="MsgPackExtensionTypeHandler.cs" t="Include" />
+                <e p="MsgPackReader.cs" t="Include" />
+                <e p="MsgPackTimestamp.cs" t="Include" />
+                <e p="MsgPackType.cs" t="Include" />
+                <e p="MsgPackWriter.cs" t="Include" />
+                <e p="UnknownMsgPackExtentionTypeException.cs" t="Include" />
+                <e p="UnknownMsgPackFormatException.cs" t="Include" />
+              </e>
+              <e p="Metadata" t="Include">
+                <e p="DataMemberDescription.cs" t="Include" />
+                <e p="FieldDescription.cs" t="Include" />
+                <e p="MemberDescription.cs" t="Include" />
+                <e p="PropertyDescription.cs" t="Include" />
+                <e p="ReflectionUtils.cs" t="Include" />
+                <e p="TypeDescription.cs" t="Include" />
+              </e>
+              <e p="MsgPack.cs" t="Include" />
+              <e p="ReflectionExtentions.cs" t="Include" />
+              <e p="SerializationContext.cs" t="Include" />
+              <e p="SerializationOptions.cs" t="Include" />
+              <e p="Serializers" t="Include">
+                <e p="ArraySerializer.cs" t="Include" />
+                <e p="BinarySerializer.cs" t="Include" />
+                <e p="BoundsSerializer.cs" t="Include" />
+                <e p="DateTimeOffsetSerializer.cs" t="Include" />
+                <e p="DateTimeSerializer.cs" t="Include" />
+                <e p="DictionaryEntrySerializer.cs" t="Include" />
+                <e p="DictionarySerializer.cs" t="Include" />
+                <e p="EnumNumberSerializer.cs" t="Include" />
+                <e p="EnumSerializer.cs" t="Include" />
+                <e p="GuidSerializer.cs" t="Include" />
+                <e p="Matrix4x4Serializer.cs" t="Include" />
+                <e p="MsgPackExtensionTypeSerializer.cs" t="Include" />
+                <e p="MsgPackTimestampSerializer.cs" t="Include" />
+                <e p="ObjectSerializer.cs" t="Include" />
+                <e p="PrimitiveTypeSerializer.cs" t="Include" />
+                <e p="QuaternionSerializer.cs" t="Include" />
+                <e p="RectSerializer.cs" t="Include" />
+                <e p="StreamSerializer.cs" t="Include" />
+                <e p="TimeSpanSerializer.cs" t="Include" />
+                <e p="UriSerializer.cs" t="Include" />
+                <e p="Vector2Serializer.cs" t="Include" />
+                <e p="Vector3Serializer.cs" t="Include" />
+                <e p="Vector4Serializer.cs" t="Include" />
+                <e p="VersionSerializer.cs" t="Include" />
+              </e>
+              <e p="TypeSerializer.cs" t="Include" />
+              <e p="TypeSerializerAttribute.cs" t="Include" />
+            </e>
+            <e p="LucidSight.Runtime.ColyseusSDK.asmdef" t="Include" />
+            <e p="Properties" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="ColyseusRequest.cs" t="Include" />
+              <e p="Managers" t="Include">
+                <e p="ColyseusManager.cs" t="Include" />
+              </e>
+              <e p="Models" t="Include">
+                <e p="ColyseusClient.cs" t="Include" />
+                <e p="ColyseusConnection.cs" t="Include" />
+                <e p="ColyseusErrorCode.cs" t="Include" />
+                <e p="ColyseusProtocol.cs" t="Include" />
+              </e>
+              <e p="Room" t="Include">
+                <e p="ColyseusMatchMakeResponse.cs" t="Include" />
+                <e p="ColyseusMessageHandler.cs" t="Include" />
+                <e p="ColyseusRoom.cs" t="Include" />
+                <e p="ColyseusRoomAvailable.cs" t="Include" />
+              </e>
+              <e p="Serializer" t="Include">
+                <e p="ColyseusNoneSerializer.cs" t="Include" />
+                <e p="ColyseusSchemaSerializer.cs" t="Include" />
+                <e p="ColyseusSerializer.cs" t="Include" />
+                <e p="Conversion" t="Include">
+                  <e p="BigEndianBitConverter.cs" t="Include" />
+                  <e p="DoubleConverter.cs" t="Include" />
+                  <e p="EndianBitConverter.cs" t="Include" />
+                  <e p="Endianness.cs" t="Include" />
+                  <e p="LittleEndianBitConverter.cs" t="Include" />
+                </e>
+                <e p="Schema" t="Include">
+                  <e p="ColyseusContext.cs" t="Include" />
+                  <e p="ColyseusDecoder.cs" t="Include" />
+                  <e p="ColyseusEncoder.cs" t="Include" />
+                  <e p="ColyseusReferenceTracker.cs" t="Include" />
+                  <e p="Schema.cs" t="Include" />
+                  <e p="Types" t="Include">
+                    <e p="ArraySchema.cs" t="Include" />
+                    <e p="ColyseusCustomType.cs" t="Include" />
+                    <e p="ColyseusReflection.cs" t="Include" />
+                    <e p="MapSchema.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="Settings" t="Include">
+                <e p="ColyseusSettings.cs" t="Include" />
+              </e>
+              <e p="Utils" t="Include">
+                <e p="ColyseusArrayUtils.cs" t="Include" />
+                <e p="ColyseusExceptions.cs" t="Include" />
+                <e p="ColyseusExtensionMethods.cs" t="Include" />
+                <e p="ColyseusHttpQSCollection.cs" t="Include" />
+                <e p="ColyseusHttpUtility.cs" t="Include" />
+                <e p="ColyseusObjectExtensions.cs" t="Include" />
+                <e p="ColyseusUnityWebRequestAwaiter.cs" t="Include" />
+              </e>
+            </e>
+            <e p="WebSocket" t="Include">
+              <e p="WebSocket.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Tests" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ColyseusTests" t="Include">
+                <e p="Schema" t="Include">
+                  <e p="ArraySchemaTypes" t="Include">
+                    <e p="ArraySchemaTypes.cs" t="Include" />
+                    <e p="IAmAChild.cs" t="Include" />
+                  </e>
+                  <e p="BackwardsForwards" t="Include">
+                    <e p="PlayerV1.cs" t="Include" />
+                    <e p="PlayerV2.cs" t="Include" />
+                    <e p="StateV1.cs" t="Include" />
+                    <e p="StateV2.cs" t="Include" />
+                  </e>
+                  <e p="Callbacks" t="Include">
+                    <e p="CallbacksState.cs" t="Include" />
+                    <e p="Container.cs" t="Include" />
+                    <e p="Ref.cs" t="Include" />
+                  </e>
+                  <e p="ChildSchemaTypes" t="Include">
+                    <e p="ChildSchemaTypes.cs" t="Include" />
+                    <e p="IAmAChild.cs" t="Include" />
+                  </e>
+                  <e p="FilteredTypes" t="Include">
+                    <e p="Player.cs" t="Include" />
+                    <e p="State.cs" t="Include" />
+                  </e>
+                  <e p="InheritedTypes" t="Include">
+                    <e p="Bot.cs" t="Include" />
+                    <e p="Entity.cs" t="Include" />
+                    <e p="InheritedTypes.cs" t="Include" />
+                    <e p="Player.cs" t="Include" />
+                  </e>
+                  <e p="InstanceSharingTypes" t="Include">
+                    <e p="Player.cs" t="Include" />
+                    <e p="Position.cs" t="Include" />
+                    <e p="State.cs" t="Include" />
+                  </e>
+                  <e p="MapSchemaInt8" t="Include">
+                    <e p="MapSchemaInt8.cs" t="Include" />
+                  </e>
+                  <e p="MapSchemaMoveNullifyType" t="Include">
+                    <e p="State.cs" t="Include" />
+                  </e>
+                  <e p="MapSchemaTypes" t="Include">
+                    <e p="IAmAChild.cs" t="Include" />
+                    <e p="MapSchemaTypes.cs" t="Include" />
+                  </e>
+                  <e p="PrimitiveTypes" t="Include">
+                    <e p="PrimitiveTypes.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="SchemaDeserializerTest.cs" t="Include" />
+              </e>
+              <e p="LucidSight.Editor.Tests.asmdef" t="Include" />
+              <e p="ServerSettingsEditor.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="ExternalDependencyManager" t="Include">
           <e p="Editor" t="Include">
             <e p="external-dependency-manager_version-1.2.169_manifest.txt" t="Include" />
@@ -135,6 +337,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Colyseous" t="Include">
+            <e p="ExampleManager.cs" t="Include" />
+          </e>
           <e p="GameInside" t="Include">
             <e p="BattleController.cs" t="Include" />
             <e p="CharacterInformation.cs" t="Include" />
@@ -151,6 +356,9 @@
           <e p="Gesture" t="Include">
             <e p="GetTouch.cs" t="Include" />
             <e p="WsClient.cs" t="Include" />
+          </e>
+          <e p="Map" t="Include">
+            <e p="MoveMap.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
             <e p="GoogleDrive" t="Include">
@@ -206,6 +414,8 @@
           </e>
         </e>
       </e>
+      <e p="LucidSight.Editor.Tests.csproj" t="IncludeRecursive" />
+      <e p="LucidSight.Runtime.ColyseusSDK.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Sirenix.OdinInspector.CompatibilityLayer.csproj" t="IncludeRecursive" />
