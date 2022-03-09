@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class NekoBar : MonoBehaviour
 {
-    public const int MAX_DAME = 200;
-    public const int MAX_SPEED = 200;
-    public const int MAX_HP = 200;
-    private const int DEFAULT = 100;
     private float currentDame;
     private float currentSpeed;
     private float currentHP;
@@ -29,9 +25,9 @@ public class NekoBar : MonoBehaviour
     }
     private void ShowNekoBar()
     {
-        sliderDame.fillAmount = (currentDame * DEFAULT / MAX_DAME)/100;
-        sliderSpeed.fillAmount = (currentSpeed * DEFAULT / MAX_SPEED)/100;
-        sliderHP.fillAmount = (currentHP * DEFAULT / MAX_HP)/100;
+        sliderDame.fillAmount = (currentDame * DataConst.DEFAULT_100 / DataConst.MAX_DAME_NEKO) / DataConst.DEFAULT_100;
+        sliderSpeed.fillAmount = (currentSpeed * DataConst.DEFAULT_100 / DataConst.MAX_SPEED_NEKO) / DataConst.DEFAULT_100;
+        sliderHP.fillAmount = (currentHP * DataConst.DEFAULT_100 / DataConst.MAX_HP_NEKO) / DataConst.DEFAULT_100;
         dameText.text = currentDame.ToString();
         speedText.text = currentSpeed.ToString();
         hpText.text = currentHP.ToString();

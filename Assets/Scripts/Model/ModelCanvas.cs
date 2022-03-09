@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ModelCanvas : MonoBehaviour
@@ -23,5 +24,8 @@ public class ModelCanvas : MonoBehaviour
         controller.InitButtonTraits(btnChangeTraits,btnChangeTraitsInfor);
         btnChangeTraitsInfor.ForEach(s => s.gameObject.SetActive(false));
     }        
-
+    public void LoadMap()
+    {
+        SceneManager.LoadScene(DataConst.MAP_SCENE);
+    }
 }

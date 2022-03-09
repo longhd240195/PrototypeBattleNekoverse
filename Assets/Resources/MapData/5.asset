@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d39daac987a9f4d80808f12409214f, type: 3}
+  m_Name: 5
+  m_EditorClassIdentifier: 
+  mapName: Area 5
+  dataLevel:
+  - levelName: Area 5 Level 1
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: 3ef29bf7e6f5adf43b173ea0197ecfe6, type: 3}
+    hp: 120
+    atk: 130
+    def: 140
+  - levelName: Area 5 Level 2
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: 47bfcf4756384c44eaebb554659149eb, type: 3}
+    hp: 130
+    atk: 140
+    def: 150
+  - levelName: Area 5 Level 3
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: fe0fc56b6d58fd440b55f3945c27cdcf, type: 3}
+    hp: 140
+    atk: 150
+    def: 160
+  - levelName: Area 5 Level 4
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: 0c2529d456cf0e34583a9b4ecf703efe, type: 3}
+    hp: 150
+    atk: 160
+    def: 170

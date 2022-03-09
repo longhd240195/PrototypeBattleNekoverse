@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d39daac987a9f4d80808f12409214f, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  mapName: Area 3
+  dataLevel:
+  - levelName: Area 3 Level 1
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: b764d6fd246fa534cb6f234cfd804563, type: 3}
+    hp: 100
+    atk: 100
+    def: 100
+  - levelName: Area 3 Level 2
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: dc5f1dcadec7d4643943de8f11b037d5, type: 3}
+    hp: 120
+    atk: 120
+    def: 120
+  - levelName: Area 3 Level 3
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: 11524b41611984a4d8e2e7f6e5a0f878, type: 3}
+    hp: 130
+    atk: 130
+    def: 130
+  - levelName: Area 3 Level 4
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: fe0fc56b6d58fd440b55f3945c27cdcf, type: 3}
+    hp: 140
+    atk: 140
+    def: 190

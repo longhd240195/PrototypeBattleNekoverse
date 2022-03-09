@@ -11,6 +11,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class ModelControllerTest : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class ModelControllerTest : MonoBehaviour
         }
 
     }
+
     public void InitNeko(Neko neko)
     {
         ChangeClass(neko.NekoClass);
@@ -123,7 +125,7 @@ public class ModelControllerTest : MonoBehaviour
         nekoView.ShowDesceptionSkill(btnSkill);
         for (int i = 0; i < btnSkill.Length; i++)
         {
-           
+
             if (i < neko.NekoSkill.Count)
             {
                 var btn = btnSkill[i];
