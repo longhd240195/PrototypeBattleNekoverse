@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ModelCanvas : MonoBehaviour
 {
     [SerializeField] private ModelControllerTest controller;
-    
+    [SerializeField] private GameLoading loadingLoader;
     [SerializeField] private Button[] btnChangeClass;
     [SerializeField] private Button[] btnChangeTraits;
     [SerializeField] private Button[] btnChangeTraitsInfor;
@@ -26,6 +26,6 @@ public class ModelCanvas : MonoBehaviour
     }        
     public void LoadMap()
     {
-        SceneManager.LoadScene(DataConst.MAP_SCENE);
+        loadingLoader.LoadLevel(DataConst.MAP_SCENE);
     }
 }

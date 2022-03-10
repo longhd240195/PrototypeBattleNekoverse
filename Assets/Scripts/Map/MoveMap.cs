@@ -5,10 +5,10 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 {
+    [SerializeField] private GameLoading levelLoader;
     [SerializeField] private Image img;
     [SerializeField] private Image preBattle;
     [SerializeField] private Image preBattle2;
@@ -212,7 +212,7 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     }
     public void OpenSceneYourNeko()
     {
-        SceneManager.LoadScene(DataConst.YOUR_NEKO_SCENE);
+        levelLoader.LoadLevel(DataConst.YOUR_NEKO_SCENE);
     }
     private Vector2 BottomLeft()
     {
