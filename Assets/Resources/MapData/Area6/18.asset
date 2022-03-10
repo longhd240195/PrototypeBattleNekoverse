@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85d39daac987a9f4d80808f12409214f, type: 3}
-  m_Name: 4
+  m_Name: 18
   m_EditorClassIdentifier: 
-  mapName: Area 4
+  mapName: Area 6 Land 1
   dataLevel:
-  - levelName: Area 4 Level 1
+  - levelName: Land 1 Level 1
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 9f9a946abaaeeca4ebca67b87fb308d4, type: 3}
-    hp: 100
+    icon: {fileID: 21300000, guid: ed63e6dd2fb9fbd429f2892f2aec9ac8, type: 3}
+    hp: 160
+    atk: 100
+    def: 170
+  - levelName: Land 1 Level 2
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: cd0af2c50427bc1449135a4f023a9801, type: 3}
+    hp: 170
     atk: 110
-    def: 120
-  - levelName: Area 4 Level 2
+    def: 180
+  - levelName: Land 1 Level 3
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 0c2529d456cf0e34583a9b4ecf703efe, type: 3}
-    hp: 110
+    icon: {fileID: 21300000, guid: 93f9d18ec77618a4696411f2732834a3, type: 3}
+    hp: 180
+    atk: 115
+    def: 190
+  - levelName: Land 1 Level 4
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: 97fb75244be88174987c708ee54d8765, type: 3}
+    hp: 190
     atk: 120
-    def: 130
-  - levelName: Area 4 Level 3
-    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
-      arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 5a7224698b9fcde4a91f80f1bf1a1b9e, type: 3}
-    hp: 120
-    atk: 130
-    def: 140
-  - levelName: Area 4 Level 4
-    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
-      arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: b764d6fd246fa534cb6f234cfd804563, type: 3}
-    hp: 130
-    atk: 140
-    def: 150
+    def: 200

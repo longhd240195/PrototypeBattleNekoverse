@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85d39daac987a9f4d80808f12409214f, type: 3}
-  m_Name: 5
+  m_Name: 0
   m_EditorClassIdentifier: 
-  mapName: Area 5
+  mapName: Area 1 Land
   dataLevel:
-  - levelName: Area 5 Level 1
+  - levelName: Area 1 Land Level 1
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 3ef29bf7e6f5adf43b173ea0197ecfe6, type: 3}
-    hp: 120
-    atk: 130
-    def: 140
-  - levelName: Area 5 Level 2
+    icon: {fileID: 21300000, guid: cd0af2c50427bc1449135a4f023a9801, type: 3}
+    hp: 123
+    atk: 78
+    def: 180
+  - levelName: Land Level 2
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 47bfcf4756384c44eaebb554659149eb, type: 3}
-    hp: 130
-    atk: 140
-    def: 150
-  - levelName: Area 5 Level 3
-    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
-      arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: fe0fc56b6d58fd440b55f3945c27cdcf, type: 3}
-    hp: 140
-    atk: 150
-    def: 160
-  - levelName: Area 5 Level 4
-    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
-      arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 0c2529d456cf0e34583a9b4ecf703efe, type: 3}
+    icon: {fileID: 21300000, guid: ed63e6dd2fb9fbd429f2892f2aec9ac8, type: 3}
     hp: 150
-    atk: 160
-    def: 170
+    atk: 100
+    def: 190
+  - levelName: Land Level 3
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: 97fb75244be88174987c708ee54d8765, type: 3}
+    hp: 160
+    atk: 110
+    def: 195
+  - levelName: Land Level 4
+    levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
+      arose within Inferno Highlands. Beware!
+    icon: {fileID: 21300000, guid: dd3dcf45342e2d9499a8aef27af7a6a5, type: 3}
+    hp: 170
+    atk: 120
+    def: 200

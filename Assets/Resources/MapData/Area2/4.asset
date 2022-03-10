@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85d39daac987a9f4d80808f12409214f, type: 3}
-  m_Name: 6
+  m_Name: 4
   m_EditorClassIdentifier: 
-  mapName: Area 6
+  mapName: Area 2 Land
   dataLevel:
-  - levelName: Area 6 Level 1
+  - levelName: Area 2 Land Level 1
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: dc5f1dcadec7d4643943de8f11b037d5, type: 3}
-    hp: 150
-    atk: 160
-    def: 170
-  - levelName: Area 6 Level 2
+    icon: {fileID: 21300000, guid: 9f9a946abaaeeca4ebca67b87fb308d4, type: 3}
+    hp: 100
+    atk: 110
+    def: 120
+  - levelName: Land Level 2
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: ed63e6dd2fb9fbd429f2892f2aec9ac8, type: 3}
-    hp: 160
-    atk: 170
-    def: 180
-  - levelName: Area 6 Level 3
+    icon: {fileID: 21300000, guid: 0c2529d456cf0e34583a9b4ecf703efe, type: 3}
+    hp: 110
+    atk: 120
+    def: 130
+  - levelName: Land Level 3
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 47bfcf4756384c44eaebb554659149eb, type: 3}
-    hp: 170
-    atk: 180
-    def: 190
-  - levelName: Area 6 Level 4
+    icon: {fileID: 21300000, guid: 5a7224698b9fcde4a91f80f1bf1a1b9e, type: 3}
+    hp: 120
+    atk: 130
+    def: 140
+  - levelName: Land Level 4
     levelDesception: You encountered scary fire-breathing creature.\n\nThese creatures
       arose within Inferno Highlands. Beware!
-    icon: {fileID: 21300000, guid: 3ef29bf7e6f5adf43b173ea0197ecfe6, type: 3}
-    hp: 180
-    atk: 190
-    def: 200
+    icon: {fileID: 21300000, guid: b764d6fd246fa534cb6f234cfd804563, type: 3}
+    hp: 130
+    atk: 140
+    def: 150
