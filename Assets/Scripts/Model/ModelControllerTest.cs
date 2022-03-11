@@ -16,10 +16,10 @@ using UnityEngine.SceneManagement;
 public class ModelControllerTest : MonoBehaviour
 {
     [SerializeField] private NekoView nekoView;
-
     [SerializeField] private List<Sprite> classSpr;
     [SerializeField] private Button[] btnChangeSkill;
     private List<Sprite> nekoImageSpr;
+    public List<Texture> listTextureNeko = new List<Texture>();
     private string[] listTraitNames;
     private Dictionary<string, List<TraitsDataModel>> traitsCache;
 
@@ -100,12 +100,12 @@ public class ModelControllerTest : MonoBehaviour
     {
         for (int i = 0; i < btnYourNeko.Length; i++)
         {
-            if (i < listNeko.Count)
+            if (i < listNeko.Count && listNeko.Count == listTextureNeko.Count)
             {
                 btnYourNeko[i].gameObject.SetActive(true);
                 int index = i;
-                var img = btnYourNeko[index].transform.GetChild(0).GetChild(0).GetComponent<Image>();
-                img.sprite = nekoImageSpr.Find(s => String.Compare(s.name, listNeko[i].NameImage.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+                var img = btnYourNeko[index].transform.GetChild(0).GetChild(0).GetComponent<RawImage>();
+                img.texture = listTextureNeko[index];
                 btnYourNeko[index].onClick.AddListener(() =>
                 {
                     neko = listNeko[index];

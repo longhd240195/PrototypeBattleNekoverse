@@ -296,12 +296,11 @@ public class DataTest
         neko4.traitsNeko.Add(listTraitNames[10], 1);
         neko4.traitsNeko.Add(listTraitNames[11], 1);
 
-
+        listNeko.Add(neko4);
         listNeko.Add(neko);
-        listNeko.Add(neko1);
         listNeko.Add(neko2);
         listNeko.Add(neko3);
-        listNeko.Add(neko4);
+        listNeko.Add(neko1);
         return listNeko;
     }
 }

@@ -23,11 +23,27 @@ public class NekoBar : MonoBehaviour
         currentHP = neko.HP;
         ShowNekoBar();
     }
+    public void InitPetBar(PetData pet)
+    {
+        currentDame = pet.Atk;
+        currentSpeed = pet.Def;
+        currentHP = pet.Hp;
+        ShowNekoBar();
+    }
     private void ShowNekoBar()
     {
         sliderDame.fillAmount = (currentDame * DataConst.DEFAULT_100 / DataConst.MAX_DAME_NEKO) / DataConst.DEFAULT_100;
         sliderSpeed.fillAmount = (currentSpeed * DataConst.DEFAULT_100 / DataConst.MAX_SPEED_NEKO) / DataConst.DEFAULT_100;
         sliderHP.fillAmount = (currentHP * DataConst.DEFAULT_100 / DataConst.MAX_HP_NEKO) / DataConst.DEFAULT_100;
+        dameText.text = currentDame.ToString();
+        speedText.text = currentSpeed.ToString();
+        hpText.text = currentHP.ToString();
+    }
+    private void ShowPetBar()
+    {
+        sliderDame.fillAmount = (currentDame * DataConst.DEFAULT_100 / DataConst.MAX_DAME_PET) / DataConst.DEFAULT_100;
+        sliderSpeed.fillAmount = (currentSpeed * DataConst.DEFAULT_100 / DataConst.MAX_SPEED_PET) / DataConst.DEFAULT_100;
+        sliderHP.fillAmount = (currentHP * DataConst.DEFAULT_100 / DataConst.MAX_HP_PET) / DataConst.DEFAULT_100;
         dameText.text = currentDame.ToString();
         speedText.text = currentSpeed.ToString();
         hpText.text = currentHP.ToString();
