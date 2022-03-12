@@ -135,7 +135,7 @@ public class ModelControllerTest : MonoBehaviour
                 n.NameSkill = neko.NekoSkill[i].NameSkill;
                 n.IsLockSkill = neko.NekoSkill[i].IsLockSkill;
 
-                var s = skillsCache.Find(s => String.Compare(s.NameSkill, n.NameSkill.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+                var s = skillsCache.Find(t => String.Compare(t.NameSkill, n.NameSkill.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
                 n.Icon.sprite = s.Icon;
 
                 btn.onClick.AddListener(() =>
