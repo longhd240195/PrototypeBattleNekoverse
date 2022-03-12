@@ -16,11 +16,8 @@ using Random = UnityEngine.Random;
 
 public class ModelController : MonoBehaviour
 {
-
-    [SerializeField] private List<Sprite> classSpr;
-    
     private string[] listTraitNames;
-
+    public Neko neko;
     private Dictionary<string, List<TraitsDataModel>> traitsCache;
 
     private Dictionary<string, GameObject> traits;
@@ -28,29 +25,23 @@ public class ModelController : MonoBehaviour
 
     private Dictionary<string, List<TraitsDataModel>> Cache =>
         traitsCache ?? (traitsCache = new Dictionary<string, List<TraitsDataModel>>());
-
+    //private List<SkillData> skillsCache;
     private void Awake()
     {
         InitTraitName();
         CacheFile();
     }
 
-    public void Start()
+    public void InitNeko(Neko neko)
     {
-        RandomInit();
-        ChangeClass(NekoClass.Fire); 
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
+        this.neko = neko;
+        ChangeClass(neko.NekoClass);
+        foreach (KeyValuePair<string, int> kvp in neko.traitsNeko)
         {
-//            RandomInit();
-            ChangeClass(NekoClass.Fire); 
+            ChangeTraits(kvp.Key, kvp.Value);
         }
     }
-
-
+    
     void InitTraitName()
     {
         listTraitNames = new[]
@@ -61,72 +52,16 @@ public class ModelController : MonoBehaviour
         };
     }
 
-    public void InitButtonTraits(Button[] btnTraits, Button[] btnTraitsInfor)
-    {
-        for (int i = 0; i < btnTraits.Length; i++)
-        {
-            if (i < listTraitNames.Length)
-            {
-                var n = listTraitNames[i];
-                var btn = btnTraits[i];
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = n;
-                btn.onClick.AddListener(() =>
-                {
-                    UpdateInforTraits(n, btnTraitsInfor);
-                    btnTraits.ForEach(s => s.transform.GetChild(1).gameObject.SetActive(false));
-                    btn.transform.GetChild(1).gameObject.SetActive(true);
-
-                    var indexModel = Random.Range(0,Cache[n].Count);
-                    ChangeTraits(n, indexModel);
-                    btnTraitsInfor.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
-                    btnTraitsInfor[indexModel].transform.GetChild(2).gameObject.SetActive(true);
-                });
-            }
-            else
-            {
-                btnTraits[i].gameObject.SetActive(false);
-            }
-        }
-    }
-
-    public void InitButtonClass(Button[] btnClasses)
-    {
-        var l = (NekoClass[]) Enum.GetValues(typeof(NekoClass));
-
-        for (int i = 0; i < btnClasses.Length; i++)
-        {
-            if (i < l.Length && i != 0)
-            {
-                var c = l[i];
-                var btn = btnClasses[i];
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = c.ToString();
-                var img = btnClasses[i].GetComponentsInChildren<Image>()[1];
-                img.sprite = classSpr.Find(s=>String.Compare(s.name, c.ToString(), StringComparison.OrdinalIgnoreCase)==0);
-
-                btn.onClick.AddListener(() =>
-                {
-                    ChangeClass(c);
-                    btnClasses.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
-                    btn.transform.GetChild(2).gameObject.SetActive(true);
-                });
-            }
-            else
-            {
-                btnClasses[i].gameObject.SetActive(false);
-            }
-        }
-    }
-
     [ContextMenu("Context")]
     public void LogModel()
-	{
+    {
         var sb = new StringBuilder();
-		foreach (var item in Traits)
-		{
-            sb.Append(item.Value.name.Replace("(Clone)","")).Append(",");
-		}
+        foreach (var item in Traits)
+        {
+            sb.Append(item.Value.name.Replace("(Clone)", "")).Append(",");
+        }
         Debug.Log(sb.ToString());
-	}
+    }
 
     #region Change model
 
@@ -136,39 +71,8 @@ public class ModelController : MonoBehaviour
         {
             ChangeTraits(traitName);
         }
-        
+
     }
-
-    public void UpdateInforTraits(string traitName, Button[] inforTraits)
-    {
-        for (int i = 0; i < inforTraits.Length; i++)
-        {
-            var btn = inforTraits[i];
-
-            if (i < Cache[traitName].Count)
-            {
-                var n = Cache[traitName];
-
-                var indexModel = i;
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = n[i].name;
-                btn.GetComponentsInChildren<Image>()[1].sprite = n[i].Icon;
-                btn.onClick.RemoveAllListeners();
-                btn.onClick.AddListener(() =>
-                {
-                    ChangeTraits(traitName, indexModel);
-                    inforTraits.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
-                    btn.transform.GetChild(2).gameObject.SetActive(true);
-                });
-                btn.gameObject.SetActive(true);
-            }
-            else
-            {
-                btn.gameObject.SetActive(false);
-            }
-        }
-    }
-
-
     void ChangeTraits(string traitName, int indexNextModel = -1)
     {
         var modelRandom = Cache[traitName];
@@ -215,39 +119,39 @@ public class ModelController : MonoBehaviour
     #region Load data
     public void CacheFile(string currentClass = "Water")
     {
-        ReadDataScripable(currentClass,ModelConst.Body);
-        ReadDataScripable(currentClass,ModelConst.Ear);
-        ReadDataScripable(currentClass,ModelConst.Nose);
-        ReadDataScripable(currentClass,ModelConst.Eye);
-        ReadDataScripable(currentClass,ModelConst.Eyebrow);
-        ReadDataScripable(currentClass,ModelConst.Medal);
-        ReadDataScripable(currentClass,ModelConst.Necklaces);
-        ReadDataScripable(currentClass,ModelConst.FrontFace);
-        ReadDataScripable(currentClass,ModelConst.Arms);
-        ReadDataScripable(currentClass,ModelConst.Accessories);
-        ReadDataScripable(currentClass,ModelConst.Back);
-        ReadDataScripable(currentClass,ModelConst.SideFace);
+        ReadDataScripable(currentClass, ModelConst.Body);
+        ReadDataScripable(currentClass, ModelConst.Ear);
+        ReadDataScripable(currentClass, ModelConst.Nose);
+        ReadDataScripable(currentClass, ModelConst.Eye);
+        ReadDataScripable(currentClass, ModelConst.Eyebrow);
+        ReadDataScripable(currentClass, ModelConst.Medal);
+        ReadDataScripable(currentClass, ModelConst.Necklaces);
+        ReadDataScripable(currentClass, ModelConst.FrontFace);
+        ReadDataScripable(currentClass, ModelConst.Arms);
+        ReadDataScripable(currentClass, ModelConst.Accessories);
+        ReadDataScripable(currentClass, ModelConst.Back);
+        ReadDataScripable(currentClass, ModelConst.SideFace);
     }
-    
- 
 
-    private void ReadDataScripable(string className ,string pathName)
+
+
+    private void ReadDataScripable(string className, string pathName)
     {
         var listItem = Resources.LoadAll<TraitsDataModel>($"ModelData/{className}/{pathName}").ToList();
         Cache.Add(pathName, listItem);
     }
-    
+
 
     #endregion
-    
-    
-    
+
+
+
     #region Modifier
 
     [ContextMenu("Create")]
     public void CreateAll()
     {
-        var l = (NekoClass[]) Enum.GetValues(typeof(NekoClass));
+        var l = (NekoClass[])Enum.GetValues(typeof(NekoClass));
         foreach (var c in l)
         {
             InitScripableObjectFile(c, ModelConst.Body);
@@ -268,9 +172,9 @@ public class ModelController : MonoBehaviour
         AssetDatabase.Refresh();
 #endif
     }
-    
-    
-    public void InitScripableObjectFile(NekoClass className,string pathName)
+
+
+    public void InitScripableObjectFile(NekoClass className, string pathName)
     {
         var path = $"Model/{className}/{pathName}";
         var pathSave = $"Assets/Resources/ModelData/{className}/{pathName}";
@@ -297,11 +201,11 @@ public class ModelController : MonoBehaviour
             model.Trait = pathName;
 #if UNITY_EDITOR
             AssetDatabase.CreateAsset(model, pathSave + "/" + model.name + ".asset");
-            EditorUtility.SetDirty(model); 
+            EditorUtility.SetDirty(model);
 #endif
         }
     }
-    
+
     [ContextMenu("Load sprite")]
     public void LoadSprite()
     {
@@ -310,14 +214,14 @@ public class ModelController : MonoBehaviour
         var pathSpr = $"Texture/Traits";
         var models = Resources.LoadAll<TraitsDataModel>(pathModel).ToList();
         var spr = Resources.LoadAll<Sprite>(pathSpr).ToList();
-        
+
         foreach (var ob in models)
         {
-            ob.Icon = spr.Find(s=>s.name == ob.name);
-            
+            ob.Icon = spr.Find(s => s.name == ob.name);
+
             EditorUtility.SetDirty(ob);
         }
-        
+
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 #endif

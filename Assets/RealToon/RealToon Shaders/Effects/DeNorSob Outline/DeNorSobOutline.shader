@@ -161,7 +161,7 @@ Shader  "Hidden/URP/RealToon/Effects/DeNorSobOutline"
                 float edgeSob_Mix = 0.0;
             #endif
 
-            return max(edgeDepth, max(edgeNormal, edgeSob_Mix));
+                return max(edgeDepth, max(edgeNormal, edgeSob_Mix));
 
         #endif
 

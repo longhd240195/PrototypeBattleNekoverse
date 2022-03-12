@@ -4,6 +4,7 @@
 //=========================
 
 #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
 #include "Assets/RealToon/RealToon Shaders/RealToon Core/URP/RT_URP_PROP.hlsl"
 
 half RTD_LVLC_F(float3 Light_Color_f3)
@@ -66,10 +67,10 @@ float EdgDet(float2 uv)
     float2 bottomRightUV = uv + float2(_ScreenSize.x * halfScaleCeil, -_ScreenSize.y * halfScaleFloor);
     float2 topLeftUV = uv + float2(-_ScreenSize.x * halfScaleFloor, _ScreenSize.y * halfScaleCeil);
 
-    float depth0 = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, bottomLeftUV).r;
-    float depth1 = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, topRightUV).r;
-    float depth2 = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, bottomRightUV).r;
-    float depth3 = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, topLeftUV).r;
+	float depth0 = SampleSceneDepth(bottomLeftUV);
+    float depth1 = SampleSceneDepth(topRightUV);
+    float depth2 = SampleSceneDepth(bottomRightUV);
+    float depth3 = SampleSceneDepth(topLeftUV);
 
     float depthDerivative0 = depth1 - depth0;
     float depthDerivative1 = depth3 - depth2;
@@ -206,7 +207,7 @@ float3 RT_SON(float4 vertexColor, float3 calNorm, float3 normalDirection, out fl
 
 	float3 RTD_SON_ON_OTHERS = lerp(normalDirection, TransformObjectToWorldNormal(-calNorm), RTD_SON_VCBCSON_OO);
 
-	float3 RTD_SNorm_OO = lerp((float3)1.0, smoothstep(0.0, 0.01, RTD_SON_ON_OTHERS), _ShowNormal);
+	float3 RTD_SNorm_OO = lerp(1, smoothstep(0.0, 0.01, RTD_SON_ON_OTHERS), _ShowNormal);
 	RTD_SON_CHE_1 = RTD_SNorm_OO;
 
 	float3 RTD_SON = RTD_SON_ON_OTHERS;
@@ -456,7 +457,7 @@ half RT_RL(float3 viewDirection , float3 normalDirection , half3 lightColor , ou
             
 	#else
 					
-		RTD_RL_LARL_OO = 1.0;
+		RTD_RL_LARL_OO = (half3)1.0;
 
 		half RTD_RL_CHE_1 = 0.0;
 

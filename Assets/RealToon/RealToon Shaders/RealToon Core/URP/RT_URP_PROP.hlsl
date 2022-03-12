@@ -237,19 +237,139 @@ CBUFFER_START(UnityPerMaterial)
 
 
 	//== Others
-		uniform half _ReduceShadowSpotDirectionalLight;
+		uniform half _ReduSha;
 		uniform sampler3D _DitherMaskLOD;
 	//==
 
 CBUFFER_END
 
+//===============================================================================
+//DOTS Instancing
+//===============================================================================
+#ifdef UNITY_DOTS_INSTANCING_ENABLED
+UNITY_DOTS_INSTANCING_START(MaterialPropertyMetadata)
 
+UNITY_DOTS_INSTANCED_PROP(half4, _MainColor)
+UNITY_DOTS_INSTANCED_PROP(half, _MVCOL)
+UNITY_DOTS_INSTANCED_PROP(half, _MCIALO)
+UNITY_DOTS_INSTANCED_PROP(half, _TexturePatternStyle)
+UNITY_DOTS_INSTANCED_PROP(half4, _HighlightColor)
+UNITY_DOTS_INSTANCED_PROP(half, _HighlightColorPower)
+
+UNITY_DOTS_INSTANCED_PROP(half, _OutlineWidth)
+UNITY_DOTS_INSTANCED_PROP(float3, _OEM)
+UNITY_DOTS_INSTANCED_PROP(int, _OutlineExtrudeMethod)
+UNITY_DOTS_INSTANCED_PROP(half, _OutlineOffset)
+UNITY_DOTS_INSTANCED_PROP(half4, _OutlineZPostionInCamera)
+UNITY_DOTS_INSTANCED_PROP(half, _OutlineColor)
+UNITY_DOTS_INSTANCED_PROP(half, _MixMainTexToOutline)
+UNITY_DOTS_INSTANCED_PROP(half, _NoisyOutlineIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _DynamicNoisyOutline)
+UNITY_DOTS_INSTANCED_PROP(half, _LightAffectOutlineColor)
+UNITY_DOTS_INSTANCED_PROP(half, _OutlineWidthAffectedByViewDistance)
+UNITY_DOTS_INSTANCED_PROP(half, _FarDistanceMaxWidth)
+UNITY_DOTS_INSTANCED_PROP(half, _VertexColorBlueAffectOutlineWitdh)
+
+UNITY_DOTS_INSTANCED_PROP(float, _DepthThreshold)
+
+UNITY_DOTS_INSTANCED_PROP(half, _SPECMODE)
+UNITY_DOTS_INSTANCED_PROP(half, _SPECIN)
+
+UNITY_DOTS_INSTANCED_PROP(half, _Opacity)
+UNITY_DOTS_INSTANCED_PROP(half, _TransparentThreshold)
+
+UNITY_DOTS_INSTANCED_PROP(half, _Cutout)
+UNITY_DOTS_INSTANCED_PROP(half, _AlphaBaseCutout)
+UNITY_DOTS_INSTANCED_PROP(half, _UseSecondaryCutout)
+
+UNITY_DOTS_INSTANCED_PROP(half, _NormalMapIntensity)
+
+UNITY_DOTS_INSTANCED_PROP(half, _Saturation)
+
+UNITY_DOTS_INSTANCED_PROP(half, _SelfLitIntensity)
+UNITY_DOTS_INSTANCED_PROP(half4, _SelfLitColor)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfLitPower)
+UNITY_DOTS_INSTANCED_PROP(half, _TEXMCOLINT)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfLitHighContrast)
+
+UNITY_DOTS_INSTANCED_PROP(half, _GlossTextureSoftness)
+UNITY_DOTS_INSTANCED_PROP(half, _PSGLOTEX)
+UNITY_DOTS_INSTANCED_PROP(half, _GlossTextureRotate)
+UNITY_DOTS_INSTANCED_PROP(half, _GlossTextureFollowObjectRotation)
+UNITY_DOTS_INSTANCED_PROP(half, _GlossTextureFollowLight)
+
+UNITY_DOTS_INSTANCED_PROP(half4, _OverallShadowColor)
+UNITY_DOTS_INSTANCED_PROP(half, _OverallShadowColorPower)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowShadowTAtViewDirection)
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowHardness)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowRealtimeShadowIntensity)
+
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowThreshold)
+UNITY_DOTS_INSTANCED_PROP(half, _VertexColorGreenControlSelfShadowThreshold)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowHardness)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowAffectedByLightShadowStrength)
+
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowIntensity)
+UNITY_DOTS_INSTANCED_PROP(half4, _SelfShadowColor)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowColorPower)
+
+UNITY_DOTS_INSTANCED_PROP(half4, _SelfShadowRealTimeShadowColor)
+UNITY_DOTS_INSTANCED_PROP(half, _SelfShadowRealTimeShadowColorPower)
+
+UNITY_DOTS_INSTANCED_PROP(half, _SmoothObjectNormal)
+UNITY_DOTS_INSTANCED_PROP(half, _VertexColorRedControlSmoothObjectNormal)
+UNITY_DOTS_INSTANCED_PROP(float4, _XYZPosition)
+UNITY_DOTS_INSTANCED_PROP(half, _ShowNormal)
+
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowColorTexturePower)
+
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowTIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowTLightThreshold)
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowTShadowThreshold)
+UNITY_DOTS_INSTANCED_PROP(half4, _ShadowTColor)
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowTColorPower)
+UNITY_DOTS_INSTANCED_PROP(half, _ShadowTHardness)
+UNITY_DOTS_INSTANCED_PROP(half, _STIL)
+UNITY_DOTS_INSTANCED_PROP(half, _ShowInAmbientLightShadowIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _ShowInAmbientLightShadowThreshold)
+UNITY_DOTS_INSTANCED_PROP(half, _LightFalloffAffectShadowT)
+
+UNITY_DOTS_INSTANCED_PROP(half4, _PTCol)
+UNITY_DOTS_INSTANCED_PROP(half, _PTexturePower)
+
+UNITY_DOTS_INSTANCED_PROP(half, _GIFlatShade)
+UNITY_DOTS_INSTANCED_PROP(half, _GIShadeThreshold)
+UNITY_DOTS_INSTANCED_PROP(half, _EnvironmentalLightingIntensity)
+
+UNITY_DOTS_INSTANCED_PROP(half, _LightAffectShadow)
+UNITY_DOTS_INSTANCED_PROP(half, _LightIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _DirectionalLightIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _PointSpotlightIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _LightFalloffSoftness)
+
+UNITY_DOTS_INSTANCED_PROP(half, _CustomLightDirectionIntensity)
+UNITY_DOTS_INSTANCED_PROP(half4, _CustomLightDirection)
+UNITY_DOTS_INSTANCED_PROP(half, _CustomLightDirectionFollowObjectRotation)
+
+UNITY_DOTS_INSTANCED_PROP(half, _ReflectionIntensity)
+UNITY_DOTS_INSTANCED_PROP(half, _ReflectionRoughtness)
+UNITY_DOTS_INSTANCED_PROP(half, _RefMetallic)
+
+UNITY_DOTS_INSTANCED_PROP(half, _RimLigInt)
+UNITY_DOTS_INSTANCED_PROP(half, _RimLightUnfill)
+UNITY_DOTS_INSTANCED_PROP(half, _RimLightSoftness)
+UNITY_DOTS_INSTANCED_PROP(half, _LightAffectRimLightColor)
+UNITY_DOTS_INSTANCED_PROP(half4, _RimLightColor)
+UNITY_DOTS_INSTANCED_PROP(half, _RimLightColorPower)
+UNITY_DOTS_INSTANCED_PROP(half, _RimLightInLight)
+
+UNITY_DOTS_INSTANCED_PROP(half, _ReduSha)
+
+UNITY_DOTS_INSTANCING_END(MaterialPropertyMetadata)
+#endif
 //===============================================================================
 //Non CBUF
 //===============================================================================
-
-TEXTURE2D(_CameraDepthTexture);
-SAMPLER(sampler_CameraDepthTexture);
 
 TEXTURE2D(_MainTex);
 SAMPLER(sampler_MainTex);

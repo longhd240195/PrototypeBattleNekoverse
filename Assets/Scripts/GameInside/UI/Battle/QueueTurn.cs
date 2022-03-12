@@ -7,7 +7,7 @@ public class QueueTurn : MonoBehaviour
 {
     [SerializeField] private RawImage rawImg;
     [SerializeField] private Image border;
-
+    //[SerializeField] private Image pointImage;
     private Color mainColor;
     
     public void Init(Texture mainImg, Color colorTeam)
@@ -15,6 +15,7 @@ public class QueueTurn : MonoBehaviour
         rawImg.texture = mainImg;
         mainColor = colorTeam;
         border.color = colorTeam;
+        //pointImage.color = colorPoint;
     }
     
     public QueueTurn SetCurrent(bool onQueue)

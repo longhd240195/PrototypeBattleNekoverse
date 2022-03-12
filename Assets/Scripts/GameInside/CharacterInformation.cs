@@ -15,6 +15,7 @@ public class CharacterInformation : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] GetTouch btnOnCharacter;
+    [SerializeField] ModelController neko;
     [SerializeField] Transform targetCanSelect;
     [SerializeField] Transform targetSelected;
     [SerializeField] Animator animator;
@@ -22,14 +23,14 @@ public class CharacterInformation : MonoBehaviour
     [SerializeField] private IngameHealthBar healthBar;
     [SerializeField] private Texture mainTexture;
 
-    [Header("Stat")] 
+    [Header("Stat")]
     [SerializeField] private CharacterAttribute initStat;
     [SerializeField, ReadOnly] private CharacterAttribute currentStat;
     [SerializeField] private List<SkillAttribute> skills;
-        
     private Vector3 localCone;
-    
+
     public BattleController Controller { get => controller; set => controller = value; }
+    public Neko Neko { get => neko.neko; set => neko.neko = value; }
 
     public float Health => CurrentStat.Hp;
     public float InitHealth => initStat.Hp;
@@ -46,14 +47,14 @@ public class CharacterInformation : MonoBehaviour
     private Action callbackDelay;
 
     private Coroutine loop;
-    
+
     #region Get reference on scene
     [ContextMenu("Init skill")]
     private void InitSkill()
     {
-        if(Skills.Count <= 0)
+        if (Skills.Count <= 0)
         {
-            Skills.Add(new SkillAttribute(currentStat) );
+            Skills.Add(new SkillAttribute(currentStat));
         }
     }
 
@@ -62,19 +63,19 @@ public class CharacterInformation : MonoBehaviour
     {
         btnOnCharacter = GetComponentInChildren<GetTouch>();
     }
-    
+
     [ContextMenu("Update Cone")]
     private void UpdateCone()
     {
         targetCanSelect = transform.Find("Cone");
     }
-    
+
     [ContextMenu("Update Selected")]
     private void UpdateSelected()
     {
         targetSelected = transform.Find("Cylinder");
     }
-    
+
     [ContextMenu("Update Animator")]
     private void UpdateAnimator()
     {
@@ -96,9 +97,21 @@ public class CharacterInformation : MonoBehaviour
         currentStat = (CharacterAttribute)initStat.Clone();
         healthBar = HpBarIngameSpawnner.Instance.GetTemp();
         healthBar.Init(this);
+        healthBar.SetImageClassNeko(this);
         healthBar.transform.position = transform.position + HpBarIngameSpawnner.Instance.PosTemp;
         UpdateStat();
     }
+    public void InitializeRed()
+    {
+        currentStat = (CharacterAttribute)initStat.Clone();
+        healthBar = HpBarIngameSpawnner.Instance.GetTemp();
+        healthBar.Init(this);
+        healthBar.SetColorHealBar(this);
+        healthBar.SetImageClassNeko(this);
+        healthBar.transform.position = transform.position + HpBarIngameSpawnner.Instance.PosTemp;
+        UpdateStat();
+    }
+
 
     public void UpdateStat()
     {
@@ -106,8 +119,8 @@ public class CharacterInformation : MonoBehaviour
         sb.Append($"HP: {CurrentStat.Hp} / {initStat.Hp}\n");
         sb.Append($"DAM: {CurrentStat.Damage} / {initStat.Damage}\n");
         sb.Append($"Speed: {CurrentStat.Speed}");
-     //   txtHP.text = sb.ToString();
-        if(btnOnCharacter)
+        //   txtHP.text = sb.ToString();
+        if (btnOnCharacter)
             btnOnCharacter.interactable = Alive;
     }
 
@@ -138,7 +151,7 @@ public class CharacterInformation : MonoBehaviour
                     BuffPower(ef.EndValue);
                     break;
                 case TypeSkill.Bonus_atk:
-                    BonusPower(ef.EndValue); 
+                    BonusPower(ef.EndValue);
                     break;
             }
 
@@ -188,14 +201,14 @@ public class CharacterInformation : MonoBehaviour
             CurrentStat.Hp = initStat.Hp;
 
         healthBar.ChangePercent(this);
-        
+
         LogChangeHeal(-numberEffect);
     }
 
     public void TakeDamage(float numberEffect)
     {
         CurrentStat.Hp -= numberEffect;
-        
+
         if (CurrentStat.Hp <= 0)
         {
             CurrentStat.Hp = 0;
@@ -203,7 +216,7 @@ public class CharacterInformation : MonoBehaviour
             gameObject.SetActive(false);
             Debug.Log("Dead");
         }
-        
+
         LogChangeHeal(numberEffect);
         healthBar.ChangePercent(this);
     }
@@ -215,7 +228,7 @@ public class CharacterInformation : MonoBehaviour
     {
         var infor = new StringBuilder();
         infor.Append($"{(damage > 0 ? "<color=red>-" : "<color=green>+")}{Mathf.Abs(damage)}");
-        TextController.Singleton.ShowInfo(transform.position,infor.ToString());
+        TextController.Singleton.ShowInfo(transform.position, infor.ToString());
         //TextSingleton.Instance.CreateText(transform.position, infor.ToString());
     }
 
@@ -223,7 +236,7 @@ public class CharacterInformation : MonoBehaviour
     {
         var infor = new StringBuilder();
         infor.Append($"Damage add {(power > 0 ? "<color=red>-" : "<color=green>+")}{Mathf.Abs(power)}");
-        TextController.Singleton.ShowInfo(transform.position,infor.ToString());
+        TextController.Singleton.ShowInfo(transform.position, infor.ToString());
     }
 
     #endregion
@@ -258,7 +271,8 @@ public class CharacterInformation : MonoBehaviour
         if (active)
         {
             loop = StartCoroutine(Loop());
-        }else if(loop != null)
+        }
+        else if (loop != null)
             StopCoroutine(loop);
     }
 
@@ -270,11 +284,11 @@ public class CharacterInformation : MonoBehaviour
             targetSelected.gameObject.SetActive(!targetSelected.gameObject.activeInHierarchy);
         }
     }
-    
-    
+
+
     public void PlayAnimation(string anim, Action callback = null)
     {
-        if(callback != null)
+        if (callback != null)
             callbackDelay = callback;
         animator.Play(anim);
     }
@@ -287,7 +301,7 @@ public class CharacterInformation : MonoBehaviour
         callbackDelay?.Invoke();
         callbackDelay = null;
     }
-    
+
 }
 
 
@@ -333,7 +347,7 @@ public class SkillAttribute
     public string NameSkill { get => nameSkill; set => nameSkill = value; }
     public SkillEffect[] Effects { get => effects; set => effects = value; }
     public string SkillAnimation => skillAnimation;
-    
+
     public SkillAttribute(string nameSkill, SkillEffect[] effects)
     {
         NameSkill = nameSkill;
@@ -351,7 +365,7 @@ public class SkillAttribute
     {
         foreach (var ef in Effects)
         {
-            ef.SetEndValue(attribute); 
+            ef.SetEndValue(attribute);
         }
     }
 
@@ -385,7 +399,8 @@ public enum TypeSkill
     Bonus_atk
 }
 
-public enum SkillTargetType { 
+public enum SkillTargetType
+{
     Self,
     Ally,
     Allies,
@@ -416,21 +431,21 @@ public class SkillEffect
 
     public void SetEndValue(CharacterAttribute multiple)
     {
-//        switch (type)
-//        {
-//            case TypeSkill.Damage:
-//                endValue = multiple * attribute;
-//                break;
-//            case TypeSkill.Heal:
-//                endValue = multiple * attribute;
-//                break;
-//            case TypeSkill.Buff_atk:
-//                endValue = attribute;
-//                break;
-//            case TypeSkill.Bonus_atk:
-//                endValue = attribute;
-//                break;
-//        }
+        //        switch (type)
+        //        {
+        //            case TypeSkill.Damage:
+        //                endValue = multiple * attribute;
+        //                break;
+        //            case TypeSkill.Heal:
+        //                endValue = multiple * attribute;
+        //                break;
+        //            case TypeSkill.Buff_atk:
+        //                endValue = attribute;
+        //                break;
+        //            case TypeSkill.Bonus_atk:
+        //                endValue = attribute;
+        //                break;
+        //        }
 
     }
 }

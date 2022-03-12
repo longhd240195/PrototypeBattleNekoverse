@@ -9,7 +9,10 @@ public class Neko
     public List<NekoSkill> NekoSkill;
     public Dictionary<string, int> traitsNeko = new Dictionary<string, int>();
     public string NameImage;
-    public int Atk;
-    public int Speed;
-    public int HP;
+    public float Atk;
+    public float Speed;
+    public float HP;
+    public float Magic;
+    public float Resist;
+    public float def;
 }

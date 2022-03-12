@@ -135,7 +135,7 @@ public class RealToonShaderGUI_URP_SRP : ShaderGUI
     MaterialProperty _OverallShadowColorPower = null;
     MaterialProperty _SelfShadowShadowTAtViewDirection = null;
 
-    MaterialProperty _ReduceShadowSpotDirectionalLight = null;
+    MaterialProperty _ReduSha = null;
     MaterialProperty _ShadowHardness = null;
 
     MaterialProperty _HighlightColor = null;
@@ -477,8 +477,8 @@ public class RealToonShaderGUI_URP_SRP : ShaderGUI
         //Refresh Settings [62]
         "This will refresh and re-apply the settings properly.\n\nClick this if there are some problem, after you update, after material reset or re-import RealToon.",
 
-        //Reduce Shadow (Spot Light & Directional Light) [63]
-        "The amount of reduce self cast shadow.\n\nThis option will only take effect when there's a 'Directional Light' or' Spot Light'.\nThis will not work in 'Directional Light' if the 'Directional Light' bias is 0." ,
+        //Reduce Shadow [63]
+        "The amount of reduce self cast shadow.\n\nThis option will only take effect when there's a 'Directional Light', 'Point' or 'Spot Light'." ,
 
         //Shadow Hardness [64] [RealTime Shadow]
         "Real time shadow hardness" ,
@@ -964,7 +964,7 @@ public class RealToonShaderGUI_URP_SRP : ShaderGUI
         _PointSpotlightIntensity = ShaderGUI.FindProperty("_PointSpotlightIntensity", properties);
         _LightFalloffSoftness = ShaderGUI.FindProperty("_LightFalloffSoftness", properties);
 
-        _ReduceShadowSpotDirectionalLight = ShaderGUI.FindProperty("_ReduceShadowSpotDirectionalLight", properties);
+        _ReduSha = ShaderGUI.FindProperty("_ReduSha", properties);
         _ShadowHardness = ShaderGUI.FindProperty("_ShadowHardness", properties);
 
         _CustomLightDirectionIntensity = ShaderGUI.FindProperty("_CustomLightDirectionIntensity", properties);
@@ -1646,7 +1646,7 @@ public class RealToonShaderGUI_URP_SRP : ShaderGUI
                     //materialEditor.ShaderProperty(_ReduceShadowPointLight, _ReduceShadowPointLight.displayName);
                     //materialEditor.ShaderProperty(_PointLightSVD, _PointLightSVD.displayName);
 
-                    materialEditor.ShaderProperty(_ReduceShadowSpotDirectionalLight, new GUIContent(_ReduceShadowSpotDirectionalLight.displayName, TOTIPS[63]));
+                    materialEditor.ShaderProperty(_ReduSha, new GUIContent(_ReduSha.displayName, TOTIPS[63]));
 
                     if (_N_F_HDLS.floatValue == 0 || _N_F_HPSS.floatValue == 0)
                     {

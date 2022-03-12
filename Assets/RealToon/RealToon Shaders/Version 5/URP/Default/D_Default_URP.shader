@@ -39,7 +39,7 @@ Shader "Universal Render Pipeline/RealToon/Version 5/Default/Default"
 		[Enum(UnityEngine.Rendering.BlendMode)] _BleModSour("Blend - Source", int) = 1
 		[Enum(UnityEngine.Rendering.BlendMode)] _BleModDest("Blend - Destination", int) = 0
 
-		_MaskTransparency("Mask Transparency", 2D) = "black" {} 
+		_MaskTransparency("Mask Transparency", 2D) = "black" {}
 
 		[Toggle(N_F_TRANSAFFSHA_ON)] _TransAffSha("Affect Shadow", Float) = 1.0
 
@@ -103,9 +103,7 @@ Shader "Universal Render Pipeline/RealToon/Version 5/Default/Default"
 
         [Toggle(NOKEWO)] _SelfShadowShadowTAtViewDirection ("Self Shadow & ShadowT At View Direction", Float ) = 0.0
 
-		//_ReduceShadowPointLight ("Reduce Shadow (Point Light)", float ) = 0 // Temporarily Removed
-		//_PointLightSVD ("Point Light Shadow Visibility Distance", float ) = 0 /Temporarily Removed
-		_ReduceShadowSpotDirectionalLight ("Reduce Shadow (Spot & Directional Light)", Float ) = 0.5
+		_ReduSha ("Reduce Shadow", Float ) = 0.5
 
 		_ShadowHardness ("Shadow Hardness", Range(0, 1)) = 0.0
 
@@ -175,7 +173,7 @@ Shader "Universal Render Pipeline/RealToon/Version 5/Default/Default"
 
         _FReflection ("FReflection", 2D) = "black" {}
 
-		_RimLigInt("Rim Light Intensity", Range(0, 1)) = 1.0 //
+		_RimLigInt("Rim Light Intensity", Range(0, 1)) = 1.0
         _RimLightUnfill ("Unfill", Float ) = 1.5
         [HDR] _RimLightColor ("Color", Color) = (1.0,1.0,1.0,1.0)
         _RimLightColorPower ("Color Power", Float ) = 10.0
@@ -230,7 +228,7 @@ Name"Outline"
 Tags{}
 //OL_NRE
 
-Cull[_DoubleSidedOutline]//OL_RCUL
+Cull [_DoubleSidedOutline]//OL_RCUL
 
 			Stencil {
             	Ref[_RefVal]
@@ -255,12 +253,12 @@ Cull[_DoubleSidedOutline]//OL_RCUL
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 			#include "Assets/RealToon/RealToon Shaders/RealToon Core/URP/RT_URP_Core.hlsl"
 
-			#pragma shader_feature_local N_F_TRANS_ON
-			#pragma shader_feature_local N_F_CO_ON
-			#pragma shader_feature_local N_F_EAL_ON
+			#pragma shader_feature_local_fragment N_F_TRANS_ON
+			#pragma shader_feature_local_fragment N_F_CO_ON
+			#pragma shader_feature_local_fragment N_F_EAL_ON
 			#pragma shader_feature_local N_F_O_ON
-			#pragma shader_feature_local N_F_DNO_ON
-			#pragma shader_feature_local N_F_UVCAND_ON
+			#pragma shader_feature_local_vertex N_F_DNO_ON
+			#pragma shader_feature_local_vertex N_F_UVCAND_ON
 
 			struct Attributes
             {
@@ -488,18 +486,20 @@ Cull[_DoubleSidedOutline]//OL_RCUL
             #pragma only_renderers d3d9 d3d11 vulkan glcore gles3 gles metal xboxone ps4 playstation wiiu switch
             #pragma target 3.0
 
-            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
-            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
-            #pragma multi_compile _ _ADDITIONAL_LIGHTS
-            #pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
+			#pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
+			#pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+			#pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
             #pragma multi_compile _ _SHADOWS_SOFT
 
+			#pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
+			#pragma multi_compile _ SHADOWS_SHADOWMASK
 			#pragma multi_compile _ DIRLIGHTMAP_COMBINED
 			#pragma multi_compile _ LIGHTMAP_ON
-			#pragma multi_compile _ _MIXED_LIGHTING_SUBTRACTIVE
+
             #pragma multi_compile_fog
 
             #pragma multi_compile_instancing
+			#pragma multi_compile _ DOTS_INSTANCING_ON
 
             #pragma vertex LitPassVertex
             #pragma fragment LitPassFragment
@@ -507,35 +507,35 @@ Cull[_DoubleSidedOutline]//OL_RCUL
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 			#include "Assets/RealToon/RealToon Shaders/RealToon Core/URP/RT_URP_Core.hlsl"
 
-			#pragma shader_feature_local N_F_USETLB_ON
-			#pragma shader_feature_local N_F_TRANS_ON
+			#pragma shader_feature_local_fragment N_F_USETLB_ON
+			#pragma shader_feature_local_fragment N_F_TRANS_ON
 
-			#pragma shader_feature_local N_F_O_ON
-			#pragma shader_feature_local N_F_O_MOTTSO_ON
-			#pragma shader_feature_local N_F_MC_ON
-			#pragma shader_feature_local N_F_NM_ON
-			#pragma shader_feature_local N_F_CO_ON
-			#pragma shader_feature_local N_F_SL_ON
-			#pragma shader_feature_local N_F_CA_ON
-			#pragma shader_feature_local N_F_GLO_ON
-			#pragma shader_feature_local N_F_GLOT_ON
-			#pragma shader_feature_local N_F_SS_ON
-			#pragma shader_feature_local N_F_SCT_ON
-			#pragma shader_feature_local N_F_ST_ON
-			#pragma shader_feature_local N_F_STIS_ON
-			#pragma shader_feature_local N_F_STIAL_ON 
+			#pragma shader_feature_local_fragment N_F_O_ON
+			#pragma shader_feature_local_fragment N_F_O_MOTTSO_ON
+			#pragma shader_feature_local_fragment N_F_MC_ON
+			#pragma shader_feature_local_fragment N_F_NM_ON
+			#pragma shader_feature_local_fragment N_F_CO_ON
+			#pragma shader_feature_local_fragment N_F_SL_ON
+			#pragma shader_feature_local_fragment N_F_CA_ON
+			#pragma shader_feature_local_fragment N_F_GLO_ON
+			#pragma shader_feature_local_fragment N_F_GLOT_ON
+			#pragma shader_feature_local_fragment N_F_SS_ON
+			#pragma shader_feature_local_fragment N_F_SCT_ON
+			#pragma shader_feature_local_fragment N_F_ST_ON
+			#pragma shader_feature_local_fragment N_F_STIS_ON
+			#pragma shader_feature_local_fragment N_F_STIAL_ON 
 			#pragma shader_feature_local N_F_SON_ON
-			#pragma shader_feature_local N_F_PT_ON
-			#pragma shader_feature_local N_F_RELGI_ON
-			#pragma shader_feature_local N_F_CLD_ON
-			#pragma shader_feature_local N_F_R_ON
-			#pragma shader_feature_local N_F_FR_ON
-			#pragma shader_feature_local N_F_RL_ON
-			#pragma shader_feature_local N_F_HDLS_ON
-			#pragma shader_feature_local N_F_HPSS_ON
-			#pragma shader_feature_local N_F_EAL_ON
-			#pragma shader_feature_local N_F_NLASOBF_ON
-			#pragma shader_feature_local N_F_OFLMB_ON
+			#pragma shader_feature_local_fragment N_F_PT_ON
+			#pragma shader_feature_local_fragment N_F_RELGI_ON
+			#pragma shader_feature_local_fragment N_F_CLD_ON
+			#pragma shader_feature_local_fragment N_F_R_ON
+			#pragma shader_feature_local_fragment N_F_FR_ON
+			#pragma shader_feature_local_fragment N_F_RL_ON
+			#pragma shader_feature_local_fragment N_F_HDLS_ON
+			#pragma shader_feature_local_fragment N_F_HPSS_ON
+			#pragma shader_feature_local_fragment N_F_EAL_ON
+			#pragma shader_feature_local_fragment N_F_NLASOBF_ON
+			#pragma shader_feature_local_fragment N_F_OFLMB_ON
 
 			#define _EMISSION
 
@@ -562,7 +562,7 @@ Cull[_DoubleSidedOutline]//OL_RCUL
                 half3 tangentWS                 : TEXCOORD4;
                 half3 bitangentWS               : TEXCOORD5;
 
-#if _MAIN_LIGHT_SHADOWS
+#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
                 float4 shadowCoord              : TEXCOORD6; 
 #endif
 				float4 projPos					: TEXCOORD7;
@@ -603,11 +603,11 @@ Cull[_DoubleSidedOutline]//OL_RCUL
 
 				OUTPUT_LIGHTMAP_UV(input.lightmapUV, unity_LightmapST, output.lightmapUV);
 
-				#if N_F_SON_ON //
+				#if N_F_SON_ON
 					output.smoNorm = calcNorm(float3(input.positionOS.x + ((_XYZPosition.x) * 0.1), input.positionOS.y + ((_XYZPosition.y) * 0.1), input.positionOS.z + ((_XYZPosition.z) * 0.1)));
-				#endif //
+				#endif
 
-#ifdef _MAIN_LIGHT_SHADOWS
+#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
 
                 output.shadowCoord = GetShadowCoord(vertexInput);
 #endif
@@ -623,17 +623,27 @@ Cull[_DoubleSidedOutline]//OL_RCUL
 
 				float3 positionWS = input.positionWSAndFogFactor.xyz;
 
-#ifdef _MAIN_LIGHT_SHADOWS
+				//=========
 
-				#if defined(MAIN_LIGHT_CALCULATE_SHADOWS)
-					Light mainLight = GetMainLight(TransformWorldToShadowCoord(input.posWorld.xyz));
+				float4 shadow_mask = SAMPLE_SHADOWMASK(input.lightmapUV);
+
+				#if defined(SHADOWS_SHADOWMASK) && defined(LIGHTMAP_ON)
+					half4 shadowMask = shadow_mask;
+				//#elif !defined (LIGHTMAP_ON)
+					//half4 shadowMask = unity_ProbesOcclusion;
 				#else
-					Light mainLight = GetMainLight(input.shadowCoord);
+					half4 shadowMask = half4(1.0, 1.0, 1.0, 1.0);
 				#endif
 
-#else
-				Light mainLight = GetMainLight();
-#endif
+				//==========
+
+				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
+					Light mainLight = GetMainLight(input.shadowCoord, positionWS, shadowMask);
+				#elif defined(MAIN_LIGHT_CALCULATE_SHADOWS)
+					Light mainLight = GetMainLight(TransformWorldToShadowCoord(positionWS), positionWS, shadowMask);
+				#else
+					Light mainLight = GetMainLight();
+				#endif
 
 				//RT_NM
 				float3 normalLocal = RT_NM(input.uv);
@@ -836,7 +846,7 @@ Cull[_DoubleSidedOutline]//OL_RCUL
 
 
 				#ifndef N_F_OFLMB_ON
-					half3 RTD_R_OFF_OTHERS = lerp( lerp( RTD_ST_LAF, RTD_LAS, RTD_ST_IS) , lerp( RTD_ST_LAF, lerp( lerp( RTD_MCIALO_IL * RTD_HL , RTD_GLO_COL , RTD_GLO_OTHERS) , RTD_RL_LARL_OO , RTD_RL_CHE_1 ) * lightColor.rgb, RTD_ST) , RTD_SS );
+					half3 RTD_R_OFF_OTHERS = lerp( lerp( RTD_ST_LAF, RTD_LAS, RTD_ST_IS) , lerp( RTD_ST_LAF, lerp( lerp( RTD_MCIALO_IL * RTD_HL , RTD_GLO_COL , RTD_GLO_OTHERS) , RTD_RL_LARL_OO , RTD_RL_CHE_1 ) * lightColor.rgb, RTD_ST) , RTD_SS ) ;
 				#else
 					half3 RTD_R_OFF_OTHERS = (half3)0.0;
 				#endif
@@ -865,19 +875,19 @@ Cull[_DoubleSidedOutline]//OL_RCUL
 
 						#if N_F_EAL_ON
 
-							int additionalLightsCount = GetAdditionalLightsCount();
+							uint additionalLightsCount = GetAdditionalLightsCount();
 
-							for (int i = 0; i < additionalLightsCount; ++i)
+							for (uint i = 0u; i < additionalLightsCount; ++i)
 							{
-								Light light = GetAdditionalLight(i, positionWS);
+								Light light = GetAdditionalLight(i, input.posWorld.xyz, shadowMask);
 
 								float3 lightDirection = light.direction;
 
 
 								#if N_F_NLASOBF_ON
-									float3 lightColor = lerp((float3)0.0,light.color.rgb,isFrontFace);
+									half3 lightColor = lerp((half3)0.0,light.color.rgb,isFrontFace);
 								#else
-									float3 lightColor = light.color.rgb;
+									half3 lightColor = light.color.rgb;
 								#endif
 
 								half RTD_LVLC = RTD_LVLC_F(lightColor.rgb);
@@ -1030,10 +1040,13 @@ float3 Init_FO=RTD_CA*RTD_SON_CHE_1;
             #pragma target 3.0
 
             #pragma multi_compile_instancing
+			#pragma multi_compile _ DOTS_INSTANCING_ON
 
-			#pragma shader_feature_local N_F_TRANS_ON 
-			#pragma shader_feature_local N_F_TRANSAFFSHA_ON
-			#pragma shader_feature_local N_F_CO_ON
+			#pragma shader_feature_local_fragment N_F_TRANS_ON
+			#pragma shader_feature_local_fragment N_F_TRANSAFFSHA_ON
+			#pragma shader_feature_local_fragment N_F_CO_ON
+
+			#pragma multi_compile_vertex _ _CASTING_PUNCTUAL_LIGHT_SHADOW
 
             #pragma vertex ShadowPassVertex
             #pragma fragment ShadowPassFragment
@@ -1044,6 +1057,7 @@ float3 Init_FO=RTD_CA*RTD_SON_CHE_1;
 			////uniform half _PointLightSVD; //Temporarily Removed
 
 			float3 _LightDirection;
+			float3 _LightPosition;
 
 			struct Attributes
 			{
@@ -1072,19 +1086,26 @@ float3 Init_FO=RTD_CA*RTD_SON_CHE_1;
 				float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
 				float3 normalWS = TransformObjectToWorldDir(input.normalOS);
 
-				float invNdotL = 1.0 - saturate(dot(_LightDirection, normalWS));
+				#if _CASTING_PUNCTUAL_LIGHT_SHADOW
+					float3 lightDirectionWS = normalize(_LightPosition - positionWS);
+				#else
+					float3 lightDirectionWS = _LightDirection;
+				#endif
+
+				float invNdotL = 1.0 - saturate(dot(lightDirectionWS, normalWS));
 				float scale = invNdotL * _ShadowBias.y;
 
-				positionWS = _LightDirection * _ShadowBias.xxx + positionWS;
+				positionWS = lightDirectionWS * _ShadowBias.xxx + positionWS;
 				positionWS = normalWS * scale.xxx + positionWS;
 				float4 positionCS = TransformWorldToHClip( positionWS );
 
 
-			#if UNITY_REVERSED_Z
-				positionCS.z = min(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE) + - _ReduceShadowSpotDirectionalLight * 0.01;
-			#else
-				positionCS.z = max(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE) + _ReduceShadowSpotDirectionalLight * 0.01;
-			#endif
+				#if UNITY_REVERSED_Z
+					positionCS.z = min(positionCS.z, UNITY_NEAR_CLIP_VALUE) + -_ReduSha * 0.01;
+				#else
+					positionCS.z = max(positionCS.z, UNITY_NEAR_CLIP_VALUE) + _ReduSha * 0.01;
+				#endif
+
 
 				return positionCS;
 
@@ -1168,6 +1189,7 @@ float3 Init_FO=RTD_CA*RTD_SON_CHE_1;
             #pragma fragment DepthOnlyFragment
 
             #pragma multi_compile_instancing
+			#pragma multi_compile _ DOTS_INSTANCING_ON
 
 			#include "Assets/RealToon/RealToon Shaders/RealToon Core/URP/RT_URP_PROP.hlsl"
 
@@ -1205,6 +1227,82 @@ float3 Init_FO=RTD_CA*RTD_SON_CHE_1;
             ENDHLSL
         }
 
+        Pass
+        {
+            Name "DepthNormals"
+            Tags{"LightMode" = "DepthNormals"}
+
+            ZWrite On
+            Cull[_Cull]
+
+            HLSLPROGRAM
+			#pragma prefer_hlslcc gles
+			#pragma only_renderers d3d9 d3d11 vulkan glcore gles3 gles metal xboxone ps4 playstation wiiu switch 
+            #pragma target 3.0
+
+            #pragma vertex DepthNormalsVertex
+            #pragma fragment DepthNormalsFragment
+
+            // -------------------------------------
+            // Material Keywords
+            #pragma shader_feature_local _NORMALMAP
+            #pragma shader_feature_local_fragment _ALPHATEST_ON
+            #pragma shader_feature_local_fragment _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+
+            //--------------------------------------
+            // GPU Instancing
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ DOTS_INSTANCING_ON
+
+			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceInput.hlsl"
+			#include "Assets/RealToon/RealToon Shaders/RealToon Core/URP/RT_URP_PROP.hlsl"
+
+			struct Attributes
+			{
+				float4 positionOS   : POSITION;
+				float4 tangentOS    : TANGENT;
+				float2 texcoord     : TEXCOORD0;
+				float3 normal       : NORMAL;
+				UNITY_VERTEX_INPUT_INSTANCE_ID
+			};
+
+			struct Varyings
+			{
+				float4 positionCS   : SV_POSITION;
+				float2 uv           : TEXCOORD1;
+				float3 normalWS     : TEXCOORD2;
+
+				UNITY_VERTEX_INPUT_INSTANCE_ID
+				UNITY_VERTEX_OUTPUT_STEREO
+			};
+
+			Varyings DepthNormalsVertex(Attributes input)
+			{
+				Varyings output = (Varyings)0;
+				UNITY_SETUP_INSTANCE_ID(input);
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
+
+				output.uv         = TRANSFORM_TEX(input.texcoord, _MainTex);
+				output.positionCS = TransformObjectToHClip(input.positionOS.xyz);
+
+				VertexNormalInputs normalInput = GetVertexNormalInputs(input.normal, input.tangentOS);
+				output.normalWS = NormalizeNormalPerVertex(normalInput.normalWS);
+
+				return output;
+			}
+
+			float4 DepthNormalsFragment(Varyings input) : SV_TARGET
+			{
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
+
+				Alpha(SampleAlbedoAlpha(input.uv, TEXTURE2D_ARGS(_MainTex, sampler_MainTex)).a, _MainColor, _Cutout);
+				return float4(PackNormalOctRectEncode(TransformWorldToViewDir(input.normalWS, true)), 0.0, 0.0);
+			}
+
+            ENDHLSL
+        }
+
 		Pass
 		{
 			Name "Meta"
@@ -1220,7 +1318,7 @@ float3 Init_FO=RTD_CA*RTD_SON_CHE_1;
 			#pragma vertex UniversalVertexMeta
 			#pragma fragment UniversalFragmentMeta
 
-			#pragma shader_feature_local N_F_SL_ON
+			#pragma shader_feature_local_fragment N_F_SL_ON
 
 			#include "Assets/RealToon/RealToon Shaders/RealToon Core/URP/RT_URP_Core.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/MetaInput.hlsl"

@@ -20,6 +20,7 @@ public class PetController : MonoBehaviour
     {
         InitObjPet(CachePet, content.gameObject);
         InitButtonPet(listPetBtns);
+        petView.SetLayoutPet(CachePet[0]);
     }
 
     void InitObjPet(List<PetData> list, GameObject parent)
@@ -42,8 +43,6 @@ public class PetController : MonoBehaviour
             btn.onClick.AddListener(() =>
             {
                 petView.SetLayoutPet(petData);
-                Debug.Log(petData.PetName);
-                Debug.Log(petData.RateNumber);
             });
         }
     }
