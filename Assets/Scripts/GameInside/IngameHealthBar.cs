@@ -14,8 +14,9 @@ public class IngameHealthBar : MonoBehaviour
     [SerializeField] private Image hpLost;
     [SerializeField] private Image classSpr;
     [SerializeField] private TextMeshPro txt;
+    [SerializeField] private TextMeshPro txtLevel;
     [SerializeField] private TextMeshPro txtName;
-
+    [SerializeField] private List<Image> listMana;
     [SerializeField] private List<Sprite> listClassSprs;
     private float currentPercent;
 
@@ -25,6 +26,7 @@ public class IngameHealthBar : MonoBehaviour
         main.transform.localScale = border.transform.localScale;
         txtName.text = infor.Neko.NekoName;
         txt.text = $"{infor.Health}/{infor.InitHealth}";
+        txtLevel.text = infor.CurrentStat.Level.ToString();
         currentPercent = 1;
     }
 
@@ -44,7 +46,7 @@ public class IngameHealthBar : MonoBehaviour
     {
         Color color = Color.red;
         main.color = color;
-        main.transform.parent.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 0.2f);
+        hpLost.color = new Color(color.r, color.g, color.b, 0.2f);
     }
     public void SetImageClassNeko(CharacterInformation infor)
     {

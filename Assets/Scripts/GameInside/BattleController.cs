@@ -50,6 +50,7 @@ public class BattleController : MonoBehaviour
                 clr[i].InitNeko(listNeko[i]);
             }
         }
+        InitBattleOderSelect();
     }
 
     private void Update()
@@ -107,7 +108,14 @@ public class BattleController : MonoBehaviour
 
         UpdateUIQueue();
     }
-
+    private void InitBattleOderSelect()
+    {
+        for (int i = 0; i < queueTurns.Count; i++)
+        {
+            //queueTurns[i].gameObject.transform.Find("Select").gameObject.SetActive(false);
+            Debug.Log(queueTurns[i].gameObject.transform.Find("Select").name);
+        }
+    }
     private void UpdateUIQueue()
     {
         for (int i = 0; i < queueTurns.Count; i++)
