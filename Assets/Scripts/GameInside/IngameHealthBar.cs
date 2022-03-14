@@ -5,15 +5,17 @@ using System.Diagnostics.Tracing;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IngameHealthBar : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer border;
-    [SerializeField] private SpriteRenderer main;
-    [SerializeField] private SpriteRenderer hpLost;
-    [SerializeField] private SpriteRenderer classSpr;
+    [SerializeField] private Image border;
+    [SerializeField] private Image main;
+    [SerializeField] private Image hpLost;
+    [SerializeField] private Image classSpr;
     [SerializeField] private TextMeshPro txt;
     [SerializeField] private TextMeshPro txtName;
+
     [SerializeField] private List<Sprite> listClassSprs;
     private float currentPercent;
 
@@ -30,19 +32,19 @@ public class IngameHealthBar : MonoBehaviour
     {
         var percent = infor.Health / infor.InitHealth;
         var cl = hpLost.transform.localScale;
-        hpLost.transform.localScale = new Vector3(currentPercent, cl.y, cl.z);
+        //hpLost.transform.localScale = new Vector3(currentPercent, cl.y, cl.z);
 
         currentPercent = percent;
-
-        main.transform.localScale = new Vector3(currentPercent, cl.y, cl.z);
-        hpLost.transform.DOScaleX(currentPercent, .5f).SetEase(Ease.Linear);
+        //main.transform.localScale = new Vector3(currentPercent, cl.y, cl.z);
+        main.fillAmount = currentPercent;
+        //hpLost.transform.DOScaleX(currentPercent, .5f).SetEase(Ease.Linear);
         txt.text = $"{infor.Health}/{infor.InitHealth}";
     }
     public void SetColorHealBar(CharacterInformation infor)
     {
         Color color = Color.red;
         main.color = color;
-
+        main.transform.parent.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 0.2f);
     }
     public void SetImageClassNeko(CharacterInformation infor)
     {
