@@ -14,6 +14,10 @@ public class DataConst
     public const int MAX_DAME_NEKO = 200;
     public const int MAX_SPEED_NEKO = 200;
     public const int MAX_HP_NEKO = 200;
+    public const int MAX_MAGIC_NEKO = 200;
+    public const int MAX_DEF_NEKO = 200;
+    public const int MAX_RESIST_NEKO = 200;
+
     public const int MAX_DAME_PET = 500;
     public const int MAX_SPEED_PET = 500;
     public const int MAX_HP_PET = 500;

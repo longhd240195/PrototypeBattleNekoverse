@@ -12,10 +12,10 @@ public class TextController : MonoBehaviour
 
     private Camera mainCam;
     private List<TextMeshPro> list;
-    
-    
+
+
     private List<TextMeshPro> List => list ?? (list = new List<TextMeshPro>());
-    
+
     void Awake()
     {
         Singleton = this;
@@ -25,12 +25,13 @@ public class TextController : MonoBehaviour
     public void ShowInfo(Vector3 position, string information)
     {
         var txt = GetText();
-
+        Debug.Log(position);
         txt.transform.position = position + Vector3.up;
-//        txt.transform.rotation = 
-//            Quaternion.LookRotation(txt.transform.position - mainCam.transform.position);
-//        txt.transform.LookAt(mainCam.transform,Vector3.up);
-        txt.color = new Color(0,0,0,0);
+        Debug.Log(txt.transform.position);
+        //        txt.transform.rotation = 
+        //            Quaternion.LookRotation(txt.transform.position - mainCam.transform.position);
+        //        txt.transform.LookAt(mainCam.transform,Vector3.up);
+        txt.color = new Color(0, 0, 0, 0);
         txt.text = information;
 
         txt.gameObject.SetActive(true);
@@ -40,7 +41,7 @@ public class TextController : MonoBehaviour
         txt.transform.DOScale(1, 0.2f);
         txt.DOColor(Color.white, .2f);
         txt.DOColor(new Color(0, 0, 0, 0), .2f)
-            .SetDelay(.8f).OnComplete(()=>txt.gameObject.SetActive(false));
+            .SetDelay(.8f).OnComplete(() => txt.gameObject.SetActive(false));
     }
 
     private TextMeshPro GetText()
@@ -54,5 +55,5 @@ public class TextController : MonoBehaviour
 
         return result;
     }
-    
+
 }

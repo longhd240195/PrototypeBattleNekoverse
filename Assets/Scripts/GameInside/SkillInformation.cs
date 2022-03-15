@@ -13,7 +13,7 @@ public class SkillInformation : MonoBehaviour
     [SerializeField] private UIButton btnClick;
     [SerializeField] private Image signSelected;
     [SerializeField] private TextMeshProUGUI txt;
-
+    [SerializeField] private Image iconSkill;
     SkillAttribute cache;
 
     private void Reset()
@@ -51,7 +51,7 @@ public class SkillInformation : MonoBehaviour
 
         cache = skill.Clone() as SkillAttribute;
         cache.Apply(character);
-        txt.text = cache.ToString() ;
+        txt.text = cache.ToString();
     }
 
     public void SetController(BattleController controller)
@@ -67,8 +67,9 @@ public class SkillInformation : MonoBehaviour
     private void StartDrag()
     {
         SkillInfo = Instantiate(imgFaded, transform.parent.parent).gameObject;
-        var txt = SkillInfo.GetComponentInChildren<TextMeshProUGUI>();
-        txt.text = cache.ToString();
+        SkillInfo.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = iconSkill.sprite;
+        // var txt = SkillInfo.GetComponentInChildren<TextMeshProUGUI>();
+        // txt.text = cache.ToString();
     }
 
     private void Drag(PointerEventData eventData)

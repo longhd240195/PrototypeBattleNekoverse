@@ -355,7 +355,7 @@ public class DataTest
         neko5.traitsNeko.Add(listTraitNames[8], 2);
         neko5.traitsNeko.Add(listTraitNames[9], 5);
         neko5.traitsNeko.Add(listTraitNames[10], 1);
-        neko4.traitsNeko.Add(listTraitNames[11], 1);
+        neko5.traitsNeko.Add(listTraitNames[11], 1);
 
         listNeko.Add(neko);
         listNeko.Add(neko1);
@@ -423,6 +423,9 @@ public class DataTest
         neko.Atk = 90;
         neko.Speed = 160;
         neko.HP = 160;
+        neko.Magic = 140;
+        neko.def = 150;
+        neko.Resist = 130;
 
 
 
@@ -472,6 +475,9 @@ public class DataTest
         neko1.Atk = 100;
         neko1.Speed = 200;
         neko1.HP = 170;
+        neko1.Magic = 130;
+        neko1.def = 160;
+        neko1.Resist = 130;
 
 
 
@@ -517,6 +523,9 @@ public class DataTest
         neko2.Atk = 170;
         neko2.Speed = 115;
         neko2.HP = 200;
+        neko2.Magic = 130;
+        neko2.def = 160;
+        neko2.Resist = 130;
 
 
         neko2.traitsNeko.Add(listTraitNames[0], 3);
@@ -575,6 +584,9 @@ public class DataTest
         neko3.Atk = 170;
         neko3.Speed = 140;
         neko3.HP = 150;
+        neko3.Magic = 160;
+        neko3.def = 120;
+        neko3.Resist = 130;
 
 
         neko3.traitsNeko.Add(listTraitNames[0], 4);
@@ -636,6 +648,9 @@ public class DataTest
         neko4.Atk = 140;
         neko4.Speed = 125;
         neko4.HP = 190;
+        neko4.Magic = 130;
+        neko4.def = 150;
+        neko4.Resist = 190;
 
 
         neko4.traitsNeko.Add(listTraitNames[0], 5);
@@ -697,6 +712,9 @@ public class DataTest
         neko5.Atk = 140;
         neko5.Speed = 125;
         neko5.HP = 190;
+        neko5.Magic = 140;
+        neko5.def = 160;
+        neko5.Resist = 180;
 
 
         neko5.traitsNeko.Add(listTraitNames[0], 3);

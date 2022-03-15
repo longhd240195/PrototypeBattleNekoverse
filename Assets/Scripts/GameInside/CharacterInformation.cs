@@ -37,7 +37,6 @@ public class CharacterInformation : MonoBehaviour
     public float Damage => CurrentStat.Damage;
     public float Speed => CurrentStat.Speed;
     public bool Alive => CurrentStat.Hp > 0;
-
     public List<SkillAttribute> Skills { get => skills; set => skills = value; }
 
     public CharacterAttribute CurrentStat { get => currentStat; }
