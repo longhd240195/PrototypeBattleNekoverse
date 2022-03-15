@@ -22,6 +22,7 @@ public class BattleController : MonoBehaviour
     [SerializeField] Image imgClock;
     [SerializeField] private Button btnChangeSkin;
     [SerializeField] private ModelController[] clr;
+    [SerializeField] StatHolder statHolder;
 
     [Header("Config")]
     [SerializeField] private float timePerRound = 10;
@@ -68,6 +69,17 @@ public class BattleController : MonoBehaviour
         }
     }
 
+    #region Neko Stat
+
+    private void UpdateStatHolder()
+    {
+        var c = currentOrderCharacters[0];
+
+        statHolder.UpdateStatHolder(c);
+    }
+
+    #endregion
+
     #region Queue character turn
 
     private void UpdateStack()
@@ -106,6 +118,8 @@ public class BattleController : MonoBehaviour
         currentOrderCharacters = currentOrderCharacters.OrderBy(s => s.Speed).ToList();
 
         UpdateUIQueue();
+
+        UpdateStatHolder(); // new line to update stat holder
     }
 
     private void UpdateUIQueue()
