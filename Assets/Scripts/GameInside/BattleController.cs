@@ -378,7 +378,7 @@ public class BattleController : MonoBehaviour
             if (cache?.target == null)
                 Debug.Log("<color=red>Missing</color> target, queue not add battle infor");
             else
-                Debug.LogError("Missing something here");
+                //Debug.LogError("Missing something here");
             return;
         }
 
