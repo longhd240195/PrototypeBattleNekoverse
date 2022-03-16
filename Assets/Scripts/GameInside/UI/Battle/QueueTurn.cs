@@ -9,6 +9,8 @@ public class QueueTurn : MonoBehaviour
     [SerializeField] private Image border;
     //[SerializeField] private Image pointImage;
     private Color mainColor;
+
+    public CharacterInformation charInfo = null;
     
     public void Init(Texture mainImg, Color colorTeam)
     {
@@ -18,8 +20,11 @@ public class QueueTurn : MonoBehaviour
         //pointImage.color = colorPoint;
     }
     
-    public QueueTurn SetCurrent(bool onQueue)
+    public QueueTurn SetCurrent(bool onQueue, CharacterInformation c)
     {
+        //save current character info for later use
+        charInfo = c;
+
         border.color = onQueue ? mainColor : (mainColor + Color.gray) / 2;
         gameObject.SetActive(onQueue);
    

@@ -22,6 +22,11 @@ public class StatHolder : MonoBehaviour
 
     public void UpdateStatHolder(CharacterInformation c)
     {
+        if(c == null)
+        {
+            return;
+        }
+
         statHolder_nekoAvatar.texture = c.MainTexture;
         statHolder_nameText.SetText(c.Neko.NekoName);
         statHolder_nekoClass.sprite = listClassSprs.Find(t => String.Compare(t.name, c.Neko.NekoClass.ToString().ToLower(), StringComparison.OrdinalIgnoreCase) == 0);

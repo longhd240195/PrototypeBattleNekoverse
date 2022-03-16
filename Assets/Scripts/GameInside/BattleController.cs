@@ -6,6 +6,7 @@ using Sirenix.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BattleController : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class BattleController : MonoBehaviour
     private float timeRoundCD;
     private int turnCount;
 
+    public LayerMask characterLayer;
+    public LayerMask uiLayer;
     public BattleStep CurrentStep;
     private QueueBattle cache;
     private bool lockSelect = false;
@@ -39,6 +42,8 @@ public class BattleController : MonoBehaviour
     private List<CharacterInformation> currentOrderCharacters;
 
     private List<Neko> listNeko;
+
+    private RaycastResult raycastResult = new RaycastResult();
 
     private void Start()
     {
@@ -67,15 +72,70 @@ public class BattleController : MonoBehaviour
             txtTimerRound.text = $"{timeRoundCD:0}";
             imgClock.fillAmount = timeRoundCD / timePerRound;
         }
+
+        UpdateStatHolderOnMouseHold();
+        UpdateStatHolderOnMouseUp();
     }
 
     #region Neko Stat
 
-    private void UpdateStatHolder()
+    private void UpdateStatHolderByTurnOrder()
     {
-        var c = currentOrderCharacters[0];
+        if (currentOrderCharacters != null)
+        {
+            var c = currentOrderCharacters[0];
 
-        statHolder.UpdateStatHolder(c);
+            statHolder.UpdateStatHolder(c);
+        }
+    }
+
+    private void UpdateStatHolderOnMouseHold()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, characterLayer))
+            {
+                Debug.Log(hit.collider.name);
+                statHolder.UpdateStatHolder(hit.collider.transform.GetComponent<CharacterInformation>());
+            }
+            else
+            {
+                raycastResult = GetUiObjectUnderMouse();
+                if(raycastResult.gameObject != null)
+                {
+                    statHolder.UpdateStatHolder(raycastResult.gameObject.GetComponentInParent<QueueTurn>().charInfo);
+                }   
+            }
+        }
+    }
+
+    private void UpdateStatHolderOnMouseUp()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            Debug.Log("release");
+            UpdateStatHolderByTurnOrder();
+        }
+    }
+
+    private RaycastResult GetUiObjectUnderMouse()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current){ position = Input.mousePosition };
+
+        List<RaycastResult> resultsList = new List<RaycastResult>();
+        RaycastResult result = new RaycastResult();
+
+        EventSystem.current.RaycastAll(pointerData, resultsList);
+
+        resultsList.ForEach((raycast) => { if (raycast.gameObject.tag == "QueueTurn") { result = raycast; } });
+
+        return result;
+
+        // for debug purpose
+        //results.ForEach((results) => { Debug.Log(results.gameObject.name); });
     }
 
     #endregion
@@ -119,7 +179,7 @@ public class BattleController : MonoBehaviour
 
         UpdateUIQueue();
 
-        UpdateStatHolder(); // new line to update stat holder
+        UpdateStatHolderByTurnOrder(); // to update stat holder
     }
 
     private void UpdateUIQueue()
@@ -142,7 +202,7 @@ public class BattleController : MonoBehaviour
                 }
                 //color.a = .1f;
                 queueTurns[i].Init(c.MainTexture, color);
-                queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c));
+                queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c), c);
             }
         }
     }
