@@ -13,7 +13,7 @@ public class MainController : MonoBehaviour
         LoadNeko();
     }
 
-    async void LoadNeko()
+    void LoadNeko()
     {
         int maxNeko = 4;
         float minSize = MAX_SIZE - (maxNeko - 1) * 20;

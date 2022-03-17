@@ -19,7 +19,7 @@ public class DataTest
         Neko neko = new Neko();
         neko.NekoName = "Neko #12312";
         neko.NekoClass = NekoClass.Fire;
-        neko.NameImage = "10005";
+        neko.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5001.png";
 
         List<NekoSkill> nekoListSkills = new List<NekoSkill>();
 
@@ -74,7 +74,7 @@ public class DataTest
         Neko neko1 = new Neko();
         neko1.NekoName = "Neko #12300";
         neko1.NekoClass = NekoClass.Fire;
-        neko1.NameImage = "15371";
+        neko1.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5002.png";
 
         List<NekoSkill> neko1ListSkills = new List<NekoSkill>();
 
@@ -123,7 +123,7 @@ public class DataTest
         Neko neko2 = new Neko();
         neko2.NekoName = "Neko #12301";
         neko2.NekoClass = NekoClass.Fire;
-        neko2.NameImage = "17215";
+        neko2.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5003.png";
 
         List<NekoSkill> neko2ListSkills = new List<NekoSkill>();
 
@@ -181,7 +181,7 @@ public class DataTest
         Neko neko3 = new Neko();
         neko3.NekoName = "Neko #12211";
         neko3.NekoClass = NekoClass.Earth;
-        neko3.NameImage = "10447";
+        neko3.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/1.png";
 
         List<NekoSkill> neko3ListSkills = new List<NekoSkill>();
 
@@ -238,7 +238,7 @@ public class DataTest
         Neko neko4 = new Neko();
         neko4.NekoName = "Neko #12212";
         neko4.NekoClass = NekoClass.Earth;
-        neko4.NameImage = "10447";
+        neko4.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/2.png";
 
         List<NekoSkill> neko4ListSkills = new List<NekoSkill>();
 
@@ -299,7 +299,7 @@ public class DataTest
         Neko neko5 = new Neko();
         neko5.NekoName = "Neko #12212";
         neko5.NekoClass = NekoClass.Earth;
-        neko5.NameImage = "10447";
+        neko5.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/3.png";
 
         List<NekoSkill> neko5ListSkills = new List<NekoSkill>();
 
@@ -374,7 +374,8 @@ public class DataTest
         Neko neko = new Neko();
         neko.NekoName = "Neko #12312";
         neko.NekoClass = NekoClass.Fire;
-        neko.NameImage = "10005";
+        neko.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5001.png";
+        neko.Level = 30;
 
         List<NekoSkill> nekoListSkills = new List<NekoSkill>();
 
@@ -432,7 +433,8 @@ public class DataTest
         Neko neko1 = new Neko();
         neko1.NekoName = "Neko #12300";
         neko1.NekoClass = NekoClass.Fire;
-        neko1.NameImage = "15371";
+        neko1.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5002.png";
+        neko1.Level = 25;
 
         List<NekoSkill> neko1ListSkills = new List<NekoSkill>();
 
@@ -484,7 +486,8 @@ public class DataTest
         Neko neko2 = new Neko();
         neko2.NekoName = "Neko #12301";
         neko2.NekoClass = NekoClass.Fire;
-        neko2.NameImage = "17215";
+        neko2.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5003.png";
+        neko2.Level = 20;
 
         List<NekoSkill> neko2ListSkills = new List<NekoSkill>();
 
@@ -545,7 +548,8 @@ public class DataTest
         Neko neko3 = new Neko();
         neko3.NekoName = "Neko #12211";
         neko3.NekoClass = NekoClass.Earth;
-        neko3.NameImage = "10447";
+        neko3.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/1.png";
+        neko3.Level = 28;
 
         List<NekoSkill> neko3ListSkills = new List<NekoSkill>();
 
@@ -605,7 +609,8 @@ public class DataTest
         Neko neko4 = new Neko();
         neko4.NekoName = "Neko #12212";
         neko4.NekoClass = NekoClass.Earth;
-        neko4.NameImage = "10447";
+        neko4.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/2.png";
+        neko4.Level = 18;
 
         List<NekoSkill> neko4ListSkills = new List<NekoSkill>();
 
@@ -669,7 +674,8 @@ public class DataTest
         Neko neko5 = new Neko();
         neko5.NekoName = "Neko #12212";
         neko5.NekoClass = NekoClass.Earth;
-        neko5.NameImage = "10447";
+        neko5.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/3.png";
+        neko5.Level = 19;
 
         List<NekoSkill> neko5ListSkills = new List<NekoSkill>();
 

@@ -8,13 +8,13 @@ public class TextController : MonoBehaviour
 {
     public static TextController Singleton;
 
-    [SerializeField] private TextMeshPro txtTemp;
+    [SerializeField] private TextMeshProUGUI txtTemp;
 
     private Camera mainCam;
-    private List<TextMeshPro> list;
+    private List<TextMeshProUGUI> list;
 
 
-    private List<TextMeshPro> List => list ?? (list = new List<TextMeshPro>());
+    private List<TextMeshProUGUI> List => list ?? (list = new List<TextMeshProUGUI>());
 
     void Awake()
     {
@@ -25,9 +25,8 @@ public class TextController : MonoBehaviour
     public void ShowInfo(Vector3 position, string information)
     {
         var txt = GetText();
-        Debug.Log(position);
-        txt.transform.position = position + Vector3.up;
-        Debug.Log(txt.transform.position);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(position);
+        txt.transform.position = screenPos + new Vector3(0, 250, 0);
         //        txt.transform.rotation = 
         //            Quaternion.LookRotation(txt.transform.position - mainCam.transform.position);
         //        txt.transform.LookAt(mainCam.transform,Vector3.up);
@@ -44,7 +43,7 @@ public class TextController : MonoBehaviour
             .SetDelay(.8f).OnComplete(() => txt.gameObject.SetActive(false));
     }
 
-    private TextMeshPro GetText()
+    private TextMeshProUGUI GetText()
     {
         var result = List.Find(s => !s.gameObject.activeInHierarchy);
         if (!result)

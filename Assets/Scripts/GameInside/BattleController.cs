@@ -19,6 +19,7 @@ public class BattleController : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtTimeOut;
     [SerializeField] TextMeshProUGUI txtLog;
     [SerializeField] TextMeshProUGUI txtLogTurn;
+    [SerializeField] Text txtRoundText;
     [SerializeField] LineRenderer line;
     [SerializeField] Image imgClock;
     [SerializeField] private Button btnChangeSkin;
@@ -31,11 +32,10 @@ public class BattleController : MonoBehaviour
     private float timer;
     private float timeRoundCD;
     private int turnCount;
-    private int indexQueueTurn = 0;
     public BattleStep CurrentStep;
     private QueueBattle cache;
     private bool lockSelect = false;
-
+    private int round = 0;
     private List<CharacterInformation> orderCharacters;
     private List<CharacterInformation> currentOrderCharacters;
 
@@ -69,13 +69,11 @@ public class BattleController : MonoBehaviour
             {
                 txtTimerRound.text = "";
                 txtTimeOut.gameObject.SetActive(true);
-                //txtTimeOut.transform.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
             }
             else
             {
                 // txtTimerRound.text = $"{timeRoundCD:0}";
                 txtTimerRound.text = SetTimer(timeRoundCD);
-                //Debug.Log();
                 imgClock.fillAmount = timeRoundCD / timePerRound;
                 txtTimeOut.gameObject.SetActive(false);
             }
@@ -98,7 +96,6 @@ public class BattleController : MonoBehaviour
         orderCharacters = new List<CharacterInformation>();
         blues.ForEach(s => orderCharacters.Add(s));
         reds.ForEach(s => orderCharacters.Add(s));
-
         RefreshCurrentTurn();
         ReorderQueue();
         InitUIQueue();
@@ -113,6 +110,9 @@ public class BattleController : MonoBehaviour
         ClearCone();
 
         orderCharacters.ForEach(s => currentOrderCharacters.Add(s));
+        round++;
+        txtRoundText.text = "Round " + round;
+
     }
 
     private CharacterInformation Pop()
@@ -129,12 +129,6 @@ public class BattleController : MonoBehaviour
         currentOrderCharacters = currentOrderCharacters.OrderBy(s => s.Speed).ToList();
 
         UpdateUIQueue();
-    }
-    private void InitBattleOderSelect(int index)
-    {
-        queueTurns[index].gameObject.transform.Find("Select").gameObject.SetActive(true);
-        //Debug.Log(queueTurns[i].gameObject.transform.Find("Select").name);
-
     }
     private void UpdateUIQueue()
     {
@@ -159,23 +153,10 @@ public class BattleController : MonoBehaviour
                 {
                     queueTurns[i].gameObject.SetActive(false);
                 }
-                queueTurns[i].Init(c.MainTexture, color);
+                queueTurns[i].Init(c, color);
                 queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c));
-                //indexQueueTurn = i;
-                //InitBattleOderSelect(indexQueueTurn);
             }
         }
-        // for (int i = 0; i < queueTurns.Count; i++)
-        // {
-        //     if (i < orderCharacters.Count && i == indexQueueTurn)
-        //     {
-        //         queueTurns[i].gameObject.transform.Find("Select").gameObject.SetActive(true);
-        //     }
-        //     else
-        //     {
-        //         queueTurns[i].gameObject.transform.Find("Select").gameObject.SetActive(false);
-        //     }
-        // }
     }
 
     private void InitUIQueue()
@@ -185,8 +166,7 @@ public class BattleController : MonoBehaviour
             if (i < orderCharacters.Count)
             {
                 var c = orderCharacters[i];
-                queueTurns[i].Init(c.MainTexture, reds.Contains(c) ? Color.red : Color.green);
-                //InitBattleOderSelect(indexQueueTurn);
+                queueTurns[i].Init(c, reds.Contains(c) ? Color.red : Color.green);
             }
         }
     }
@@ -222,7 +202,7 @@ public class BattleController : MonoBehaviour
         });
         reds.ForEach(s =>
         {
-            s.InitializeRed();
+            s.Initialize(true);
             s.Controller = this;
         });
         skills.ForEach(s =>
@@ -231,7 +211,8 @@ public class BattleController : MonoBehaviour
         });
 
         UpdateStack();
-
+        queueTurns[0].transform.parent.gameObject.SetActive(true);
+        viewNekoBattle.gameObject.SetActive(true);
         NextOnQueue();
     }
 
@@ -277,18 +258,25 @@ public class BattleController : MonoBehaviour
         if (blues.Contains(turnCharacter))
         {
             ShowUISkill(true);
-
             AssignCharacterAttack(turnCharacter);
-
+            turnCharacter.AddMana(1);
+            turnCharacter.LoadManaBar();
         }
         else
         {
             //TODO: Add AI for red team here
             ShowUISkill(false);
-
             AIAction(turnCharacter);
+            turnCharacter.AddMana(1);
+            turnCharacter.LoadManaBar();
 
         }
+        CheckQueueTurn(turnCharacter);
+        viewNekoBattle.LoadNekoBar(turnCharacter);
+        AnnounceNewTurn();
+    }
+    private void CheckQueueTurn(CharacterInformation turnCharacter)
+    {
         for (int i = 0; i < queueTurns.Count; i++)
         {
             if (i < orderCharacters.Count)
@@ -305,10 +293,7 @@ public class BattleController : MonoBehaviour
                 }
             }
         }
-        viewNekoBattle.LoadNekoBar(turnCharacter.Neko, turnCharacter.MainTexture);
-        AnnounceNewTurn();
     }
-
     public void AssignSkill(SkillAttribute skill)
     {
         if (cache == null)
@@ -616,20 +601,7 @@ public class BattleController : MonoBehaviour
         for (int i = 0; i < character.Skills.Count || i < skills.Count; i++)
         {
             skills[i].SetSkill(character.CurrentStat, i < character.Skills.Count ? character.Skills[i] : null);
-            skills[i].gameObject.SetActive(true);
         }
-        // for (int i = 0; i < blues.Count; i++)
-        // {
-        //     if (i < character.Skills.Count)
-        //     {
-        //         skills[i].SetSkill(character.CurrentStat, i < character.Skills.Count ? character.Skills[i] : null);
-        //         skills[i].gameObject.SetActive(true);
-        //     }
-        //     else
-        //     {
-        //         skills[i].gameObject.SetActive(false);
-        //     }
-        // }
     }
 
     private void Announce(string announceInfor)
@@ -638,11 +610,26 @@ public class BattleController : MonoBehaviour
         txtLogTurn.color = Color.white;
         txtLogTurn.DOFade(0, .3f).SetDelay(1f);
     }
-
+    int lineLog = 0;
+    string[] arr = { "FF", "CC", "AA", "88", "66", "44", "22", "00" };
+    List<string> textLogArr = new List<string>();
     private void UpdateLog(string newTurn)
     {
-        txtLog.text += newTurn + "\n";
+        txtLog.text = "";
+        textLogArr.Add(newTurn);
+        for (int i = 0; i < textLogArr.Count; i++)
+        {
+            txtLog.text += "<alpha=#" + arr[textLogArr.Count - 1 - i] + ">" + textLogArr[i] + "\n";
+            lineLog++;
+            if (lineLog > 7 || lineLog == textLogArr.Count)
+                lineLog = 0;
+        }
+        if (textLogArr.Count == 7)
+        {
+            textLogArr.Remove(textLogArr[textLogArr.Count - 1]);
+        }
     }
+
     private string SetTimer(float time)
     {
         TimeSpan t = TimeSpan.FromSeconds(time);

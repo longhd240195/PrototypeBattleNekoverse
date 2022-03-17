@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class QueueTurn : MonoBehaviour
 {
     [SerializeField] private RawImage rawImg;
+    [SerializeField] private Image img;
     [SerializeField] private Image border;
     [SerializeField] private Image pointImage;
     private Color mainColor;
-    public void Init(Texture mainImg, Color colorTeam)
+    public void Init(CharacterInformation infor, Color colorTeam)
     {
-        rawImg.texture = mainImg;
+        //rawImg.texture = infor.MainTexture;
+        infor.NekoController.LoadImage(infor.Neko.UrlImage, img);
         mainColor = colorTeam;
         border.color = colorTeam;
         //pointImage.color = colorPoint;

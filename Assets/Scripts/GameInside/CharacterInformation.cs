@@ -15,7 +15,7 @@ public class CharacterInformation : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] GetTouch btnOnCharacter;
-    [SerializeField] ModelController neko;
+    [SerializeField] ModelController nekoController;
     [SerializeField] Transform targetCanSelect;
     [SerializeField] Transform targetSelected;
     [SerializeField] Animator animator;
@@ -30,9 +30,10 @@ public class CharacterInformation : MonoBehaviour
     private Vector3 localCone;
 
     public BattleController Controller { get => controller; set => controller = value; }
-    public Neko Neko { get => neko.neko; set => neko.neko = value; }
-
+    public Neko Neko { get => nekoController.neko; set => nekoController.neko = value; }
+    public ModelController NekoController { get => nekoController; }
     public float Health => CurrentStat.Hp;
+    public int Mana => CurrentStat.Mana;
     public float InitHealth => initStat.Hp;
     public float Damage => CurrentStat.Damage;
     public float Speed => CurrentStat.Speed;
@@ -91,26 +92,39 @@ public class CharacterInformation : MonoBehaviour
         btnOnCharacter.onMouseExit.AddListener(RemoveTargetPlayer);
     }
 
-    public void Initialize()
+    public void Initialize(bool isEnemy = false)
     {
+        SetNekoStat(Neko);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.localPosition);
         currentStat = (CharacterAttribute)initStat.Clone();
         healthBar = HpBarIngameSpawnner.Instance.GetTemp();
         healthBar.Init(this);
-        healthBar.SetImageClassNeko(this);
-        healthBar.transform.position = transform.position + HpBarIngameSpawnner.Instance.PosTemp;
-        UpdateStat();
-    }
-    public void InitializeRed()
-    {
-        currentStat = (CharacterAttribute)initStat.Clone();
-        healthBar = HpBarIngameSpawnner.Instance.GetTemp();
-        healthBar.Init(this);
-        healthBar.SetColorHealBar(this);
-        healthBar.SetImageClassNeko(this);
-        healthBar.transform.position = transform.position + HpBarIngameSpawnner.Instance.PosTemp;
+        if (isEnemy)
+        {
+            screenPos.y += 150;
+            screenPos.x += 50;
+            healthBar.SetColorHealBar(this);
+        }
+        else
+        {
+            screenPos.y += 200;
+            screenPos.x -= 50;
+        }
+        LoadManaBar();
+        healthBar.transform.position = screenPos + HpBarIngameSpawnner.Instance.PosTemp;
         UpdateStat();
     }
 
+    private void SetNekoStat(Neko neko)
+    {
+        initStat.Level = neko.Level;
+        initStat.Hp = neko.HP;
+    }
+
+    public void LoadManaBar()
+    {
+        healthBar.SetManaBar(this);
+    }
 
     public void UpdateStat()
     {
@@ -300,7 +314,20 @@ public class CharacterInformation : MonoBehaviour
         callbackDelay?.Invoke();
         callbackDelay = null;
     }
-
+    public void AddMana(int i)
+    {
+        if (currentStat.Mana > DataConst.MAX_MANA_NEKO)
+            currentStat.Mana = DataConst.MAX_MANA_NEKO;
+        else
+            currentStat.Mana += i;
+    }
+    public void SubMana(int i)
+    {
+        if (currentStat.Mana < 0)
+            currentStat.Mana = 0;
+        else
+            currentStat.Mana -= i;
+    }
 }
 
 
@@ -312,10 +339,12 @@ public class CharacterAttribute
     [SerializeField] float speed;
     [SerializeField] float evasion;
     [SerializeField] int level;
+    [SerializeField] int mana;
 
     public float Damage { get => damage; set => damage = value; }
     public float Hp { get => hp; set => hp = value; }
     public float Speed { get => speed; set => speed = value; }
+    public int Mana { get => mana; set => mana = value; }
 
     public int Level
     {

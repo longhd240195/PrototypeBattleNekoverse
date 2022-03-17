@@ -11,6 +11,7 @@ public class DataConst
     public const float MAX_HP_BOSS = 200;
     public const float DEFAULT_100 = 100;
 
+    public const int MAX_MANA_NEKO = 5;
     public const int MAX_DAME_NEKO = 200;
     public const int MAX_SPEED_NEKO = 200;
     public const int MAX_HP_NEKO = 200;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using TMPro;
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -41,7 +43,7 @@ public class ModelController : MonoBehaviour
             ChangeTraits(kvp.Key, kvp.Value);
         }
     }
-    
+
     void InitTraitName()
     {
         listTraitNames = new[]
@@ -226,6 +228,28 @@ public class ModelController : MonoBehaviour
         AssetDatabase.Refresh();
 #endif
     }
+    public void LoadImage(string url, Image profileImage)
+    {
+        StartCoroutine(DownloadImage(url, profileImage));
+    }
 
+    IEnumerator DownloadImage(string MediaUrl, Image profileImage)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+            Debug.Log(request.error);
+        else
+        {
+            Texture2D webTexture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture2D;
+            Sprite webSprite = SpriteFromTexture2D(webTexture);
+            profileImage.sprite = webSprite;
+        }
+    }
+
+    Sprite SpriteFromTexture2D(Texture2D texture)
+    {
+        return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+    }
     #endregion
 }

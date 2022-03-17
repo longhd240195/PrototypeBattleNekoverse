@@ -12,6 +12,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class ModelControllerTest : MonoBehaviour
 {
@@ -19,7 +21,6 @@ public class ModelControllerTest : MonoBehaviour
     [SerializeField] private List<Sprite> classSpr;
     [SerializeField] private Button[] btnChangeSkill;
     private List<Sprite> nekoImageSpr;
-    public List<Texture> listTextureNeko = new List<Texture>();
     private string[] listTraitNames;
     private Dictionary<string, List<TraitsDataModel>> traitsCache;
 
@@ -100,12 +101,12 @@ public class ModelControllerTest : MonoBehaviour
     {
         for (int i = 0; i < btnYourNeko.Length; i++)
         {
-            if (i < listNeko.Count && listNeko.Count == listTextureNeko.Count)
+            if (i < listNeko.Count)
             {
                 btnYourNeko[i].gameObject.SetActive(true);
                 int index = i;
-                var img = btnYourNeko[index].transform.GetChild(0).GetChild(0).GetComponent<RawImage>();
-                img.texture = listTextureNeko[index];
+                var img = btnYourNeko[index].transform.GetChild(0).GetComponent<Image>();
+                LoadImage(listNeko[index].UrlImage, img);
                 btnYourNeko[index].onClick.AddListener(() =>
                 {
                     neko = listNeko[index];
@@ -421,4 +422,27 @@ public class ModelControllerTest : MonoBehaviour
         nekoImageSpr = spr;
     }
     #endregion
+    public void LoadImage(string url, Image profileImage)
+    {
+        StartCoroutine(DownloadImage(url, profileImage));
+    }
+
+    IEnumerator DownloadImage(string MediaUrl, Image profileImage)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+            Debug.Log(request.error);
+        else
+        {
+            Texture2D webTexture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture2D;
+            Sprite webSprite = SpriteFromTexture2D(webTexture);
+            profileImage.sprite = webSprite;
+        }
+    }
+
+    Sprite SpriteFromTexture2D(Texture2D texture)
+    {
+        return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+    }
 }
