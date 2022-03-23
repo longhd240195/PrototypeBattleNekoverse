@@ -15,7 +15,10 @@ public class MainController : MonoBehaviour
     {
         LoadNeko();
         view.Init();
-        // btnStart.onClick.AddListener(() => LoadMapSence());
+        // string url = "unitydl://mylink?scene12";
+        // string sceneName = url.Split("?"[0])[1];
+        // Debug.Log(sceneName);
+
     }
 
     void LoadNeko()

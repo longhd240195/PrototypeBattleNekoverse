@@ -135,7 +135,7 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        drag = false;
+
         if (!drag)
         {
             if (isIn)
@@ -154,8 +154,6 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
                 img.rectTransform.DOSizeDelta(initSize, 1f);
                 //img.rectTransform.DOMove(center, 1f).SetRelative(true);
                 img.rectTransform.DOLocalMove(center, 1f);
-                Debug.Log(last + " " + drag);
-
                 //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
                 areasBtn.ForEach(i => i.gameObject.SetActive(true));
                 lands.ForEach(i => i.gameObject.SetActive(false));
@@ -177,11 +175,12 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
             // }
             isIn = !isIn;
         }
+        drag = false;
 
     }
     public void OnBtnPointerClick(Button eventData, MapData[] l)
     {
-        drag = false;
+
         if (!drag)
         {
             if (!isIn)
@@ -222,7 +221,7 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
             }
             isIn = !isIn;
         }
-        //drag = false;
+        drag = false;
     }
 
     private void OpenTitle(MapData a)

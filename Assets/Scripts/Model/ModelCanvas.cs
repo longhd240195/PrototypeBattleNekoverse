@@ -57,7 +57,6 @@ public class ModelCanvas : MonoBehaviour
     public void AnimListSkill()
     {
         listSkillObj.localPosition = new Vector2(listSkillObj.localPosition.x + posListSkill.localPosition.x, listSkillObj.localPosition.y);
-        Debug.Log("a");
         listSkillObj.DOLocalMoveX(posListSkill.localPosition.x, 0.5f);
     }
     public void AnimDesSkill()
