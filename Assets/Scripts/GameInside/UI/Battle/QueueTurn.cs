@@ -24,7 +24,7 @@ public class QueueTurn : MonoBehaviour
     }
     public QueueTurn SetCurrent(bool onQueue)
     {
-        border.color = onQueue ? mainColor : (mainColor + Color.gray) / 2;
+        //border.color = onQueue ? mainColor : (mainColor + Color.gray) / 2;
         //gameObject.SetActive(onQueue);
         //pointImage.gameObject.SetActive(onQueue);
 

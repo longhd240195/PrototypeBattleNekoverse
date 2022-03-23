@@ -43,6 +43,7 @@ public class PetController : MonoBehaviour
             btn.onClick.AddListener(() =>
             {
                 petView.SetLayoutPet(petData);
+                petView.animDetailPet();
             });
         }
     }

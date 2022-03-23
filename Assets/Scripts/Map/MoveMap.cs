@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 {
@@ -16,6 +17,12 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     [SerializeField] private List<Button> lands;
     [SerializeField] private List<Button> levels;
     [SerializeField] private BattleView battleView;
+    [Header("Anim")]
+    [SerializeField] private RectTransform posBar;
+    [SerializeField] private RectTransform barObj;
+    [SerializeField] private RectTransform posInventory;
+    [SerializeField] private RectTransform InventoryObj;
+
     private List<Button> btnCacheLands = new List<Button>();
     private Dictionary<string, MapData[]> cacheMap;
     private Dictionary<string, MapData[]> Cache =>
@@ -38,8 +45,19 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
         sizeScene = new Vector2(Screen.width, Screen.height);
         sizeChild = new Vector2(64, 64);
         LoadArea(areasBtn);
+        barObj.DOLocalMoveY(posBar.localPosition.y, 0.5f);
+        InventoryObj.DOLocalMoveY(posInventory.localPosition.y, 0.5f);
     }
-
+    public void LoadHomeScene()
+    {
+        //levelLoader.LoadLevel(DataConst.MAIN_SCENE);
+        SceneManager.LoadScene(DataConst.MAIN_SCENE);
+    }
+    public void OpenSceneBattle()
+    {
+        //levelLoader.LoadLevel(DataConst.BATTLE_SCENE);
+        SceneManager.LoadScene(DataConst.BATTLE_SCENE);
+    }
     void LoadArea(List<Button> btnAreas)
     {
         for (int i = 0; i < btnAreas.Count; i++)
@@ -111,43 +129,59 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
         else if (positionTarget.y > bottomLeft.y)
             positionTarget.y = bottomLeft.y;
 
-        drag = true;
         img.rectTransform.position = positionTarget;
+        drag = true;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        drag = false;
         if (!drag)
         {
-            if (!isIn)
+            if (isIn)
             {
-                var diff = (Vector2)img.rectTransform.position - eventData.position;
-                var toCenter = sizeScene / 2 - eventData.position;
-                var last = diff * sizeMultiple - diff + toCenter;
+                // var diff = (Vector2)img.rectTransform.position - eventData.position;
+                // var toCenter = sizeScene / 2 - eventData.position;
+                // var last = diff * sizeMultiple - diff + toCenter;
 
-                img.rectTransform.DOSizeDelta(sizeMultiple * initSize, 1f);
-                img.rectTransform.DOMove(last, 1f).SetRelative(true);
+                // img.rectTransform.DOSizeDelta(sizeMultiple * initSize, 1f);
+                // img.rectTransform.DOMove(last, 1f).SetRelative(true);
                 //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeMultiple * sizeChild, 1f));
-            }
-            else
-            {
                 var diff = (Vector2)img.rectTransform.position - eventData.position;
                 var toCenter = sizeScene / 2 - eventData.position;
                 var last = diff / sizeMultiple - diff + toCenter;
-
+                Vector2 center = new Vector2(0f, 0f);
                 img.rectTransform.DOSizeDelta(initSize, 1f);
-                img.rectTransform.DOMove(last, 1f).SetRelative(true);
+                //img.rectTransform.DOMove(center, 1f).SetRelative(true);
+                img.rectTransform.DOLocalMove(center, 1f);
+                Debug.Log(last + " " + drag);
+
                 //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
                 areasBtn.ForEach(i => i.gameObject.SetActive(true));
                 lands.ForEach(i => i.gameObject.SetActive(false));
             }
+            // else
+            // {
+            //     var diff = (Vector2)img.rectTransform.position - eventData.position;
+            //     var toCenter = sizeScene / 2 - eventData.position;
+            //     var last = diff / sizeMultiple - diff + toCenter;
+            //     Vector2 center = new Vector2(0f, 0f);
+            //     img.rectTransform.DOSizeDelta(initSize, 1f);
+            //     //img.rectTransform.DOMove(center, 1f).SetRelative(true);
+            //     img.rectTransform.DOLocalMove(center, 1f);
+            //     Debug.Log(last);
+
+            //     //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
+            //     areasBtn.ForEach(i => i.gameObject.SetActive(true));
+            //     lands.ForEach(i => i.gameObject.SetActive(false));
+            // }
             isIn = !isIn;
         }
 
-        drag = false;
     }
     public void OnBtnPointerClick(Button eventData, MapData[] l)
     {
+        drag = false;
         if (!drag)
         {
             if (!isIn)
@@ -170,7 +204,7 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
                         btnCacheLands.Add(lands[i]);
                     }
                 }
-                LoadLand(btnCacheLands,l);
+                LoadLand(btnCacheLands, l);
             }
             else
             {
@@ -178,16 +212,17 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
                 var toCenter = sizeScene / 2 - (Vector2)eventData.transform.position;
                 var last = diff / sizeMultiple - diff + toCenter;
 
+                Vector2 center = new Vector2(0f, 0f);
                 img.rectTransform.DOSizeDelta(initSize, 1f);
-                img.rectTransform.DOMove(last, 1f).SetRelative(true);
+                //img.rectTransform.DOMove(center, 1f).SetRelative(true);
+                img.rectTransform.DOLocalMove(center, 1f);
                 //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
                 areasBtn.ForEach(i => i.gameObject.SetActive(true));
                 lands.ForEach(i => i.gameObject.SetActive(false));
             }
             isIn = !isIn;
         }
-
-        drag = false;
+        //drag = false;
     }
 
     private void OpenTitle(MapData a)
@@ -210,10 +245,7 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     {
         preBattle2.rectTransform.DOMoveX(sizeScene.x * 2, .5f);
     }
-    public void OpenSceneYourNeko()
-    {
-        levelLoader.LoadLevel(DataConst.YOUR_NEKO_SCENE);
-    }
+
     private Vector2 BottomLeft()
     {
         Vector2 result = Vector2.zero;
@@ -234,13 +266,13 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 
     private void LoadDataMap()
     {
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"1");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"2");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"3");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"4");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"5");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"6");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA +"7");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "1");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "2");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "3");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "4");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "5");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "6");
+        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "7");
     }
 
     private void ReadDataScripableMap(string areaName)

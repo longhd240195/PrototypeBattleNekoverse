@@ -9,7 +9,7 @@ public class SkillInformation : MonoBehaviour
 
     [SerializeField] private BattleController controller;
     [SerializeField] private Image imgFaded;
-
+    [SerializeField] private Image imgLockSkill;
     [SerializeField] private UIButton btnClick;
     [SerializeField] private Image signSelected;
     [SerializeField] private TextMeshProUGUI txt;
@@ -51,6 +51,16 @@ public class SkillInformation : MonoBehaviour
 
         cache = skill.Clone() as SkillAttribute;
         cache.Apply(character);
+        if (character.Mana >= skill.Mana)
+        {
+            imgLockSkill.gameObject.SetActive(false);
+            gameObject.GetComponent<UIButton>().enabled = true;
+        }
+        else
+        {
+            imgLockSkill.gameObject.SetActive(true);
+            gameObject.GetComponent<UIButton>().enabled = false;
+        }
         txt.text = cache.ToString();
     }
 

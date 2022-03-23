@@ -85,7 +85,7 @@ public class CharacterInformation : MonoBehaviour
 
     private void Start()
     {
-        localCone = targetCanSelect.localPosition;
+        // localCone = targetCanSelect.localPosition;
 
         btnOnCharacter.onClick.AddListener(AssignAction);
         btnOnCharacter.onMouseEnter.AddListener(SetTargetPlayer);
@@ -101,14 +101,14 @@ public class CharacterInformation : MonoBehaviour
         healthBar.Init(this);
         if (isEnemy)
         {
-            screenPos.y += 150;
+            screenPos.y += 100;
             screenPos.x += 50;
             healthBar.SetColorHealBar(this);
         }
         else
         {
             screenPos.y += 200;
-            screenPos.x -= 50;
+            screenPos.x -= 30;
         }
         LoadManaBar();
         healthBar.transform.position = screenPos + HpBarIngameSpawnner.Instance.PosTemp;
@@ -144,8 +144,10 @@ public class CharacterInformation : MonoBehaviour
             (attributeCheck.from != null && attributeCheck.from == this ||
             attributeCheck.target != null && attributeCheck.target == this);
         MoveCone(track);
-        if (targetCanSelect.gameObject.activeInHierarchy)
-            targetCanSelect.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
+        // if (targetCanSelect.gameObject.activeInHierarchy)
+        //     targetCanSelect.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
+        if (healthBar.Cone.gameObject.activeInHierarchy)
+            healthBar.Cone.transform.DOMoveY(.5f, .3f).SetLoops(-1, LoopType.Yoyo).SetRelative(true);
     }
 
     #region Logic change character attribute in-game
@@ -188,7 +190,6 @@ public class CharacterInformation : MonoBehaviour
                 BonusPower(effects.EndValue);
                 break;
         }
-
         UpdateStat();
     }
 
@@ -212,9 +213,7 @@ public class CharacterInformation : MonoBehaviour
 
         if (CurrentStat.Hp > initStat.Hp)
             CurrentStat.Hp = initStat.Hp;
-
         healthBar.ChangePercent(this);
-
         LogChangeHeal(-numberEffect);
     }
 
@@ -272,9 +271,12 @@ public class CharacterInformation : MonoBehaviour
 
     public void MoveCone(bool active)
     {
-        targetCanSelect.DOKill();
-        targetCanSelect.localPosition = localCone;
-        targetCanSelect.gameObject.SetActive(active);
+        // targetCanSelect.DOKill();
+        // targetCanSelect.localPosition = localCone;
+        // targetCanSelect.gameObject.SetActive(active);
+        
+        healthBar.Cone.DOKill();
+        healthBar.Cone.gameObject.SetActive(active);
     }
 
     public void SelectedTarget(bool active)
@@ -316,14 +318,16 @@ public class CharacterInformation : MonoBehaviour
     }
     public void AddMana(int i)
     {
-        if (currentStat.Mana > DataConst.MAX_MANA_NEKO)
+        if (currentStat.Mana >= DataConst.MAX_MANA_NEKO)
+        {
             currentStat.Mana = DataConst.MAX_MANA_NEKO;
+        }
         else
             currentStat.Mana += i;
     }
     public void SubMana(int i)
     {
-        if (currentStat.Mana < 0)
+        if (currentStat.Mana <= 0)
             currentStat.Mana = 0;
         else
             currentStat.Mana -= i;
@@ -372,14 +376,17 @@ public class SkillAttribute
     [SerializeField] string nameSkill;
     [SerializeField] SkillEffect[] effects;
     [SerializeField] private string skillAnimation = "CastSkill";
+    [SerializeField] private int mana;
     public string NameSkill { get => nameSkill; set => nameSkill = value; }
     public SkillEffect[] Effects { get => effects; set => effects = value; }
     public string SkillAnimation => skillAnimation;
+    public int Mana { get => mana; set => mana = value; }
 
-    public SkillAttribute(string nameSkill, SkillEffect[] effects)
+    public SkillAttribute(string nameSkill, SkillEffect[] effects, int mana)
     {
         NameSkill = nameSkill;
         Effects = effects;
+        Mana = mana;
     }
 
     public SkillAttribute(CharacterAttribute attribute)

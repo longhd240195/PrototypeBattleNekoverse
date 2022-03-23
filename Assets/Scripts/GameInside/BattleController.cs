@@ -26,6 +26,8 @@ public class BattleController : MonoBehaviour
     [SerializeField] private ModelController[] clr;
     [SerializeField] private BattleNekoView viewNekoBattle;
 
+    [SerializeField] private RectTransform posSkill;
+
     [Header("Config")]
     [SerializeField] private float timePerRound = 10;
 
@@ -88,6 +90,7 @@ public class BattleController : MonoBehaviour
             txtTimerRound.gameObject.transform.parent.gameObject.SetActive(true);
         }
     }
+
 
     #region Queue character turn
 
@@ -259,17 +262,12 @@ public class BattleController : MonoBehaviour
         {
             ShowUISkill(true);
             AssignCharacterAttack(turnCharacter);
-            turnCharacter.AddMana(1);
-            turnCharacter.LoadManaBar();
         }
         else
         {
             //TODO: Add AI for red team here
             ShowUISkill(false);
             AIAction(turnCharacter);
-            turnCharacter.AddMana(1);
-            turnCharacter.LoadManaBar();
-
         }
         CheckQueueTurn(turnCharacter);
         viewNekoBattle.LoadNekoBar(turnCharacter);
@@ -307,7 +305,10 @@ public class BattleController : MonoBehaviour
 
     private void ShowUISkill(bool active)
     {
+        var skillObj = skills[0].gameObject.transform.parent;
+        skillObj.localPosition = new Vector2(skillObj.localPosition.x, skillObj.localPosition.y + posSkill.localPosition.y);
         skills.ForEach(s => s.gameObject.SetActive(active));
+        skillObj.DOLocalMoveY(posSkill.localPosition.y, 0.5f);
     }
 
 
@@ -433,7 +434,6 @@ public class BattleController : MonoBehaviour
         //UpdateLog();
         ResetState();
         DoAction();
-
         ResetCacheBattle();
     }
 
@@ -484,10 +484,14 @@ public class BattleController : MonoBehaviour
                         case SkillTargetType.Self:
                             from.ApplyEffects(ef);
                             from.MoveCone(true);
+                            from.AddMana(1);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Ally:
                             target.ApplyEffects(ef);
                             target.MoveCone(true);
+                            from.SubMana(q.skill.Mana);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Allies:
                             var listAllies = reds.Contains(from) ? reds : blues;
@@ -496,11 +500,15 @@ public class BattleController : MonoBehaviour
                                 s.ApplyEffects(ef);
                                 s.MoveCone(true);
                             });
+                            from.SubMana(q.skill.Mana);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Enemy:
                             target.ApplyEffects(ef);
                             target.PlayAnimation("TakeDamage");
                             target.MoveCone(true);
+                            from.AddMana(1);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Enemies:
                             var listEnemies = !reds.Contains(from) ? reds : blues;
@@ -560,6 +568,7 @@ public class BattleController : MonoBehaviour
              DoAction();
          });
         //DoAction();
+
     }
 
     private void ChangeToSelectSkillAction()

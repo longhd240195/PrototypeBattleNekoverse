@@ -18,6 +18,8 @@ using UnityEngine.Networking;
 public class ModelControllerTest : MonoBehaviour
 {
     [SerializeField] private NekoView nekoView;
+    [SerializeField] private ModelCanvas modelCanvas;
+    [SerializeField] private TextMeshProUGUI txtLog;
     [SerializeField] private List<Sprite> classSpr;
     [SerializeField] private Button[] btnChangeSkill;
     private List<Sprite> nekoImageSpr;
@@ -44,7 +46,7 @@ public class ModelControllerTest : MonoBehaviour
 
     public void Start()
     {
-        listNeko = DataTest.GetNeko();
+        listNeko = DataTest.GetListNeko();
         neko = listNeko[cacheIdNeko];
         InitNeko(neko);
     }
@@ -86,6 +88,9 @@ public class ModelControllerTest : MonoBehaviour
         nekoView.Init(neko);
         nekoView.ResetBtnSkill(btnChangeSkill);
         InitButtonSkill(btnChangeSkill, neko);
+        modelCanvas.AnimListSkill();
+        modelCanvas.AnimNekoBar();
+        txtLog.text = "";
     }
     void InitTraitName()
     {
@@ -145,6 +150,7 @@ public class ModelControllerTest : MonoBehaviour
                     n.StateSkill = StateSkill.SELECTED;
                     nekoView.SetDesceptionSkillActive(true);
                     nekoView.ChangeSkillState(btnSkill, s.NameSkill);
+                    modelCanvas.AnimDesSkill();
                 });
             }
             else
@@ -215,6 +221,7 @@ public class ModelControllerTest : MonoBehaviour
 
     void RandomInit()
     {
+        txtLog.text = "";
         foreach (var traitName in listTraitNames)
         {
             ChangeTraits(traitName);
@@ -253,11 +260,13 @@ public class ModelControllerTest : MonoBehaviour
 
     void ChangeTraits(string traitName, int indexNextModel = -1)
     {
+
         var modelRandom = Cache[traitName];
         if (indexNextModel == -1)
             indexNextModel = Random.Range(0, modelRandom.Count);
         var randomModel = Instantiate(modelRandom[indexNextModel].Model, transform);
         ChangeModel(randomModel);
+        txtLog.text += traitName + " " + randomModel.name + "\n";
         randomModel.layer = 6;
         ChangeModel(traitName, randomModel);
     }

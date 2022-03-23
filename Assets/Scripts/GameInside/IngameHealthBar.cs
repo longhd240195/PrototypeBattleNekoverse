@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class IngameHealthBar : MonoBehaviour
 {
+    [SerializeField] private Image cone;
     [SerializeField] private Image border;
     [SerializeField] private Image main;
     [SerializeField] private Image hpLost;
@@ -17,6 +18,7 @@ public class IngameHealthBar : MonoBehaviour
     [SerializeField] private Text txtName;
     [SerializeField] private List<Image> listMana;
     [SerializeField] private List<Sprite> listClassSprs;
+    public Image Cone { get => cone;}
     private float currentPercent;
     private float health = 1;
     public void Init(CharacterInformation infor)

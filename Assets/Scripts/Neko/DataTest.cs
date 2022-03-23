@@ -10,7 +10,7 @@ public class DataTest
             ModelConst.Necklaces, ModelConst.FrontFace, ModelConst.Arms, ModelConst.Accessories,
             ModelConst.Back, ModelConst.SideFace
         };
-    public static List<Neko> GetNeko()
+    public static List<Neko> GetListNeko()
     {
         List<Neko> listNeko = new List<Neko>();
 
@@ -364,6 +364,66 @@ public class DataTest
         listNeko.Add(neko4);
         listNeko.Add(neko5);
         return listNeko;
+    }
+    public static Neko GetNeko()
+    {
+        Neko neko = new Neko();
+        neko.NekoName = "Neko #12312";
+        neko.NekoClass = NekoClass.Fire;
+        neko.UrlImage = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/200x200/5001.png";
+        neko.Level = 30;
+
+        List<NekoSkill> nekoListSkills = new List<NekoSkill>();
+
+        NekoSkill nekoSkill1 = new NekoSkill();
+        nekoSkill1.NameSkill = "Fire Shocking";
+
+        NekoSkill nekoSkill2 = new NekoSkill();
+        nekoSkill2.NameSkill = "Fire Discard";
+
+        NekoSkill nekoSkill3 = new NekoSkill();
+        nekoSkill3.NameSkill = "Fire Virus";
+
+        NekoSkill nekoSkill4 = new NekoSkill();
+        nekoSkill4.NameSkill = "Fire Hell Boy";
+
+        NekoSkill nekoSkill5 = new NekoSkill();
+        nekoSkill5.NameSkill = "Fire Last Man Stand";
+
+        NekoSkill nekoSkill6 = new NekoSkill();
+        nekoSkill6.NameSkill = "Fire Supreme";
+
+
+
+
+        nekoListSkills.Add(nekoSkill1);
+        nekoListSkills.Add(nekoSkill2);
+        nekoListSkills.Add(nekoSkill3);
+        nekoListSkills.Add(nekoSkill4);
+        nekoListSkills.Add(nekoSkill5);
+        nekoListSkills.Add(nekoSkill6);
+
+        neko.traitsNeko.Add(listTraitNames[0], 1);
+        neko.traitsNeko.Add(listTraitNames[1], 2);
+        neko.traitsNeko.Add(listTraitNames[2], 1);
+        neko.traitsNeko.Add(listTraitNames[3], 2);
+        neko.traitsNeko.Add(listTraitNames[4], 4);
+        neko.traitsNeko.Add(listTraitNames[5], 3);
+        neko.traitsNeko.Add(listTraitNames[6], 4);
+        neko.traitsNeko.Add(listTraitNames[7], 9);
+        neko.traitsNeko.Add(listTraitNames[8], 8);
+        neko.traitsNeko.Add(listTraitNames[9], 4);
+        neko.traitsNeko.Add(listTraitNames[10], 4);
+        neko.traitsNeko.Add(listTraitNames[11], 3);
+
+        neko.NekoSkill = nekoListSkills;
+        neko.Atk = 90;
+        neko.Speed = 160;
+        neko.HP = 160;
+        neko.Magic = 140;
+        neko.def = 150;
+        neko.Resist = 130;
+        return neko;
     }
     public static List<Neko> GetNekoBattle()
     {
