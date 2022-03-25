@@ -3,27 +3,75 @@
     "m_SelectedPackage": {
         "deviceId": "3e7b98bf",
         "name": "com.DefaultCompany.NekoNekoNekoBattle",
-        "processId": 11071,
+        "processId": 13481,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "3e7b98bf",
-            "name": "com.DefaultCompany.NekoNekoNekoBattle",
-            "processId": 8431,
+            "name": "com.bbk.launcher2",
+            "processId": 17093,
             "exited": false
         },
         {
             "deviceId": "3e7b98bf",
             "name": "com.DefaultCompany.NekoNekoNekoBattle",
-            "processId": 10241,
+            "processId": 32521,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 2880,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 4124,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 5449,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 7303,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 8186,
             "exited": false
         },
         {
             "deviceId": "3e7b98bf",
             "name": "com.DefaultCompany.NekoNekoNekoBattle",
-            "processId": 11071,
+            "processId": 8868,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 10193,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 11327,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 13481,
             "exited": false
         }
     ],

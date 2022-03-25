@@ -35,7 +35,7 @@ public class DataLogin
 {
     public string id;
     public string data;
-    public string responseURL;
+    public string responseUrl;
 }
 public class DataSign
 {
