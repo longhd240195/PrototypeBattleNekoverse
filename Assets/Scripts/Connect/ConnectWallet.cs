@@ -1,24 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Security.Cryptography;
-using Newtonsoft.Json.Linq;
-using System;
+using TMPro;
 
 public class ConnectWallet : MonoBehaviour
 {
-    string str = "{ \"message\": \"Test Message\"}";
-    private void Start()
+    [SerializeField] private TextMeshProUGUI text;
+    public void OnButtonConnectClick()
     {
-        JObject data = JObject.Parse(str);
-        Debug.Log(data);
-        // var publicKey = RSAController.ConvertPublicKeyToXml(DataConst.PUBLIC_KEY);
-        // var rsa = new RSACryptoServiceProvider();
-        // string pubKeyString = RSAController.GetKeyString(publicKey);
-        // //Debug.Log(pubKeyString);
-        // string encryptedText = RSAController.Encrypt("Thao", pubKeyString);
-        // Debug.Log(encryptedText);
-
+        var data = new DataSign
+        {
+            message = "Test Message"
+        };
+        string dataSign = JsonUtility.ToJson(data);
+        //string c = RSAController.Encrypt(RSAController.CheckData(dataSign), DataConst.PUBLIC_KEY);
+        string c = "";
+        var obj = new DataLogin
+        {
+            id = DataConst.ID,
+            data = c,
+            responseURL = DataConst.RESPONSE_URL
+        };
+        var s = JsonUtility.ToJson(obj);
+            
+        string url = DataConst.NEKOWALLET_URL + "?data=" + s;
+        text.text = url;
+        Application.OpenURL(url);
+        Debug.Log(url);
     }
-
 }
