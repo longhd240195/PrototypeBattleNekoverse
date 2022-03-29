@@ -26,10 +26,15 @@ public class DataConst
     public const int MAX_HP_PET = 500;
     public const string NAME_FOLDER_AREA = "Area";
 
+    //Connect
     public const string ID = "fea8dc14-cf13-4360-bb79-60d4bbfdc8de";
     public const string PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlduwiCc1ByxBoQA7CPvPF0s5jrX6bJRHzo5oPpRqay4XISFSOY0JDLFL2UZZycAIa09sk6tC/4GUMJcAdwHL0VGX6R+x7sh2EZHv3GTLj0LChF+onFAzyW1W28MjDcZDRQrys1A/HJLecmmpZdW0Egw3ziD3duK6H8M3vxu6eT3jzMFfns5DBABPH7CxRPQxkmVEXQpooXkDILytWdtdkgDJnql4iVORk3bF5cUDWlW/XGd7mzfWEt/rMEvmwamHDu+YYE8V810+OjhdC05Hv0UZ1i6C5mTahuNf0vnxUBNV0cqo8+IvsnSPH+0KHgp3bUGCvODqCo3lTg76WRLtiQIDAQAB";
     public const string RESPONSE_URL = "nekoverse://login";
     public const string NEKOWALLET_URL = "nekowallet://sign";
+
+    //Load image neko in url
+    public const string NEKO_IMAGE_URL = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/100x100/";
+    public const string NEKO_IMAGE_PNG = ".png";
 }
 public class DataLogin
 {
@@ -40,4 +45,41 @@ public class DataLogin
 public class DataSign
 {
     public string message;
+}
+public class NekoData
+{
+    public string id;
+    public string mint_address;
+    public string nft_id;
+    public string name;
+    public MetaData metadata;
+    public int level;
+    public int experience;
+    public TraitsData[] traits;
+}
+public class MetaData
+{
+    public int atk;
+    public int m_atk;
+    public int def;
+    public int m_def;
+    public int speed;
+    public int health;
+    public int mana;
+}
+public class TraitsNeko
+{
+    public TraitsData body;
+}
+public class TraitsData
+{
+    public string id;
+    public string name;
+    public TraitsType trait_type;
+}
+public class TraitsType
+{
+    public string id;
+    public string name;
+    public string description;
 }

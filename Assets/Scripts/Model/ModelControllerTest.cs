@@ -37,6 +37,8 @@ public class ModelControllerTest : MonoBehaviour
     private List<Neko> listNeko;
     private Neko neko;
     private int cacheIdNeko = 0;
+
+    private List<NekoData> listNekoData;
     private void Awake()
     {
         InitTraitName();
@@ -47,6 +49,7 @@ public class ModelControllerTest : MonoBehaviour
     public void Start()
     {
         listNeko = DataTest.GetListNeko();
+        listNekoData = DataTest.GetMyNekoDatas();
         neko = listNeko[cacheIdNeko];
         InitNeko(neko);
     }
@@ -106,12 +109,13 @@ public class ModelControllerTest : MonoBehaviour
     {
         for (int i = 0; i < btnYourNeko.Length; i++)
         {
-            if (i < listNeko.Count)
+            if (i < listNekoData.Count)
             {
                 btnYourNeko[i].gameObject.SetActive(true);
                 int index = i;
-                var img = btnYourNeko[index].transform.GetChild(0).GetComponent<Image>();
-                LoadImage(listNeko[index].UrlImage, img);
+                var img = btnYourNeko[index].transform.GetChild(1).GetChild(0).GetComponent<Image>();
+                string url = DataConst.NEKO_IMAGE_URL + listNekoData[index].nft_id + DataConst.NEKO_IMAGE_PNG;
+                LoadImage(url, img);
                 btnYourNeko[index].onClick.AddListener(() =>
                 {
                     neko = listNeko[index];
@@ -304,7 +308,6 @@ public class ModelControllerTest : MonoBehaviour
 
     #endregion
 
-
     #region Load data
     public void CacheFile(string currentClass = "Water")
     {
@@ -340,8 +343,6 @@ public class ModelControllerTest : MonoBehaviour
 
 
     #endregion
-
-
 
     #region Modifier
 
@@ -431,6 +432,8 @@ public class ModelControllerTest : MonoBehaviour
         nekoImageSpr = spr;
     }
     #endregion
+
+    #region Download imgae url
     public void LoadImage(string url, Image profileImage)
     {
         StartCoroutine(DownloadImage(url, profileImage));
@@ -454,4 +457,5 @@ public class ModelControllerTest : MonoBehaviour
     {
         return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
     }
+    #endregion
 }

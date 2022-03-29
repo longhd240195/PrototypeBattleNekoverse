@@ -6,10 +6,723 @@ public class DataTest
 {
     public static string[] listTraitNames = new[]
         {
-            ModelConst.Body, ModelConst.Ear, ModelConst.Nose, ModelConst.Eye, ModelConst.Eyebrow, ModelConst.Medal,
-            ModelConst.Necklaces, ModelConst.FrontFace, ModelConst.Arms, ModelConst.Accessories,
-            ModelConst.Back, ModelConst.SideFace
+        ModelConst.Body, ModelConst.Ear, ModelConst.Nose, ModelConst.Eye, ModelConst.Eyebrow, ModelConst.Medal,
+        ModelConst.Necklaces, ModelConst.FrontFace, ModelConst.Arms, ModelConst.Accessories,
+        ModelConst.Back, ModelConst.SideFace
+    };
+
+    public static List<NekoData> GetMyNekoDatas()
+    {
+        List<NekoData> listMyNekoData = new List<NekoData>(); 
+        NekoData neko = new NekoData
+        {
+            id = "15c6b4ae-bcd5-4886-bf1e-ec98790e96f3",
+            mint_address = "29MXryUw6xBBVQXiwQgD5ZqNrsbWYtA2xpLdkX6ZvC6D",
+            nft_id = "5244",
+            name = "NEKO #5244",
+            metadata = new MetaData
+            {
+                atk = 161,
+                m_atk = 189,
+                def = 186,
+                m_def = 164,
+                speed = 110,
+                health = 255,
+                mana = 100
+            },
+            level = 1,
+            experience = 0,
+            traits = new TraitsData[] {
+                new TraitsData
+                {
+                    id = "164",
+                    name = "Neutral buddy",
+                    trait_type = new TraitsType
+                    {
+                        id = "1",
+                        name = "body",
+                        description = null
+                    }
+                }, 
+                new TraitsData
+                {
+                    id = "167",
+                    name = "Sharp feline",
+                    trait_type = new TraitsType
+                    {
+                        id = "3",
+                        name = "ear",
+                        description = null
+                    }
+                }, 
+                new TraitsData
+                {
+                    id = "175",
+                    name = "Diamond gem",
+                    trait_type =new TraitsType
+                    {
+                        id = "6",
+                        name = "eyebrow",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "180",
+                    name = "Water shining pendant",
+                    trait_type =new TraitsType
+                    {
+                        id = "7",
+                        name = "medal",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "184",
+                    name = "Minimal gold",
+                    trait_type =new TraitsType
+                    {
+                        id = "8",
+                        name = "necklaces",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "200",
+                    name = "Mermaid fin",
+                    trait_type = new TraitsType
+                    {
+                        id = "14",
+                        name = "side face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "206",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "12",
+                        name = "accessories",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "206",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "12",
+                        name = "accessories",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "211",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "13",
+                        name = "back",
+                        description = null
+                    } 
+                },
+                new TraitsData
+                {
+                    id = "272",
+                    name = "Red gradient",
+                    trait_type =new TraitsType
+                    {
+                        id = "2",
+                        name = "background",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "375",
+                    name = "Heart nose",
+                    trait_type =new TraitsType
+                    {
+                        id = "4",
+                        name = "nose",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "379",
+                    name = "Fire extinguisher",
+                    trait_type =new TraitsType
+                    {
+                        id = "11",
+                        name = "arms",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "380",
+                    name = "Frappuccino bottle hat",
+                    trait_type = new TraitsType
+                    {
+                        id = "9",
+                        name = "top",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "387",
+                    name = "Aqua cupid",
+                    trait_type = new TraitsType
+                    {
+                        id = "10",
+                        name = "front face",
+                        description = null
+                    }
+                }
+            }
         };
+        
+        
+
+        NekoData neko1 = new NekoData
+        {
+            id = "47e04355-7243-4f15-96e4-a8192fd5022a",
+            mint_address = "4kixX7y4x536BT2xuk1EYidBQoucZMjGhFneQ4KytiwR",
+            nft_id = "1841",
+            name = "NEKO #1841",
+            metadata = new MetaData
+            {
+                atk = 161,
+                m_atk = 189,
+                def = 186,
+                m_def = 164,
+                speed = 110,
+                health = 255,
+                mana = 100
+            },
+            level = 1,
+            experience = 0,
+            traits = new TraitsData[] {
+                new TraitsData
+                {
+                    id = "11",
+                    name = "Frightening",
+                    trait_type = new TraitsType
+                    {
+                        id = "5",
+                        name = "eye",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "17",
+                    name = "Long stone",
+                    trait_type = new TraitsType
+                    {
+                        id = "6",
+                        name = "eyebrow",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "19",
+                    name = "Stone pendant",
+                    trait_type =new TraitsType
+                    {
+                        id = "7",
+                        name = "medal",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "38",
+                    name = "Bare",
+                    trait_type =new TraitsType
+                    {
+                        id = "10",
+                        name = "front face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "42",
+                    name = "Earth cheek",
+                    trait_type =new TraitsType
+                    {
+                        id = "14",
+                        name = "side face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "43",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "11",
+                        name = "arms",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "56",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "13",
+                        name = "back",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "231",
+                    name = "Orange gradient",
+                    trait_type = new TraitsType
+                    {
+                        id = "2",
+                        name = "background",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "362",
+                    name = "Hard hat",
+                    trait_type = new TraitsType
+                    {
+                        id = "9",
+                        name = "top",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "364",
+                    name = "Spicky collar",
+                    trait_type =new TraitsType
+                    {
+                        id = "8",
+                        name = "necklaces",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "365",
+                    name = "From the hood",
+                    trait_type =new TraitsType
+                    {
+                        id = "3",
+                        name = "ear",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "367",
+                    name = "Nose ring",
+                    trait_type =new TraitsType
+                    {
+                        id = "4",
+                        name = "nose",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "369",
+                    name = "First warrior",
+                    trait_type = new TraitsType
+                    {
+                        id = "12",
+                        name = "accessories",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "389",
+                    name = "Ground buddy",
+                    trait_type = new TraitsType
+                    {
+                        id = "1",
+                        name = "body",
+                        description = null
+                    }
+                }
+            }
+        };
+        NekoData neko2 = new NekoData
+        {
+            id = "fa681035-cddc-44be-8182-bd25057c5534",
+            mint_address = "6uZWNsJPaF27uPM5rTVuHtGEz3RtFAcUa1hjJncCTQbN",
+            nft_id = "12",
+            name = "NEKO #12",
+            metadata = new MetaData
+            {
+                atk = 161,
+                m_atk = 189,
+                def = 186,
+                m_def = 164,
+                speed = 110,
+                health = 255,
+                mana = 100
+            },
+            level = 1,
+            experience = 0,
+            traits = new TraitsData[] {
+                new TraitsData
+                {
+                    id = "12",
+                    name = "Eye-opened",
+                    trait_type = new TraitsType
+                    {
+                        id = "5",
+                        name = "eye",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "13",
+                    name = "Arched",
+                    trait_type = new TraitsType
+                    {
+                        id = "6",
+                        name = "eyebrow",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "21",
+                    name = "Silver pendant",
+                    trait_type =new TraitsType
+                    {
+                        id = "7",
+                        name = "medal",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "29",
+                    name = "Shining Unicorn horn",
+                    trait_type =new TraitsType
+                    {
+                        id = "9",
+                        name = "top",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "35",
+                    name = "Rock Gem face",
+                    trait_type =new TraitsType
+                    {
+                        id = "10",
+                        name = "front face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "40",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "14",
+                        name = "side face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "51",
+                    name = "Ninja Pad",
+                    trait_type = new TraitsType
+                    {
+                        id = "12",
+                        name = "accessories",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "56",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "13",
+                        name = "back",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "230",
+                    name = "Mint gradient",
+                    trait_type = new TraitsType
+                    {
+                        id = "2",
+                        name = "background",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "357",
+                    name = "Matt plier",
+                    trait_type =new TraitsType
+                    {
+                        id = "11",
+                        name = "arms",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "364",
+                    name = "Spicky collar",
+                    trait_type =new TraitsType
+                    {
+                        id = "8",
+                        name = "necklaces",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "367",
+                    name = "Nose ring",
+                    trait_type =new TraitsType
+                    {
+                        id = "4",
+                        name = "nose",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "388",
+                    name = "Haft blood buddy",
+                    trait_type = new TraitsType
+                    {
+                        id = "1",
+                        name = "body",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "397",
+                    name = "Flash",
+                    trait_type = new TraitsType
+                    {
+                        id = "3",
+                        name = "ear",
+                        description = null
+                    }
+                }
+            }
+        };
+        NekoData neko3 = new NekoData
+        {
+            id = "2a92913b-98c1-46ff-8427-aa3bfd08d75f",
+            mint_address = "6PX72AkDUR1wH7kXcPuX2kqZ2XArLRA6cBs5W4vaN3MT",
+            nft_id = "7135",
+            name = "NEKO #7135",
+            metadata = new MetaData
+            {
+                atk = 161,
+                m_atk = 189,
+                def = 186,
+                m_def = 164,
+                speed = 110,
+                health = 255,
+                mana = 100
+            },
+            level = 1,
+            experience = 0,
+            traits = new TraitsData[] {
+                new TraitsData
+                {
+                    id = "64",
+                    name = "Bunny",
+                    trait_type = new TraitsType
+                    {
+                        id = "3",
+                        name = "ear",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "67",
+                    name = "Big nose",
+                    trait_type = new TraitsType
+                    {
+                        id = "4",
+                        name = "nose",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "69",
+                    name = "Fire stare",
+                    trait_type =new TraitsType
+                    {
+                        id = "5",
+                        name = "eye",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "73",
+                    name = "Picky",
+                    trait_type =new TraitsType
+                    {
+                        id = "6",
+                        name = "eyebrow",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "78",
+                    name = "Fire shining pendant",
+                    trait_type =new TraitsType
+                    {
+                        id = "7",
+                        name = "medal",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "82",
+                    name = "Minimal gold",
+                    trait_type = new TraitsType
+                    {
+                        id = "8",
+                        name = "necklaces",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "83",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "9",
+                        name = "top",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "93",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "10",
+                        name = "front face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "99",
+                    name = "Gold cheek",
+                    trait_type = new TraitsType
+                    {
+                        id = "14",
+                        name = "side face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "104",
+                    name = "Molotov",
+                    trait_type =new TraitsType
+                    {
+                        id = "11",
+                        name = "arms",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "110",
+                    name = "Bare",
+                    trait_type =new TraitsType
+                    {
+                        id = "13",
+                        name = "back",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "239",
+                    name = "K Character",
+                    trait_type =new TraitsType
+                    {
+                        id = "2",
+                        name = "background",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "284",
+                    name = "Shining warrior",
+                    trait_type = new TraitsType
+                    {
+                        id = "12",
+                        name = "accessories",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "360",
+                    name = "Candy buddy",
+                    trait_type = new TraitsType
+                    {
+                        id = "1",
+                        name = "body",
+                        description = null
+                    }
+                }
+            }
+        };
+        listMyNekoData.Add(neko);
+        listMyNekoData.Add(neko1);
+        listMyNekoData.Add(neko2);
+        listMyNekoData.Add(neko3);
+        return listMyNekoData;
+    }
     public static List<Neko> GetListNeko()
     {
         List<Neko> listNeko = new List<Neko>();
@@ -804,4 +1517,6 @@ public class DataTest
         listNeko.Add(neko5);
         return listNeko;
     }
+
+
 }
