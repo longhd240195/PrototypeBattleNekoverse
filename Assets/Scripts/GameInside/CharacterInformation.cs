@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using DG.Tweening;
-
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,6 @@ public class CharacterInformation : MonoBehaviour
     [Header("Reference")]
     [SerializeField] GetTouch btnOnCharacter;
     [SerializeField] ModelController nekoController;
-    [SerializeField] Transform targetCanSelect;
     [SerializeField] Transform targetSelected;
     [SerializeField] Animator animator;
     [SerializeField] private BattleController controller;
@@ -30,7 +28,7 @@ public class CharacterInformation : MonoBehaviour
     private Vector3 localCone;
 
     public BattleController Controller { get => controller; set => controller = value; }
-    public Neko Neko { get => nekoController.neko; set => nekoController.neko = value; }
+    public NekoData Neko { get => nekoController.neko; set => nekoController.neko = value; }
     public ModelController NekoController { get => nekoController; }
     public float Health => CurrentStat.Hp;
     public int Mana => CurrentStat.Mana;
@@ -67,7 +65,7 @@ public class CharacterInformation : MonoBehaviour
     [ContextMenu("Update Cone")]
     private void UpdateCone()
     {
-        targetCanSelect = transform.Find("Cone");
+        //targetCanSelect = transform.Find("Cone");
     }
 
     [ContextMenu("Update Selected")]
@@ -115,10 +113,10 @@ public class CharacterInformation : MonoBehaviour
         UpdateStat();
     }
 
-    private void SetNekoStat(Neko neko)
+    private void SetNekoStat(NekoData neko)
     {
-        initStat.Level = neko.Level;
-        initStat.Hp = neko.HP;
+        initStat.Level = neko.level;
+        initStat.Hp = neko.metadata.health;
     }
 
     public void LoadManaBar()

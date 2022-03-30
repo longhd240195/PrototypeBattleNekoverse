@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a1650537b92114385ab02b4f59b14d, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: 
-  nameSkill: Fire Virus
+  nameSkill: Neko-Skill-4-1
   icon: {fileID: 8821516196380029320, guid: 412b583064485cb4eb1af707150fe96d, type: 3}
   className: 2
   desception: Decrease all of your opponent's Nekos by 20%. \nThis skill can not

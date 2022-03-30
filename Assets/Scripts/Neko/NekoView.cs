@@ -9,10 +9,10 @@ public class NekoView : MonoBehaviour
     [SerializeField] private NekoBar nekoBar;
     [SerializeField] private Text nekoNameText;
     [SerializeField] private GameObject DesceptionSkill;
-    public void Init(Neko neko)
+    public void Init(NekoData neko)
     {
         nekoBar.InitNekoBar(neko);
-        SetName(neko.NekoName);
+        SetName(neko.name);
     }
 
     private void SetName(string name)

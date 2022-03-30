@@ -14,12 +14,12 @@ public class DataConst
     public const float DEFAULT_100 = 100;
 
     public const int MAX_MANA_NEKO = 5;
-    public const int MAX_DAME_NEKO = 200;
-    public const int MAX_SPEED_NEKO = 200;
-    public const int MAX_HP_NEKO = 200;
-    public const int MAX_MAGIC_NEKO = 200;
-    public const int MAX_DEF_NEKO = 200;
-    public const int MAX_RESIST_NEKO = 200;
+    public const int MAX_DAME_NEKO = 300;
+    public const int MAX_SPEED_NEKO = 300;
+    public const int MAX_HP_NEKO = 300;
+    public const int MAX_MAGIC_NEKO = 300;
+    public const int MAX_DEF_NEKO = 300;
+    public const int MAX_RESIST_NEKO = 300;
 
     public const int MAX_DAME_PET = 500;
     public const int MAX_SPEED_PET = 500;
@@ -52,12 +52,14 @@ public class NekoData
     public string mint_address;
     public string nft_id;
     public string name;
-    public MetaData metadata;
+    public string className;
+    public MetaDataNeko metadata;
     public int level;
     public int experience;
     public TraitsData[] traits;
+    public SkillNekoData[] skills;
 }
-public class MetaData
+public class MetaDataNeko
 {
     public int atk;
     public int m_atk;
@@ -65,6 +67,20 @@ public class MetaData
     public int m_def;
     public int speed;
     public int health;
+    public int mana;
+}
+public class SkillNekoData
+{
+    public string id;
+    public string name;
+    public MetaDataSkill metadata;
+}
+public class MetaDataSkill
+{
+    public string function;
+    public int atk;
+    public int def;
+    public int speed;
     public int mana;
 }
 public class TraitsNeko

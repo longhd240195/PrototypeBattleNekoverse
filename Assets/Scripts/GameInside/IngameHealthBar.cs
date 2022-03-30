@@ -24,7 +24,7 @@ public class IngameHealthBar : MonoBehaviour
     public void Init(CharacterInformation infor)
     {
         main.transform.localScale = border.transform.localScale;
-        txtName.text = infor.Neko.NekoName;
+        txtName.text = infor.Neko.name;
         //txt.text = $"{infor.Health}/{infor.InitHealth}";
         txtLevel.text = infor.CurrentStat.Level.ToString();
         currentPercent = 1;
@@ -62,7 +62,7 @@ public class IngameHealthBar : MonoBehaviour
     }
     private void SetImageClassNeko(CharacterInformation infor)
     {
-        classSpr.sprite = listClassSprs.Find(s => String.Compare(s.name, infor.Neko.NekoClass.ToString().ToLower(), StringComparison.OrdinalIgnoreCase) == 0);
+        classSpr.sprite = listClassSprs.Find(s => String.Compare(s.name, infor.Neko.className.ToString().ToLower(), StringComparison.OrdinalIgnoreCase) == 0);
     }
     public void SetManaBar(CharacterInformation infor)
     {

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,14 +6,11 @@ using DG.Tweening;
 
 public class ModelCanvas : MonoBehaviour
 {
-    [SerializeField] private ModelControllerTest controller;
-    [SerializeField] private GameLoading loadingLoader;
+    [SerializeField] private ModelController controller;
     [SerializeField] private Button[] btnChangeClass;
     [SerializeField] private Button[] btnChangeTraits;
     [SerializeField] private Button[] btnChangeTraitsInfor;
-    [SerializeField] private Button[] btnChangeSkill;
     [SerializeField] private Button[] btnYourNeko;
-    [SerializeField] private Button btnChangeModel;
     [Header("Animation")]
     [SerializeField] private RectTransform posListNeko;
     [SerializeField] private RectTransform listNekoObj;
@@ -33,6 +27,7 @@ public class ModelCanvas : MonoBehaviour
 
     private void Start()
     {
+        controller.LoadNeko(DataTest.GetMyNekoDatas());
         controller.InitButtonClass(btnChangeClass);
         controller.InitButtonYourNeko(btnYourNeko);
         controller.InitButtonTraits(btnChangeTraits, btnChangeTraitsInfor);

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,21 +25,22 @@ public class BattleNekoView : MonoBehaviour
     public void LoadNekoBar(CharacterInformation character)
     {
         imgNeko.texture = character.MainTexture;
-        character.NekoController.LoadImage(character.Neko.UrlImage, img);
-        txtNekoName.text = character.Neko.NekoName;
-        txtHp.text = character.Neko.HP.ToString();
-        txtMagic.text = character.Neko.Magic.ToString();
-        txtSpeed.text = character.Neko.Speed.ToString();
-        txtResist.text = character.Neko.Resist.ToString();
-        txtAtk.text = character.Neko.Atk.ToString();
-        txtDef.text = character.Neko.def.ToString();
-        sliderHP.fillAmount = (character.Neko.HP * DataConst.DEFAULT_100 / DataConst.MAX_HP_NEKO) / DataConst.DEFAULT_100;
-        sliderMagic.fillAmount = (character.Neko.Magic * DataConst.DEFAULT_100 / DataConst.MAX_MAGIC_NEKO) / DataConst.DEFAULT_100;
-        sliderSpeed.fillAmount = (character.Neko.Speed * DataConst.DEFAULT_100 / DataConst.MAX_SPEED_NEKO) / DataConst.DEFAULT_100;
-        sliderResist.fillAmount = (character.Neko.Resist * DataConst.DEFAULT_100 / DataConst.MAX_RESIST_NEKO) / DataConst.DEFAULT_100;
-        sliderAtk.fillAmount = (character.Neko.Atk * DataConst.DEFAULT_100 / DataConst.MAX_DAME_NEKO) / DataConst.DEFAULT_100;
-        sliderDef.fillAmount = (character.Neko.def * DataConst.DEFAULT_100 / DataConst.MAX_DEF_NEKO) / DataConst.DEFAULT_100;
-        imgClassNeko.sprite = listClassSpr.Find(s => String.Compare(s.name, character.Neko.NekoClass.ToString().ToLower()) == 0);
+        string url = DataConst.NEKO_IMAGE_URL + character.Neko.nft_id + DataConst.NEKO_IMAGE_PNG;
+        character.NekoController.LoadImage(url, img);
+        txtNekoName.text = character.Neko.name;
+        txtHp.text = character.Neko.metadata.health.ToString();
+        txtMagic.text = character.Neko.metadata.m_atk.ToString();
+        txtSpeed.text = character.Neko.metadata.speed.ToString();
+        txtResist.text = character.Neko.metadata.m_def.ToString();
+        txtAtk.text = character.Neko.metadata.atk.ToString();
+        txtDef.text = character.Neko.metadata.def.ToString();
+        sliderHP.fillAmount = (character.Neko.metadata.health * DataConst.DEFAULT_100 / DataConst.MAX_HP_NEKO) / DataConst.DEFAULT_100;
+        sliderMagic.fillAmount = (character.Neko.metadata.m_atk * DataConst.DEFAULT_100 / DataConst.MAX_MAGIC_NEKO) / DataConst.DEFAULT_100;
+        sliderSpeed.fillAmount = (character.Neko.metadata.speed * DataConst.DEFAULT_100 / DataConst.MAX_SPEED_NEKO) / DataConst.DEFAULT_100;
+        sliderResist.fillAmount = (character.Neko.metadata.m_def * DataConst.DEFAULT_100 / DataConst.MAX_RESIST_NEKO) / DataConst.DEFAULT_100;
+        sliderAtk.fillAmount = (character.Neko.metadata.atk * DataConst.DEFAULT_100 / DataConst.MAX_DAME_NEKO) / DataConst.DEFAULT_100;
+        sliderDef.fillAmount = (character.Neko.metadata.def * DataConst.DEFAULT_100 / DataConst.MAX_DEF_NEKO) / DataConst.DEFAULT_100;
+        imgClassNeko.sprite = listClassSpr.Find(s => String.Compare(s.name, character.Neko.className.ToString().ToLower()) == 0);
     }
 
 }

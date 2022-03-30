@@ -10,6 +10,7 @@ public class MainController : MonoBehaviour
     [SerializeField] private List<RectTransform> listNekoBtn;
     [SerializeField] private List<Image> listNekoTeamImg;
     [SerializeField] private MainAnimationView view;
+    [SerializeField] private GameObject loadingPrefab;
     private List<NekoData> listMyNeko;
     private const int MAX_SIZE = 300;
     void Start()
@@ -21,16 +22,23 @@ public class MainController : MonoBehaviour
 
     void LoadNeko()
     {
-        int maxNeko = listMyNeko.Count;
-        Debug.Log(maxNeko);
-        float minSize = MAX_SIZE - (maxNeko - 1) * 20;
+        int maxNeko = 0;
+        if (listMyNeko.Count > 4)
+        {
+            maxNeko = 3;
+        }
+        else
+        {
+            maxNeko = listMyNeko.Count;
+        }
+        float minSize = MAX_SIZE - (maxNeko - 1) * 40;
         for (int i = 0; i < listNekoBtn.Count; i++)
         {
             if (i < maxNeko)
             {
-                float width = minSize + i * 20;
-                float height = minSize + i * 20;
-                float posX = width / 2 - 350 + i * 50;
+                float width = minSize + i * 40;
+                float height = minSize + i * 40;
+                float posX = width / 2 - 350 + i * 100;
                 listNekoBtn[i].sizeDelta = new Vector2(width, height);
                 listNekoBtn[i].localPosition = new Vector2(posX, listNekoBtn[i].localPosition.y);
                 Button btn = listNekoBtn[i].gameObject.GetComponent<Button>();
@@ -60,6 +68,15 @@ public class MainController : MonoBehaviour
 
     private void OnLoadYourNeko()
     {
+        StartCoroutine(LoadSceneYourNeko());
+    }
+
+    private IEnumerator LoadSceneYourNeko()
+    {
+        GameObject loading = Instantiate(loadingPrefab);
+        loading.transform.SetParent(transform);
+        yield return new WaitForSeconds(3f);
+        Destroy(loading);
         SceneManager.LoadScene(DataConst.YOUR_NEKO_SCENE);
     }
     public void LoadMapSence()

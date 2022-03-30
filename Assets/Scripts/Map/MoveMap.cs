@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 {
-    [SerializeField] private GameLoading levelLoader;
     [SerializeField] private Image img;
     [SerializeField] private Image preBattle;
     [SerializeField] private Image preBattle2;
@@ -176,11 +175,9 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
             isIn = !isIn;
         }
         drag = false;
-
     }
     public void OnBtnPointerClick(Button eventData, MapData[] l)
     {
-
         if (!drag)
         {
             if (!isIn)

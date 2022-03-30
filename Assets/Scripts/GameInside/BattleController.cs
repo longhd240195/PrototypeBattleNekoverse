@@ -41,17 +41,17 @@ public class BattleController : MonoBehaviour
     private List<CharacterInformation> orderCharacters;
     private List<CharacterInformation> currentOrderCharacters;
 
-    private List<Neko> listNeko;
+    private List<NekoData> listNekoData;
 
     private void Start()
     {
-        listNeko = DataTest.GetNekoBattle();
+        listNekoData = DataTest.GetNekoDataBattle();
 
         for (int i = 0; i < 6; i++)
         {
-            if (clr.Length == listNeko.Count)
+            if (clr.Length == listNekoData.Count)
             {
-                clr[i].InitNeko(listNeko[i]);
+                clr[i].InitNekoData(listNekoData[i],true);
             }
         }
     }
