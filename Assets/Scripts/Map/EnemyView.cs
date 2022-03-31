@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelView : MonoBehaviour
+public class EnemyView : MonoBehaviour
 {
     public Image icon;
     [SerializeField] private GameObject objOnLevel;
@@ -14,8 +12,4 @@ public class LevelView : MonoBehaviour
     {
         objOnLevel.SetActive(isOnLevel);
     }
-    //public void SetIconLevel()
-    //{
-    //    icon.sprite = level.Icon;
-    //}
 }

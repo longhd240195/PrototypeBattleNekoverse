@@ -14,18 +14,13 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     [SerializeField] private Image preBattle2;
     [SerializeField] private List<Button> areasBtn;
     [SerializeField] private List<Button> lands;
-    [SerializeField] private List<Button> levels;
+    [SerializeField] private List<Button> enemyBtn;
     [SerializeField] private BattleView battleView;
     [Header("Anim")]
     [SerializeField] private RectTransform posBar;
     [SerializeField] private RectTransform barObj;
     [SerializeField] private RectTransform posInventory;
     [SerializeField] private RectTransform InventoryObj;
-
-    private List<Button> btnCacheLands = new List<Button>();
-    private Dictionary<string, MapData[]> cacheMap;
-    private Dictionary<string, MapData[]> Cache =>
-        cacheMap ?? (cacheMap = new Dictionary<string, MapData[]>());
 
     private Vector2 sizeScene;
     private Vector2 initSize;
@@ -34,9 +29,14 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     private float sizeMultiple = 3f;
     private bool drag;
     private bool isIn;
+
+    //data map api fake
+    private List<DataArea> listDataAreas;
+    private List<DataAreaLevel> listDataAreaLevel;
     private void Awake()
     {
-        LoadDataMap();
+        listDataAreas = DataTest.GetDataAreas();
+        listDataAreaLevel = DataTest.GetDataAreaLevels();
     }
     private void Start()
     {
@@ -49,66 +49,22 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     }
     public void LoadHomeScene()
     {
-        //levelLoader.LoadLevel(DataConst.MAIN_SCENE);
         SceneManager.LoadScene(DataConst.MAIN_SCENE);
     }
     public void OpenSceneBattle()
     {
-        //levelLoader.LoadLevel(DataConst.BATTLE_SCENE);
         SceneManager.LoadScene(DataConst.BATTLE_SCENE);
     }
     void LoadArea(List<Button> btnAreas)
     {
-        for (int i = 0; i < btnAreas.Count; i++)
+        for (int i = 0; i < listDataAreas.Count; i++)
         {
-            if (i < cacheMap.Count)
-            {
-                btnAreas[i].gameObject.SetActive(true);
-                int index = i;
-                var area = Cache[btnAreas[i].name];
-                btnAreas[index].onClick.AddListener(() => OnBtnPointerClick(btnAreas[index], area));
-            }
-            else
-            {
-                btnAreas[i].gameObject.SetActive(false);
-            }
+            Button btn = btnAreas.Find(s => s.GetComponent<Area>().nameArea == listDataAreas[i].name);
+            btn.gameObject.SetActive(true);
+            Area area = btn.gameObject.GetComponent<Area>();
+            area.data = listDataAreas[i];
         }
-    }
-    void LoadLand(List<Button> btnLands, MapData[] lands)
-    {
-        for (int i = 0; i < btnLands.Count; i++)
-        {
-            if (i < lands.Length)
-            {
-                btnLands[i].gameObject.SetActive(true);
-                int index = i;
-                var area = lands[i];
-                btnLands[index].onClick.AddListener(() => OpenTitle(area));
-            }
-            else
-            {
-                btnLands[i].gameObject.SetActive(false);
-            }
-        }
-    }
-    void LoadLevel(List<Button> btnLevels, MapData area)
-    {
-        for (int i = 0; i < btnLevels.Count; i++)
-        {
-            if (i < area.DataLevel.Count)
-            {
-                btnLevels[i].gameObject.SetActive(true);
-                int index = i;
-                var level = area.DataLevel[i];
-                btnLevels[i].GetComponent<LevelView>().level = level;
-                btnLevels[i].GetComponent<LevelView>().SetIconLevel();
-                btnLevels[index].onClick.AddListener(() => OpenBatlle(level));
-            }
-            else
-            {
-                btnLevels[i].gameObject.SetActive(false);
-            }
-        }
+        btnAreas.ForEach(s => s.onClick.AddListener(() => OnBtnPointerClick(s)));
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -134,49 +90,24 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
         if (!drag)
         {
             if (isIn)
             {
-                // var diff = (Vector2)img.rectTransform.position - eventData.position;
-                // var toCenter = sizeScene / 2 - eventData.position;
-                // var last = diff * sizeMultiple - diff + toCenter;
-
-                // img.rectTransform.DOSizeDelta(sizeMultiple * initSize, 1f);
-                // img.rectTransform.DOMove(last, 1f).SetRelative(true);
-                //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeMultiple * sizeChild, 1f));
                 var diff = (Vector2)img.rectTransform.position - eventData.position;
                 var toCenter = sizeScene / 2 - eventData.position;
                 var last = diff / sizeMultiple - diff + toCenter;
                 Vector2 center = new Vector2(0f, 0f);
                 img.rectTransform.DOSizeDelta(initSize, 1f);
-                //img.rectTransform.DOMove(center, 1f).SetRelative(true);
                 img.rectTransform.DOLocalMove(center, 1f);
-                //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
                 areasBtn.ForEach(i => i.gameObject.SetActive(true));
                 lands.ForEach(i => i.gameObject.SetActive(false));
             }
-            // else
-            // {
-            //     var diff = (Vector2)img.rectTransform.position - eventData.position;
-            //     var toCenter = sizeScene / 2 - eventData.position;
-            //     var last = diff / sizeMultiple - diff + toCenter;
-            //     Vector2 center = new Vector2(0f, 0f);
-            //     img.rectTransform.DOSizeDelta(initSize, 1f);
-            //     //img.rectTransform.DOMove(center, 1f).SetRelative(true);
-            //     img.rectTransform.DOLocalMove(center, 1f);
-            //     Debug.Log(last);
-
-            //     //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
-            //     areasBtn.ForEach(i => i.gameObject.SetActive(true));
-            //     lands.ForEach(i => i.gameObject.SetActive(false));
-            // }
             isIn = !isIn;
         }
         drag = false;
     }
-    public void OnBtnPointerClick(Button eventData, MapData[] l)
+    public void OnBtnPointerClick(Button eventData)
     {
         if (!drag)
         {
@@ -185,22 +116,19 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
                 var diff = (Vector2)img.rectTransform.position - (Vector2)eventData.transform.position;
                 var toCenter = sizeScene / 2 - (Vector2)eventData.transform.position;
                 var last = diff * sizeMultiple - diff + toCenter;
-
                 img.rectTransform.DOSizeDelta(sizeMultiple * initSize, 1f);
                 img.rectTransform.DOMove(last, 1f).SetRelative(true);
-                // areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeMultiple * sizeChild, 1f));
                 areasBtn.ForEach(i => i.gameObject.SetActive(false));
-                btnCacheLands.Clear();
-                for (int i = 0; i < lands.Count; i++)
+                Area area = eventData.gameObject.GetComponent<Area>();
+                area.landAreas.ForEach(s => s.gameObject.SetActive(true));
+                for (int i = 0; i < listDataAreaLevel.Count; i++)
                 {
-                    var landOfArea = lands[i].GetComponent<LandArea>().NameArea;
-                    var areaName = eventData.gameObject.GetComponent<Area>().area;
-                    if (landOfArea == areaName)
+                    if(listDataAreaLevel[i].area_id == area.data.id)
                     {
-                        btnCacheLands.Add(lands[i]);
+                        area.landAreas.ForEach(s => s.data = listDataAreaLevel[i]);
                     }
                 }
-                LoadLand(btnCacheLands, l);
+                area.landAreas.ForEach(s => s.gameObject.GetComponent<Button>().onClick.AddListener(() => OpenTitle(s.gameObject.GetComponent<Button>())));
             }
             else
             {
@@ -210,9 +138,7 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 
                 Vector2 center = new Vector2(0f, 0f);
                 img.rectTransform.DOSizeDelta(initSize, 1f);
-                //img.rectTransform.DOMove(center, 1f).SetRelative(true);
                 img.rectTransform.DOLocalMove(center, 1f);
-                //areas.ForEach(i => i.rectTransform.DOSizeDelta(sizeChild, 1f));
                 areasBtn.ForEach(i => i.gameObject.SetActive(true));
                 lands.ForEach(i => i.gameObject.SetActive(false));
             }
@@ -220,20 +146,38 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
         }
         drag = false;
     }
-
-    private void OpenTitle(MapData a)
+    void LoadEnemy(Button btn)
+    {
+        LandArea land = btn.GetComponent<LandArea>();
+        for (int i = 0; i < enemyBtn.Count; i++)
+        {
+            if (i < land.data.enemies.Length)
+            {
+                Button b = enemyBtn[i];
+                b.gameObject.SetActive(true);
+                EnemyView l = b.GetComponent<EnemyView>();
+                l.enemy = land.data.enemies[i];
+                b.onClick.AddListener(() => OpenBatlle(l.enemy,l.icon));
+            }
+            else
+            {
+                enemyBtn[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    private void OpenTitle(Button btn)
     {
         preBattle.gameObject.SetActive(true);
         preBattle.rectTransform.DOMoveX(sizeScene.x / 2, .5f);
-        LoadLevel(levels, a);
+        LoadEnemy(btn);
     }
     public void CloseTitle()
     {
         preBattle.rectTransform.DOMoveX(sizeScene.x * 2, .5f);
     }
-    private void OpenBatlle(LevelData l)
+    private void OpenBatlle(DataEnemy l,Image icon)
     {
-        battleView.InitBattle(l);
+        battleView.InitBattle(l,icon);
         preBattle2.gameObject.SetActive(true);
         preBattle2.rectTransform.DOMoveX(sizeScene.x / 2, .5f);
     }
@@ -259,22 +203,4 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 
         return result;
     }
-
-    private void LoadDataMap()
-    {
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "1");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "2");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "3");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "4");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "5");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "6");
-        ReadDataScripableMap(DataConst.NAME_FOLDER_AREA + "7");
-    }
-
-    private void ReadDataScripableMap(string areaName)
-    {
-        var listItem = Resources.LoadAll<MapData>($"MapData/{areaName}");
-        Cache.Add(areaName, listItem);
-    }
-
 }

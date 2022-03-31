@@ -8,9 +8,10 @@ public class DataConst
     public const string MAP_SCENE = "Map";
     public const string BATTLE_SCENE = "Battle_Scene";
     public const string MAIN_SCENE = "Main";
-    public const float MAX_ATK_BOSS = 200;
-    public const float MAX_SPEED_BOSS = 200;
-    public const float MAX_HP_BOSS = 200;
+    public const float MAX_ATK_BOSS = 500;
+    public const float MAX_SPEED_BOSS = 500;
+    public const float MAX_DEF_BOSS = 500;
+    public const float MAX_HP_BOSS = 500;
     public const float DEFAULT_100 = 100;
 
     public const int MAX_MANA_NEKO = 5;

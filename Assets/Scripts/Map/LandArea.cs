@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class LandArea : MonoBehaviour
 {
-    public string NameArea;
+    public DataAreaLevel data;
 }

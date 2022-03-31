@@ -57,7 +57,6 @@ public class ModelController : MonoBehaviour
         {
             return;
         }
-
     }
     public void InitNekoData(NekoData neko, bool isBattle = false)
     {
@@ -125,7 +124,7 @@ public class ModelController : MonoBehaviour
                 Button btn = btnSkill[i];
                 btnSkill[i].gameObject.SetActive(true);
 
-                NekoSkill n = btnSkill[i].GetComponent<NekoSkill>();
+                NekoSkillData n = btnSkill[i].GetComponent<NekoSkillData>();
                 n.NameSkill = neko.skills[i].name;
                 n.IsLockSkill = false;
 
@@ -324,9 +323,6 @@ public class ModelController : MonoBehaviour
         ReadDataScripable(currentClass, ModelConst.Top);
         ReadDataScripableSkill(currentClass);
     }
-
-
-
     private void ReadDataScripable(string className, string pathName)
     {
         List<TraitsDataModel> listItem = Resources.LoadAll<TraitsDataModel>($"ModelData/{className}/{pathName}").ToList();
@@ -338,8 +334,6 @@ public class ModelController : MonoBehaviour
     }
 
     #endregion
-
-
 
     #region Modifier
 

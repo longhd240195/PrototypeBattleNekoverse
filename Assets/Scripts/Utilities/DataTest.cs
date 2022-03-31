@@ -3491,6 +3491,18 @@ public class DataTest
                 }
             }
         };
+        listDataAreaLevel.Add(level);
+        listDataAreaLevel.Add(level1);
+        listDataAreaLevel.Add(level2);
+        listDataAreaLevel.Add(level3);
+        listDataAreaLevel.Add(level4);
+        listDataAreaLevel.Add(level5);
+        listDataAreaLevel.Add(level6);
+        listDataAreaLevel.Add(level7);
+        listDataAreaLevel.Add(level8);
+        listDataAreaLevel.Add(level9);
+        listDataAreaLevel.Add(level10);
+        listDataAreaLevel.Add(level11);
         return listDataAreaLevel;
     }
 }

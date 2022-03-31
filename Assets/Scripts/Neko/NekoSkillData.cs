@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NekoSkill : MonoBehaviour
+public class NekoSkillData : MonoBehaviour
 {
     public string NameSkill;
     public Image Icon;
@@ -12,10 +12,14 @@ public class NekoSkill : MonoBehaviour
     [SerializeField] private GameObject lockSkill;
     [SerializeField] private GameObject selectSkill;
 
+    private void Start()
+    {
+        lockSkill.SetActive(IsLockSkill);
+    }
+
     private void Update()
     {
         ChangeStateSkill();
-        ShowLockSkill();
     }
     void ChangeStateSkill()
     {
@@ -28,12 +32,7 @@ public class NekoSkill : MonoBehaviour
             selectSkill.SetActive(false);
         }
     }
-    void ShowLockSkill()
-    {
-        lockSkill.SetActive(IsLockSkill);
-    }
 }
-
 public enum StateSkill
 {
     NONE,

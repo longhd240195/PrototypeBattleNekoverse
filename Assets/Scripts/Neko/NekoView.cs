@@ -24,7 +24,7 @@ public class NekoView : MonoBehaviour
     {
         for (int i = 0; i < btnSkill.Length; i++)
         {
-            NekoSkill nekoSkill = btnSkill[i].GetComponent<NekoSkill>();
+            NekoSkillData nekoSkill = btnSkill[i].GetComponent<NekoSkillData>();
             if (nekoSkill.StateSkill == StateSkill.SELECTED && nekoSkill.NameSkill != nameSkill)
             {
                 nekoSkill.StateSkill = StateSkill.NONE;
@@ -41,7 +41,7 @@ public class NekoView : MonoBehaviour
         bool isSelect = false;
         for (int i = 0; i < btnSkill.Length; i++)
         {
-            NekoSkill nekoSkill = btnSkill[i].GetComponent<NekoSkill>();
+            NekoSkillData nekoSkill = btnSkill[i].GetComponent<NekoSkillData>();
             if (nekoSkill.StateSkill == StateSkill.SELECTED)
             {
                 isSelect = true;
@@ -60,7 +60,7 @@ public class NekoView : MonoBehaviour
     {
         for (int i = 0; i < btnSkill.Length; i++)
         {
-            NekoSkill nekoSkill = btnSkill[i].GetComponent<NekoSkill>();
+            NekoSkillData nekoSkill = btnSkill[i].GetComponent<NekoSkillData>();
             if (nekoSkill.StateSkill == StateSkill.SELECTED)
             {
                 nekoSkill.StateSkill = StateSkill.NONE;
