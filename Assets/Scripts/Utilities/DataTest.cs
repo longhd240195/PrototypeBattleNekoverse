@@ -2281,4 +2281,1216 @@ public class DataTest
         listMyNekoData.Add(neko5);
         return listMyNekoData;
     }
+    
+    public static List<DataArea> GetDataAreas()
+    {
+        List<DataArea> listArea = new List<DataArea>();
+        DataArea area = new DataArea
+        {
+            id = "bd81a30e-96f5-4522-bbfa-a0b29f9032bb",
+            name = "area-1",
+            description = "Fire",
+            area_type = 0,
+            metadata = new MetaDataBackground
+            {
+                background = "fire"
+            },
+            created_at = "2022-03-23T10:19:12.613Z",
+            updated_at = "2022-03-23T10:19:12.613Z",
+            deleted_at = null,
+            max_map_level = 2
+        };
+        DataArea area1 = new DataArea
+        {
+            id = "0ddd676e-9c32-4e8a-88dd-b27685b9c905",
+            name = "area-2",
+            description = "Water",
+            area_type = 1,
+            metadata = new MetaDataBackground
+            {
+                background = "water"
+            },
+            created_at = "2022-03-23T10:19:12.613Z",
+            updated_at = "2022-03-23T10:19:12.613Z",
+            deleted_at = null,
+            max_map_level = 4
+        };
+        DataArea area2 = new DataArea
+        {
+            id = "fbb9b471-dddb-4768-a3eb-577020a21063",
+            name = "area-3",
+            description = "Plant",
+            area_type = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "plant"
+            },
+            created_at = "2022-03-23T10:19:12.613Z",
+            updated_at = "2022-03-23T10:19:12.613Z",
+            deleted_at = null,
+            max_map_level = 2
+        };
+        DataArea area3 = new DataArea
+        {
+            id = "2bbd6514-05c0-4d7a-8eda-77c6ac4a8a0c",
+            name = "area-4",
+            description = "Inferno",
+            area_type = 3,
+            metadata = new MetaDataBackground
+            {
+                background = "inferno"
+            },
+            created_at = "2022-03-23T10:19:12.613Z",
+            updated_at = "2022-03-23T10:19:12.613Z",
+            deleted_at = null,
+            max_map_level = 2
+        };
+        DataArea area4 = new DataArea
+        {
+            id = "0cc2ade4-fddf-4bbd-84c4-8eecd12a972f",
+            name = "area-5",
+            description = "Hell",
+            area_type = 4,
+            metadata = new MetaDataBackground
+            {
+                background = "hell"
+            },
+            created_at = "2022-03-23T10:19:12.613Z",
+            updated_at = "2022-03-23T10:19:12.613Z",
+            deleted_at = null,
+            max_map_level = 2
+        };
+        DataArea area5 = new DataArea
+        {
+            id = "fc093330-fd2d-4f71-a734-a45336932dda",
+            name = "area-6",
+            description = "Land",
+            area_type = 5,
+            metadata = new MetaDataBackground
+            {
+                background = "land"
+            },
+            created_at = "2022-03-23T10:19:12.613Z",
+            updated_at = "2022-03-23T10:19:12.613Z",
+            deleted_at = null,
+            max_map_level = 2
+        };
+        listArea.Add(area);
+        listArea.Add(area1);
+        listArea.Add(area2);
+        listArea.Add(area3);
+        listArea.Add(area4);
+        listArea.Add(area5);
+        return listArea;
+    }
+
+    public static List<DataAreaLevel> GetDataAreaLevels()
+    {
+        List<DataAreaLevel> listDataAreaLevel = new List<DataAreaLevel>();
+        DataAreaLevel level = new DataAreaLevel()
+        {
+            id = "bd71bc34-8740-4cfc-aa7b-bb90bc44b8a4",
+            level = 1,
+            metadata = new MetaDataBackground
+            {
+                background = "color-0"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "bd81a30e-96f5-4522-bbfa-a0b29f9032bb",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "bd71bc34-8740-4cfc-aa7b-bb90bc44b8a4",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "bd71bc34-8740-4cfc-aa7b-bb90bc44b8a4",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fa",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "bd71bc34-8740-4cfc-aa7b-bb90bc44b8a4",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "bd71bc34-8740-4cfc-aa7b-bb90bc44b8a4",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level1 = new DataAreaLevel()
+        {
+            id = "3e531d27-2243-491e-92d0-449dbc69ad93",
+            level = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "color-0"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "bd81a30e-96f5-4522-bbfa-a0b29f9032bb",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "3e531d27-2243-491e-92d0-449dbc69ad93",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "3e531d27-2243-491e-92d0-449dbc69ad93",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fa",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "3e531d27-2243-491e-92d0-449dbc69ad93",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "3e531d27-2243-491e-92d0-449dbc69ad93",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level2 = new DataAreaLevel()
+        {
+            id = "dd7a7491-6b54-4654-a6c7-97fce3afd586",
+            level = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "color-1"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "0ddd676e-9c32-4e8a-88dd-b27685b9c905",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "dd7a7491-6b54-4654-a6c7-97fce3afd586",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "dd7a7491-6b54-4654-a6c7-97fce3afd586",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fa",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "dd7a7491-6b54-4654-a6c7-97fce3afd586",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "dd7a7491-6b54-4654-a6c7-97fce3afd586",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level3 = new DataAreaLevel()
+        {
+            id = "794f30aa-27ab-4de3-b29e-b9c538d84c04",
+            level = 4,
+            metadata = new MetaDataBackground
+            {
+                background = "color-3"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "0ddd676e-9c32-4e8a-88dd-b27685b9c905",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "794f30aa-27ab-4de3-b29e-b9c538d84c04",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "794f30aa-27ab-4de3-b29e-b9c538d84c04",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fa",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "794f30aa-27ab-4de3-b29e-b9c538d84c04",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "794f30aa-27ab-4de3-b29e-b9c538d84c04",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level4 = new DataAreaLevel()
+        {
+            id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+            level = 1,
+            metadata = new MetaDataBackground
+            {
+                background = "color-2"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "fbb9b471-dddb-4768-a3eb-577020a21063",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level5 = new DataAreaLevel()
+        {
+            id = "f1294662-02c1-440b-b348-bdb45e0a4b6b",
+            level = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "color-2"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "fbb9b471-dddb-4768-a3eb-577020a21063",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "f1294662-02c1-440b-b348-bdb45e0a4b6b",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "f1294662-02c1-440b-b348-bdb45e0a4b6b",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "f1294662-02c1-440b-b348-bdb45e0a4b6b",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "f1294662-02c1-440b-b348-bdb45e0a4b6b",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level6 = new DataAreaLevel()
+        {
+            id = "4811fef4-9185-4a8d-b898-3fdb97c9c774",
+            level = 1,
+            metadata = new MetaDataBackground
+            {
+                background = "color-3"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "2bbd6514-05c0-4d7a-8eda-77c6ac4a8a0c",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "4811fef4-9185-4a8d-b898-3fdb97c9c774",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "4811fef4-9185-4a8d-b898-3fdb97c9c774",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "4811fef4-9185-4a8d-b898-3fdb97c9c774",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "4811fef4-9185-4a8d-b898-3fdb97c9c774",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level7 = new DataAreaLevel()
+        {
+            id = "f9f5690d-17b4-4c65-8164-e9e1e32c3dbf",
+            level = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "color-3"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "2bbd6514-05c0-4d7a-8eda-77c6ac4a8a0c",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "f9f5690d-17b4-4c65-8164-e9e1e32c3dbf",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "f9f5690d-17b4-4c65-8164-e9e1e32c3dbf",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "f9f5690d-17b4-4c65-8164-e9e1e32c3dbf",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "f9f5690d-17b4-4c65-8164-e9e1e32c3dbf",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level8 = new DataAreaLevel()
+        {
+            id = "760821c9-a5d2-4ef5-a931-08c85001797a",
+            level = 1,
+            metadata = new MetaDataBackground
+            {
+                background = "color-4"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "0cc2ade4-fddf-4bbd-84c4-8eecd12a972f",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "760821c9-a5d2-4ef5-a931-08c85001797a",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "760821c9-a5d2-4ef5-a931-08c85001797a",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "760821c9-a5d2-4ef5-a931-08c85001797a",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "760821c9-a5d2-4ef5-a931-08c85001797a",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level9 = new DataAreaLevel()
+        {
+            id = "d56fa7c2-0098-4248-9a9a-6a6a7264cbd3",
+            level = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "color-4"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "0cc2ade4-fddf-4bbd-84c4-8eecd12a972f",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "d56fa7c2-0098-4248-9a9a-6a6a7264cbd3",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "d56fa7c2-0098-4248-9a9a-6a6a7264cbd3",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "d56fa7c2-0098-4248-9a9a-6a6a7264cbd3",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "d56fa7c2-0098-4248-9a9a-6a6a7264cbd3",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level10 = new DataAreaLevel()
+        {
+            id = "b5e02df0-e3d9-4e01-ace2-1d44344cf6e8",
+            level = 1,
+            metadata = new MetaDataBackground
+            {
+                background = "color-5"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "fc093330-fd2d-4f71-a734-a45336932dda",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "b5e02df0-e3d9-4e01-ace2-1d44344cf6e8",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "b5e02df0-e3d9-4e01-ace2-1d44344cf6e8",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "b5e02df0-e3d9-4e01-ace2-1d44344cf6e8",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "b5e02df0-e3d9-4e01-ace2-1d44344cf6e8",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        DataAreaLevel level11 = new DataAreaLevel()
+        {
+            id = "df271b57-11bb-471c-a23f-7fb6d72345ff",
+            level = 2,
+            metadata = new MetaDataBackground
+            {
+                background = "color-5"
+            },
+            created_at = "2022-03-23T10:19:12.624Z",
+            updated_at = "2022-03-23T10:19:12.624Z",
+            deleted_at = null,
+            area_id = "fc093330-fd2d-4f71-a734-a45336932dda",
+            enemies = new DataEnemy[]
+            {
+                new DataEnemy
+                {
+                    id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
+                    name = "Enemy-0",
+                    element_id = 1,
+                    class_id = 1,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 310,
+                        def = 106,
+                        speed = 10,
+                        health = 240
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "df271b57-11bb-471c-a23f-7fb6d72345ff",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
+                    name = "Enemy-1",
+                    element_id = 1,
+                    class_id = 2,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 309,
+                        def = 110,
+                        speed = 2,
+                        health = 207
+                    },
+                    strategy = "EnemyStrategy1",
+                    map_level_id = "df271b57-11bb-471c-a23f-7fb6d72345ff",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "0f9fe263-1bf3-462c-baf1-45004e110d79",
+                    name = "Enemy-2",
+                    element_id = 1,
+                    class_id = 3,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy3",
+                    map_level_id = "df271b57-11bb-471c-a23f-7fb6d72345ff",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                },
+                new DataEnemy
+                {
+                    id = "02ae6b61-c1a5-4c5c-af71-5115135996fb",
+                    name = "Enemy-3",
+                    element_id = 1,
+                    class_id = 4,
+                    metadata = new MetaDataEnemies
+                    {
+                        atk = 367,
+                        def = 99,
+                        speed = 6,
+                        health = 204
+                    },
+                    strategy = "EnemyStrategy4",
+                    map_level_id = "df271b57-11bb-471c-a23f-7fb6d72345ff",
+                    created_at = "2022-03-23T10:19:12.726Z",
+                    updated_at = "2022-03-23T10:19:12.726Z",
+                    deleted_at = null
+                }
+            }
+        };
+        return listDataAreaLevel;
+    }
 }

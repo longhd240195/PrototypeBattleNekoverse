@@ -48,54 +48,102 @@ public class DataSign
 }
 public class NekoData
 {
-    public string id;
-    public string mint_address;
-    public string nft_id;
-    public string name;
-    public string className;
-    public MetaDataNeko metadata;
-    public int level;
-    public int experience;
-    public TraitsData[] traits;
-    public SkillNekoData[] skills;
+    public string id { get; set; }
+    public string mint_address { get; set; }
+    public string nft_id { get; set; }
+    public string name { get; set; }
+    public string className { get; set; }
+    public MetaDataNeko metadata { get; set; }
+    public int level { get; set; }
+    public int experience { get; set; }
+    public TraitsData[] traits { get; set; }
+    public SkillNekoData[] skills { get; set; }
 }
 public class MetaDataNeko
 {
-    public int atk;
-    public int m_atk;
-    public int def;
-    public int m_def;
-    public int speed;
-    public int health;
-    public int mana;
+    public int atk { get; set; }
+    public int m_atk { get; set; }
+    public int def { get; set; }
+    public int m_def { get; set; }
+    public int speed { get; set; }
+    public int health { get; set; }
+    public int mana { get; set; }
 }
 public class SkillNekoData
 {
-    public string id;
-    public string name;
-    public MetaDataSkill metadata;
+    public string id { get; set; }
+    public string name { get; set; }
+    public MetaDataSkill metadata { get; set; }
 }
 public class MetaDataSkill
 {
-    public string function;
-    public int atk;
-    public int def;
-    public int speed;
-    public int mana;
-}
-public class TraitsNeko
-{
-    public TraitsData body;
+    public string function { get; set; }
+    public int atk { get; set; }
+    public int def { get; set; }
+    public int speed { get; set; }
+    public int mana { get; set; }
 }
 public class TraitsData
 {
-    public string id;
-    public string name;
-    public TraitsType trait_type;
+    public string id { get; set; }
+    public string name { get; set; }
+    public TraitsType trait_type { get; set; }
 }
+
 public class TraitsType
 {
-    public string id;
-    public string name;
-    public string description;
+    public string id { get; set; }
+    public string name { get; set; }
+    public string description { get; set; }
 }
+
+//map
+public class MetaDataBackground
+{
+    public string background { get; set; }
+}
+
+public class DataArea
+{
+    public string id { get; set; }
+    public string name { get; set; }
+    public string description { get; set; }
+    public int area_type { get; set; }
+    public MetaDataBackground metadata { get; set; }
+    public string created_at { get; set; }
+    public string updated_at { get; set; }
+    public object deleted_at { get; set; }
+    public int max_map_level { get; set; }
+}
+public class DataAreaLevel
+{
+    public string id { get; set; }
+    public int level { get; set; }
+    public MetaDataBackground metadata { get; set; }
+    public string created_at { get; set; }
+    public string updated_at { get; set; }
+    public object deleted_at { get; set; }
+    public string area_id { get; set; }
+    public DataEnemy[] enemies { get; set; }
+}
+public class DataEnemy
+{
+    public string id { get; set; }
+    public string name { get; set; }
+    public int element_id { get; set; }
+    public int class_id { get; set; }
+    public MetaDataEnemies metadata { get; set; }
+    public string strategy { get; set; }
+    public string map_level_id { get; set; }
+    public string created_at { get; set; }
+    public string updated_at { get; set; }
+    public string deleted_at { get; set; }
+}
+public class MetaDataEnemies
+{
+    public int atk { get; set; }
+    public int def { get; set; }
+    public int speed { get; set; }
+    public int health { get; set; }
+}
+
