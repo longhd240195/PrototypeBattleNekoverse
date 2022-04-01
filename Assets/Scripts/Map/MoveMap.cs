@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
 {
@@ -33,13 +34,31 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     //data map api fake
     private List<DataArea> listDataAreas;
     private List<DataAreaLevel> listDataAreaLevel;
+
+    //data map api
+    private AreaResponse areaResponse;
+    private List<SArea> listAreas;
+
+    private MapLevelResponse mapLevelResponse;
+    //private List<MapLevel> listMapLevel;
+
+    private List<MapLevelIdResponse> mapLevelIdResponse;
+
     private void Awake()
     {
+        areaResponse = DataApi.GetInstance().GetAreaResponse();
+        mapLevelResponse = DataApi.GetInstance().GetMapLevelResponse();
+        mapLevelIdResponse = DataApi.GetInstance().GetMapLevelIdResponse();
+        listAreas = areaResponse.data.ToList();
+        //listMapLevel = mapLevelResponse.data.ToList();
+        
         listDataAreas = DataTest.GetDataAreas();
         listDataAreaLevel = DataTest.GetDataAreaLevels();
     }
     private void Start()
     {
+
+        
         initSize = new Vector2(img.rectTransform.rect.width, img.rectTransform.rect.height);
         sizeScene = new Vector2(Screen.width, Screen.height);
         sizeChild = new Vector2(64, 64);
@@ -57,12 +76,12 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
     }
     void LoadArea(List<Button> btnAreas)
     {
-        for (int i = 0; i < listDataAreas.Count; i++)
+        for (int i = 0; i < listAreas.Count; i++)
         {
-            Button btn = btnAreas.Find(s => s.GetComponent<Area>().nameArea == listDataAreas[i].name);
+            Button btn = btnAreas.Find(s => s.GetComponent<Area>().nameArea == listAreas[i].name);
             btn.gameObject.SetActive(true);
             Area area = btn.gameObject.GetComponent<Area>();
-            area.data = listDataAreas[i];
+            area.data = listAreas[i];
         }
         btnAreas.ForEach(s => s.onClick.AddListener(() => OnBtnPointerClick(s)));
     }
@@ -120,12 +139,20 @@ public class MoveMap : MonoBehaviour, IDragHandler, IPointerClickHandler
                 img.rectTransform.DOMove(last, 1f).SetRelative(true);
                 areasBtn.ForEach(i => i.gameObject.SetActive(false));
                 Area area = eventData.gameObject.GetComponent<Area>();
-                area.landAreas.ForEach(s => s.gameObject.SetActive(true));
+                List<DataAreaLevel> l = new List<DataAreaLevel>();
                 for (int i = 0; i < listDataAreaLevel.Count; i++)
                 {
                     if(listDataAreaLevel[i].area_id == area.data.id)
                     {
-                        area.landAreas.ForEach(s => s.data = listDataAreaLevel[i]);
+                        l.Add(listDataAreaLevel[i]);
+                    }
+                }
+                for (int i = 0; i < area.landAreas.Count; i++)
+                {
+                    if (i < l.Count)
+                    {
+                        area.landAreas[i].gameObject.SetActive(true);
+                        area.landAreas[i].data = l[i];
                     }
                 }
                 area.landAreas.ForEach(s => s.gameObject.GetComponent<Button>().onClick.AddListener(() => OpenTitle(s.gameObject.GetComponent<Button>())));

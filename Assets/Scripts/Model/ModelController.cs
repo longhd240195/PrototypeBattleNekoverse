@@ -190,6 +190,7 @@ public class ModelController : MonoBehaviour
                 btn.onClick.AddListener(() =>
                 {
                     ChangeClass(c.ToString());
+                    RandomInit();
                     btnClasses.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
                     btn.transform.GetChild(2).gameObject.SetActive(true);
                 });
@@ -300,7 +301,7 @@ public class ModelController : MonoBehaviour
         Cache.Clear();
         skillsCache.Clear();
         CacheFile(newClass);
-        RandomInit();
+        //RandomInit();
     }
 
     #endregion

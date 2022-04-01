@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,16 +38,26 @@ public class DataConst
     public const string NEKO_IMAGE_URL = "https://d1j8r0kxyu9tj8.cloudfront.net/neko/neko/origin/100x100/";
     public const string NEKO_IMAGE_PNG = ".png";
 }
+[Serializable]
 public class DataLogin
 {
     public string id;
     public string data;
     public string responseUrl;
 }
+[Serializable]
 public class DataSign
 {
     public string message;
 }
+[Serializable]
+public class DataLoginResponse
+{
+    public string walletAddesss;
+    public string network;
+    public string signKey;
+}
+[Serializable]
 public class NekoData
 {
     public string id { get; set; }
@@ -60,6 +71,7 @@ public class NekoData
     public TraitsData[] traits { get; set; }
     public SkillNekoData[] skills { get; set; }
 }
+[Serializable]
 public class MetaDataNeko
 {
     public int atk { get; set; }
@@ -70,12 +82,14 @@ public class MetaDataNeko
     public int health { get; set; }
     public int mana { get; set; }
 }
+[Serializable]
 public class SkillNekoData
 {
     public string id { get; set; }
     public string name { get; set; }
     public MetaDataSkill metadata { get; set; }
 }
+[Serializable]
 public class MetaDataSkill
 {
     public string function { get; set; }
@@ -84,13 +98,14 @@ public class MetaDataSkill
     public int speed { get; set; }
     public int mana { get; set; }
 }
+[Serializable]
 public class TraitsData
 {
     public string id { get; set; }
     public string name { get; set; }
     public TraitsType trait_type { get; set; }
 }
-
+[Serializable]
 public class TraitsType
 {
     public string id { get; set; }
@@ -99,11 +114,12 @@ public class TraitsType
 }
 
 //map
+[Serializable]
 public class MetaDataBackground
 {
     public string background { get; set; }
 }
-
+[Serializable]
 public class DataArea
 {
     public string id { get; set; }
@@ -116,6 +132,7 @@ public class DataArea
     public object deleted_at { get; set; }
     public int max_map_level { get; set; }
 }
+[Serializable]
 public class DataAreaLevel
 {
     public string id { get; set; }
@@ -127,6 +144,7 @@ public class DataAreaLevel
     public string area_id { get; set; }
     public DataEnemy[] enemies { get; set; }
 }
+[Serializable]
 public class DataEnemy
 {
     public string id { get; set; }
@@ -140,6 +158,7 @@ public class DataEnemy
     public string updated_at { get; set; }
     public string deleted_at { get; set; }
 }
+[Serializable]
 public class MetaDataEnemies
 {
     public int atk { get; set; }

@@ -5,5 +5,5 @@ public class Area : MonoBehaviour
 {
     public string nameArea;
     public List<LandArea> landAreas;
-    public DataArea data;
+    public SArea data;
 }

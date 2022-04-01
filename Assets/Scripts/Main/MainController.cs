@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Networking;
+using System.Linq;
 
 public class MainController : MonoBehaviour
 {
@@ -13,23 +14,32 @@ public class MainController : MonoBehaviour
     [SerializeField] private GameObject loadingPrefab;
     private List<NekoData> listMyNeko;
     private const int MAX_SIZE = 300;
+    private NekoManager nekoManager;
+    private UserNekosResponse userNekosResponse;
+
+    private void Awake()
+    {
+        DataApi data = DataApi.GetInstance();
+    }
+
     void Start()
     {
-        listMyNeko = DataTest.GetMyNekoDatas();
+        userNekosResponse = DataApi.GetInstance().GetUserNekoResponse();
+        //listMyNeko = DataTest.GetMyNekoDatas();
         LoadNeko();
         view.Init();
     }
 
     void LoadNeko()
     {
-        int maxNeko = 0;
-        if (listMyNeko.Count > 4)
+        int maxNeko = userNekosResponse.data.Length;
+        if (userNekosResponse.data.Length >= 5)
         {
-            maxNeko = 3;
+            maxNeko = 5;
         }
         else
         {
-            maxNeko = listMyNeko.Count;
+            maxNeko = userNekosResponse.data.Length;
         }
         float minSize = MAX_SIZE - (maxNeko - 1) * 40;
         for (int i = 0; i < listNekoBtn.Count; i++)
@@ -38,11 +48,11 @@ public class MainController : MonoBehaviour
             {
                 float width = minSize + i * 40;
                 float height = minSize + i * 40;
-                float posX = width / 2 - 350 + i * 100;
+                float posX = width / 2 - 350 + i * 50;
                 listNekoBtn[i].sizeDelta = new Vector2(width, height);
                 listNekoBtn[i].localPosition = new Vector2(posX, listNekoBtn[i].localPosition.y);
                 Button btn = listNekoBtn[i].gameObject.GetComponent<Button>();
-                string url = DataConst.NEKO_IMAGE_URL + listMyNeko[i].nft_id + DataConst.NEKO_IMAGE_PNG;
+                string url = DataConst.NEKO_IMAGE_URL + userNekosResponse.data[i].nft_id + DataConst.NEKO_IMAGE_PNG;
                 LoadImage(url, btn.transform.GetChild(0).GetChild(0).GetComponent<Image>());
                 btn.onClick.AddListener(() => OnLoadYourNeko());
             }
@@ -53,10 +63,10 @@ public class MainController : MonoBehaviour
         }
         for (int i = 0; i < listNekoTeamImg.Count; i++)
         {
-            if (i < listMyNeko.Count)
+            if (i < userNekosResponse.data.Length)
             {
                 Image btn = listNekoTeamImg[i].GetComponent<Image>();
-                string url = DataConst.NEKO_IMAGE_URL + listMyNeko[i].nft_id + DataConst.NEKO_IMAGE_PNG;
+                string url = DataConst.NEKO_IMAGE_URL + userNekosResponse.data[i].nft_id + DataConst.NEKO_IMAGE_PNG;
                 LoadImage(url, btn);
             }
             else

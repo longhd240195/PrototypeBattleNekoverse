@@ -1,8 +1,10 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ConnectWallet : MonoBehaviour
 {
+    [SerializeField] private NekoManager nekoManager;
     private void Awake()
     {
         Application.deepLinkActivated += onDeepLinkActivated;
@@ -10,11 +12,14 @@ public class ConnectWallet : MonoBehaviour
         {
             onDeepLinkActivated(Application.absoluteURL);
         }
+        nekoManager.LogIn();
     }
     public void onDeepLinkActivated(string url)
     {
         string sceneName = url.Split("?"[0])[1];
-        SceneManager.LoadScene(DataConst.MAIN_SCENE);
+        sceneName = sceneName.Replace("response=", "");
+        DataLoginResponse res = JsonUtility.FromJson<DataLoginResponse>(sceneName);
+        //SceneManager.LoadScene(DataConst.MAIN_SCENE);
         Debug.Log(sceneName);
     }
     public void OnButtonConnectClick()
@@ -33,6 +38,10 @@ public class ConnectWallet : MonoBehaviour
         };
         string s = JsonUtility.ToJson(obj);
         string url = DataConst.NEKOWALLET_URL + "?data=" + s;
-        Application.OpenURL(url);
+        //Debug.Log(url);
+        //Application.OpenURL(url);
+        nekoManager.GetDataAPI();
+        SceneManager.LoadScene(DataConst.MAIN_SCENE);
+        //nekoManager.test();
     }
 }

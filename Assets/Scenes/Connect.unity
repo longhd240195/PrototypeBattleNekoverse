@@ -198,6 +198,150 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220823255}
   m_CullTransparentMesh: 1
+--- !u!1 &304384364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304384365}
+  - component: {fileID: 304384367}
+  - component: {fileID: 304384366}
+  m_Layer: 0
+  m_Name: NekoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304384365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304384364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304384366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304384364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a587a30a3b7a12e4baace02dcdc568d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colyseusSettings: {fileID: 11400000, guid: 2029b2f74c15d7d438d60aee80ad0bdc, type: 2}
+  areaResponse:
+    status: 0
+    data: []
+  currentUserProfileResponse:
+    data:
+      id: 
+      username: 
+      address: 
+      level: 0
+      experience: 0
+      avatar_url: 
+    status: 0
+  loginResponse:
+    data:
+      user:
+        id: 
+        username: 
+        address: 
+        level: 0
+        experience: 0
+        avatar_url: 
+      expired_time: 0
+      refresh_token: 
+      access_token: 
+    status: 0
+  mapLevelResponse:
+    data: []
+    status: 0
+  mapLevelIdResponse:
+    data:
+      id: 
+      level: 0
+      metadata:
+        background: 
+      area_id: 
+      enemies: []
+    status: 0
+  currLevelResponse:
+    data: []
+    status: 0
+  userNekoResponse:
+    data: []
+    status: 0
+  consumptionItemsResponse:
+    data: []
+    status: 0
+  exclusiveItemsResponse:
+    data: []
+    status: 0
+  nekoResponse:
+    data:
+      id: 
+      mint_address: 
+      nft_id: 
+      name: 
+      metadata:
+        atk: 0
+        m_atk: 0
+        def: 0
+        m_def: 0
+        speed: 0
+        health: 0
+        mana: 0
+      level: 0
+      experience: 0
+      traits: []
+    status: 0
+  nekoSkillResponse:
+    data:
+      skills: []
+    status: 0
+  allUsersResponse:
+    users: []
+    status: 0
+  userProfileResponse:
+    user:
+      id: 
+      username: 
+      address: 
+      level: 0
+      experience: 0
+      avatar_url: 
+    status: 0
+  signKey: QkkqwQFXLgPP0zkeVS2ONYdXDkI16ynrG+VdJGipuY1ocE0Ypp9U49AhyJKtnimbnXHglPDlSFuymYA1AX1hBQ==
+  walletAddress: D5sGL6rCYzWKfZj6eP4SwyV8xQ2PozLY5J76ovnwVw4y
+  data: {fileID: 304384367}
+--- !u!114 &304384367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304384364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5580a31b23b0bec49b3386d8e468f886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 304384366}
 --- !u!1 &675694318
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae069ec4bbfc0547955422e47cfe880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1836004373}
+  nekoManager: {fileID: 304384366}
 --- !u!1 &866036321
 GameObject:
   m_ObjectHideFlags: 0

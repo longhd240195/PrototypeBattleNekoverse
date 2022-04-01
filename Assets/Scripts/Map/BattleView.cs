@@ -18,7 +18,7 @@ public class BattleView : MonoBehaviour
     [SerializeField] private Button battleBtn;
     public void InitBattle(DataEnemy l,Image i)
     {
-        //battleTitleText.text = ;
+        battleTitleText.text = l.name;
         //battleDesceptionText.text = level.LevelDesception;
         icon.sprite = i.sprite;
         atkText.text = l.metadata.atk.ToString();

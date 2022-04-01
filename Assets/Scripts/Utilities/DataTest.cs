@@ -2404,7 +2404,7 @@ public class DataTest
                 new DataEnemy
                 {
                     id = "cf35a082-5d3b-41b0-a46c-c1b20b429643",
-                    name = "Enemy-0",
+                    name = "Enemy-1",
                     element_id = 1,
                     class_id = 1,
                     metadata = new MetaDataEnemies
@@ -2423,7 +2423,7 @@ public class DataTest
                 new DataEnemy
                 {
                     id = "0f4faef0-dfbf-4a1b-8492-def70e39cdcf",
-                    name = "Enemy-1",
+                    name = "Enemy-0",
                     element_id = 1,
                     class_id = 2,
                     metadata = new MetaDataEnemies
