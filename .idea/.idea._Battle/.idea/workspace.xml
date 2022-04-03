@@ -2,99 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f954b944-d5e5-49ff-a84a-7e20a8c39838" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/368.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/368.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/369.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/369.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/49.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/49.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/50.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/50.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/51.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/51.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/52.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/52.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/53.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/53.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/54.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/accessories/54.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/352.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/352.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/353.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/353.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/354.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/354.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/355.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/355.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/356.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/356.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/357.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/357.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/358.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/358.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/359.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/359.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/361.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/361.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/371.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/371.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/372.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/372.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/44.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/44.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/45.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/45.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/46.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/46.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/47.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/arms/47.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/295.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/55.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/55.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/57.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/57.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/58.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/58.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/59.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/back/59.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/1.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/1.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/2.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/2.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/3.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/3.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/388.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/388.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/389.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/389.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/390.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/390.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/391.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/391.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/392.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/392.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/393.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/393.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/4.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/body/4.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/365.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/365.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/394.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/394.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/395.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/395.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/396.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/396.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/397.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/397.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/5.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/5.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/6.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/6.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/7.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/7.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/8.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/8.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/9.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/ear/9.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/11.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/11.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/12.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eye/12.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/13.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/13.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/14.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/14.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/15.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/15.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/16.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/16.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/17.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/17.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/18.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/eyebrow/18.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/34.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/34.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/35.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/35.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/36.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/36.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/37.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/37.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/370.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/370.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/39.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/front face/39.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/19.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/19.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/20.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/20.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/21.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/21.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/22.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/22.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/23.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/medal/23.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/24.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/24.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/25.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/25.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/26.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/26.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/27.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/27.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/28.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/28.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/363.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/363.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/364.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/necklaces/364.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/10.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/10.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/366.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/366.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/367.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/nose/367.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/41.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/41.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/42.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/side face/42.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/29.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/29.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/30.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/30.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/31.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/31.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/33.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/33.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/362.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Model/Earth/top/362.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ModelData/Earth/back/295.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ModelData/Earth/back/295.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/model.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/model.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea._Battle/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Examples/Built-In RP [3D]/RealToon Built-In RP [3D] (Example).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/Built-In RP [3D]/RealToon Built-In RP [3D] (Unity 2018 and below).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/Built-In RP [3D]/RealToon Built-In RP [3D] (Unity 2019 and Later).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/HDRP/RealToon HDRP (HDRP 10 and Later).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/HDRP/RealToon HDRP (HDRP 7 and 8).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/LWRP/RealToon LWRP (Unity 2018).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/LWRP/RealToon LWRP (Unity 2019).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/URP/RealToon URP (URP 10).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/URP/RealToon URP (URP 11 and Later).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealToon/RealToon Shader Packages/SRP (LWRP - URP - HDRP)/URP/RealToon URP (URP 7 and 8).unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recordings/movie_001.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recordings/movie_002.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recordings/movie_003.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="1155">
               <caret line="86" column="32" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="32" />
               <folding>
                 <marker date="1645640443496" expanded="true" signature="6:95" ph="..." />
@@ -134,20 +55,73 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map/MoveMap.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+            <state relative-caret-position="1485">
+              <caret line="114" column="52" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
               <folding>
-                <marker date="1646309958889" expanded="true" signature="6:165" ph="..." />
-                <marker date="1646309958889" expanded="true" signature="239:2228" ph="{...}" />
-                <marker date="1646309958889" expanded="true" signature="546:779" ph="{...}" />
-                <marker date="1646309958889" expanded="true" signature="831:1475" ph="{...}" />
-                <marker date="1646309958889" expanded="true" signature="1535:1915" ph="{...}" />
-                <marker date="1646309958889" expanded="true" signature="1640:1878" ph="{...}" />
-                <marker date="1646309958889" expanded="true" signature="1953:2064" ph="{...}" />
-                <marker date="1646309958889" expanded="true" signature="2096:2220" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="6:165" ph="..." />
+                <marker date="1647229438846" expanded="true" signature="239:8732" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="1175:1210" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="1235:1471" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="1513:2000" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="1568:1994" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="1614:1882" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="1899:1984" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2058:2503" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2113:2497" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2157:2385" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2402:2487" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2560:3170" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2616:3164" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="2668:3051" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="3068:3154" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="3221:3856" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="3916:5142" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="3941:5113" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="3974:4464" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="4481:5077" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="5207:7061" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="5232:7032" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="5265:6345" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="5943:6288" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="6173:6270" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="6362:6996" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7100:7251" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7280:7355" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7396:7553" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7583:7659" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7695:7765" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7798:7908" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="7940:8063" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="8095:8548" ph="{...}" />
+                <marker date="1647229438846" expanded="true" signature="8604:8729" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/SkillInformation.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <marker date="1645445190645" expanded="false" signature="6:85" ph="..." />
+                <marker date="1645445190645" expanded="true" signature="132:2245" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="480:594" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="664:721" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="747:1025" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="902:964" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1103:1407" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1204:1281" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1467:1517" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1548:1599" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1629:1828" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1879:1950" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="1980:2096" ph="{...}" />
+                <marker date="1645445190645" expanded="true" signature="2149:2243" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -176,17 +150,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelConst.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/TestLoadGoogleDrive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/File.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Colyseous/ExampleManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/TraitsDataModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/HpBarIngameSpawnner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/GoogleDriveRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/AdaptiveWindowGUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/GetTouch.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/GoogleDrive/StringUltility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader 2.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/UI/Battle/QueueTurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelCanvas.cs" root0="FORCE_HIGHLIGHTING" />
@@ -194,10 +163,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Battle_Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/BattleController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/FileList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ModelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/IngameHealthBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.elringus.unitygoogledrive@fe300dd537/Runtime/API/Data/ResourceData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/SkillInformation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/CharacterInformation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shader/NewSurfaceShader 1.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -243,14 +211,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
     </panes>
   </component>
@@ -323,11 +291,12 @@
       <workItem from="1646191033698" duration="4157000" />
       <workItem from="1646195606666" duration="4990000" />
       <workItem from="1646297252181" duration="6109000" />
+      <workItem from="1648783282014" duration="53000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85061000" />
+    <option name="totallyTimeSpent" value="85114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,9 +309,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10868407" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1097496" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -906,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gesture/WsClient.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
+        <state relative-caret-position="1155">
           <caret line="86" column="32" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="32" />
           <folding>
             <marker date="1645640443496" expanded="true" signature="6:95" ph="..." />
@@ -934,17 +902,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map/MoveMap.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+        <state relative-caret-position="1485">
+          <caret line="114" column="52" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
           <folding>
-            <marker date="1646309958889" expanded="true" signature="6:165" ph="..." />
-            <marker date="1646309958889" expanded="true" signature="239:2228" ph="{...}" />
-            <marker date="1646309958889" expanded="true" signature="546:779" ph="{...}" />
-            <marker date="1646309958889" expanded="true" signature="831:1475" ph="{...}" />
-            <marker date="1646309958889" expanded="true" signature="1535:1915" ph="{...}" />
-            <marker date="1646309958889" expanded="true" signature="1640:1878" ph="{...}" />
-            <marker date="1646309958889" expanded="true" signature="1953:2064" ph="{...}" />
-            <marker date="1646309958889" expanded="true" signature="2096:2220" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="6:165" ph="..." />
+            <marker date="1647229438846" expanded="true" signature="239:8732" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="1175:1210" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="1235:1471" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="1513:2000" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="1568:1994" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="1614:1882" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="1899:1984" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2058:2503" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2113:2497" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2157:2385" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2402:2487" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2560:3170" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2616:3164" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="2668:3051" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="3068:3154" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="3221:3856" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="3916:5142" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="3941:5113" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="3974:4464" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="4481:5077" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="5207:7061" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="5232:7032" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="5265:6345" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="5943:6288" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="6173:6270" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="6362:6996" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7100:7251" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7280:7355" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7396:7553" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7583:7659" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7695:7765" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7798:7908" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="7940:8063" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="8095:8548" ph="{...}" />
+            <marker date="1647229438846" expanded="true" signature="8604:8729" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameInside/SkillInformation.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <marker date="1645445190645" expanded="false" signature="6:85" ph="..." />
+            <marker date="1645445190645" expanded="true" signature="132:2245" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="480:594" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="664:721" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="747:1025" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="902:964" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1103:1407" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1204:1281" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1467:1517" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1548:1599" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1629:1828" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1879:1950" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="1980:2096" ph="{...}" />
+            <marker date="1645445190645" expanded="true" signature="2149:2243" ph="{...}" />
           </folding>
         </state>
       </provider>
