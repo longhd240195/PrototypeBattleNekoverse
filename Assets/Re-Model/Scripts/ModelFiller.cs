@@ -32,6 +32,11 @@ public class ModelFiller : MonoBehaviour
 			{ ModelConst.Back,null },
 			{ ModelConst.SideFace,null },
 		};
+
+		ChangeModel(0);
+		ChangeModel(1);
+		ChangeModel(2);
+		ChangeModel(3);
 	}
 
 	private void Update()

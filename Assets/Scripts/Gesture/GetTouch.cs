@@ -39,11 +39,11 @@ public class GetTouch : MonoBehaviour
             return;
 
         onMouseExit?.Invoke();
-        nekoHover.gameObject.SetActive(false);
+        nekoHover?.gameObject.SetActive(false);
     }
     void OnMouseOver()
     {
-        nekoHover.gameObject.SetActive(true);
-        nekoHover.LoadNekoBar(character);
+        nekoHover?.gameObject.SetActive(true);
+        nekoHover?.LoadNekoBar(character);
     }
 }
