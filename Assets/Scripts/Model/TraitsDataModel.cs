@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(fileName = "Model", menuName = "ScriptableObjects/TraitsDataModel")]
 public class TraitsDataModel : ScriptableObject
 {
     [SerializeField] private GameObject model;

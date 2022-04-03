@@ -16,12 +16,17 @@ public class BattleController : MonoBehaviour
     [SerializeField] List<QueueTurn> queueTurns;
     [SerializeField] TextMeshProUGUI txtTimer;
     [SerializeField] TextMeshProUGUI txtTimerRound;
+    [SerializeField] TextMeshProUGUI txtTimeOut;
     [SerializeField] TextMeshProUGUI txtLog;
     [SerializeField] TextMeshProUGUI txtLogTurn;
+    [SerializeField] Text txtRoundText;
     [SerializeField] LineRenderer line;
     [SerializeField] Image imgClock;
     [SerializeField] private Button btnChangeSkin;
     [SerializeField] private ModelController[] clr;
+    [SerializeField] private BattleNekoView viewNekoBattle;
+
+    [SerializeField] private RectTransform posSkill;
 
     [Header("Config")]
     [SerializeField] private float timePerRound = 10;
@@ -29,25 +34,24 @@ public class BattleController : MonoBehaviour
     private float timer;
     private float timeRoundCD;
     private int turnCount;
-
     public BattleStep CurrentStep;
     private QueueBattle cache;
     private bool lockSelect = false;
-
+    private int round = 0;
     private List<CharacterInformation> orderCharacters;
     private List<CharacterInformation> currentOrderCharacters;
 
-    private List<Neko> listNeko;
+    private List<NekoData> listNekoData;
 
     private void Start()
     {
-        listNeko = DataTest.GetNekoBattle();
+        listNekoData = DataTest.GetNekoDataBattle();
 
         for (int i = 0; i < 6; i++)
         {
-            if (clr.Length == listNeko.Count)
+            if (clr.Length == listNekoData.Count)
             {
-                clr[i].InitNeko(listNeko[i]);
+                clr[i].InitNekoData(listNekoData[i],true);
             }
         }
     }
@@ -63,10 +67,30 @@ public class BattleController : MonoBehaviour
         if (CurrentStep == BattleStep.PreSkill)
         {
             timeRoundCD -= Time.deltaTime;
-            txtTimerRound.text = $"{timeRoundCD:0}";
-            imgClock.fillAmount = timeRoundCD / timePerRound;
+            if (timeRoundCD <= 0)
+            {
+                txtTimerRound.text = "";
+                txtTimeOut.gameObject.SetActive(true);
+            }
+            else
+            {
+                // txtTimerRound.text = $"{timeRoundCD:0}";
+                txtTimerRound.text = SetTimer(timeRoundCD);
+                imgClock.fillAmount = timeRoundCD / timePerRound;
+                txtTimeOut.gameObject.SetActive(false);
+            }
+
+        }
+        if (String.IsNullOrEmpty(txtTimerRound.text))
+        {
+            txtTimerRound.gameObject.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            txtTimerRound.gameObject.transform.parent.gameObject.SetActive(true);
         }
     }
+
 
     #region Queue character turn
 
@@ -75,7 +99,6 @@ public class BattleController : MonoBehaviour
         orderCharacters = new List<CharacterInformation>();
         blues.ForEach(s => orderCharacters.Add(s));
         reds.ForEach(s => orderCharacters.Add(s));
-
         RefreshCurrentTurn();
         ReorderQueue();
         InitUIQueue();
@@ -90,6 +113,9 @@ public class BattleController : MonoBehaviour
         ClearCone();
 
         orderCharacters.ForEach(s => currentOrderCharacters.Add(s));
+        round++;
+        txtRoundText.text = "Round " + round;
+
     }
 
     private CharacterInformation Pop()
@@ -107,7 +133,6 @@ public class BattleController : MonoBehaviour
 
         UpdateUIQueue();
     }
-
     private void UpdateUIQueue()
     {
         for (int i = 0; i < queueTurns.Count; i++)
@@ -127,7 +152,11 @@ public class BattleController : MonoBehaviour
                     color = Color.green;
                 }
                 //color.a = .1f;
-                queueTurns[i].Init(c.MainTexture, color);
+                if (c.CurrentStat.Hp <= 0)
+                {
+                    queueTurns[i].gameObject.SetActive(false);
+                }
+                queueTurns[i].Init(c, color);
                 queueTurns[i].SetCurrent(currentOrderCharacters.Contains(c));
             }
         }
@@ -140,7 +169,7 @@ public class BattleController : MonoBehaviour
             if (i < orderCharacters.Count)
             {
                 var c = orderCharacters[i];
-                queueTurns[i].Init(c.MainTexture, reds.Contains(c) ? Color.red : Color.green);
+                queueTurns[i].Init(c, reds.Contains(c) ? Color.red : Color.green);
             }
         }
     }
@@ -176,7 +205,7 @@ public class BattleController : MonoBehaviour
         });
         reds.ForEach(s =>
         {
-            s.InitializeRed();
+            s.Initialize(true);
             s.Controller = this;
         });
         skills.ForEach(s =>
@@ -185,7 +214,8 @@ public class BattleController : MonoBehaviour
         });
 
         UpdateStack();
-
+        queueTurns[0].transform.parent.gameObject.SetActive(true);
+        viewNekoBattle.gameObject.SetActive(true);
         NextOnQueue();
     }
 
@@ -231,21 +261,37 @@ public class BattleController : MonoBehaviour
         if (blues.Contains(turnCharacter))
         {
             ShowUISkill(true);
-
             AssignCharacterAttack(turnCharacter);
-
         }
         else
         {
             //TODO: Add AI for red team here
             ShowUISkill(false);
-
             AIAction(turnCharacter);
         }
-
+        CheckQueueTurn(turnCharacter);
+        viewNekoBattle.LoadNekoBar(turnCharacter);
         AnnounceNewTurn();
     }
+    private void CheckQueueTurn(CharacterInformation turnCharacter)
+    {
+        for (int i = 0; i < queueTurns.Count; i++)
+        {
+            if (i < orderCharacters.Count)
+            {
+                var c = orderCharacters[i];
 
+                if (turnCharacter == c)
+                {
+                    queueTurns[i].SetOderQueueTurn(true);
+                }
+                else
+                {
+                    queueTurns[i].SetOderQueueTurn(false);
+                }
+            }
+        }
+    }
     public void AssignSkill(SkillAttribute skill)
     {
         if (cache == null)
@@ -259,7 +305,10 @@ public class BattleController : MonoBehaviour
 
     private void ShowUISkill(bool active)
     {
+        var skillObj = skills[0].gameObject.transform.parent;
+        skillObj.localPosition = new Vector2(skillObj.localPosition.x, skillObj.localPosition.y + posSkill.localPosition.y);
         skills.ForEach(s => s.gameObject.SetActive(active));
+        skillObj.DOLocalMoveY(posSkill.localPosition.y, 0.5f);
     }
 
 
@@ -385,7 +434,6 @@ public class BattleController : MonoBehaviour
         //UpdateLog();
         ResetState();
         DoAction();
-
         ResetCacheBattle();
     }
 
@@ -413,7 +461,6 @@ public class BattleController : MonoBehaviour
 
         imgClock.fillAmount = 0;
         txtTimerRound.text = string.Empty;
-
         Debug.Log($"Make attack: from {from.name} to {target.name}");
         UpdateLog($"{from.name} {q.skill.NameSkill} {target.name}");
 
@@ -437,10 +484,14 @@ public class BattleController : MonoBehaviour
                         case SkillTargetType.Self:
                             from.ApplyEffects(ef);
                             from.MoveCone(true);
+                            from.AddMana(1);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Ally:
                             target.ApplyEffects(ef);
                             target.MoveCone(true);
+                            from.SubMana(q.skill.Mana);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Allies:
                             var listAllies = reds.Contains(from) ? reds : blues;
@@ -449,11 +500,15 @@ public class BattleController : MonoBehaviour
                                 s.ApplyEffects(ef);
                                 s.MoveCone(true);
                             });
+                            from.SubMana(q.skill.Mana);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Enemy:
                             target.ApplyEffects(ef);
                             target.PlayAnimation("TakeDamage");
                             target.MoveCone(true);
+                            from.AddMana(1);
+                            from.LoadManaBar();
                             break;
                         case SkillTargetType.Enemies:
                             var listEnemies = !reds.Contains(from) ? reds : blues;
@@ -513,6 +568,7 @@ public class BattleController : MonoBehaviour
              DoAction();
          });
         //DoAction();
+
     }
 
     private void ChangeToSelectSkillAction()
@@ -563,12 +619,46 @@ public class BattleController : MonoBehaviour
         txtLogTurn.color = Color.white;
         txtLogTurn.DOFade(0, .3f).SetDelay(1f);
     }
-
+    int lineLog = 0;
+    string[] arr = { "FF", "CC", "AA", "88", "66", "44", "22", "00" };
+    List<string> textLogArr = new List<string>();
     private void UpdateLog(string newTurn)
     {
-        txtLog.text += newTurn + "\n";
+        txtLog.text = "";
+        textLogArr.Add(newTurn);
+        for (int i = 0; i < textLogArr.Count; i++)
+        {
+            txtLog.text += "<alpha=#" + arr[textLogArr.Count - 1 - i] + ">" + textLogArr[i] + "\n";
+            lineLog++;
+            if (lineLog > 7 || lineLog == textLogArr.Count)
+                lineLog = 0;
+        }
+        if (textLogArr.Count == 7)
+        {
+            textLogArr.Remove(textLogArr[textLogArr.Count - 1]);
+        }
     }
 
+    private string SetTimer(float time)
+    {
+        TimeSpan t = TimeSpan.FromSeconds(time);
+        if (t.Minutes < 10)
+        {
+            if (t.Seconds < 10)
+            {
+                return "0" + t.Minutes + ":0" + t.Seconds;
+            }
+            else
+            {
+                return "0" + t.Minutes + ":" + t.Seconds;
+            }
+        }
+        else
+        {
+            return t.Minutes + ":" + t.Seconds;
+        }
+
+    }
     #endregion
 }
 

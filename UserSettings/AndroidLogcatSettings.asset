@@ -1,0 +1,143 @@
+{
+    "m_SelectedDeviceId": "3e7b98bf",
+    "m_SelectedPackage": {
+        "deviceId": "3e7b98bf",
+        "name": "com.DefaultCompany.NekoNekoNekoBattle",
+        "processId": 12325,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.bbk.launcher2",
+            "processId": 17093,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 7053,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 9335,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 11394,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 6286,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 7662,
+            "exited": true
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 12031,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 13607,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 6106,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 7677,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 10550,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 11370,
+            "exited": false
+        },
+        {
+            "deviceId": "3e7b98bf",
+            "name": "com.DefaultCompany.NekoNekoNekoBattle",
+            "processId": 12325,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 0
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}

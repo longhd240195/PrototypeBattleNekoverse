@@ -16,11 +16,11 @@ public class NekoBar : MonoBehaviour
     [SerializeField] private Text speedText;
     [SerializeField] private Text hpText;
 
-    public void InitNekoBar(Neko neko)
+    public void InitNekoBar(NekoData neko)
     {
-        currentDame = neko.Atk;
-        currentSpeed = neko.Speed;
-        currentHP = neko.HP;
+        currentDame = neko.metadata.atk;
+        currentSpeed = neko.metadata.speed;
+        currentHP = neko.metadata.health;
         ShowNekoBar();
     }
     public void InitPetBar(PetData pet)

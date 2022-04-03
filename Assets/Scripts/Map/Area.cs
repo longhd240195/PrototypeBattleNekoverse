@@ -1,8 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Area : MonoBehaviour
 {
-    public string area;
+    public string nameArea;
+    public List<LandArea> landAreas;
+    public SArea data;
 }

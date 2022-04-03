@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class LevelView : MonoBehaviour
 {
-    [SerializeField] private Image icon;
+    public Image icon;
     [SerializeField] private GameObject objOnLevel;
-    public LevelData level;
+    public DataEnemy enemy;
+    //public LevelData level;
     public bool isOnLevel;
     private void Start()
     {
         objOnLevel.SetActive(isOnLevel);
     }
-    public void SetIconLevel()
-    {
-        icon.sprite = level.Icon;
-    }
+    //public void SetIconLevel()
+    //{
+    //    icon.sprite = level.Icon;
+    //}
 }

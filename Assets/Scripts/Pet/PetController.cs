@@ -10,7 +10,7 @@ public class PetController : MonoBehaviour
     [SerializeField] private Transform content;
     [SerializeField] private GameObject petPrefab;
     private List<Button> listPetBtns = new List<Button>();
-    private List<PetData> CachePet;
+    private List<PetData> cachePet;
 
     private void Awake()
     {
@@ -18,9 +18,9 @@ public class PetController : MonoBehaviour
     }
     private void Start()
     {
-        InitObjPet(CachePet, content.gameObject);
+        InitObjPet(cachePet, content.gameObject);
         InitButtonPet(listPetBtns);
-        petView.SetLayoutPet(CachePet[0]);
+        petView.SetLayoutPet(cachePet[0]);
     }
 
     void InitObjPet(List<PetData> list, GameObject parent)
@@ -43,12 +43,13 @@ public class PetController : MonoBehaviour
             btn.onClick.AddListener(() =>
             {
                 petView.SetLayoutPet(petData);
+                petView.animDetailPet();
             });
         }
     }
 
     private void ReadDataPetScripable()
     {
-        CachePet = Resources.LoadAll<PetData>($"PetData").ToList();
+        cachePet = Resources.LoadAll<PetData>($"PetData").ToList();
     }
 }

@@ -1,57 +1,234 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-
-using DG.Tweening;
 using Sirenix.Utilities;
 using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class ModelController : MonoBehaviour
 {
+    [SerializeField] private NekoView nekoView;
+    [SerializeField] private ModelCanvas modelCanvas;
+    [SerializeField] private TextMeshProUGUI txtLog;
+    [SerializeField] private List<Sprite> classSpr;
+    [SerializeField] private Button[] btnChangeSkill;
     private string[] listTraitNames;
-    public Neko neko;
+    public NekoData neko;
+    private List<SkillData> skillsCache;
     private Dictionary<string, List<TraitsDataModel>> traitsCache;
 
     private Dictionary<string, GameObject> traits;
     private Dictionary<string, GameObject> Traits => traits ?? (traits = new Dictionary<string, GameObject>());
-
     private Dictionary<string, List<TraitsDataModel>> Cache =>
         traitsCache ?? (traitsCache = new Dictionary<string, List<TraitsDataModel>>());
-    //private List<SkillData> skillsCache;
+    private int cacheIdNeko = 0;
+    private List<NekoData> listNekoData;
     private void Awake()
     {
         InitTraitName();
         CacheFile();
     }
-
-    public void InitNeko(Neko neko)
+    public void LoadNeko(List<NekoData> nekoDatas)
     {
-        this.neko = neko;
-        ChangeClass(neko.NekoClass);
-        foreach (KeyValuePair<string, int> kvp in neko.traitsNeko)
+        listNekoData = nekoDatas;
+        neko = listNekoData[cacheIdNeko];
+        InitNekoData(neko);
+    }
+    public void ChangeModel(int i)
+    {
+        int index = cacheIdNeko + i;
+        if (cacheIdNeko == 0 && i < 0)
+            return;
+        if (index < listNekoData.Count)
         {
-            ChangeTraits(kvp.Key, kvp.Value);
+            InitNekoData(listNekoData[index]);
+            cacheIdNeko = index;
+        }
+        else
+        {
+            return;
         }
     }
-    
+    public void InitNekoData(NekoData neko, bool isBattle = false)
+    {
+        this.neko = neko;
+        ChangeClass(neko.className);
+        for (int i = 0; i < neko.traits.Length; i++)
+        {
+            if (listTraitNames.Contains(neko.traits[i].trait_type.name))
+            {
+                ChangeTraits(neko.traits[i].trait_type.name, Convert.ToInt32(neko.traits[i].id));
+            }
+        }
+        if (!isBattle)
+        {
+            nekoView.Init(neko);
+            nekoView.ResetBtnSkill(btnChangeSkill);
+            InitButtonSkill(btnChangeSkill, neko);
+            modelCanvas.AnimListSkill();
+            modelCanvas.AnimNekoBar();
+            txtLog.text = "";
+        }
+    }
+
     void InitTraitName()
     {
         listTraitNames = new[]
         {
             ModelConst.Body, ModelConst.Ear, ModelConst.Nose, ModelConst.Eye, ModelConst.Eyebrow, ModelConst.Medal,
             ModelConst.Necklaces, ModelConst.Necklaces, ModelConst.FrontFace, ModelConst.Arms, ModelConst.Accessories,
-            ModelConst.Back, ModelConst.SideFace
+            ModelConst.Back, ModelConst.SideFace, ModelConst.Top
         };
     }
+    public void InitButtonYourNeko(Button[] btnYourNeko)
+    {
+        for (int i = 0; i < btnYourNeko.Length; i++)
+        {
+            if (i < listNekoData.Count)
+            {
+                btnYourNeko[i].gameObject.SetActive(true);
+                int index = i;
+                Image img = btnYourNeko[index].transform.GetChild(1).GetChild(0).GetComponent<Image>();
+                string url = DataConst.NEKO_IMAGE_URL + listNekoData[index].nft_id + DataConst.NEKO_IMAGE_PNG;
+                LoadImage(url, img);
+                btnYourNeko[index].onClick.AddListener(() =>
+                {
+                    neko = listNekoData[index];
+                    cacheIdNeko = index;
+                    InitNekoData(neko);
+                });
+            }
+            else
+            {
+                btnYourNeko[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    public void InitButtonSkill(Button[] btnSkill, NekoData neko)
+    {
+        nekoView.ShowDesceptionSkill(btnSkill);
+        for (int i = 0; i < btnSkill.Length; i++)
+        {
 
+            if (i < neko.skills.Length)
+            {
+                Button btn = btnSkill[i];
+                btnSkill[i].gameObject.SetActive(true);
+
+                NekoSkillData n = btnSkill[i].GetComponent<NekoSkillData>();
+                n.NameSkill = neko.skills[i].name;
+                n.IsLockSkill = false;
+
+                SkillData s = skillsCache.Find(t => String.Compare(t.NameSkill, n.NameSkill.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+                n.Icon.sprite = s.Icon;
+
+                btn.onClick.AddListener(() =>
+                {
+                    nekoView.SetDesceptionSkill(s.NameSkill, s.Desception);
+                    n.StateSkill = StateSkill.SELECTED;
+                    nekoView.SetDesceptionSkillActive(true);
+                    nekoView.ChangeSkillState(btnSkill, s.NameSkill);
+                    modelCanvas.AnimDesSkill();
+                });
+            }
+            else
+            {
+                btnSkill[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    public void InitButtonTraits(Button[] btnTraits, Button[] btnTraitsInfor)
+    {
+        for (int i = 0; i < btnTraits.Length; i++)
+        {
+            if (i < listTraitNames.Length)
+            {
+                string n = listTraitNames[i];
+                Button btn = btnTraits[i];
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = n;
+                btn.onClick.AddListener(() =>
+                {
+                    UpdateInforTraits(n, btnTraitsInfor);
+                    btnTraits.ForEach(s => s.transform.GetChild(1).gameObject.SetActive(false));
+                    btn.transform.GetChild(1).gameObject.SetActive(true);
+
+                    int indexModel = Random.Range(0, Cache[n].Count);
+                    ChangeTraits(n, indexModel);
+                    btnTraitsInfor.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
+                    btnTraitsInfor[indexModel].transform.GetChild(2).gameObject.SetActive(true);
+                });
+            }
+            else
+            {
+                btnTraits[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    public void InitButtonClass(Button[] btnClasses)
+    {
+        NekoClass[] l = (NekoClass[])Enum.GetValues(typeof(NekoClass));
+
+        for (int i = 0; i < btnClasses.Length; i++)
+        {
+            if (i < l.Length && i != 0)
+            {
+                NekoClass c = l[i];
+                Button btn = btnClasses[i];
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = c.ToString();
+                Image img = btnClasses[i].GetComponentsInChildren<Image>()[1];
+                img.sprite = classSpr.Find(s => String.Compare(s.name, c.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+
+                btn.onClick.AddListener(() =>
+                {
+                    ChangeClass(c.ToString());
+                    RandomInit();
+                    btnClasses.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
+                    btn.transform.GetChild(2).gameObject.SetActive(true);
+                });
+            }
+            else
+            {
+                btnClasses[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    public void UpdateInforTraits(string traitName, Button[] inforTraits)
+    {
+        for (int i = 0; i < inforTraits.Length; i++)
+        {
+            Button btn = inforTraits[i];
+
+            if (i < Cache[traitName].Count)
+            {
+                List<TraitsDataModel> n = Cache[traitName];
+
+                int indexModel = i;
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = n[i].name;
+                btn.GetComponentsInChildren<Image>()[1].sprite = n[i].Icon;
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(() =>
+                {
+                    ChangeTraits(traitName, indexModel);
+                    inforTraits.ForEach(s => s.transform.GetChild(2).gameObject.SetActive(false));
+                    btn.transform.GetChild(2).gameObject.SetActive(true);
+                });
+                btn.gameObject.SetActive(true);
+            }
+            else
+            {
+                btn.gameObject.SetActive(false);
+            }
+        }
+    }
     [ContextMenu("Context")]
     public void LogModel()
     {
@@ -67,26 +244,38 @@ public class ModelController : MonoBehaviour
 
     void RandomInit()
     {
+        txtLog.text = "";
         foreach (var traitName in listTraitNames)
         {
             ChangeTraits(traitName);
         }
-
     }
     void ChangeTraits(string traitName, int indexNextModel = -1)
     {
-        var modelRandom = Cache[traitName];
+        List<TraitsDataModel> modelRandom = Cache[traitName];
         if (indexNextModel == -1)
+        {
             indexNextModel = Random.Range(0, modelRandom.Count);
-        var randomModel = Instantiate(modelRandom[indexNextModel].Model, transform);
-        ChangeModel(randomModel);
-        randomModel.layer = 6;
-        ChangeModel(traitName, randomModel);
+            GameObject randomModel = Instantiate(modelRandom[indexNextModel].Model, transform);
+            txtLog.text += traitName + " " + randomModel.name.Replace("(Clone)", "") + "\n";
+            ChangeModel(randomModel);
+            randomModel.layer = 6;
+            ChangeModel(traitName, randomModel);
+        }
+        else
+        {
+            TraitsDataModel model = modelRandom.Find(s => s.Model.name == indexNextModel.ToString());
+            GameObject randomModel = Instantiate(model.Model, transform);
+            ChangeModel(randomModel);
+            randomModel.layer = 6;
+            ChangeModel(traitName, randomModel);
+        }
     }
+
 
     private void ChangeModel(GameObject parent)
     {
-        var childCount = parent.transform.childCount;
+        int childCount = parent.transform.childCount;
         for (int i = 0; i < childCount; i++)
         {
             parent.transform.GetChild(i).gameObject.layer = 6;
@@ -107,11 +296,12 @@ public class ModelController : MonoBehaviour
         }
     }
 
-    public void ChangeClass(NekoClass newClass)
+    public void ChangeClass(string newClass)
     {
         Cache.Clear();
-        CacheFile(newClass.ToString());
-        RandomInit();
+        skillsCache.Clear();
+        CacheFile(newClass);
+        //RandomInit();
     }
 
     #endregion
@@ -131,20 +321,20 @@ public class ModelController : MonoBehaviour
         ReadDataScripable(currentClass, ModelConst.Accessories);
         ReadDataScripable(currentClass, ModelConst.Back);
         ReadDataScripable(currentClass, ModelConst.SideFace);
+        ReadDataScripable(currentClass, ModelConst.Top);
+        ReadDataScripableSkill(currentClass);
     }
-
-
-
     private void ReadDataScripable(string className, string pathName)
     {
-        var listItem = Resources.LoadAll<TraitsDataModel>($"ModelData/{className}/{pathName}").ToList();
+        List<TraitsDataModel> listItem = Resources.LoadAll<TraitsDataModel>($"ModelData/{className}/{pathName}").ToList();
         Cache.Add(pathName, listItem);
     }
-
+    private void ReadDataScripableSkill(string className)
+    {
+        skillsCache = Resources.LoadAll<SkillData>($"SkillData/{className}").ToList();
+    }
 
     #endregion
-
-
 
     #region Modifier
 
@@ -226,6 +416,28 @@ public class ModelController : MonoBehaviour
         AssetDatabase.Refresh();
 #endif
     }
+    public void LoadImage(string url, Image profileImage)
+    {
+        StartCoroutine(DownloadImage(url, profileImage));
+    }
 
+    IEnumerator DownloadImage(string MediaUrl, Image profileImage)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+            Debug.Log(request.error);
+        else
+        {
+            Texture2D webTexture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture2D;
+            Sprite webSprite = SpriteFromTexture2D(webTexture);
+            profileImage.sprite = webSprite;
+        }
+    }
+
+    Sprite SpriteFromTexture2D(Texture2D texture)
+    {
+        return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+    }
     #endregion
 }

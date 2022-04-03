@@ -17,6 +17,7 @@ public class ModelConst
     public const string Accessories = "accessories";
     public const string Back = "back";
     public const string SideFace = "side face";
+    public const string Top = "top";
 }
 
 public enum NekoClass

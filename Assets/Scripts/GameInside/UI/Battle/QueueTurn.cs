@@ -6,32 +6,48 @@ using UnityEngine.UI;
 public class QueueTurn : MonoBehaviour
 {
     [SerializeField] private RawImage rawImg;
+    [SerializeField] private Image img;
     [SerializeField] private Image border;
-    //[SerializeField] private Image pointImage;
+    [SerializeField] private Image pointImage;
     private Color mainColor;
-    
-    public void Init(Texture mainImg, Color colorTeam)
+    public void Init(CharacterInformation infor, Color colorTeam)
     {
-        rawImg.texture = mainImg;
+        //rawImg.texture = infor.MainTexture;
+        string url = DataConst.NEKO_IMAGE_URL + infor.Neko.nft_id + DataConst.NEKO_IMAGE_PNG;
+        infor.NekoController.LoadImage(url, img);
         mainColor = colorTeam;
         border.color = colorTeam;
         //pointImage.color = colorPoint;
     }
-    
+    public void SetOderQueueTurn(bool b)
+    {
+        pointImage.gameObject.SetActive(b);
+    }
     public QueueTurn SetCurrent(bool onQueue)
     {
-        border.color = onQueue ? mainColor : (mainColor + Color.gray) / 2;
-        gameObject.SetActive(onQueue);
-   
-        if(!onQueue)
+        //border.color = onQueue ? mainColor : (mainColor + Color.gray) / 2;
+        //gameObject.SetActive(onQueue);
+        //pointImage.gameObject.SetActive(onQueue);
+
+        if (!onQueue)
         {
-//            Color c = border.color;
-//            Color rawColor = Color.white;
-//            c.a = .25f;
-//            rawColor.a = .25f;
-//            border.color = c;
-//            rawImg.color = rawColor;
+
+            //Debug.Log(gameObject.name);
+            //gameObject.transform.Find("Select").gameObject.SetActive(false);
+            //            Color c = border.color;
+            //            Color rawColor = Color.white;
+            //            c.a = .25f;
+            //            rawColor.a = .25f;
+            //            border.color = c;
+            //            rawImg.color = rawColor;
+            // Debug.Log(onQueue + " " + gameObject.name);
+            // SetIsOder();
+        }
+        else
+        {
+            //gameObject.transform.Find("Select").gameObject.SetActive(true);
         }
         return this;
     }
+
 }

@@ -1,37 +1,122 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.Networking;
+using System.Linq;
 
 public class MainController : MonoBehaviour
 {
-    [SerializeField] private List<RectTransform> listNeko;
-
+    [SerializeField] private List<RectTransform> listNekoBtn;
+    [SerializeField] private List<Image> listNekoTeamImg;
+    [SerializeField] private MainAnimationView view;
+    [SerializeField] private GameObject loadingPrefab;
+    private List<NekoData> listMyNeko;
     private const int MAX_SIZE = 300;
-    void Start()
+    private NekoManager nekoManager;
+    private UserNekosResponse userNekosResponse;
+
+    private void Awake()
     {
-        LoadNeko();
+        DataApi data = DataApi.GetInstance();
     }
 
-    async void LoadNeko()
+    void Start()
     {
-        int maxNeko = 4;
-        float minSize = MAX_SIZE - (maxNeko - 1) * 20;
-        for (int i = 0; i < listNeko.Count; i++)
+        userNekosResponse = DataApi.GetInstance().GetUserNekoResponse();
+        //listMyNeko = DataTest.GetMyNekoDatas();
+        LoadNeko();
+        view.Init();
+    }
+
+    void LoadNeko()
+    {
+        int maxNeko = userNekosResponse.data.Length;
+        if (userNekosResponse.data.Length >= 5)
+        {
+            maxNeko = 5;
+        }
+        else
+        {
+            maxNeko = userNekosResponse.data.Length;
+        }
+        float minSize = MAX_SIZE - (maxNeko - 1) * 40;
+        for (int i = 0; i < listNekoBtn.Count; i++)
         {
             if (i < maxNeko)
             {
-                float width = minSize + i * 20;
-                float height = minSize + i * 20;
+                float width = minSize + i * 40;
+                float height = minSize + i * 40;
                 float posX = width / 2 - 350 + i * 50;
-                listNeko[i].sizeDelta = new Vector2(width, height);
-                listNeko[i].localPosition = new Vector2(posX, listNeko[i].localPosition.y);
+                listNekoBtn[i].sizeDelta = new Vector2(width, height);
+                listNekoBtn[i].localPosition = new Vector2(posX, listNekoBtn[i].localPosition.y);
+                Button btn = listNekoBtn[i].gameObject.GetComponent<Button>();
+                string url = DataConst.NEKO_IMAGE_URL + userNekosResponse.data[i].nft_id + DataConst.NEKO_IMAGE_PNG;
+                LoadImage(url, btn.transform.GetChild(0).GetChild(0).GetComponent<Image>());
+                btn.onClick.AddListener(() => OnLoadYourNeko());
             }
             else
             {
-                listNeko[i].gameObject.SetActive(false);
+                listNekoBtn[i].gameObject.SetActive(false);
+            }
+        }
+        for (int i = 0; i < listNekoTeamImg.Count; i++)
+        {
+            if (i < userNekosResponse.data.Length)
+            {
+                Image btn = listNekoTeamImg[i].GetComponent<Image>();
+                string url = DataConst.NEKO_IMAGE_URL + userNekosResponse.data[i].nft_id + DataConst.NEKO_IMAGE_PNG;
+                LoadImage(url, btn);
+            }
+            else
+            {
+                listNekoTeamImg[i].gameObject.SetActive(false);
             }
         }
     }
 
+    private void OnLoadYourNeko()
+    {
+        StartCoroutine(LoadSceneYourNeko());
+    }
+
+    private IEnumerator LoadSceneYourNeko()
+    {
+        GameObject loading = Instantiate(loadingPrefab);
+        loading.transform.SetParent(transform);
+        yield return new WaitForSeconds(3f);
+        Destroy(loading);
+        SceneManager.LoadScene(DataConst.YOUR_NEKO_SCENE);
+    }
+    public void LoadMapSence()
+    {
+        SceneManager.LoadScene(DataConst.MAP_SCENE);
+    }
+
+    #region Download image from url
+    public void LoadImage(string url, Image profileImage)
+    {
+        StartCoroutine(DownloadImage(url, profileImage));
+    }
+
+    IEnumerator DownloadImage(string MediaUrl, Image profileImage)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+            Debug.Log(request.error);
+        else
+        {
+            Texture2D webTexture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture2D;
+            Sprite webSprite = SpriteFromTexture2D(webTexture);
+            profileImage.sprite = webSprite;
+        }
+    }
+
+    Sprite SpriteFromTexture2D(Texture2D texture)
+    {
+        return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+    }
+    #endregion
 }

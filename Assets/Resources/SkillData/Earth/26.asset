@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a1650537b92114385ab02b4f59b14d, type: 3}
   m_Name: 26
   m_EditorClassIdentifier: 
-  nameSkill: Earth Element Burn
+  nameSkill: Neko-Skill-3-2
   icon: {fileID: 2825354799550100536, guid: 412b583064485cb4eb1af707150fe96d, type: 3}
   className: 4
   desception: Decrease all of your opponent's Nekos by 20%. \nThis skill can not
