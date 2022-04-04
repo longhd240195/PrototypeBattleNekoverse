@@ -246,8 +246,8 @@ GameObject:
   m_Component:
   - component: {fileID: 255208802833998733}
   - component: {fileID: 288255049308849250}
-  - component: {fileID: 288255049308849248}
   - component: {fileID: 288255049308849249}
+  - component: {fileID: 288255049308849248}
   m_Layer: 6
   m_Name: 2
   m_TagString: Untagged
@@ -290,57 +290,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &288255049308849248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630925753596868919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbda265ab2b894782778b897fcc8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnOnCharacter: {fileID: 288255049308849249}
-  targetCanSelect: {fileID: 6299592571414148791}
-  targetSelected: {fileID: 1930864145}
-  animator: {fileID: 0}
-  controller: {fileID: 0}
-  healthBar: {fileID: 0}
-  mainTexture: {fileID: 0}
-  initStat:
-    hp: 50
-    damage: 20
-    speed: 2
-    evasion: 0
-  currentStat:
-    hp: 0
-    damage: 0
-    speed: 0
-    evasion: 0
-  skills:
-  - nameSkill: skill 1
-    effects:
-    - type: 0
-      targetType: 3
-      attribute: 1.1
-      endValue: 0
-    skillAnimation: 
-  - nameSkill: Skill 2
-    effects:
-    - type: 1
-      targetType: 1
-      attribute: 1.2
-      endValue: 0
-    skillAnimation: 
-  - nameSkill: Skill 3
-    effects:
-    - type: 2
-      targetType: 2
-      attribute: 3
-      endValue: 0
-    skillAnimation: 
 --- !u!114 &288255049308849249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +312,60 @@ MonoBehaviour:
   onMouseExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &288255049308849248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630925753596868919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fbda265ab2b894782778b897fcc8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnOnCharacter: {fileID: 288255049308849249}
+  neko: {fileID: 0}
+  targetCanSelect: {fileID: 6299592571414148791}
+  targetSelected: {fileID: 1930864145}
+  animator: {fileID: 0}
+  controller: {fileID: 0}
+  healthBar: {fileID: 0}
+  mainTexture: {fileID: 0}
+  initStat:
+    hp: 50
+    damage: 20
+    speed: 2
+    evasion: 0
+    level: 0
+  currentStat:
+    hp: 0
+    damage: 0
+    speed: 0
+    evasion: 0
+    level: 0
+  skills:
+  - nameSkill: skill 1
+    effects:
+    - type: 0
+      targetType: 3
+      attribute: 1.1
+      endValue: 0
+    skillAnimation: 
+  - nameSkill: Skill 2
+    effects:
+    - type: 1
+      targetType: 1
+      attribute: 1.2
+      endValue: 0
+    skillAnimation: 
+  - nameSkill: Skill 3
+    effects:
+    - type: 2
+      targetType: 2
+      attribute: 3
+      endValue: 0
+    skillAnimation: 
 --- !u!1 &818044777993122424
 GameObject:
   m_ObjectHideFlags: 0
