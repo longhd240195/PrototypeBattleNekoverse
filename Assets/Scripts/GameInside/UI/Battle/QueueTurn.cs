@@ -14,7 +14,8 @@ public class QueueTurn : MonoBehaviour
     {
         //rawImg.texture = infor.MainTexture;
         string url = DataConst.NEKO_IMAGE_URL + infor.Neko.nft_id + DataConst.NEKO_IMAGE_PNG;
-        infor.NekoController.LoadImage(url, img);
+        GameUtilities.LoadImage(url, img, this);
+        //infor.NekoController.LoadImage(url, img);
         mainColor = colorTeam;
         border.color = colorTeam;
         //pointImage.color = colorPoint;

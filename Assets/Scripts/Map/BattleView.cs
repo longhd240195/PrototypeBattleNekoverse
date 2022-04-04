@@ -16,17 +16,17 @@ public class BattleView : MonoBehaviour
     [SerializeField] private Image speedImg;
     [SerializeField] private Image hpImg;
     [SerializeField] private Button battleBtn;
-    public void InitBattle(DataEnemy l,Image i)
+    public void InitBattle(Enemy e,Image i)
     {
-        battleTitleText.text = l.name;
+        battleTitleText.text = e.name;
         //battleDesceptionText.text = level.LevelDesception;
         icon.sprite = i.sprite;
-        atkText.text = l.metadata.atk.ToString();
-        speedText.text = l.metadata.def.ToString();
-        hpText.text = l.metadata.health.ToString();
-        atkImg.fillAmount = (l.metadata.atk * DataConst.DEFAULT_100 / DataConst.MAX_ATK_BOSS) / DataConst.DEFAULT_100;
-        speedImg.fillAmount = (l.metadata.def * DataConst.DEFAULT_100 / DataConst.MAX_DEF_BOSS) / DataConst.DEFAULT_100;
-        hpImg.fillAmount = (l.metadata.health * DataConst.DEFAULT_100 / DataConst.MAX_HP_BOSS) / DataConst.DEFAULT_100;
+        atkText.text = e.metadata.atk.ToString();
+        speedText.text = e.metadata.def.ToString();
+        hpText.text = e.metadata.health.ToString();
+        atkImg.fillAmount = (e.metadata.atk * DataConst.DEFAULT_100 / DataConst.MAX_ATK_BOSS) / DataConst.DEFAULT_100;
+        speedImg.fillAmount = (e.metadata.def * DataConst.DEFAULT_100 / DataConst.MAX_DEF_BOSS) / DataConst.DEFAULT_100;
+        hpImg.fillAmount = (e.metadata.health * DataConst.DEFAULT_100 / DataConst.MAX_HP_BOSS) / DataConst.DEFAULT_100;
 
     }
 }

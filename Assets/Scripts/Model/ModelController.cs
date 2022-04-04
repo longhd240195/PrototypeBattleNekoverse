@@ -99,7 +99,7 @@ public class ModelController : MonoBehaviour
                 int index = i;
                 Image img = btnYourNeko[index].transform.GetChild(1).GetChild(0).GetComponent<Image>();
                 string url = DataConst.NEKO_IMAGE_URL + listNekoData[index].nft_id + DataConst.NEKO_IMAGE_PNG;
-                LoadImage(url, img);
+                GameUtilities.LoadImage(url, img, this);
                 btnYourNeko[index].onClick.AddListener(() =>
                 {
                     neko = listNekoData[index];
@@ -128,7 +128,7 @@ public class ModelController : MonoBehaviour
                 n.NameSkill = neko.skills[i].name;
                 n.IsLockSkill = false;
 
-                SkillData s = skillsCache.Find(t => String.Compare(t.NameSkill, n.NameSkill.ToString(), StringComparison.OrdinalIgnoreCase) == 0);
+                SkillData s = skillsCache.Find(t => String.Compare(t.NameSkill, n.NameSkill, StringComparison.OrdinalIgnoreCase) == 0);
                 n.Icon.sprite = s.Icon;
 
                 btn.onClick.AddListener(() =>
@@ -229,6 +229,8 @@ public class ModelController : MonoBehaviour
             }
         }
     }
+
+    #region Log Model
     [ContextMenu("Context")]
     public void LogModel()
     {
@@ -239,6 +241,7 @@ public class ModelController : MonoBehaviour
         }
         Debug.Log(sb.ToString());
     }
+    #endregion
 
     #region Change model
 
@@ -415,29 +418,6 @@ public class ModelController : MonoBehaviour
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 #endif
-    }
-    public void LoadImage(string url, Image profileImage)
-    {
-        StartCoroutine(DownloadImage(url, profileImage));
-    }
-
-    IEnumerator DownloadImage(string MediaUrl, Image profileImage)
-    {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
-        yield return request.SendWebRequest();
-        if (request.isNetworkError || request.isHttpError)
-            Debug.Log(request.error);
-        else
-        {
-            Texture2D webTexture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture2D;
-            Sprite webSprite = SpriteFromTexture2D(webTexture);
-            profileImage.sprite = webSprite;
-        }
-    }
-
-    Sprite SpriteFromTexture2D(Texture2D texture)
-    {
-        return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
     }
     #endregion
 }

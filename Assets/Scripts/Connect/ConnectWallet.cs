@@ -12,15 +12,17 @@ public class ConnectWallet : MonoBehaviour
         {
             onDeepLinkActivated(Application.absoluteURL);
         }
+        #if UNITY_EDITOR
         nekoManager.LogIn();
+        #endif
     }
     public void onDeepLinkActivated(string url)
     {
-        string sceneName = url.Split("?"[0])[1];
-        sceneName = sceneName.Replace("response=", "");
-        DataLoginResponse res = JsonUtility.FromJson<DataLoginResponse>(sceneName);
-        //SceneManager.LoadScene(DataConst.MAIN_SCENE);
-        Debug.Log(sceneName);
+        string responseUrl = url.Split("?"[0])[1];
+        responseUrl = responseUrl.Replace("response=", "");
+        ConnectWalletResponse res = JsonUtility.FromJson<ConnectWalletResponse>(responseUrl);
+        //nekoManager.LogIn(res.signKey,res.walletAddesss);
+        SceneManager.LoadScene(DataConst.LOADING_SCENE);
     }
     public void OnButtonConnectClick()
     {
@@ -28,20 +30,15 @@ public class ConnectWallet : MonoBehaviour
         {
             message = "Test Message"
         };
-        string dataSign = JsonUtility.ToJson(data);
-        string rsaDataSign = RSAController.RSAEncryptPublicKey(DataConst.PUBLIC_KEY, RSAController.CheckData(dataSign));
-        DataLogin obj = new DataLogin
+        string encryptData = RSAController.RSAEncryptPublicKey(DataConst.PUBLIC_KEY, RSAController.CheckData(JsonUtility.ToJson(data)));
+        ConnectWalletRequest request = new ConnectWalletRequest
         {
             id = DataConst.ID,
-            data = rsaDataSign,
+            data = encryptData,
             responseUrl = DataConst.RESPONSE_URL
         };
-        string s = JsonUtility.ToJson(obj);
-        string url = DataConst.NEKOWALLET_URL + "?data=" + s;
-        //Debug.Log(url);
-        //Application.OpenURL(url);
-        nekoManager.GetDataAPI();
-        SceneManager.LoadScene(DataConst.MAIN_SCENE);
-        //nekoManager.test();
+        string requestUrl = DataConst.NEKOWALLET_URL + "?data=" + JsonUtility.ToJson(request);
+        //Application.OpenURL(requestUrl);
+        SceneManager.LoadScene(DataConst.LOADING_SCENE);
     }
 }

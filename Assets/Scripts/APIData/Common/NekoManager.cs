@@ -63,17 +63,21 @@ public partial class NekoManager : ColyseusManager<NekoManager>
     public string signKey = "QkkqwQFXLgPP0zkeVS2ONYdXDkI16ynrG+VdJGipuY1ocE0Ypp9U49AhyJKtnimbnXHglPDlSFuymYA1AX1hBQ==";
     public string walletAddress = "D5sGL6rCYzWKfZj6eP4SwyV8xQ2PozLY5J76ovnwVw4y";
 
-    
-    //protected override void Awake()
-    //{
-    //    InitClient();
-    //}
+    protected override void Awake()
+    {
+        InitClient();
+    }
 
-    public void LogIn()
+    public void LogIn(string signKey = "", string walletAddress = "")
     {
         var d = new Dictionary<string, string>();
-        d.Add("signature", signKey);
-        d.Add("wallet_address", walletAddress);
+        if (signKey != "" && walletAddress != "")
+        {
+            this.signKey = signKey;
+            this.walletAddress = walletAddress;
+        }
+        d.Add("signature", this.signKey);
+        d.Add("wallet_address", this.walletAddress);
 
         Post(API_LOGIN, d, return_value =>
         {
@@ -81,16 +85,6 @@ public partial class NekoManager : ColyseusManager<NekoManager>
             Debug.Log("Logged in");
         });
     }
-
-    public void GetDataAPI()
-    {
-
-        GetData(API_USER_NEKOS);
-        GetData(API_AREA);
-        GetData(API_MAP_LEVELS);
-    }
-
-    public UserNekosResponse GetUserNekoResponse() { return userNekoResponse; }
 
     public void GetData(string API, string id = "", bool getSkill = false) // check API string to see if an API require ID
     {
@@ -109,8 +103,7 @@ public partial class NekoManager : ColyseusManager<NekoManager>
                 {
                     Get(current_api, return_value => {
                         mapLevelIdResponse = JsonUtility.FromJson<MapLevelIdResponse>(return_value);
-                        //Debug.Log(mapLevelIdResponse.data.enemies[0].metadata.atk);
-                        Debug.Log(mapLevelIdResponse.data.id);
+                        DataApi.GetInstance().AddListMapLevelIdResponse(mapLevelIdResponse);
                     },
                     loginResponse.data.access_token);
                 }
@@ -119,7 +112,6 @@ public partial class NekoManager : ColyseusManager<NekoManager>
                     Get(current_api, return_value => {
                         mapLevelResponse = JsonUtility.FromJson<MapLevelResponse>(return_value);
                         DataApi.GetInstance().SetMapLevelResponse(mapLevelResponse);
-                        
                     },
                     loginResponse.data.access_token);
                 }
@@ -173,7 +165,7 @@ public partial class NekoManager : ColyseusManager<NekoManager>
                     Get(current_api, return_value => {
                         nekoResponse = JsonUtility.FromJson<NekoResponse>(return_value);
                         //Debug.Log(nekoResponse.data.traits[3].trait_type.id);
-                        DataApi.GetInstance().SetNekoResponse(nekoResponse);
+                        //DataApi.GetInstance().SetNekoResponse(nekoResponse);
                     });
                 }
                 else
@@ -182,7 +174,7 @@ public partial class NekoManager : ColyseusManager<NekoManager>
                     Get(current_api, return_value => {
                         nekoSkillResponse = JsonUtility.FromJson<NekoSkillResponse>(return_value);
                         //Debug.Log(nekoSkillResponse.data.skills[0].metadata.mana);
-                        DataApi.GetInstance().SetNekoSkillResponse(nekoSkillResponse);
+                        //DataApi.GetInstance().SetNekoSkillResponse(nekoSkillResponse);
                     });
                 }
                 break;

@@ -26,7 +26,8 @@ public class BattleNekoView : MonoBehaviour
     {
         imgNeko.texture = character.MainTexture;
         string url = DataConst.NEKO_IMAGE_URL + character.Neko.nft_id + DataConst.NEKO_IMAGE_PNG;
-        character.NekoController.LoadImage(url, img);
+        GameUtilities.LoadImage(url, img, this);
+        //character.NekoController.LoadImage(url, img);
         txtNekoName.text = character.Neko.name;
         txtHp.text = character.Neko.metadata.health.ToString();
         txtMagic.text = character.Neko.metadata.m_atk.ToString();
