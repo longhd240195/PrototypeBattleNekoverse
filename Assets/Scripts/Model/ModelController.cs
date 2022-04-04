@@ -301,6 +301,9 @@ public class ModelController : MonoBehaviour
 
     public void ChangeClass(string newClass)
     {
+        if (skillsCache == null)
+            skillsCache = new List<SkillData>();
+
         Cache.Clear();
         skillsCache.Clear();
         CacheFile(newClass);

@@ -369,12 +369,14 @@ public class SkillAttribute
 {
     [SerializeField] string nameSkill;
     [SerializeField] SkillEffect[] effects;
+    [SerializeField] SkillAction[] queue;
     [SerializeField] private string skillAnimation = "CastSkill";
     [SerializeField] private int mana;
     public string NameSkill { get => nameSkill; set => nameSkill = value; }
     public SkillEffect[] Effects { get => effects; set => effects = value; }
     public string SkillAnimation => skillAnimation;
     public int Mana { get => mana; set => mana = value; }
+    public SkillAction[] Queue { get => queue; set => queue = value; }
 
     public SkillAttribute(string nameSkill, SkillEffect[] effects, int mana)
     {
@@ -437,6 +439,17 @@ public enum SkillTargetType
     Enemies
 }
 
+[System.Serializable]
+public class SkillAction
+{
+    [SerializeField] private string anim;
+    [SerializeField] private float time;
+    [SerializeField] private GameObject particleSystem;
+
+    public string Anim { get => anim; set => anim = value; }
+    public float Time { get => time; set => time = value; }
+    public GameObject ParticleSystem { get => particleSystem; set => particleSystem = value; }
+}
 
 [System.Serializable]
 public class SkillEffect

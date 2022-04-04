@@ -6,6 +6,7 @@ using Sirenix.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class BattleController : MonoBehaviour
 {
@@ -47,13 +48,13 @@ public class BattleController : MonoBehaviour
     {
         listNekoData = DataTest.GetNekoDataBattle();
 
-        for (int i = 0; i < 6; i++)
-        {
-            if (clr.Length == listNekoData.Count)
-            {
-                clr[i].InitNekoData(listNekoData[i],true);
-            }
-        }
+        //for (int i = 0; i < 6; i++)
+        //{
+        //    if (clr.Length == listNekoData.Count)
+        //    {
+        //        clr[i].InitNekoData(listNekoData[i],true);
+        //    }
+        //}
     }
 
     private void Update()
@@ -475,53 +476,16 @@ public class BattleController : MonoBehaviour
             //			target.transform.DOMove(-target.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
 
             //TODO: Here is in-skill. Add more skill effect inside skill apply
-            from.PlayAnimation(q.skill.SkillAnimation, () =>
-            {
-                foreach (var ef in q.skill.Effects)
-                {
-                    switch (ef.TargetType)
-                    {
-                        case SkillTargetType.Self:
-                            from.ApplyEffects(ef);
-                            from.MoveCone(true);
-                            from.AddMana(1);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Ally:
-                            target.ApplyEffects(ef);
-                            target.MoveCone(true);
-                            from.SubMana(q.skill.Mana);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Allies:
-                            var listAllies = reds.Contains(from) ? reds : blues;
-                            listAllies.ForEach(s =>
-                            {
-                                s.ApplyEffects(ef);
-                                s.MoveCone(true);
-                            });
-                            from.SubMana(q.skill.Mana);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Enemy:
-                            target.ApplyEffects(ef);
-                            target.PlayAnimation("TakeDamage");
-                            target.MoveCone(true);
-                            from.AddMana(1);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Enemies:
-                            var listEnemies = !reds.Contains(from) ? reds : blues;
-                            listEnemies.ForEach(s =>
-                            {
-                                s.ApplyEffects(ef);
-                                s.PlayAnimation("TakeDamage");
-                                s.MoveCone(true);
-                            });
-                            break;
-                    }
-                }
-            });
+
+            //var queueAnimation = q.skill.Queue;
+
+            StartCoroutine(PlayTakeHit(from,target,q));
+
+            //from.PlayAnimation(q.skill.SkillAnimation, () =>
+            //{
+            //    ApplyEffect(from, target, q);
+            //});
+
 
             //TODO: End of action, change state to pre skill
             //need to split all action, prepare for command pattern? 
@@ -538,6 +502,72 @@ public class BattleController : MonoBehaviour
             ChangeToSelectSkillAction();
             NextOnQueue();
         });
+    }
+
+    private IEnumerator PlayTakeHit(CharacterInformation from, CharacterInformation target, QueueBattle q)
+    {
+        var queueAnimation = q.skill.Queue;
+        var index = 0;
+        foreach (var item in queueAnimation)
+        {
+            if (index != queueAnimation.Length)
+                from.PlayAnimation(item.Anim);
+            else from.PlayAnimation(q.skill.SkillAnimation, () =>
+            {
+                ApplyEffect(from, target, q);
+            });
+            yield return new WaitForSeconds(item.Time);
+            index++;
+        }
+
+    }
+
+    private void ApplyEffect(CharacterInformation from, CharacterInformation target, QueueBattle q)
+    {
+        foreach (var ef in q.skill.Effects)
+        {
+            switch (ef.TargetType)
+            {
+                case SkillTargetType.Self:
+                    from.ApplyEffects(ef);
+                    from.MoveCone(true);
+                    from.AddMana(1);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Ally:
+                    target.ApplyEffects(ef);
+                    target.MoveCone(true);
+                    from.SubMana(q.skill.Mana);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Allies:
+                    var listAllies = reds.Contains(from) ? reds : blues;
+                    listAllies.ForEach(s =>
+                    {
+                        s.ApplyEffects(ef);
+                        s.MoveCone(true);
+                    });
+                    from.SubMana(q.skill.Mana);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Enemy:
+                    target.ApplyEffects(ef);
+                    target.PlayAnimation("TakeDamage");
+                    target.MoveCone(true);
+                    from.AddMana(1);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Enemies:
+                    var listEnemies = !reds.Contains(from) ? reds : blues;
+                    listEnemies.ForEach(s =>
+                    {
+                        s.ApplyEffects(ef);
+                        s.PlayAnimation("TakeDamage");
+                        s.MoveCone(true);
+                    });
+                    break;
+            }
+        }
     }
 
     private void AnnounceNewTurn()
