@@ -61,16 +61,29 @@ public class ModelController : MonoBehaviour
     public void InitNekoData(NekoData neko, bool isBattle = false)
     {
         this.neko = neko;
-        ChangeClass(neko.className);
-        for (int i = 0; i < neko.traits.Length; i++)
+        Cache.Clear();
+        InitTraitName();
+        if (isBattle)
         {
-            if (listTraitNames.Contains(neko.traits[i].trait_type.name))
+            ChangeClass(neko.className);
+            for (int i = 0; i < neko.traits.Length; i++)
             {
-                ChangeTraits(neko.traits[i].trait_type.name, Convert.ToInt32(neko.traits[i].id));
+                if (listTraitNames.Contains(neko.traits[i].trait_type.name))
+                {
+                    ChangeTraits(neko.traits[i].trait_type.name, Convert.ToInt32(neko.traits[i].id));
+                }
             }
         }
         if (!isBattle)
         {
+            ChangeClass(neko.className);
+            for (int i = 0; i < neko.traits.Length; i++)
+            {
+                if (listTraitNames.Contains(neko.traits[i].trait_type.name))
+                {
+                    ChangeTraits(neko.traits[i].trait_type.name, Convert.ToInt32(neko.traits[i].id));
+                }
+            }
             nekoView.Init(neko);
             nekoView.ResetBtnSkill(btnChangeSkill);
             InitButtonSkill(btnChangeSkill, neko);

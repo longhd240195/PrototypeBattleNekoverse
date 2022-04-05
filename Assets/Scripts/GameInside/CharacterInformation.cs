@@ -96,13 +96,13 @@ public class CharacterInformation : MonoBehaviour
         if (isEnemy)
         {
             screenPos.y += 100;
-            screenPos.x += 50;
+            //screenPos.x += 50;
             healthBar.SetColorHealBar(this);
         }
         else
         {
             screenPos.y += 200;
-            screenPos.x -= 30;
+            //screenPos.x -= 30;
         }
         LoadManaBar();
         healthBar.transform.position = screenPos + HpBarIngameSpawnner.Instance.PosTemp;

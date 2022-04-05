@@ -12,7 +12,6 @@ public class GetTouch : MonoBehaviour
     public UnityEvent onMouseEnter;
     public UnityEvent onMouseExit;
     private CharacterInformation character;
-    [SerializeField] private BattleNekoView nekoHover;
 
 	private void Start()
 	{
@@ -39,11 +38,5 @@ public class GetTouch : MonoBehaviour
             return;
 
         onMouseExit?.Invoke();
-        nekoHover?.gameObject.SetActive(false);
-    }
-    void OnMouseOver()
-    {
-        nekoHover?.gameObject.SetActive(true);
-        nekoHover?.LoadNekoBar(character);
     }
 }
