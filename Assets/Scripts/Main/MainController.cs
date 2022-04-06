@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Networking;
-using System.Linq;
 
 public class MainController : MonoBehaviour
 {
@@ -12,20 +10,24 @@ public class MainController : MonoBehaviour
     [SerializeField] private List<Image> listNekoTeamImg;
     [SerializeField] private MainAnimationView view;
     [SerializeField] private GameObject loadingPrefab;
-    private List<NekoData> listMyNeko;
     private const int MAX_SIZE = 300;
-    private NekoManager nekoManager;
     private UserNekosResponse userNekosResponse;
-
+    private MapLevelResponse mapLevelResponse;
     private void Awake()
     {
-        DataApi data = DataApi.GetInstance();
+        mapLevelResponse = DataApi.GetInstance().GetMapLevelResponse();
+        if (DataApi.GetInstance().GetMapLevelIdResponse().Count == 0)
+        {
+            for (int i = 0; i < mapLevelResponse.data.Length; i++)
+            {
+                DataApi.GetInstance().manager.GetData("/v1/pve/map-levels/", mapLevelResponse.data[i].id);
+            }
+        }
+        userNekosResponse = DataApi.GetInstance().GetUserNekoResponse();
     }
 
     void Start()
     {
-        userNekosResponse = DataApi.GetInstance().GetUserNekoResponse();
-        //listMyNeko = DataTest.GetMyNekoDatas();
         LoadNeko();
         view.Init();
     }
@@ -53,7 +55,8 @@ public class MainController : MonoBehaviour
                 listNekoBtn[i].localPosition = new Vector2(posX, listNekoBtn[i].localPosition.y);
                 Button btn = listNekoBtn[i].gameObject.GetComponent<Button>();
                 string url = DataConst.NEKO_IMAGE_URL + userNekosResponse.data[i].nft_id + DataConst.NEKO_IMAGE_PNG;
-                LoadImage(url, btn.transform.GetChild(0).GetChild(0).GetComponent<Image>());
+                Image img = btn.transform.GetChild(0).GetChild(0).GetComponent<Image>();
+                GameUtilities.LoadImage(url, img, this);
                 btn.onClick.AddListener(() => OnLoadYourNeko());
             }
             else
@@ -67,7 +70,7 @@ public class MainController : MonoBehaviour
             {
                 Image btn = listNekoTeamImg[i].GetComponent<Image>();
                 string url = DataConst.NEKO_IMAGE_URL + userNekosResponse.data[i].nft_id + DataConst.NEKO_IMAGE_PNG;
-                LoadImage(url, btn);
+                GameUtilities.LoadImage(url, btn, this);
             }
             else
             {
@@ -78,45 +81,10 @@ public class MainController : MonoBehaviour
 
     private void OnLoadYourNeko()
     {
-        StartCoroutine(LoadSceneYourNeko());
-    }
-
-    private IEnumerator LoadSceneYourNeko()
-    {
-        GameObject loading = Instantiate(loadingPrefab);
-        loading.transform.SetParent(transform);
-        yield return new WaitForSeconds(3f);
-        Destroy(loading);
-        SceneManager.LoadScene(DataConst.YOUR_NEKO_SCENE);
+        GameUtilities.LoadingScene(DataConst.YOUR_NEKO_SCENE, transform, loadingPrefab, this);
     }
     public void LoadMapSence()
     {
-        SceneManager.LoadScene(DataConst.MAP_SCENE);
+        GameUtilities.LoadingScene(DataConst.MAP_SCENE, transform, loadingPrefab, this);
     }
-
-    #region Download image from url
-    public void LoadImage(string url, Image profileImage)
-    {
-        StartCoroutine(DownloadImage(url, profileImage));
-    }
-
-    IEnumerator DownloadImage(string MediaUrl, Image profileImage)
-    {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
-        yield return request.SendWebRequest();
-        if (request.isNetworkError || request.isHttpError)
-            Debug.Log(request.error);
-        else
-        {
-            Texture2D webTexture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture2D;
-            Sprite webSprite = SpriteFromTexture2D(webTexture);
-            profileImage.sprite = webSprite;
-        }
-    }
-
-    Sprite SpriteFromTexture2D(Texture2D texture)
-    {
-        return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
-    }
-    #endregion
 }

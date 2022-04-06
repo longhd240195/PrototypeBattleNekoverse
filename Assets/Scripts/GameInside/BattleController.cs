@@ -6,6 +6,7 @@ using Sirenix.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class BattleController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class BattleController : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtLogTurn;
     [SerializeField] Text txtRoundText;
     [SerializeField] LineRenderer line;
-    [SerializeField] Image imgClock;
+    //[SerializeField] Image imgClock;
     [SerializeField] private Button btnChangeSkin;
     [SerializeField] private ModelController[] clr;
     [SerializeField] private BattleNekoView viewNekoBattle;
@@ -47,11 +48,13 @@ public class BattleController : MonoBehaviour
     {
         listNekoData = DataTest.GetNekoDataBattle();
 
+        Debug.Log(listNekoData.Count);
+
         for (int i = 0; i < 6; i++)
         {
             if (clr.Length == listNekoData.Count)
             {
-                clr[i].InitNekoData(listNekoData[i],true);
+                clr[i].InitNekoData(listNekoData[i], true);
             }
         }
     }
@@ -76,7 +79,7 @@ public class BattleController : MonoBehaviour
             {
                 // txtTimerRound.text = $"{timeRoundCD:0}";
                 txtTimerRound.text = SetTimer(timeRoundCD);
-                imgClock.fillAmount = timeRoundCD / timePerRound;
+                //imgClock.fillAmount = timeRoundCD / timePerRound;
                 txtTimeOut.gameObject.SetActive(false);
             }
 
@@ -260,13 +263,13 @@ public class BattleController : MonoBehaviour
         //if(turnCharacter.Alive)
         if (blues.Contains(turnCharacter))
         {
-            ShowUISkill(true);
+            //ShowUISkill(true);
             AssignCharacterAttack(turnCharacter);
         }
         else
         {
             //TODO: Add AI for red team here
-            ShowUISkill(false);
+            //ShowUISkill(false);
             AIAction(turnCharacter);
         }
         CheckQueueTurn(turnCharacter);
@@ -459,7 +462,7 @@ public class BattleController : MonoBehaviour
         line.SetPosition(0, from.transform.position);
         line.SetPosition(1, target.transform.position);
 
-        imgClock.fillAmount = 0;
+        //imgClock.fillAmount = 0;
         txtTimerRound.text = string.Empty;
         Debug.Log($"Make attack: from {from.name} to {target.name}");
         UpdateLog($"{from.name} {q.skill.NameSkill} {target.name}");
@@ -523,6 +526,15 @@ public class BattleController : MonoBehaviour
                 }
             });
 
+            //var queueAnimation = q.skill.Queue;
+            //StartCoroutine(PlayTakeHit(from,target,q));
+
+            //from.PlayAnimation(q.skill.SkillAnimation, () =>
+            //{
+            //    ApplyEffect(from, target, q);
+            //});
+
+
             //TODO: End of action, change state to pre skill
             //need to split all action, prepare for command pattern? 
         }
@@ -538,6 +550,73 @@ public class BattleController : MonoBehaviour
             ChangeToSelectSkillAction();
             NextOnQueue();
         });
+    }
+
+    private IEnumerator PlayTakeHit(CharacterInformation from, CharacterInformation target, QueueBattle q)
+    {
+        var queueAnimation = q.skill.Queue;
+        var index = 0;
+        
+        foreach (var item in queueAnimation)
+        {
+            if (index != queueAnimation.Length)
+                from.PlayAnimation(item.Anim);
+            else from.PlayAnimation(q.skill.SkillAnimation, () =>
+            {
+                ApplyEffect(from, target, q);
+            });
+            yield return new WaitForSeconds(item.Time);
+            index++;
+        }
+
+    }
+
+    private void ApplyEffect(CharacterInformation from, CharacterInformation target, QueueBattle q)
+    {
+        foreach (var ef in q.skill.Effects)
+        {
+            switch (ef.TargetType)
+            {
+                case SkillTargetType.Self:
+                    from.ApplyEffects(ef);
+                    from.MoveCone(true);
+                    from.AddMana(1);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Ally:
+                    target.ApplyEffects(ef);
+                    target.MoveCone(true);
+                    from.SubMana(q.skill.Mana);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Allies:
+                    var listAllies = reds.Contains(from) ? reds : blues;
+                    listAllies.ForEach(s =>
+                    {
+                        s.ApplyEffects(ef);
+                        s.MoveCone(true);
+                    });
+                    from.SubMana(q.skill.Mana);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Enemy:
+                    target.ApplyEffects(ef);
+                    target.PlayAnimation("TakeDamage");
+                    target.MoveCone(true);
+                    from.AddMana(1);
+                    from.LoadManaBar();
+                    break;
+                case SkillTargetType.Enemies:
+                    var listEnemies = !reds.Contains(from) ? reds : blues;
+                    listEnemies.ForEach(s =>
+                    {
+                        s.ApplyEffects(ef);
+                        s.PlayAnimation("TakeDamage");
+                        s.MoveCone(true);
+                    });
+                    break;
+            }
+        }
     }
 
     private void AnnounceNewTurn()

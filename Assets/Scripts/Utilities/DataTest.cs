@@ -4,6 +4,215 @@ using UnityEngine;
 
 public class DataTest
 {
+    public static NekoData GetNeko()
+    {
+        NekoData neko = new NekoData
+        {
+            id = "15c6b4ae-bcd5-4886-bf1e-ec98790e96f3",
+            mint_address = "29MXryUw6xBBVQXiwQgD5ZqNrsbWYtA2xpLdkX6ZvC6D",
+            nft_id = "5244",
+            name = "NEKO #5244",
+            className = "Fire",
+            metadata = new MetaDataNeko
+            {
+                atk = 161,
+                m_atk = 189,
+                def = 186,
+                m_def = 164,
+                speed = 110,
+                health = 255,
+                mana = 100
+            },
+            level = 1,
+            experience = 0,
+            traits = new TraitsData[] {
+                new TraitsData
+                {
+                    id = "62",
+                    name = "Displeased Candy buddy",
+                    trait_type = new TraitsType
+                    {
+                        id = "1",
+                        name = "body",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "66",
+                    name = "Nyan feline",
+                    trait_type = new TraitsType
+                    {
+                        id = "3",
+                        name = "ear",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "67",
+                    name = "Big nose",
+                    trait_type = new TraitsType
+                    {
+                        id = "4",
+                        name = "nose",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "69",
+                    name = "Fire stare",
+                    trait_type = new TraitsType
+                    {
+                        id = "5",
+                        name = "eye",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "73",
+                    name = "Picky",
+                    trait_type = new TraitsType
+                    {
+                        id = "6",
+                        name = "eyebrow",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "75",
+                    name = "Bronze pendant",
+                    trait_type = new TraitsType
+                    {
+                        id = "7",
+                        name = "medal",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "81",
+                    name = "Fabric choker",
+                    trait_type = new TraitsType
+                    {
+                        id = "8",
+                        name = "necklaces",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "98",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "14",
+                        name = "side face",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "101",
+                    name = "Bare",
+                    trait_type = new TraitsType
+                    {
+                        id = "11",
+                        name = "arms",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "108",
+                    name = "Ninja pad",
+                    trait_type = new TraitsType
+                    {
+                        id = "12",
+                        name = "accessories",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "112",
+                    name = "Wyvern tail",
+                    trait_type = new TraitsType
+                    {
+                        id = "13",
+                        name = "back",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "242",
+                    name = "Peach gradient",
+                    trait_type = new TraitsType
+                    {
+                        id = "2",
+                        name = "background",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "299",
+                    name = "White cap",
+                    trait_type = new TraitsType
+                    {
+                        id = "9",
+                        name = "top",
+                        description = null
+                    }
+                },
+                new TraitsData
+                {
+                    id = "301",
+                    name = "Neko frames",
+                    trait_type = new TraitsType
+                    {
+                        id = "10",
+                        name = "front face",
+                        description = null
+                    }
+                }
+            },
+            skills = new SkillNekoData[]
+            {
+                new SkillNekoData
+                {
+                    id = "56f82d47-e8b1-4380-a181-a726420ee959",
+                    name = "Neko-Skill-4-1",
+                    metadata = new MetaDataSkill
+                    {
+                        function = "cover",
+                        atk = 516,
+                        def = 263,
+                        speed = 1,
+                        mana = 43
+                    }
+                },
+                new SkillNekoData
+                {
+                    id = "64244d1b-9148-48f8-af9c-dfe8c4274b80",
+                    name = "Neko-Skill-4-2",
+                    metadata = new MetaDataSkill
+                    {
+                        function = "fire",
+                        atk = 572,
+                        def = 564,
+                        speed = 5,
+                        mana = 17
+                    }
+                }
+            }
+        };
+        return neko;
+    }
     public static List<NekoData> GetMyNekoDatas()
     {
         List<NekoData> listMyNekoData = new List<NekoData>();

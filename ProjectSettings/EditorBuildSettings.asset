@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Loading.unity
-    guid: f7d7bdd5aa519ba4995bf3eaeca55921
   - enabled: 1
     path: Assets/Scenes/Connect.unity
     guid: 767d288fd6a53d64598b6816d571ffc0
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: f7d7bdd5aa519ba4995bf3eaeca55921
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 3689969a7fc69fd499876509edaa4b75
@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Your_Neko.unity
     guid: 18629774b7d154a4f9d827ad34904793
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Battle_Scene.unity
     guid: de3b8503a498edd4099016474fa58c8b
   m_configObjects: {}

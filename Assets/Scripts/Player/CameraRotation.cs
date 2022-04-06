@@ -7,10 +7,11 @@ public class CameraRotation : MonoBehaviour
     public float Xaxis;
     public float Yaxis;
     public float RotationSensitivity = 1.5f;
+    [SerializeField] private FixedJoystick joystick;
     void Update()
     {
-        Yaxis += Input.GetAxis("Mouse X");
-        Xaxis -= Input.GetAxis("Mouse Y");
+        Yaxis += joystick.Horizontal;
+        Xaxis -= joystick.Vertical;
         Vector3 targetRotation = new Vector3(Xaxis, Yaxis);
         transform.eulerAngles = targetRotation;
     }

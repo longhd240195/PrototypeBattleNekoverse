@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextController : MonoBehaviour
 {
     public static TextController Singleton;
 
     [SerializeField] private TextMeshProUGUI txtTemp;
-
+    Text text;
     private Camera mainCam;
     private List<TextMeshProUGUI> list;
 

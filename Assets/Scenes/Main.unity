@@ -649,7 +649,7 @@ MonoBehaviour:
   - {fileID: 326110881}
   - {fileID: 585519275}
   view: {fileID: 181674506}
-  loadingPrefab: {fileID: 7566934233837084481, guid: 98839760d26e5af48b97e2b379b2c0d8,
+  loadingPrefab: {fileID: 2890200149011188547, guid: d2d3e3929b3d87f439d90d1b8a08d67c,
     type: 3}
 --- !u!114 &181674506
 MonoBehaviour:

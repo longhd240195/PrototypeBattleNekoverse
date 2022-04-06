@@ -328,7 +328,6 @@ MonoBehaviour:
     status: 0
   signKey: QkkqwQFXLgPP0zkeVS2ONYdXDkI16ynrG+VdJGipuY1ocE0Ypp9U49AhyJKtnimbnXHglPDlSFuymYA1AX1hBQ==
   walletAddress: D5sGL6rCYzWKfZj6eP4SwyV8xQ2PozLY5J76ovnwVw4y
-  data: {fileID: 304384367}
 --- !u!114 &304384367
 MonoBehaviour:
   m_ObjectHideFlags: 0

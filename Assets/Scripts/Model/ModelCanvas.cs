@@ -11,6 +11,7 @@ public class ModelCanvas : MonoBehaviour
     [SerializeField] private Button[] btnChangeTraits;
     [SerializeField] private Button[] btnChangeTraitsInfor;
     [SerializeField] private Button[] btnYourNeko;
+    [SerializeField] private GameObject loadingPrefab;
     [Header("Animation")]
     [SerializeField] private RectTransform posListNeko;
     [SerializeField] private RectTransform listNekoObj;
@@ -64,10 +65,12 @@ public class ModelCanvas : MonoBehaviour
 
     public void LoadMap()
     {
-        SceneManager.LoadScene(DataConst.MAP_SCENE);
+        GameUtilities.LoadingScene(DataConst.MAP_SCENE, transform, loadingPrefab, this);
+        //SceneManager.LoadScene(DataConst.MAP_SCENE);
     }
     public void LoadHome()
     {
-        SceneManager.LoadScene(DataConst.MAIN_SCENE);
+        GameUtilities.LoadingScene(DataConst.MAIN_SCENE, transform, loadingPrefab, this);
+        //SceneManager.LoadScene(DataConst.MAIN_SCENE);
     }
 }

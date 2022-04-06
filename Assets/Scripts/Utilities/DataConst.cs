@@ -9,6 +9,7 @@ public class DataConst
     public const string MAP_SCENE = "Map";
     public const string BATTLE_SCENE = "Battle_Scene";
     public const string MAIN_SCENE = "Main";
+    public const string LOADING_SCENE = "Loading";
     public const float MAX_ATK_BOSS = 500;
     public const float MAX_SPEED_BOSS = 500;
     public const float MAX_DEF_BOSS = 500;
@@ -39,7 +40,7 @@ public class DataConst
     public const string NEKO_IMAGE_PNG = ".png";
 }
 [Serializable]
-public class DataLogin
+public class ConnectWalletRequest
 {
     public string id;
     public string data;
@@ -51,7 +52,7 @@ public class DataSign
     public string message;
 }
 [Serializable]
-public class DataLoginResponse
+public class ConnectWalletResponse
 {
     public string walletAddesss;
     public string network;
