@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-    public float Xaxis;
-    public float Yaxis;
-    public float RotationSensitivity = 1.5f;
-    [SerializeField] private FixedJoystick joystick;
-    void Update()
+    public float Speed = 5.0f;
+    //public Transform camTarget;
+    public Transform lookTarget;
+    public Vector3 dist;
+    void LateUpdate()
     {
-        Yaxis += joystick.Horizontal;
-        Xaxis -= joystick.Vertical;
-        Vector3 targetRotation = new Vector3(Xaxis, Yaxis);
-        transform.eulerAngles = targetRotation;
+        Vector3 dPos = lookTarget.position + dist;
+        Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime);
+        transform.position = sPos;
+        transform.LookAt(lookTarget.position);
     }
 }
