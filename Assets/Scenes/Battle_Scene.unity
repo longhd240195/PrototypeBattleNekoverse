@@ -1031,7 +1031,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56250738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d0aa6b6ae451cc4cb5dff2f1507359f, type: 2}
   m_CullingMode: 0
@@ -2926,7 +2926,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314458190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e468f1ae20a0c240951cd325ea43076, type: 3}
   m_Name: 
@@ -3331,7 +3331,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350485962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e468f1ae20a0c240951cd325ea43076, type: 3}
   m_Name: 
@@ -4662,7 +4662,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401423720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e468f1ae20a0c240951cd325ea43076, type: 3}
   m_Name: 
@@ -8521,7 +8521,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699054961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e468f1ae20a0c240951cd325ea43076, type: 3}
   m_Name: 
@@ -12473,7 +12473,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196804351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d0aa6b6ae451cc4cb5dff2f1507359f, type: 2}
   m_CullingMode: 0
@@ -13095,7 +13095,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249179499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d0aa6b6ae451cc4cb5dff2f1507359f, type: 2}
   m_CullingMode: 0
@@ -15839,7 +15839,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481588272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d0aa6b6ae451cc4cb5dff2f1507359f, type: 2}
   m_CullingMode: 0
@@ -15921,7 +15921,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494599570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d0aa6b6ae451cc4cb5dff2f1507359f, type: 2}
   m_CullingMode: 0
@@ -19560,7 +19560,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823743130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d0aa6b6ae451cc4cb5dff2f1507359f, type: 2}
   m_CullingMode: 0
@@ -22004,7 +22004,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011802635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e468f1ae20a0c240951cd325ea43076, type: 3}
   m_Name: 
@@ -23388,7 +23388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140000413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e468f1ae20a0c240951cd325ea43076, type: 3}
   m_Name: 
@@ -23574,7 +23574,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1494599573}
+      objectReference: {fileID: 401423719}
     - target: {fileID: 288255049308849248, guid: 4faf9b7e7246c1d408f43bb31f43bd86,
         type: 3}
       propertyPath: healthBar
@@ -24159,7 +24159,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1196804354}
+      objectReference: {fileID: 350485961}
     - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
         type: 3}
       propertyPath: initStat.hp
@@ -24197,6 +24197,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
         type: 3}
+      propertyPath: skills.Array.data[1].mana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
+      propertyPath: skills.Array.data[2].mana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
       propertyPath: skills.Array.data[0].nameSkill
       value: Flash
       objectReference: {fileID: 0}
@@ -24227,6 +24237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
       propertyPath: skills.Array.data[0].effects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -24242,6 +24257,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].anim
+      value: prepare-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].anim
+      value: attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].anim
+      value: end-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
+        type: 3}
       propertyPath: skills.Array.data[1].effects.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
@@ -24253,7 +24298,7 @@ PrefabInstance:
     - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
         type: 3}
       propertyPath: skills.Array.data[0].effects.Array.data[0].endValue
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 411826448886052693, guid: f22af0d02fecf7641807aed594131653,
         type: 3}
@@ -24709,7 +24754,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1823743133}
+      objectReference: {fileID: 699054960}
     - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
         type: 3}
       propertyPath: initStat.hp
@@ -24787,12 +24832,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
       propertyPath: skills.Array.data[1].effects.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
         type: 3}
       propertyPath: skills.Array.data[2].effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].anim
+      value: prepare-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].anim
+      value: attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].anim
+      value: end-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].time
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
@@ -24808,7 +24888,7 @@ PrefabInstance:
     - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
         type: 3}
       propertyPath: skills.Array.data[0].effects.Array.data[0].endValue
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1270643473247890002, guid: 239f137573564704799f4892a3b78de3,
         type: 3}
@@ -25274,7 +25354,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1481588275}
+      objectReference: {fileID: 1268353264}
     - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
         type: 3}
       propertyPath: initStat.hp
@@ -25312,6 +25392,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
         type: 3}
+      propertyPath: skills.Array.data[1].mana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
+      propertyPath: skills.Array.data[2].mana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
       propertyPath: skills.Array.data[0].nameSkill
       value: Flash
       objectReference: {fileID: 0}
@@ -25342,6 +25432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
       propertyPath: skills.Array.data[0].effects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -25357,6 +25452,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].anim
+      value: prepare-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].anim
+      value: attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].anim
+      value: end-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
+        type: 3}
       propertyPath: skills.Array.data[1].effects.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
@@ -25368,7 +25493,7 @@ PrefabInstance:
     - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
         type: 3}
       propertyPath: skills.Array.data[0].effects.Array.data[0].endValue
-      value: 23
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4358950840411602006, guid: 281647d2579e0854b9decbd5a807009d,
         type: 3}
@@ -25704,7 +25829,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1249179502}
+      objectReference: {fileID: 2011802634}
     - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
         type: 3}
       propertyPath: initStat.hp
@@ -25782,6 +25907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
       propertyPath: skills.Array.data[0].effects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -25797,6 +25927,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].anim
+      value: prepare-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].anim
+      value: attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].anim
+      value: end-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
+        type: 3}
       propertyPath: skills.Array.data[1].effects.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
@@ -25808,7 +25968,7 @@ PrefabInstance:
     - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
         type: 3}
       propertyPath: skills.Array.data[0].effects.Array.data[0].endValue
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5377199695156545246, guid: 4963d188f63e78c45944195fde1d0cae,
         type: 3}
@@ -26783,7 +26943,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 56250741}
+      objectReference: {fileID: 2140000412}
     - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
         type: 3}
       propertyPath: initStat.hp
@@ -26826,6 +26986,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
         type: 3}
+      propertyPath: skills.Array.data[1].mana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
+      propertyPath: skills.Array.data[2].mana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
       propertyPath: skills.Array.data[0].nameSkill
       value: Flash
       objectReference: {fileID: 0}
@@ -26856,6 +27026,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
       propertyPath: skills.Array.data[0].effects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -26871,6 +27046,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
         type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].anim
+      value: prepare-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[0].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].anim
+      value: attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].anim
+      value: end-attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
+      propertyPath: skills.Array.data[0].queue.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
+        type: 3}
       propertyPath: skills.Array.data[1].effects.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
@@ -26882,7 +27087,7 @@ PrefabInstance:
     - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
         type: 3}
       propertyPath: skills.Array.data[0].effects.Array.data[0].endValue
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7094712920772679878, guid: bc71bc630f06cd14f97377e2987b0709,
         type: 3}

@@ -476,58 +476,65 @@ public class BattleController : MonoBehaviour
             //TODO: Here is pre-skill
             //			from.transform.DOMove(-from.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
             //			target.transform.DOMove(-target.transform.forward * .3f, .2f).SetRelative(true).SetLoops(2, LoopType.Yoyo);
-
-            //TODO: Here is in-skill. Add more skill effect inside skill apply
-            from.PlayAnimation(q.skill.SkillAnimation, () =>
+            if(q.skill.Queue.Length == 0)
             {
-                foreach (var ef in q.skill.Effects)
+                Debug.Log("0");
+                //TODO: Here is in-skill. Add more skill effect inside skill apply
+                from.PlayAnimation(q.skill.SkillAnimation, () =>
                 {
-                    switch (ef.TargetType)
+                    foreach (var ef in q.skill.Effects)
                     {
-                        case SkillTargetType.Self:
-                            from.ApplyEffects(ef);
-                            from.MoveCone(true);
-                            from.AddMana(1);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Ally:
-                            target.ApplyEffects(ef);
-                            target.MoveCone(true);
-                            from.SubMana(q.skill.Mana);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Allies:
-                            var listAllies = reds.Contains(from) ? reds : blues;
-                            listAllies.ForEach(s =>
-                            {
-                                s.ApplyEffects(ef);
-                                s.MoveCone(true);
-                            });
-                            from.SubMana(q.skill.Mana);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Enemy:
-                            target.ApplyEffects(ef);
-                            target.PlayAnimation("TakeDamage");
-                            target.MoveCone(true);
-                            from.AddMana(1);
-                            from.LoadManaBar();
-                            break;
-                        case SkillTargetType.Enemies:
-                            var listEnemies = !reds.Contains(from) ? reds : blues;
-                            listEnemies.ForEach(s =>
-                            {
-                                s.ApplyEffects(ef);
-                                s.PlayAnimation("TakeDamage");
-                                s.MoveCone(true);
-                            });
-                            break;
+                        Debug.Log("1");
+                        switch (ef.TargetType)
+                        {
+                            case SkillTargetType.Self:
+                                from.ApplyEffects(ef);
+                                from.MoveCone(true);
+                                from.AddMana(1);
+                                from.LoadManaBar();
+                                break;
+                            case SkillTargetType.Ally:
+                                target.ApplyEffects(ef);
+                                target.MoveCone(true);
+                                from.SubMana(q.skill.Mana);
+                                from.LoadManaBar();
+                                break;
+                            case SkillTargetType.Allies:
+                                var listAllies = reds.Contains(from) ? reds : blues;
+                                listAllies.ForEach(s =>
+                                {
+                                    s.ApplyEffects(ef);
+                                    s.MoveCone(true);
+                                });
+                                from.SubMana(q.skill.Mana);
+                                from.LoadManaBar();
+                                break;
+                            case SkillTargetType.Enemy:
+                                target.ApplyEffects(ef);
+                                //target.PlayAnimation("TakeDamage");
+                                target.MoveCone(true);
+                                from.AddMana(1);
+                                from.LoadManaBar();
+                                break;
+                            case SkillTargetType.Enemies:
+                                var listEnemies = !reds.Contains(from) ? reds : blues;
+                                listEnemies.ForEach(s =>
+                                {
+                                    s.ApplyEffects(ef);
+                                    //s.PlayAnimation("TakeDamage");
+                                    s.MoveCone(true);
+                                });
+                                break;
+                        }
                     }
-                }
-            });
+                });
+            }
+            else
+            {
+                //var queueAnimation = q.skill.Queue;
+                StartCoroutine(PlayTakeHit(from, target, q));
+            }
 
-            //var queueAnimation = q.skill.Queue;
-            //StartCoroutine(PlayTakeHit(from,target,q));
 
             //from.PlayAnimation(q.skill.SkillAnimation, () =>
             //{
@@ -556,19 +563,17 @@ public class BattleController : MonoBehaviour
     {
         var queueAnimation = q.skill.Queue;
         var index = 0;
-        
         foreach (var item in queueAnimation)
         {
             if (index != queueAnimation.Length)
-                from.PlayAnimation(item.Anim);
-            else from.PlayAnimation(q.skill.SkillAnimation, () =>
             {
-                ApplyEffect(from, target, q);
-            });
+                from.PlayAnimation(item.Anim);
+                if (item.Anim == "attack")
+                    ApplyEffect(from, target, q);
+            }
             yield return new WaitForSeconds(item.Time);
             index++;
         }
-
     }
 
     private void ApplyEffect(CharacterInformation from, CharacterInformation target, QueueBattle q)

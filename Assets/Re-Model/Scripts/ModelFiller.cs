@@ -39,15 +39,15 @@ public class ModelFiller : MonoBehaviour
 		ChangeModel(3);
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.A)) {
-			ChangeModel(0);
-			ChangeModel(1);
-			ChangeModel(2);
-			ChangeModel(3);
-		}
-	}
+	//private void Update()
+	//{
+	//	if (Input.GetKeyDown(KeyCode.A)) {
+	//		ChangeModel(0);
+	//		ChangeModel(1);
+	//		ChangeModel(2);
+	//		ChangeModel(3);
+	//	}
+	//}
 
 	public void ChangeModel(int index)
 	{
