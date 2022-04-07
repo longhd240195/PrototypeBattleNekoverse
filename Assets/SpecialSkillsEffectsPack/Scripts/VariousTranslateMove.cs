@@ -7,6 +7,7 @@ public class VariousTranslateMove : MonoBehaviour {
     public float m_power;
     public float m_reduceTime;
     public bool m_fowardMove;
+    public bool m_backwardMove;
     public bool m_rightMove;
     public bool m_upMove;
     public float m_changedFactor;
@@ -22,6 +23,8 @@ public class VariousTranslateMove : MonoBehaviour {
 
         if (m_fowardMove)
             transform.Translate(transform.forward * m_power * m_changedFactor);
+        if (m_backwardMove)
+            transform.Translate(transform.forward * m_power * -m_changedFactor);
         if (m_rightMove)
             transform.Translate(transform.right * m_power* m_changedFactor);
         if (m_upMove)

@@ -60,6 +60,16 @@ public class VariousEffectsScene : MonoBehaviour {
             MakeObject();
     }
 
+    public void SpawnVFX()
+    {
+        int num = 86;
+
+        Vector3 pos = new Vector3(m_effects[num].transform.position.x + 20, m_effects[num].transform.position.y, m_effects[num].transform.position.z);
+
+
+        GameObject go = Instantiate(m_effects[num], pos, m_effects[num].transform.rotation).gameObject;
+    }
+
     void MakeObject()
     {
         DestroyGameObject();
