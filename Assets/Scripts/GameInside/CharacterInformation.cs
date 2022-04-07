@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CharacterInformation : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CharacterInformation : MonoBehaviour
     [SerializeField] private BattleController controller;
     [SerializeField] private IngameHealthBar healthBar;
     [SerializeField] private Texture mainTexture;
-
+    [SerializeField] private Transform pointAttack;
     [Header("Stat")]
     [SerializeField] private CharacterAttribute initStat;
     [SerializeField, ReadOnly] private CharacterAttribute currentStat;
@@ -32,6 +33,7 @@ public class CharacterInformation : MonoBehaviour
     public float Damage => CurrentStat.Damage;
     public float Speed => CurrentStat.Speed;
     public bool Alive => CurrentStat.Hp > 0;
+    public Transform PointAttack => pointAttack;
     public List<SkillAttribute> Skills { get => skills; set => skills = value; }
 
     public CharacterAttribute CurrentStat { get => currentStat; }
@@ -41,7 +43,7 @@ public class CharacterInformation : MonoBehaviour
     private System.Action callbackDelay;
 
     private Coroutine loop;
-
+    Vector3 screenPos;
     #region Get reference on scene
     [ContextMenu("Init skill")]
     private void InitSkill()
@@ -84,31 +86,44 @@ public class CharacterInformation : MonoBehaviour
         btnOnCharacter.onClick.AddListener(AssignAction);
         btnOnCharacter.onMouseEnter.AddListener(SetTargetPlayer);
         btnOnCharacter.onMouseExit.AddListener(RemoveTargetPlayer);
+        healthBar = HpBarIngameSpawnner.Instance.GetTemp();
+        
+        //healthBar.transform.position = screenPos + HpBarIngameSpawnner.Instance.PosTemp;
+    }
+    
+    private void Update()
+    {
+        screenPos = Camera.main.WorldToScreenPoint(transform.localPosition);
+        screenPos.y += 100f;
+        healthBar.transform.position = screenPos + HpBarIngameSpawnner.Instance.PosTemp;
     }
 
     public void Initialize(bool isEnemy = false)
     {
         SetNekoStat(Neko);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.localPosition);
         currentStat = (CharacterAttribute)initStat.Clone();
-        healthBar = HpBarIngameSpawnner.Instance.GetTemp();
         healthBar.Init(this);
         if (isEnemy)
         {
-            screenPos.y += 100;
-            //screenPos.x += 50;
             healthBar.SetColorHealBar(this);
         }
-        else
-        {
-            screenPos.y += 200;
-            //screenPos.x -= 30;
-        }
         LoadManaBar();
-        healthBar.transform.position = screenPos + HpBarIngameSpawnner.Instance.PosTemp;
         UpdateStat();
     }
-
+    Vector3 rePoint = new Vector3();
+    public void MovingToTarget(CharacterInformation target)
+    {
+        rePoint = transform.position;
+        GetComponent<NavMeshAgent>().SetDestination(target.pointAttack.position);
+        GetComponent<NavMeshAgent>().updateRotation = false;
+    }
+    public void MovingToForm()
+    {
+        //healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.localPosition) + HpBarIngameSpawnner.Instance.PosTemp;
+        transform.Rotate(new Vector3(0f, 180f, 0f));
+        GetComponent<NavMeshAgent>().SetDestination(rePoint);
+        GetComponent<NavMeshAgent>().updateRotation = false;
+    }
     private void SetNekoStat(NekoData neko)
     {
         initStat.Level = neko.level;
@@ -443,11 +458,13 @@ public enum SkillTargetType
 public class SkillAction
 {
     [SerializeField] private string anim;
-    [SerializeField] private float time;
+    [SerializeField] private float timeAttack;
     [SerializeField] private GameObject particleSystem;
+    [SerializeField] private float timeVfx;
 
     public string Anim { get => anim; set => anim = value; }
-    public float Time { get => time; set => time = value; }
+    public float Time { get => timeAttack; set => timeAttack = value; }
+    public float TimeVFX { get => timeVfx; set => timeVfx = value; }
     public GameObject ParticleSystem { get => particleSystem; set => particleSystem = value; }
 }
 

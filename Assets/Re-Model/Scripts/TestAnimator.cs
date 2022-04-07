@@ -27,5 +27,13 @@ public class TestAnimator : MonoBehaviour
         {
             anim.Play("Idle");
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            anim.Play("run_body");
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.Play("pre-skill");
+        }
     }
 }

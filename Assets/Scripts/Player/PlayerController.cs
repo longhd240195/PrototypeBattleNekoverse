@@ -6,20 +6,15 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Joystick moveJoystick;
-    public Transform[] m_effects;
-    public int inputLocation;
-    GameObject gm;
-    public GameObject scaleform;
-    public GameObject[] m_destroyObjects = new GameObject[30];
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity = 0.1f;
     private NavMeshAgent navMeshAgent;
     public float speed = 2f;
-    public Camera camera;
-    public static float m_gaph_scenesizefactor = 1;
+    public Transform effect;
+    public Transform parentEffect;
+    public Animator animator;
     private void Awake()
     {
-        inputLocation = 0;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void Update()
@@ -36,37 +31,19 @@ public class PlayerController : MonoBehaviour
 
 
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    MakeObject();
-        //}
+        if (Input.GetKey(KeyCode.Space))
+        {
+            StartCoroutine(MakeObject());
+        }
 
 
     }
-    //void MakeObject()
-    //{
-    //    int index = Random.Range(0, 10);
-    //    DestroyGameObject();
-    //    gm = Instantiate(m_effects[index],
-    //        m_effects[index].transform.position,
-    //        m_effects[index].transform.rotation).gameObject; 
-    //    scaleform.transform.position = gm.transform.position;
-    //    gm.transform.parent = scaleform.transform;
-    //    gm.transform.localScale = new Vector3(1, 1, 1);
-    //    float submit_scalefactor = m_gaph_scenesizefactor;
-    //    if (index < 70)
-    //        submit_scalefactor *= 0.5f;
-    //    gm.transform.localScale = new Vector3(submit_scalefactor, submit_scalefactor, submit_scalefactor);
-    //    m_destroyObjects[inputLocation] = gm;
-    //    inputLocation++;
-    //}
-
-    //void DestroyGameObject()
-    //{
-    //    for (int i = 0; i < inputLocation; i++)
-    //    {
-    //        Destroy(m_destroyObjects[i]);
-    //    }
-    //    inputLocation = 0;
-    //}
+    IEnumerator MakeObject()
+    {
+        animator.Play("pre-skill");
+        Transform vfx = Instantiate(effect, parentEffect);
+        yield return new WaitForSeconds(10f);
+        animator.Play("Idle");
+        Destroy(vfx.gameObject);
+    }
 }
